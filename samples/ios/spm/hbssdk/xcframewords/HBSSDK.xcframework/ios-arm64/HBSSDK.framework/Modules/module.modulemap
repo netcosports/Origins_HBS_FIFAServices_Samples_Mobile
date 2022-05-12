@@ -1,0 +1,4 @@
+framework module HBSSDK {
+  header "HBSSDK-Swift.h"
+  requires objc
+}

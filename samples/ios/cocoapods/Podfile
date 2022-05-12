@@ -1,0 +1,51 @@
+platform :ios, '13.0'
+
+use_frameworks!
+inhibit_all_warnings!
+
+install! 'cocoapods', :disable_input_output_paths => true
+
+def download_spec! (options={})
+  url = options[:url]
+  Dir.chdir('./specs'){
+    `curl -X GET '#{url}' -O -k -f -L`
+  }
+end
+
+
+target 'HBSSDKSample' do
+
+  download_spec!(url: 'https://origins-mobile-products.s3.eu-west-1.amazonaws.com/hbssdk/whitelabel/1.0.62/HBSSDK.podspec')
+  download_spec!(url: 'https://origins-mobile-products.s3.eu-west-1.amazonaws.com/hbssdk/whitelabel/1.0.62/hbsshared.podspec')
+  download_spec!(url: 'https://origins-mobile-products.s3.eu-west-1.amazonaws.com/OnRewindSDK.podspec')
+
+  # SDK specs
+  pod 'hbsshared', :podspec => './specs/hbsshared.podspec'
+  pod 'HBSSDK', :podspec => './specs/HBSSDK.podspec'
+  pod 'OnRewindSDK', :podspec => './specs/OnRewindSDK.podspec'
+  pod 'SportBuff', '0.2.0.0'
+
+  # sample
+  pod 'RxSwift'
+  pod 'RxCocoa'
+
+  pod 'PinLayout'
+  pod 'Astrolabe'
+
+  pod 'Alidade'
+  pod 'Alidade/Associatable'
+  pod 'Alidade/Flowable'
+  pod 'Alidade/FormatterPool'
+  pod 'Alidade/UI'
+  pod 'Alidade/String'
+
+
+end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
+    end
+  end
+end

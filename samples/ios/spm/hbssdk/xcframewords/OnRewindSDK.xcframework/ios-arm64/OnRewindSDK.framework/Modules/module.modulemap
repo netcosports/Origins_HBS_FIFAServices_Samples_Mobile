@@ -1,0 +1,4 @@
+framework module OnRewindSDK {
+  header "OnRewindSDK-Swift.h"
+  requires objc
+}

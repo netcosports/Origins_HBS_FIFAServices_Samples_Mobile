@@ -1,0 +1,260 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.6 (swiftlang-5.6.0.323.62 clang-1316.0.20.8)
+// swift-module-flags: -target x86_64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name HBSSDK
+import AVKit
+import Combine
+import CommonCrypto
+import CoreGraphics
+import CoreImage
+import Darwin
+import Dispatch
+import Foundation
+import HBSSDK_Private
+import ImageIO
+import ObjectiveC
+import QuartzCore
+import SafariServices
+import Swift
+import SwiftUI
+import UIKit.UIColor
+import UIKit.UIFont
+import UIKit.UIGestureRecognizerSubclass
+import UIKit.UIImage
+import UIKit
+import WebKit
+import _Concurrency
+import hbsshared
+import os
+public protocol ActionsWidget : UIKit.UIView {
+  func setupMatchId(matchId: Swift.String)
+}
+public struct AttributesWrapper {
+  public var attributes: [Foundation.NSAttributedString.Key : Any]
+  public init(attributes: [Foundation.NSAttributedString.Key : Any])
+}
+public protocol BigMatchesWidget : HBSSDK.MatchesWidget {
+  func setupWidgetParams(isDarkMode: Swift.Bool)
+}
+public struct Championship {
+  public func widgetSize(for containerSize: CoreGraphics.CGSize) -> CoreGraphics.CGSize
+  public func widget() -> HBSSDK.ChampionshipWidget
+}
+public protocol ChampionshipGroupDetailsWidget {
+  func setupWidgetParam(groupId: Swift.String)
+}
+public protocol ChampionshipGroupListWidget : UIKit.UIView {
+}
+public protocol ChampionshipWidget : UIKit.UIView {
+}
+extension UIKit.UIViewController {
+  @_Concurrency.MainActor(unsafe) public func openUrl(url: Swift.String)
+}
+extension UIKit.UIImage {
+  @available(*, deprecated, message: "Please use `ImageConatainer` `data` instead")
+  public var animatedImageData: Foundation.Data? {
+    get
+    set
+  }
+}
+public protocol FavoriteWidget : UIKit.UIView {
+}
+public struct Favorites {
+  public func widget() -> HBSSDK.FavoriteWidget
+  public func size(for containerSize: CoreGraphics.CGSize) -> CoreGraphics.CGSize
+}
+infix operator ~== : ComparisonPrecedence
+infix operator ~!= : ComparisonPrecedence
+extension Swift.String : Swift.Error {
+}
+@_hasMissingDesignatedInitializers @objc public class HBSSDKPresentationContext : ObjectiveC.NSObject {
+  @objc final public let presentationController: UIKit.UIViewController
+  @objc final public let videoURL: Foundation.URL
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class HBSSDKObjc : ObjectiveC.NSObject {
+  @objc public static func initSdk()
+  @objc public static func allowFavoriteTeams(allow: Swift.Bool)
+  @objc public static var presentPlayerBlock: ((HBSSDK.HBSSDKPresentationContext) -> ())?
+  @objc deinit
+}
+public func initSdk()
+public func standings() -> HBSSDK.Standings
+public func matches() -> HBSSDK.Matches
+public func stats() -> HBSSDK.Stats
+public func championship() -> HBSSDK.Championship
+public func matchCenter() -> HBSSDK.MatchCenter
+public func videos() -> HBSSDK.Videos
+public func favorites() -> HBSSDK.Favorites
+public func teams() -> HBSSDK.Teams
+public func players() -> HBSSDK.Players
+public func injures() -> HBSSDK.Injures
+public func headToHead() -> HBSSDK.HeadToHead
+public func venue() -> HBSSDK.Venue
+public func allowFavoriteTeams(allow: Swift.Bool)
+public struct HeadToHead {
+  public func widget() -> HBSSDK.HeadToHeadWidget
+  public func size(for containerSize: CoreGraphics.CGSize) -> CoreGraphics.CGSize
+}
+public protocol HeadToHeadWidget : UIKit.UIView {
+  func setupParams(team1Id: Swift.String, team2Id: Swift.String)
+}
+public enum ImageProcessors {
+}
+extension UIKit.UIImageView {
+  @_Concurrency.MainActor(unsafe) @objc dynamic open func nuke_display(image: UIKit.UIImage?, data: Foundation.Data? = nil)
+}
+public struct Injures {
+  public func widget() -> HBSSDK.InjuresWidget
+  public func size(for containerSize: CoreGraphics.CGSize) -> CoreGraphics.CGSize
+}
+public protocol InjuresWidget : UIKit.UIView {
+  func setupTeamId(teamId: Swift.String)
+}
+public enum StyleComplementary {
+  case color(UIKit.UIColor)
+  case trancate(UIKit.NSLineBreakMode)
+  case underline
+}
+public struct MatchCenter {
+  public func widget() -> HBSSDK.MatchCenterWidget
+  public func controller() -> HBSSDK.MatchCenterController
+  public func widgetSize(for size: CoreGraphics.CGSize) -> CoreGraphics.CGSize
+  public func actionsWidget() -> HBSSDK.ActionsWidget
+  public func actionsWidgetSize(for size: CoreGraphics.CGSize) -> CoreGraphics.CGSize
+}
+public protocol MatchCenterController : UIKit.UIViewController {
+  func presentMatchCenter(from viewController: UIKit.UIViewController, for matchId: Swift.String)
+}
+public protocol MatchCenterWidget : UIKit.UIView {
+  func setupMatch(with matchId: Swift.String)
+}
+public struct Matches {
+  public func smallWidget() -> HBSSDK.MatchesWidget
+  public func smallSize(for containerSize: CoreGraphics.CGSize) -> CoreGraphics.CGSize
+  public func mediumWidget() -> HBSSDK.MatchesWidget
+  public func mediumSize(for containerSize: CoreGraphics.CGSize) -> CoreGraphics.CGSize
+  public func bigWidget() -> HBSSDK.BigMatchesWidget
+  public func bigSize(for containerSize: CoreGraphics.CGSize) -> CoreGraphics.CGSize
+}
+postfix operator %
+prefix operator -
+public protocol PlayOffWidget : UIKit.UIView {
+}
+public protocol PlayerDetailsController : UIKit.UIViewController {
+  func presentPlayerDetails(from viewController: UIKit.UIViewController, for playerId: Swift.String)
+}
+public struct Players {
+  public func detailsController() -> HBSSDK.PlayerDetailsController
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class SampleHomeController : UIKit.UIViewController {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func traitCollectionDidChange(_ previousTraitCollection: UIKit.UITraitCollection?)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLayoutSubviews()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+extension UIKit.UIButton {
+  @_Concurrency.MainActor(unsafe) public func setupHbsButton(_ title: Swift.String)
+}
+@_inheritsConvenienceInitializers @objc public class Global : ObjectiveC.NSObject {
+  @objc override dynamic public init()
+  @objc deinit
+}
+public protocol MatchesWidget : UIKit.UIView {
+  func setupWidgetParams(dataSource: HBSSDK.MatchWidgetDataSource, isTransparent: Swift.Bool)
+}
+public enum MatchWidgetDataSource {
+  case group(groupId: Swift.String)
+  case team(teamId: Swift.String)
+  case round(roundId: Swift.String)
+}
+public struct Standings {
+  public func size(for containerSize: CoreGraphics.CGSize) -> CoreGraphics.CGSize
+  public func widget() -> HBSSDK.StandingsWidget
+}
+public protocol StandingsWidget : UIKit.UIView {
+  func setupWidgetParams(dataSource: HBSSDK.StandingsDataSource, isExpanded: Swift.Bool, isTransparent: Swift.Bool)
+}
+public enum StandingsDataSource {
+  case all
+  case single(groupId: Swift.String)
+}
+@_inheritsConvenienceInitializers @objc public class StatsObjc : ObjectiveC.NSObject {
+  @objc public func topPlayersWidget() -> UIKit.UIView & HBSSDK.TopPlayerStatsWidget
+  @objc public func topPlayersSize(for size: CoreGraphics.CGSize) -> CoreGraphics.CGSize
+  @objc public func teamMatchesWidget() -> UIKit.UIView & HBSSDK.TeamMatchesStatsWidget
+  @objc public func teamMatchesSize(for size: CoreGraphics.CGSize) -> CoreGraphics.CGSize
+  @objc override dynamic public init()
+  @objc deinit
+}
+public struct Stats {
+  public func topPlayersWidget() -> UIKit.UIView & HBSSDK.TopPlayerStatsWidget
+  public func topPlayersSize(for size: CoreGraphics.CGSize) -> CoreGraphics.CGSize
+  public func teamMatchesWidget() -> UIKit.UIView & HBSSDK.TeamMatchesStatsWidget
+  public func teamMatchesSize(for size: CoreGraphics.CGSize) -> CoreGraphics.CGSize
+}
+extension Swift.String {
+  public func styled(as style: hbsshared.TextStyleKMM) -> Foundation.NSAttributedString
+}
+public protocol TeamDetailsController : UIKit.UIViewController {
+  func presentTeamDetails(from viewController: UIKit.UIViewController, for teamId: Swift.String, isCarousel: Swift.Bool)
+}
+public protocol TeamInfoWidget {
+  func setupTeamId(teamId: Swift.String)
+}
+public protocol TeamListWidget : UIKit.UIView {
+  func setupParams(isCarouselMode: Swift.Bool)
+}
+@objc public protocol TeamMatchesStatsWidget {
+  @objc func setupWidgetParams(teamId: Swift.String)
+  @objc func setupDisplayParams(isTransparent: Swift.Bool)
+}
+public struct Teams {
+  public func widget() -> HBSSDK.TeamListWidget
+  public func teamDetailsWidget() -> UIKit.UIView & HBSSDK.TeamInfoWidget
+  public func size(for containerSize: CoreGraphics.CGSize) -> CoreGraphics.CGSize
+  public func teamDetailsSize(for containerSize: CoreGraphics.CGSize) -> CoreGraphics.CGSize
+  public func detailsController() -> HBSSDK.TeamDetailsController
+}
+@objc public protocol TopPlayerStatsWidget {
+  @objc func setupWidgetParams(statsType: HBSSDK.TopPlayerStatsWidgetType, isTransparent: Swift.Bool)
+}
+@objc public enum TopPlayerStatsWidgetType : Swift.Int {
+  case goals = 0
+  case assists = 1
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+infix operator | : AdditionPrecedence
+public struct Venue {
+  public func widget() -> UIKit.UIView & HBSSDK.VenueWidget
+  public func widgetSize(containerSize: CoreGraphics.CGSize) -> CoreGraphics.CGSize
+  public func detailsController() -> UIKit.UIViewController & HBSSDK.VenueDetailsController
+}
+public protocol VenueDetailsController {
+  func presentDetails(from viewController: UIKit.UIViewController, for venueId: Swift.String)
+}
+public protocol VenueWidget {
+}
+@objc public protocol VideoWidget {
+}
+@_inheritsConvenienceInitializers @objc public class VideosObjc : ObjectiveC.NSObject {
+  @objc public func widget() -> UIKit.UIView & HBSSDK.VideoWidget
+  @objc public func size(for size: CoreGraphics.CGSize) -> CoreGraphics.CGSize
+  @objc override dynamic public init()
+  @objc deinit
+}
+public struct Videos {
+  public func size(for containerSize: CoreGraphics.CGSize) -> CoreGraphics.CGSize
+  public func widget() -> UIKit.UIView & HBSSDK.VideoWidget
+}
+extension UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) public func isDarkMode() -> Swift.Bool
+}
+extension HBSSDK.TopPlayerStatsWidgetType : Swift.Equatable {}
+extension HBSSDK.TopPlayerStatsWidgetType : Swift.Hashable {}
+extension HBSSDK.TopPlayerStatsWidgetType : Swift.RawRepresentable {}

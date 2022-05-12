@@ -1,0 +1,66 @@
+## OS X
+.DS_Store
+
+## User settings
+xcuserdata/
+
+## Obj-C/Swift specific
+*.hmap
+
+## Ruby
+vendor
+
+## App packaging
+DerivedData
+build
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+## Git
+.orig
+
+## CocoaPods
+Pods/
+*.xcworkspace
+
+## Fastlane
+fastlane/test_output
+fastlane/report.xml
+fastlane/.env
+fastlane/README.md
+fastlane/context_item.yaml
+
+## Lint
+swiftlint_result.txt
+
+## XcodeGen
+*.xcodeproj
+iosApp/Info.plist
+iosAppNotificationsService/Info.plist
+
+## Symlinks
+CustomizedPods.rb
+fastlane/Appfile
+fastlane/Firebase
+fastlane/Icon.png
+iosApp/Modules/Resources/Resources/Colors.json
+iosApp/Modules/Resources/Resources/Assets.xcassets
+iosApp/Resources/LaunchScreen.storyboard
+iosApp/Resources/Assets.xcassets/Splash/
+iosApp/Modules/Resources/Resources/Fonts/
+
+## Generated 
+iosApp/Modules/Resources/Sources/Generated/
+iosApp/Modules/KMMWrappers/Sources/Generated/
+
+## Resoureces Downloaded via plugin
+iosApp/Modules/Resources/Resources/Localization/
+iosApp/Modules/Resources/Resources/Fonts/
+iosApp/Modules/Resources/Resources/ExportedAssets.xcassets
+iosApp/Resources/GoogleService-Info.plist
+iosApp/Resources/init.json
+##Playground
+Playground.playground
+
+.env
