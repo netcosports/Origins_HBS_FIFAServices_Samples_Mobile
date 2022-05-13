@@ -46,6 +46,15 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     implementation "com.origins-digital.hbswidgets:widgets-whitelabel:1.0.63"
-    implementation "androidx.navigation:navigation-fragment-ktx:2.3.5"
-    implementation "androidx.preference:preference-ktx:1.1.1"
+
+    implementation("androidx.preference:preference-ktx:1.2.0")
+    implementation ("androidx.navigation:navigation-fragment-ktx:2.3.5")
+
+    // Or if you want to use the latest version, you need to exclude coroutines
+//    implementation ("androidx.navigation:navigation-fragment-ktx:2.4.2") {
+//        exclude(group: "org.jetbrains.kotlinx", module: "kotlinx-coroutines-android")
+//    }
+//    implementation("androidx.preference:preference-ktx:1.2.0") {
+//        exclude(group: "org.jetbrains.kotlinx", module: "kotlinx-coroutines-android")
+//    }
 }
