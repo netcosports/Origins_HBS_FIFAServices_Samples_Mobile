@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sample_navigation"
+    app:startDestination="@id/home_fragment">
+
+    <fragment
+        android:id="@+id/home_fragment"
+        android:name="com.originsdigital.hbssample.HomeFragment"
+        android:label="Home Fragment"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_home_fragment_to_groupStandingRootFragment"
+            app:destination="@id/groupStandingRootFragment" />
+        <action
+            android:id="@+id/action_home_fragment_to_groupMatchesFragment"
+            app:destination="@id/groupMatchesRootFragment" />
+        <action
+            android:id="@+id/action_home_fragment_to_statsFragment"
+            app:destination="@id/statsFragment" />
+        <action
+            android:id="@+id/action_home_fragment_to_topChampionshipFragment"
+            app:destination="@id/championshipFragment" />
+        <action
+            android:id="@+id/action_home_fragment_to_matchCenterFragment"
+            app:destination="@id/matchCenterFragment" />
+
+        <action
+            android:id="@+id/action_home_fragment_to_topVideosFragment"
+            app:destination="@id/videosFragment" />
+
+        <action
+            android:id="@+id/action_home_fragment_to_favoritesFragment"
+            app:destination="@id/favoritesFragment" />
+        <action
+            android:id="@+id/action_home_fragment_to_teamsFragment"
+            app:destination="@id/teamsFragment" />
+        <action
+            android:id="@+id/action_home_fragment_to_headToHeadFragment"
+            app:destination="@id/headToHeadFragment" />
+        <action
+            android:id="@+id/action_home_fragment_to_injuresFragment"
+            app:destination="@id/injuresFragment" />
+
+        <action
+            android:id="@+id/action_home_fragment_to_actionsFragment"
+            app:destination="@id/actionsFragment" />
+
+        <action
+            android:id="@+id/action_home_fragment_to_venuesFragment"
+            app:destination="@id/venuesFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/groupStandingRootFragment"
+        android:name="com.originsdigital.hbssample.groupstanding.StandingsRootFragment"
+        android:label="GroupStandingFragment" >
+        <action
+            android:id="@+id/action_groupStandingRootFragment_to_groupStandingFragment"
+            app:destination="@id/groupStandingFragment" />
+        <action
+            android:id="@+id/action_groupStandingRootFragment_to_singleGroupStandingFragment"
+            app:destination="@id/singleGroupStandingFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/groupMatchesRootFragment"
+        android:name="com.originsdigital.hbssample.matches.GroupMatchesPagerFragment"
+        android:label="GroupMatchesPagerFragment" >
+
+        <action
+            android:id="@+id/action_groupMatches_fragment_to_groupMatchesFragment"
+            app:destination="@id/groupMatchesFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/groupMatchesFragment"
+        android:name="com.originsdigital.hbssample.matches.GroupMatchesFragment"
+        android:label="GroupMatchesFragment" >
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/groupMatchFragment"
+        android:name="com.originsdigital.hbssample.groupstanding.GroupStandingFragment"
+        android:label="GroupStandingFragment" />
+    <fragment
+        android:id="@+id/singlegroupMatchFragment"
+        android:name="com.originsdigital.hbssample.groupstanding.SingleGroupStandingFragment"
+        android:label="SingleGroupStandingFragment" />
+    <fragment
+        android:id="@+id/groupStandingFragment"
+        android:name="com.originsdigital.hbssample.groupstanding.GroupStandingFragment"
+        android:label="GroupStandingFragment" />
+    <fragment
+        android:id="@+id/singleGroupStandingFragment"
+        android:name="com.originsdigital.hbssample.groupstanding.SingleGroupStandingFragment"
+        android:label="SingleGroupStandingFragment" />
+    <fragment
+        android:id="@+id/statsFragment"
+        android:name="com.originsdigital.hbssample.stats.StatsFragment"
+        android:label="StatsFragment">
+
+        <action
+            android:id="@+id/action_statsFragment_to_teamMatches"
+            app:destination="@id/teamMatchesStatsFragment" />
+
+        <action
+            android:id="@+id/action_statsFragment_to_topPlayers"
+            app:destination="@id/topPlayerStatsFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/topPlayerStatsFragment"
+        android:name="com.originsdigital.hbssample.stats.TopPlayerStatsFragment"
+        android:label="TopPlayerStatsFragment" />
+
+    <fragment
+        android:id="@+id/teamMatchesStatsFragment"
+        android:name="com.originsdigital.hbssample.stats.TeamMatchesStatsFragment"
+        android:label="TeamMatchesStatsFragment" />
+
+    <fragment
+        android:id="@+id/championshipFragment"
+        android:name="com.originsdigital.hbssample.championship.ChampionshipFragment"
+        android:label="ChampionshipFragment"/>
+
+    <fragment
+        android:id="@+id/matchCenterFragment"
+        android:name="com.originsdigital.hbssample.matchcenter.MatchCenterFragment"
+        android:label="MatchCenterFragment"/>
+
+    <fragment
+        android:id="@+id/videosFragment"
+        android:name="com.originsdigital.hbssample.videos.VideosFragment"
+        android:label="VideosFragment"/>
+
+    <fragment
+        android:id="@+id/favoritesFragment"
+        android:name="com.originsdigital.hbssample.favorite.FavoritesFragment"
+        android:label="FavoritesFragment"/>
+
+    <fragment
+        android:id="@+id/teamsFragment"
+        android:name="com.originsdigital.hbssample.teams.TeamsFragment"
+        android:label="TeamsFragment"/>
+    <fragment
+        android:id="@+id/headToHeadFragment"
+        android:name="com.originsdigital.hbssample.h2h.HeadToHeadFragment"
+        android:label="TeamsFragment"/>
+
+    <fragment
+        android:id="@+id/injuresFragment"
+        android:name="com.originsdigital.hbssample.injures.InjuresFragment"
+        android:label="Injures Fragment"/>
+
+    <fragment
+        android:id="@+id/actionsFragment"
+        android:name="com.originsdigital.hbssample.action.ActionsFragment"
+        android:label="Actions Fragment"/>
+
+    <fragment
+        android:id="@+id/venuesFragment"
+        android:name="com.originsdigital.hbssample.venues.VenuesFragment"
+        android:label="Venues Fragment"/>
+</navigation>

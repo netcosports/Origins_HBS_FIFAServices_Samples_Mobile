@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#f3f3f3"
+    android:id="@+id/container">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        app:navigationIcon="@drawable/arrow_left"
+        app:title="Team Matches Stats"
+        app:titleTextColor="@android:color/white" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <com.originsdigital.hbswidgets.stats.teammatches.TeamMatchesWidget
+            android:id="@+id/team_matches_widget"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </FrameLayout>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#117"
+        android:visibility="gone"
+        android:layout_weight="1">
+
+        <com.originsdigital.hbswidgets.stats.teammatches.TeamMatchesWidget
+            android:id="@+id/team_matches_widget_transparent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:hbs_widget_transparent="true"
+            />
+    </FrameLayout>
+
+
+</LinearLayout>

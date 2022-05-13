@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="onrewind_color_primary">@color/colorPrimary</color>
+    <color name="onrewind_color_primary_dark">@color/colorPrimary</color>
+    <color name="onrewind_color_accent">@color/colorPrimary</color>
+</resources>
