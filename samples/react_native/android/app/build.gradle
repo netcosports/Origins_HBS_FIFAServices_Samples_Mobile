@@ -252,7 +252,7 @@ android {
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
 
-    implementation("com.origins-digital.hbswidgets:widgets-whitelabel:1.0.62")
+    implementation("com.origins-digital.hbswidgets:widgets-whitelabel:1.0.64")
 //    implementation(project(":whitelabel"))
 
     //noinspection GradleDynamicVersion
