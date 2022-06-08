@@ -73,10 +73,10 @@ PODS:
     - FlipperKit/FlipperKitNetworkPlugin
   - fmt (6.2.1)
   - glog (0.3.5)
-  - HBSSDK (1.0.61):
+  - HBSSDK (1.0.65):
     - hbsshared
     - OnRewindSDK
-  - hbsshared (1.0.60)
+  - hbsshared (1.0.65)
   - libevent (2.1.12)
   - OnRewindSDK (1.0.0)
   - OpenSSL-Universal (1.1.1100)
@@ -525,8 +525,8 @@ SPEC CHECKSUMS:
   FlipperKit: cbdee19bdd4e7f05472a66ce290f1b729ba3cb86
   fmt: ff9d55029c625d3757ed641535fd4a75fedc7ce9
   glog: 476ee3e89abb49e07f822b48323c51c57124b572
-  HBSSDK: 3c8edb9adbb925bd054821f60155dbe87560136c
-  hbsshared: 424890795940349f84a73ea33cdd83f159df8dd7
+  HBSSDK: 577356750eb00616648887b7abcf5ad9a06e82ce
+  hbsshared: feede0bd0e93dcbbf9b7d61369f90ef56b969056
   libevent: 4049cae6c81cdb3654a443be001fb9bdceff7913
   OnRewindSDK: fbe5f1b507176554c162a133828b22414ad0900f
   OpenSSL-Universal: ebc357f1e6bc71fa463ccb2fe676756aff50e88c
