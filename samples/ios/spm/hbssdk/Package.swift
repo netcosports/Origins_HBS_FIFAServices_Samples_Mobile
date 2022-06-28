@@ -16,19 +16,19 @@ let package = Package(
   targets: [
     .binaryTarget(
       name: "HBSSDK",
-      path: "xcframewords/HBSSDK.xcframework"
+      path: "xcframeworks/HBSSDK.xcframework"
     ),
     .binaryTarget(
       name: "OnRewindSDK",
-      path: "xcframewords/OnRewindSDK.xcframework"
+      path: "xcframeworks/OnRewindSDK.xcframework"
     ),
     .binaryTarget(
       name: "SportBuff",
-      path: "xcframewords/SportBuff.xcframework"
+      path: "xcframeworks/SportBuff.xcframework"
     ),
     .binaryTarget(
       name: "hbsshared",
-      path: "xcframewords/hbsshared.xcframework"
+      path: "xcframeworks/hbsshared.xcframework"
     )
   ],
   swiftLanguageVersions: [.v5]

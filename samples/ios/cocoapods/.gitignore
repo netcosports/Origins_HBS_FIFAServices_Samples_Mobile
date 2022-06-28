@@ -14,8 +14,6 @@ vendor
 DerivedData
 build
 *.ipa
-*.dSYM.zip
-*.dSYM
 
 ## Git
 .orig
@@ -35,7 +33,6 @@ fastlane/context_item.yaml
 swiftlint_result.txt
 
 ## XcodeGen
-*.xcodeproj
 iosApp/Info.plist
 iosAppNotificationsService/Info.plist
 
