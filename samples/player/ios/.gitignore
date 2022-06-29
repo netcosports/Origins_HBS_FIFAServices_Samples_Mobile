@@ -1,0 +1,34 @@
+## OS X
+.DS_Store
+
+## User settings
+xcuserdata/
+
+## Obj-C/Swift specific
+*.hmap
+
+## Ruby
+vendor
+
+## App packaging
+DerivedData
+build
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+## Git
+.orig
+
+## CocoaPods
+Pods/
+*.xcworkspace
+
+## Fastlane
+fastlane/test_output
+fastlane/report.xml
+fastlane/.env
+
+## Lint
+swiftlint_result.txt
+
