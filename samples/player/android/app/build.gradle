@@ -1,0 +1,48 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdk 31
+
+    defaultConfig {
+        applicationId "com.originsdigital.hbsonrewindplayerdemo"
+        minSdk 21
+        targetSdk 31
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation 'androidx.core:core-ktx:1.8.0'
+    implementation 'androidx.appcompat:appcompat:1.4.2'
+    implementation 'com.google.android.material:material:1.6.1'
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    //NOTE: artifact will be customized per customer
+    implementation "com.onrewind:onrewind-sdk:1.7.9"
+    implementation "com.netcosports.dioptra:exo:1.0.2"
+
+    implementation 'com.google.android.gms:play-services-cast-framework:21.0.1'
+
+    implementation "com.github.bumptech.glide:glide:4.13.0"
+    kapt "com.github.bumptech.glide:compiler:4.13.0"
+}
