@@ -28,6 +28,13 @@
             android:name="com.originsdigital.hbssample.settings.SettingsActivity"
             android:screenOrientation="portrait"
             android:exported="false" />
+
+        <activity
+            android:name=".player.PlayerActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:supportsPictureInPicture="true" />
     </application>
 
 </manifest>
