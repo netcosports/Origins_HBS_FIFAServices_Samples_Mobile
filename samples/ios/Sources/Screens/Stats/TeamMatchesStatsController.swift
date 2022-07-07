@@ -14,12 +14,12 @@ class TeamMatchesStatsController: UIViewController {
   private var teamId: String?
 
   func setupParams(teamId: String) {
-    teamMatchesStatsWidget.setupWidgetParams(teamId: teamId)
-    teamMatchesStatsTransparentWidget.setupWidgetParams(teamId: teamId)
+    teamMatchesStatsWidget.setupWidgetParams(teamId: teamId, isTransparent: true)
+    teamMatchesStatsTransparentWidget.setupWidgetParams(teamId: teamId, isTransparent: true)
   }
 
-  private let teamMatchesStatsWidget = HBSSDK.stats().teamMatchesWidget()
-  private let teamMatchesStatsTransparentWidget = HBSSDK.stats().teamMatchesWidget()
+  private let teamMatchesStatsWidget = HBSSDK.Stats.teamMatchesWidget()
+  private let teamMatchesStatsTransparentWidget = HBSSDK.Stats.teamMatchesWidget()
 
   private let bottomView = UIView {
     $0.backgroundColor = .blue
@@ -28,7 +28,6 @@ class TeamMatchesStatsController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     changeBackground()
-    teamMatchesStatsTransparentWidget.setupDisplayParams(isTransparent: true)
     self.view.addSubviews(teamMatchesStatsWidget, bottomView)
     bottomView.addSubviews(teamMatchesStatsTransparentWidget)
   }
@@ -36,12 +35,12 @@ class TeamMatchesStatsController: UIViewController {
   override func viewDidLayoutSubviews() {
     super.viewDidLayoutSubviews()
     teamMatchesStatsWidget.pin.top(self.view.safeAreaInsets.top)
-      .start().size(HBSSDK.stats().teamMatchesSize(for: self.view.bounds.size))
+      .start().size(HBSSDK.Stats.teamMatchesSize(for: self.view.bounds.size))
 
     bottomView.pin.below(of: teamMatchesStatsWidget).marginTop(30.ui).all()
 
     teamMatchesStatsTransparentWidget.pin.top(self.view.safeAreaInsets.top)
-      .start().size(HBSSDK.stats().teamMatchesSize(for: self.view.bounds.size))
+      .start().size(HBSSDK.Stats.teamMatchesSize(for: self.view.bounds.size))
   }
 
   override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
