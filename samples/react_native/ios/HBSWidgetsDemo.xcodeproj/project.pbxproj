@@ -14,10 +14,6 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-HBSWidgetsDemo-HBSWidgetsDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-HBSWidgetsDemo-HBSWidgetsDemoTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		AA34591A281A879F00D0A540 /* VideosViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AA345919281A879F00D0A540 /* VideosViewManager.m */; };
-		AA5D963D2809AD8D00908BE2 /* TeamMatchesViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5D963C2809AD8D00908BE2 /* TeamMatchesViewManager.m */; };
-		AA6DE786280D5A06002F44D1 /* HBSSDKModule.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6DE785280D5A06002F44D1 /* HBSSDKModule.m */; };
-		AAC320D8280067CF008F21B4 /* TopPlayerStatsViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC320D7280067CF008F21B4 /* TopPlayerStatsViewManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,10 +43,6 @@
 		5DCACB8F33CDC322A6C60F78 /* libPods-HBSWidgetsDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HBSWidgetsDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = HBSWidgetsDemo/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-HBSWidgetsDemo-HBSWidgetsDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HBSWidgetsDemo-HBSWidgetsDemoTests.release.xcconfig"; path = "Target Support Files/Pods-HBSWidgetsDemo-HBSWidgetsDemoTests/Pods-HBSWidgetsDemo-HBSWidgetsDemoTests.release.xcconfig"; sourceTree = "<group>"; };
-		AA345919281A879F00D0A540 /* VideosViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = VideosViewManager.m; path = HBSWidgetsDemo/VideosViewManager.m; sourceTree = "<group>"; };
-		AA5D963C2809AD8D00908BE2 /* TeamMatchesViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = TeamMatchesViewManager.m; path = HBSWidgetsDemo/TeamMatchesViewManager.m; sourceTree = "<group>"; };
-		AA6DE785280D5A06002F44D1 /* HBSSDKModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = HBSSDKModule.m; path = HBSWidgetsDemo/HBSSDKModule.m; sourceTree = "<group>"; };
-		AAC320D7280067CF008F21B4 /* TopPlayerStatsViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = TopPlayerStatsViewManager.m; path = HBSWidgetsDemo/TopPlayerStatsViewManager.m; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -100,10 +92,6 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
-				AAC320D7280067CF008F21B4 /* TopPlayerStatsViewManager.m */,
-				AA5D963C2809AD8D00908BE2 /* TeamMatchesViewManager.m */,
-				AA6DE785280D5A06002F44D1 /* HBSSDKModule.m */,
-				AA345919281A879F00D0A540 /* VideosViewManager.m */,
 			);
 			name = HBSWidgetsDemo;
 			sourceTree = "<group>";
@@ -422,11 +410,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAC320D8280067CF008F21B4 /* TopPlayerStatsViewManager.m in Sources */,
-				AA6DE786280D5A06002F44D1 /* HBSSDKModule.m in Sources */,
-				AA5D963D2809AD8D00908BE2 /* TeamMatchesViewManager.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
-				AA34591A281A879F00D0A540 /* VideosViewManager.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

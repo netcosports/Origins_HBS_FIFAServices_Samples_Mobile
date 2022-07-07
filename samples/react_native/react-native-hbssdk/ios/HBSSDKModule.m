@@ -14,7 +14,18 @@
 
 @implementation HBSSDKModule
 
+- (instancetype)init {
+  [HBSSDKObjc initSdk];
+  [HBSSDKObjc allowFavoriteTeamsWithAllow:YES];
+
+  return [super init];
+}
+
 RCT_EXPORT_MODULE(HBSSDK);
+
++ (BOOL)requiresMainQueueSetup {
+  return YES;
+}
 
 -(NSDictionary *)constantsToExport {
   CGFloat teamMatchesComponentHeight = [[StatsObjc new] teamMatchesSizeFor: CGSizeMake(100.0, 0.0)].height;
