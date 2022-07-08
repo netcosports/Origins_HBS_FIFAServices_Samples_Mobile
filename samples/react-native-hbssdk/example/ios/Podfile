@@ -1,0 +1,52 @@
+require_relative '../node_modules/react-native/scripts/react_native_pods'
+require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
+
+platform :ios, '13.0'
+install! 'cocoapods', :deterministic_uuids => false
+
+ENV['RCT_NEW_ARCH_ENABLED'] = '0'
+
+def download_spec! (options={})
+  url = options[:url]
+  FileUtils.mkdir_p './specs'
+  Dir.chdir('./specs'){
+    `curl -X GET '#{url}' -O -k -f -L`
+  }
+end
+
+download_spec!(url: 'https://origins-mobile-products.s3.eu-west-1.amazonaws.com/hbssdk/whitelabel/1.0.71/HBSSDK.podspec')
+download_spec!(url: 'https://origins-mobile-products.s3.eu-west-1.amazonaws.com/hbssdk/whitelabel/1.0.71/hbsshared.podspec')
+download_spec!(url: 'https://origins-mobile-products.s3.eu-west-1.amazonaws.com/OnRewindSDK.podspec')
+
+target 'HbssdkExample' do
+  config = use_native_modules!
+
+  # Flags change depending on the env values.
+  flags = get_default_flags()
+
+  use_react_native!(
+    :path => config[:reactNativePath],
+    # to enable hermes on iOS, change `false` to `true` and then install pods
+    :hermes_enabled => true,
+    :fabric_enabled => flags[:fabric_enabled],
+    # An absolute path to your application root.
+    :app_path => "#{Pod::Config.instance.installation_root}/.."
+  )
+
+  # Enables Flipper.
+  #
+  # Note that if you have use_frameworks! enabled, Flipper will not work and
+  # you should disable the next line.
+  use_flipper!()
+
+  post_install do |installer|
+    react_native_post_install(installer)
+    __apply_Xcode_12_5_M1_post_install_workaround(installer)
+  end
+
+  pod 'hbsshared', :podspec => './specs/hbsshared.podspec'
+  pod 'HBSSDK', :podspec => './specs/HBSSDK.podspec'
+  pod 'OnRewindSDK', :podspec => './specs/OnRewindSDK.podspec'
+  pod 'SportBuff', '0.2.0.0'
+
+end
