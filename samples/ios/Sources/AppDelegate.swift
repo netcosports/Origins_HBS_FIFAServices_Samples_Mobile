@@ -9,7 +9,6 @@
 import UIKit
 import HBSSDK
 import hbsshared
-
 import OnRewindSDK
 
 class MyCustomNavigation: UINavigationController {
@@ -48,8 +47,7 @@ public class AppDelegate: UIResponder, UIApplicationDelegate {
     HBSSDK.Integration.presentPlayerBlock = { context in
       OnRewind.presentPlayer(
         with: OnRewind.EventParams.videoStream(context.videoURL, isLive: false),
-        from: context.presentationController,
-        richPlayback: false
+        from: context.presentationController
       )
     }
 

@@ -1,6 +1,0 @@
-framework module hbsshared {
-    umbrella header "hbsshared.h"
-
-    export *
-    module * { export * }
-}
