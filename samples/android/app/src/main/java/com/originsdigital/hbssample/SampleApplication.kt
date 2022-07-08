@@ -1,7 +1,9 @@
 package com.originsdigital.hbssample
 
 import android.app.Application
+import android.content.Context
 import com.netcosports.onrewind.OnRewind
+import com.originsdigital.hbssample.player.PlayerActivity
 import com.originsdigital.hbswidgets.core.HbsSdk
 
 class SampleApplication: Application() {
@@ -16,6 +18,17 @@ class SampleApplication: Application() {
                 .build()
         )
         HbsSdk.allowMultipleFavoriteTeams(false)
+        HbsSdk.setOnVideoClickListener(object : HbsSdk.OnVideoClickListener {
+            override fun playEventId(context: Context, eventId: String) {
+                TODO("Not yet implemented")
+            }
+
+            override fun playVideoUrl(context: Context, videoUrl: String) {
+                val intent = PlayerActivity.getLaunchIntent(context, videoUrl)
+                context.startActivity(intent)
+            }
+
+        })
     }
 
 
