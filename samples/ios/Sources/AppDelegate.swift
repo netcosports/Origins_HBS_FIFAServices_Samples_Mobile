@@ -9,7 +9,6 @@
 import UIKit
 import HBSSDK
 import hbsshared
-
 import OnRewindSDK
 
 class MyCustomNavigation: UINavigationController {
@@ -31,8 +30,8 @@ public class AppDelegate: UIResponder, UIApplicationDelegate {
 													didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 		//FirebaseApp.configure()
 
-    HBSSDK.initSdk()
-    HBSSDK.allowFavoriteTeams(allow: true)
+    HBSSDK.Integration.initSdk()
+    HBSSDK.Integration.allowMultipleFavoriteTeams(allow: true)
 
 		let window = UIWindow(frame: UIScreen.main.bounds)
 		window.backgroundColor = .white
@@ -45,11 +44,10 @@ public class AppDelegate: UIResponder, UIApplicationDelegate {
     OnRewind.initialize()
     OnRewind.set(baseUrl: "")
 
-    HBSSDKObjc.presentPlayerBlock = { context in
+    HBSSDK.Integration.presentPlayerBlock = { context in
       OnRewind.presentPlayer(
         with: OnRewind.EventParams.videoStream(context.videoURL, isLive: false),
-        from: context.presentationController,
-        richPlayback: false
+        from: context.presentationController
       )
     }
 

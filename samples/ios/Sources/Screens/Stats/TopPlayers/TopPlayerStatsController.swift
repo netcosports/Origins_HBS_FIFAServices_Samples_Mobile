@@ -25,8 +25,8 @@ class TopPlayerStatsController: UIViewController {
     assistsStatsWidget.setupWidgetParams(statsType: .assists, isTransparent: false)
   }
 
-  private let goalsStatsWidget = HBSSDK.stats().topPlayersWidget()
-  private let assistsStatsWidget = HBSSDK.stats().topPlayersWidget()
+  private let goalsStatsWidget = HBSSDK.Stats.topPlayersWidget()
+  private let assistsStatsWidget = HBSSDK.Stats.topPlayersWidget()
 
   override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
     changeBackground()
@@ -54,10 +54,10 @@ class TopPlayerStatsController: UIViewController {
   override func viewDidLayoutSubviews() {
     super.viewDidLayoutSubviews()
     goalsStatsWidget.pin.top(view.safeAreaInsets.top).horizontally()
-      .height(HBSSDK.stats().topPlayersSize(for: view.bounds.size).height)
+      .height(HBSSDK.Stats.topPlayersSize(for: view.bounds.size).height)
 
     assistsStatsWidget.pin.below(of: goalsStatsWidget).marginTop(20.ui).horizontally()
-      .height(HBSSDK.stats().topPlayersSize(for: view.bounds.size).height)
+      .height(HBSSDK.Stats.topPlayersSize(for: view.bounds.size).height)
 
   }
 }

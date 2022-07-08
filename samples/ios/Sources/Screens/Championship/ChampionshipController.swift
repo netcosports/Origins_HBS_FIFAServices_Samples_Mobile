@@ -11,7 +11,7 @@ import HBSSDK
 
 final class ChampionshipController: UIViewController {
 
-  private let widget = HBSSDK.championship().widget()
+  private let widget = HBSSDK.Championship.widget()
   
 
   override func viewDidLoad() {

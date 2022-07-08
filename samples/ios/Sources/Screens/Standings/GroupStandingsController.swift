@@ -20,11 +20,11 @@ class GroupStandingsViewController: UIViewController {
   private var isTransparent = false
   func setupParams(isExpanded: Bool = false, isTransparent: Bool = false) {
     self.isTransparent = isTransparent
-    groupStandingWidget.setupWidgetParams(dataSource: .all, isExpanded: isExpanded, isTransparent: isTransparent)
+    groupStandingWidget.setupAllGroupsWidgetParams(isExpanded: isExpanded, isTransparent: isTransparent)
   }
 
 
-  private let groupStandingWidget = HBSSDK.standings().widget()
+  private let groupStandingWidget = HBSSDK.Standings.widget()
 
   override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
     changeBackground()
@@ -55,7 +55,7 @@ class GroupStandingsViewController: UIViewController {
     groupStandingWidget.pin.top(view.safeAreaInsets.top)
       .marginTop(20.ui)
       .horizontally()
-      .height(HBSSDK.standings().size(for: view.bounds.size).height)
+      .height(HBSSDK.Standings.size(for: view.bounds.size).height)
   }
 
   override func viewWillAppear(_ animated: Bool) {

@@ -12,7 +12,7 @@ import HBSSDK
 
 class MatchCenterControllerSample: UIViewController {
 
-  private let matchCenterWidget = HBSSDK.matchCenter().widget()
+  private let matchCenterWidget = HBSSDK.MatchCenter.widget()
   override func viewDidLoad() {
     super.viewDidLoad()
     changeBackground()
@@ -23,7 +23,7 @@ class MatchCenterControllerSample: UIViewController {
   override func viewDidLayoutSubviews() {
     super.viewDidLayoutSubviews()
     matchCenterWidget.pin.top().start()
-      .size(HBSSDK.matchCenter().widgetSize(for: view.bounds.size))
+      .size(HBSSDK.MatchCenter.widgetSize(for: view.bounds.size))
 
     
   }
