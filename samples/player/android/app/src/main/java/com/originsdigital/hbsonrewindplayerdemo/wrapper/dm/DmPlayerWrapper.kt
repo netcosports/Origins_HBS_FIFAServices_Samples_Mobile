@@ -1,4 +1,4 @@
-package com.originsdigital.hbsonrewindplayerdemo.wrapper
+package com.originsdigital.hbsonrewindplayerdemo.wrapper.dm
 
 import android.content.Context
 import android.graphics.Color

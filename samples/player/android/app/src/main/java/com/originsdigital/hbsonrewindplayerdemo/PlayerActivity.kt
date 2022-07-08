@@ -24,7 +24,8 @@ import com.netcosports.onrewind.ui.PlayerParameters
 import com.netcosports.onrewind.ui.util.isPortrait
 import com.netcosports.onrewind.ui.viewmodel.OnRewindPlayerViewModel
 import com.netcosports.onrewind.ui.viewmodel.OnRewindPlayerViewModelFactory
-import com.originsdigital.hbsonrewindplayerdemo.wrapper.DmPlayerWrapper
+import com.originsdigital.hbsonrewindplayerdemo.wrapper.dm.DmPlayerWrapper
+import com.originsdigital.hbsonrewindplayerdemo.wrapper.exo.ExoPlayerWrapper
 
 class PlayerActivity : AppCompatActivity() {
 
@@ -124,7 +125,7 @@ class PlayerActivity : AppCompatActivity() {
     private fun showPlayer() {
         val config = PlayerParameters.Builder().apply {
             if (intent.getBooleanExtra(USE_WRAPPER, false)) {
-                setWrapperClass(DmPlayerWrapper::class.java)
+                setWrapperClass(ExoPlayerWrapper::class.java)
                 setWrapperArguments(Bundle.EMPTY)
             }
         }
