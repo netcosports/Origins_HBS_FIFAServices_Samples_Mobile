@@ -1,6 +1,8 @@
 package com.originsdigital.hbsonrewindplayerdemo
 
 import android.app.PictureInPictureParams
+import android.content.Context
+import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.content.res.Configuration
 import android.graphics.Rect
@@ -22,6 +24,7 @@ import com.netcosports.onrewind.ui.PlayerParameters
 import com.netcosports.onrewind.ui.util.isPortrait
 import com.netcosports.onrewind.ui.viewmodel.OnRewindPlayerViewModel
 import com.netcosports.onrewind.ui.viewmodel.OnRewindPlayerViewModelFactory
+import com.originsdigital.hbsonrewindplayerdemo.wrapper.DmPlayerWrapper
 
 class PlayerActivity : AppCompatActivity() {
 
@@ -119,7 +122,12 @@ class PlayerActivity : AppCompatActivity() {
     }
 
     private fun showPlayer() {
-        val config = PlayerParameters.Builder()
+        val config = PlayerParameters.Builder().apply {
+            if (intent.getBooleanExtra(USE_WRAPPER, false)) {
+                setWrapperClass(DmPlayerWrapper::class.java)
+                setWrapperArguments(Bundle.EMPTY)
+            }
+        }
             //Test Event params
             .setEventConfigurationUrl("https://storage.googleapis.com/static-production.netcosports.com/onrewind/hbs_demo_player_config.json")
             .setAccountKey("B1oYoKWDK")
@@ -190,6 +198,15 @@ class PlayerActivity : AppCompatActivity() {
         windowInsetController?.apply {
             hide(WindowInsetsCompat.Type.systemBars())
             systemBarsBehavior = WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+        }
+    }
+
+    companion object {
+        private const val USE_WRAPPER = "extra_use_wrapper"
+
+        fun getLaunchIntent(context: Context, useWrapper: Boolean): Intent {
+            return Intent(context, PlayerActivity::class.java)
+                .putExtra(USE_WRAPPER, useWrapper)
         }
     }
 }
