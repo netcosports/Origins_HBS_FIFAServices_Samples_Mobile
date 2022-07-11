@@ -33,6 +33,9 @@ export default function App() {
   );
 }
 
+
+//         <Championship _onOpenMatchDetails={_onOpenMatchDetails} style={styles.championship} />
+
 var styles = StyleSheet.create({
   topPlayerStats: {
     width: "100%",
