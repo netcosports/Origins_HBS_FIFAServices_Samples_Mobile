@@ -1,5 +1,5 @@
 {
-  "name": "react-native-hbssdk",
+  "name": "@origins-digital/react-native-hbssdk",
   "version": "0.1.0",
   "description": "test",
   "main": "lib/commonjs/index",
@@ -27,6 +27,7 @@
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
     "prepare": "bob build",
     "release": "release-it",
+    "release:dry": "release-it --dry-run -Y",
     "example": "yarn --cwd example",
     "bootstrap": "yarn example && yarn && yarn example pods"
   },
@@ -43,7 +44,7 @@
   },
   "homepage": "https://github.com/sergeimikhan/react-native-hbssdk#readme",
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "access": "public"
   },
   "devDependencies": {
     "@arkweid/lefthook": "^0.7.7",
@@ -88,8 +89,13 @@
   },
   "release-it": {
     "git": {
-      "commitMessage": "chore: release ${version}",
-      "tagName": "v${version}"
+      "commitMessage": "chore: release ${version} [skip ci]",
+      "tagName": "v${version}",
+      "commit": true,
+      "tag": true,
+      "pushArgs": [
+        "--follow-tags"
+      ]
     },
     "npm": {
       "publish": true
