@@ -13,10 +13,15 @@ def download_spec! (options={})
   }
 end
 
+PLAYKIT_GIT='https://github.com/kaltura/playkit-ios.git'
+PLAYKIT_BRANCH=ENV['PK_BRANCH'] || 'develop'
 
 target 'OnRewindSample' do
 
   download_spec!(url: 'https://origins-mobile-products.s3.eu-west-1.amazonaws.com/OnRewindSDK.podspec')
+
+
+  pod 'PlayKit', :git => PLAYKIT_GIT, :branch => PLAYKIT_BRANCH
 
   pod 'OnRewindSDK', :podspec => './specs/OnRewindSDK.podspec'
   pod 'SportBuff', '0.2.0.0'

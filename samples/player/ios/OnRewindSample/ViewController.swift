@@ -118,8 +118,11 @@ class ViewController: UIViewController {
         )
       case .fullscreen(let params):
           OnRewind.presentPlayer(with: params, from: self, playerWrapperClosure: {
-            let stream = "https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/hls/DesigningForGoogleCast.m3u8"
-            let wrapper = AVPlayerDemo(item: .just(AVPlayerItem(url: URL(string: stream)!)))
+//            let stream = "https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/hls/DesigningForGoogleCast.m3u8"
+//            let wrapper = AVPlayerDemo(item: .just(AVPlayerItem(url: URL(string: stream)!)))
+//            return wrapper
+
+            let wrapper = KalturaPlayerDemo()
             return wrapper
           })
       case .list(let params):

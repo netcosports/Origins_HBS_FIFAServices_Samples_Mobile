@@ -10,8 +10,23 @@ PODS:
     - RxCocoa (~> 5)
     - RxGesture (~> 3)
     - RxSwift (~> 5)
+  - KalturaNetKit (1.5.1):
+    - KalturaNetKit/Core (= 1.5.1)
+  - KalturaNetKit/Core (1.5.1):
+    - SwiftyJSON (= 5.0.0)
+  - ObjcExceptionBridging (1.0.1):
+    - ObjcExceptionBridging/ObjcExceptionBridging (= 1.0.1)
+  - ObjcExceptionBridging/ObjcExceptionBridging (1.0.1)
   - OnRewindSDK (1.0.0)
   - PinLayout (1.10.2)
+  - PlayKit (3.26.0.0000):
+    - PlayKit/Core (= 3.26.0.0000)
+  - PlayKit/Core (3.26.0.0000):
+    - KalturaNetKit (~> 1.5.1)
+    - PlayKitUtils (~> 0.5)
+    - SwiftyJSON (= 5.0.0)
+    - XCGLogger (= 7.0.0)
+  - PlayKitUtils (0.5.0)
   - RxCocoa (5.1.3):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
@@ -22,12 +37,18 @@ PODS:
     - RxSwift (~> 5)
   - RxSwift (5.1.3)
   - SportBuff (0.2.0.0)
+  - SwiftyJSON (5.0.0)
+  - XCGLogger (7.0.0):
+    - XCGLogger/Core (= 7.0.0)
+  - XCGLogger/Core (7.0.0):
+    - ObjcExceptionBridging
 
 DEPENDENCIES:
   - Astrolabe
   - Dioptra
   - OnRewindSDK (from `./specs/OnRewindSDK.podspec`)
   - PinLayout
+  - PlayKit (from `https://github.com/kaltura/playkit-ios.git`, branch `develop`)
   - RxCocoa
   - RxSwift
   - SportBuff (= 0.2.0.0)
@@ -36,28 +57,47 @@ SPEC REPOS:
   trunk:
     - Astrolabe
     - Dioptra
+    - KalturaNetKit
+    - ObjcExceptionBridging
     - PinLayout
+    - PlayKitUtils
     - RxCocoa
     - RxGesture
     - RxRelay
     - RxSwift
     - SportBuff
+    - SwiftyJSON
+    - XCGLogger
 
 EXTERNAL SOURCES:
   OnRewindSDK:
     :podspec: "./specs/OnRewindSDK.podspec"
+  PlayKit:
+    :branch: develop
+    :git: https://github.com/kaltura/playkit-ios.git
+
+CHECKOUT OPTIONS:
+  PlayKit:
+    :commit: a6357d68c5eb1b53df5c072e84d19237daff556c
+    :git: https://github.com/kaltura/playkit-ios.git
 
 SPEC CHECKSUMS:
   Astrolabe: 97d5636ab06045bdfde8b420197b9aa85d5dff43
   Dioptra: be1324ec757d12bfa7f56fab4958cdd12bedb286
+  KalturaNetKit: 8774fdc2e73d3d013c3df88aa49376dd922d3606
+  ObjcExceptionBridging: c30e00eb3700467e695faeea30e26e18bd445001
   OnRewindSDK: fbe5f1b507176554c162a133828b22414ad0900f
   PinLayout: d6b1960e4b182b4da1481b9aa6728f621e20708d
+  PlayKit: 5498c2375ea5277da9618d1dca9dc5e8b8dab6ea
+  PlayKitUtils: 8edb43515c8b91d9aa9a47ae8b5af1e7dd58f6f3
   RxCocoa: e2ed092d5432e4296aa818021d27de4090ac0354
   RxGesture: d6bd7447ca3a596c7a9702a6a2b6a2bb5d8bae54
   RxRelay: 5a18c2eb2d68326ebaf0112f80d837ae41b92b97
   RxSwift: 915abbdfb62214aa89ccd0b194d44fb478019b27
   SportBuff: 02fbad1c12fa8a63a4d731ce7c5692873fe07b7b
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+  XCGLogger: 0434f15e3909cdc450bb63faf638b8792ab782ab
 
-PODFILE CHECKSUM: 6d509538d91bf7e2411abf9dbe8dbdea6f8123b2
+PODFILE CHECKSUM: 475c391988cca7547dd8a73d81159ff9bc220cc3
 
 COCOAPODS: 1.11.2
