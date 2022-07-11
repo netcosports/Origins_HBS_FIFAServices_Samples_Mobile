@@ -28,14 +28,19 @@ RCT_EXPORT_MODULE(HBSSDK);
 }
 
 -(NSDictionary *)constantsToExport {
-  CGFloat teamMatchesComponentHeight = [Stats teamMatchesSizeFor: CGSizeMake(100.0, 0.0)].height;
-  CGFloat topPlayerStatsComponentHeight = [Stats topPlayersSizeFor: CGSizeMake(100.0, 0.0)].height;
-  CGFloat videosComponentHeight = [Videos sizeFor: CGSizeMake(100.0, 0.0)].height;
+  CGSize containerSize = [UIScreen mainScreen].bounds.size;
+  CGFloat teamMatchesComponentHeight = [Stats teamMatchesSizeFor: containerSize].height;
+  CGFloat topPlayerStatsComponentHeight = [Stats topPlayersSizeFor: containerSize].height;
+  CGFloat videosComponentHeight = [Videos sizeFor: containerSize].height;
+  CGFloat standingsComponentHeight = [Standings sizeFor:containerSize].height;
+  CGFloat championshipComponentHeight = [Championship widgetSizeFor:containerSize].height;
 
   return @{
     @"teamMatchesComponentHeight": @(teamMatchesComponentHeight),
     @"topPlayerStatsComponentHeight": @(topPlayerStatsComponentHeight),
-    @"videosComponentHeight": @(videosComponentHeight)
+    @"videosComponentHeight": @(videosComponentHeight),
+    @"standingsComponentHeight": @(standingsComponentHeight),
+    @"championshipComponentHeight": @(championshipComponentHeight)
   };
 }
 
