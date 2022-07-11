@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA72194D2879AE8000A53363 /* KalturaDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA72194C2879AE8000A53363 /* KalturaDemo.swift */; };
 		AA98130927B3E8F700355E69 /* AVPlayerLayer+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA98130527B3E8F700355E69 /* AVPlayerLayer+Rx.swift */; };
 		AA98130A27B3E8F700355E69 /* AVAsynchronousKeyValueLoading+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA98130627B3E8F700355E69 /* AVAsynchronousKeyValueLoading+Rx.swift */; };
 		AA98130B27B3E8F700355E69 /* AVPlayerItem+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA98130727B3E8F700355E69 /* AVPlayerItem+Rx.swift */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		8CCD9945B9DD86AABE2FA64C /* Pods-OnRewindSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnRewindSample.release.xcconfig"; path = "Target Support Files/Pods-OnRewindSample/Pods-OnRewindSample.release.xcconfig"; sourceTree = "<group>"; };
 		92972D6C77858D8E635E42D0 /* Pods-OnRewindSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnRewindSample.debug.xcconfig"; path = "Target Support Files/Pods-OnRewindSample/Pods-OnRewindSample.debug.xcconfig"; sourceTree = "<group>"; };
+		AA72194C2879AE8000A53363 /* KalturaDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KalturaDemo.swift; sourceTree = "<group>"; };
 		AA98130527B3E8F700355E69 /* AVPlayerLayer+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVPlayerLayer+Rx.swift"; sourceTree = "<group>"; };
 		AA98130627B3E8F700355E69 /* AVAsynchronousKeyValueLoading+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVAsynchronousKeyValueLoading+Rx.swift"; sourceTree = "<group>"; };
 		AA98130727B3E8F700355E69 /* AVPlayerItem+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVPlayerItem+Rx.swift"; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				AAA4B70521E888A900508199 /* Assets.xcassets */,
 				AAA4B70721E888A900508199 /* LaunchScreen.storyboard */,
 				AAA4B70A21E888A900508199 /* Info.plist */,
+				AA72194C2879AE8000A53363 /* KalturaDemo.swift */,
 			);
 			path = OnRewindSample;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 				AAE6A7BC25C4361000DEC20A /* DetailsViewController.swift in Sources */,
 				AAE6A90D25C7F32E00DEC20A /* ListViewController.swift in Sources */,
 				AA98130A27B3E8F700355E69 /* AVAsynchronousKeyValueLoading+Rx.swift in Sources */,
+				AA72194D2879AE8000A53363 /* KalturaDemo.swift in Sources */,
 				AAE6A7BE25C4361000DEC20A /* AVPlayerDemo.swift in Sources */,
 				AA98130C27B3E8F700355E69 /* AVPlayer+Rx.swift in Sources */,
 			);
