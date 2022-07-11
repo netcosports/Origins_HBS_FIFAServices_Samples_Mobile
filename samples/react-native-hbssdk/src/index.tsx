@@ -50,6 +50,7 @@ export const TeamMatches =
 ////////////////////////
 // videos
 type VideosProps = {
+  data: { groupId: string, isExpanded: boolean };
   style: ViewStyle;
 };
 
@@ -58,6 +59,38 @@ const VideosComponentName = 'Videos';
 export const Videos =
   UIManager.getViewManagerConfig(VideosComponentName) != null
     ? requireNativeComponent<VideosProps>(VideosComponentName)
+    : () => {
+        throw new Error(LINKING_ERROR);
+      };
+
+////////////////////////
+// standings
+type StandingsProps = {
+  data: { groupId: string, isExpanded: boolean };
+  style: ViewStyle;
+};
+
+const StandingsComponentName = 'Standings';
+
+export const Standings =
+  UIManager.getViewManagerConfig(StandingsComponentName) != null
+    ? requireNativeComponent<StandingsProps>(StandingsComponentName)
+    : () => {
+        throw new Error(LINKING_ERROR);
+      };
+
+////////////////////////
+// championship
+type ChampionshipProps = {
+//  onRegionChange: Function,
+  style: ViewStyle;
+};
+
+const ChampionshipComponentName = 'Championship';
+
+export const Championship =
+  UIManager.getViewManagerConfig(ChampionshipComponentName) != null
+    ? requireNativeComponent<ChampionshipProps>(ChampionshipComponentName)
     : () => {
         throw new Error(LINKING_ERROR);
       };
