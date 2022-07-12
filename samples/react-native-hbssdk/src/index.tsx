@@ -127,6 +127,22 @@ export const HeadToHead =
         throw new Error(LINKING_ERROR);
       };
 
+////////////////////////
+// matchcenter
+type MatchCenterProps = {
+  matchId: string;
+  style: ViewStyle;
+};
+
+const MatchCenterComponentName = 'MatchCenter';
+
+export const MatchCenter =
+  UIManager.getViewManagerConfig(MatchCenterComponentName) != null
+    ? requireNativeComponent<MatchCenterProps>(MatchCenterComponentName)
+    : () => {
+        throw new Error(LINKING_ERROR);
+      };
+
 ///////////////////////
 // module
 export default HBSSDK;

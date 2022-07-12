@@ -36,6 +36,7 @@ RCT_EXPORT_MODULE(HBSSDK);
   CGFloat championshipComponentHeight = [Championship widgetSizeFor:containerSize].height;
   CGFloat favoritesComponentHeight = [Favorites sizeFor:containerSize].height;
   CGFloat headToHeadComponentHeight = [HeadToHead sizeFor:containerSize].height;
+  CGFloat matchCenterComponentHeight = [MatchCenter widgetSizeFor:containerSize].height;
 
   return @{
     @"teamMatchesComponentHeight": @(teamMatchesComponentHeight),
@@ -44,7 +45,8 @@ RCT_EXPORT_MODULE(HBSSDK);
     @"standingsComponentHeight": @(standingsComponentHeight),
     @"favoritesComponentHeight": @(favoritesComponentHeight),
     @"championshipComponentHeight": @(championshipComponentHeight),
-    @"headToHeadComponentHeight": @(headToHeadComponentHeight)
+    @"headToHeadComponentHeight": @(headToHeadComponentHeight),
+    @"matchCenterComponentHeight": @(matchCenterComponentHeight)
   };
 }
 
