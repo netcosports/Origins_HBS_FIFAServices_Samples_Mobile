@@ -35,10 +35,6 @@ RCT_CUSTOM_VIEW_PROPERTY(statType, NSString, UIView<TopPlayerStatsWidget>)
   return true;
 }
 
-- (NSDictionary *)constantsToExport {
-  CGFloat height = [Stats topPlayersSizeFor: CGSizeMake(100.0, 0.0)].height;
-  return @{ @"ComponentHeight": @(height) };
-}
 
 @end
 

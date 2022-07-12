@@ -95,6 +95,38 @@ export const Championship =
         throw new Error(LINKING_ERROR);
       };
 
+////////////////////////
+// favorites
+type FavoritesProps = {
+  style: ViewStyle;
+};
+
+const FavoritesComponentName = 'Favorites';
+
+export const Favorites =
+  UIManager.getViewManagerConfig(FavoritesComponentName) != null
+    ? requireNativeComponent<FavoritesProps>(FavoritesComponentName)
+    : () => {
+        throw new Error(LINKING_ERROR);
+      };
+
+
+////////////////////////
+// head to head
+type HeadToHeadProps = {
+  data: { teamId1: string, teamId2: string };
+  style: ViewStyle;
+};
+
+const HeadToHeadComponentName = 'HeadToHead';
+
+export const HeadToHead =
+  UIManager.getViewManagerConfig(HeadToHeadComponentName) != null
+    ? requireNativeComponent<HeadToHeadProps>(HeadToHeadComponentName)
+    : () => {
+        throw new Error(LINKING_ERROR);
+      };
+
 ///////////////////////
 // module
 export default HBSSDK;

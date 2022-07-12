@@ -34,13 +34,17 @@ RCT_EXPORT_MODULE(HBSSDK);
   CGFloat videosComponentHeight = [Videos sizeFor: containerSize].height;
   CGFloat standingsComponentHeight = [Standings sizeFor:containerSize].height;
   CGFloat championshipComponentHeight = [Championship widgetSizeFor:containerSize].height;
+  CGFloat favoritesComponentHeight = [Favorites sizeFor:containerSize].height;
+  CGFloat headToHeadComponentHeight = [HeadToHead sizeFor:containerSize].height;
 
   return @{
     @"teamMatchesComponentHeight": @(teamMatchesComponentHeight),
     @"topPlayerStatsComponentHeight": @(topPlayerStatsComponentHeight),
     @"videosComponentHeight": @(videosComponentHeight),
     @"standingsComponentHeight": @(standingsComponentHeight),
-    @"championshipComponentHeight": @(championshipComponentHeight)
+    @"favoritesComponentHeight": @(favoritesComponentHeight),
+    @"championshipComponentHeight": @(championshipComponentHeight),
+    @"headToHeadComponentHeight": @(headToHeadComponentHeight)
   };
 }
 

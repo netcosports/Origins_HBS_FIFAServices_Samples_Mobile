@@ -6,6 +6,8 @@ import { TeamMatches } from 'react-native-hbssdk';
 import { Videos } from 'react-native-hbssdk';
 import { Standings } from 'react-native-hbssdk';
 import { Championship } from 'react-native-hbssdk';
+import { Favorites } from 'react-native-hbssdk';
+import { HeadToHead } from 'react-native-hbssdk';
 
 import HBSSDK from 'react-native-hbssdk'
 
@@ -27,6 +29,8 @@ export default function App() {
         <Videos style={styles.videos} />
         <Standings data={{ groupId: "no", isExpanded: true }} style={styles.standings} />
         <Championship  style={styles.championship} />
+        <Favorites style={styles.favorites} />
+        <HeadToHead data={{ teamId1: "some", teamId2: "another" }} style={styles.headToHead} />
 
       </ScrollView>
     </SafeAreaView>
@@ -56,6 +60,14 @@ var styles = StyleSheet.create({
   },
   championship: {
     width: "100%",
-    height: HBSSDK.championshipComponentHeight,
+    height: 520//HBSSDK.championshipComponentHeight,
   },
+  favorites: {
+    width: "100%",
+    height: 520//HBSSDK.favoritesComponentHeight,
+  },
+  headToHead: {
+    width: "100%",
+    height: HBSSDK.headToHeadComponentHeight,
+  }
 });
