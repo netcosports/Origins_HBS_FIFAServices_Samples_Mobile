@@ -26,6 +26,7 @@ import com.netcosports.onrewind.ui.viewmodel.OnRewindPlayerViewModel
 import com.netcosports.onrewind.ui.viewmodel.OnRewindPlayerViewModelFactory
 import com.originsdigital.hbsonrewindplayerdemo.wrapper.dm.DmPlayerWrapper
 import com.originsdigital.hbsonrewindplayerdemo.wrapper.exo.ExoPlayerWrapper
+import com.originsdigital.hbsonrewindplayerdemo.wrapper.kaltura.KalturaWrapper
 
 class PlayerActivity : AppCompatActivity() {
 
