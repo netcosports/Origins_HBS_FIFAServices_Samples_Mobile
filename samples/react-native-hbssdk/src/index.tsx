@@ -143,6 +143,37 @@ export const MatchCenter =
         throw new Error(LINKING_ERROR);
       };
 
+////////////////////////
+// large matches
+type MatchesProps = {
+  data: { groupId: string, teamId: string, roundId: string };
+  style: ViewStyle;
+};
+
+const LargeMatchesComponentName = 'LargeMatches';
+const MediumMatchesComponentName = 'MediumMatches';
+const SmallMatchesComponentName = 'SmallMatches';
+
+export const LargeMatches =
+  UIManager.getViewManagerConfig(LargeMatchesComponentName) != null
+    ? requireNativeComponent<MatchesProps>(LargeMatchesComponentName)
+    : () => {
+        throw new Error(LINKING_ERROR);
+      };
+
+export const MediumMatches =
+  UIManager.getViewManagerConfig(MediumMatchesComponentName) != null
+    ? requireNativeComponent<MatchesProps>(MediumMatchesComponentName)
+    : () => {
+        throw new Error(LINKING_ERROR);
+      };
+
+export const SmallMatches =
+  UIManager.getViewManagerConfig(SmallMatchesComponentName) != null
+    ? requireNativeComponent<MatchesProps>(SmallMatchesComponentName)
+    : () => {
+        throw new Error(LINKING_ERROR);
+      };
 ///////////////////////
 // module
 export default HBSSDK;

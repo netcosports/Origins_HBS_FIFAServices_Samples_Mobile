@@ -38,6 +38,12 @@ RCT_EXPORT_MODULE(HBSSDK);
   CGFloat headToHeadComponentHeight = [HeadToHead sizeFor:containerSize].height;
   CGFloat matchCenterComponentHeight = [MatchCenter widgetSizeFor:containerSize].height;
 
+  CGFloat matchesWithEventsComponentHeight = [Matches bigSizeFor:containerSize displayEvents:YES].height;
+  CGFloat matchesWithoutEventsComponentHeight = [Matches bigSizeFor:containerSize displayEvents:NO].height;
+
+  CGFloat mediumMatchesComponentHeight = [Matches mediumSizeFor:containerSize].height;
+  CGFloat smallMatchesComponentHeight = [Matches smallSizeFor:containerSize].height;
+
   return @{
     @"teamMatchesComponentHeight": @(teamMatchesComponentHeight),
     @"topPlayerStatsComponentHeight": @(topPlayerStatsComponentHeight),
@@ -46,7 +52,12 @@ RCT_EXPORT_MODULE(HBSSDK);
     @"favoritesComponentHeight": @(favoritesComponentHeight),
     @"championshipComponentHeight": @(championshipComponentHeight),
     @"headToHeadComponentHeight": @(headToHeadComponentHeight),
-    @"matchCenterComponentHeight": @(matchCenterComponentHeight)
+    @"matchCenterComponentHeight": @(matchCenterComponentHeight),
+
+    @"matchesWithEventsComponentHeight": @(matchesWithEventsComponentHeight),
+    @"matchesWithoutEventsComponentHeight": @(matchesWithoutEventsComponentHeight),
+    @"mediumMatchesComponentHeight": @(mediumMatchesComponentHeight),
+    @"smallMatchesComponentHeight": @(smallMatchesComponentHeight)
   };
 }
 

@@ -8,7 +8,11 @@ import { Standings } from 'react-native-hbssdk';
 import { Championship } from 'react-native-hbssdk';
 import { Favorites } from 'react-native-hbssdk';
 import { HeadToHead } from 'react-native-hbssdk';
-import { MatchCenter } from 'react-native-hbssdk';
+//import { MatchCenter } from 'react-native-hbssdk';
+
+import { LargeMatches } from 'react-native-hbssdk';
+import { MediumMatches } from 'react-native-hbssdk';
+import { SmallMatches } from 'react-native-hbssdk';
 
 import HBSSDK from 'react-native-hbssdk'
 
@@ -21,6 +25,9 @@ export default function App() {
      <ScrollView 
         style={{ width: "100%", height: "100%", backgroundColor: 'orange' }}
         contentContainerStyle={{ width: "100%" }}>
+        <SmallMatches data={{ groupId: "someId"}} style={styles.smallMatches} />
+        <MediumMatches data={{ teamId: "someId"}} style={styles.mediumMatches} />
+        <LargeMatches data={{ roundId: "someId"}} style={styles.largeMatchesWithEvents} />
         <TopPlayerStats statType={"goals"} style={styles.topPlayerStats} />
         <TopPlayerStats statType={"assist"} style={styles.topPlayerStats} />
         <TeamMatches teamId={"anyId"} style={styles.teamMatches} />
@@ -29,11 +36,11 @@ export default function App() {
         <Championship  style={styles.championship} />
         <Favorites style={styles.favorites} />
         <HeadToHead data={{ teamId1: "some", teamId2: "another" }} style={styles.headToHead} />
-        <MatchCenter matchId={"anyId"} style={styles.matchCenter} />
       </ScrollView>
     </SafeAreaView>
   );
 }
+//         <MatchCenter matchId={"anyId"} style={styles.matchCenter} />
 
 //         <Championship _onOpenMatchDetails={_onOpenMatchDetails} style={styles.championship} />
 
@@ -70,5 +77,17 @@ var styles = StyleSheet.create({
   headToHead: {
     width: "100%",
     height: HBSSDK.headToHeadComponentHeight,
-  }
+  },
+  smallMatches: {
+    width: "100%",
+    height: HBSSDK.smallMatchesComponentHeight,
+  },
+  mediumMatches: {
+    width: "100%",
+    height: HBSSDK.mediumMatchesComponentHeight,
+  },
+  largeMatchesWithEvents: {
+    width: "100%",
+    height: HBSSDK.matchesWithEventsComponentHeight,
+  },
 });
