@@ -45,6 +45,9 @@ RCT_EXPORT_MODULE(HBSSDK);
   CGFloat smallMatchesComponentHeight = [Matches smallSizeFor:containerSize].height;
 
   CGFloat teamMatchesStatsComponentHeight = [Stats teamMatchesSizeFor:containerSize].height;
+  CGFloat teamBoardComponentHeight = [TeamBoard sizeFor:containerSize].height;
+  CGFloat venueComponentHeight = [Venue widgetSizeWithContainerSize:containerSize].height;
+  CGFloat watchComponentHeight = [Watch sizeFor:containerSize].height;
 
   return @{
     @"teamMatchesComponentHeight": @(teamMatchesComponentHeight),
@@ -60,7 +63,10 @@ RCT_EXPORT_MODULE(HBSSDK);
     @"matchesWithoutEventsComponentHeight": @(matchesWithoutEventsComponentHeight),
     @"mediumMatchesComponentHeight": @(mediumMatchesComponentHeight),
     @"smallMatchesComponentHeight": @(smallMatchesComponentHeight),
-    @"teamMatchesStatsComponentHeight": @(teamMatchesStatsComponentHeight)
+    @"teamMatchesStatsComponentHeight": @(teamMatchesStatsComponentHeight),
+    @"teamBoardComponentHeight": @(teamBoardComponentHeight),
+    @"venueComponentHeight": @(venueComponentHeight),
+    @"watchComponentHeight": @(watchComponentHeight)
   };
 }
 

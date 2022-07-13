@@ -16,6 +16,11 @@ import { LargeMatches } from 'react-native-hbssdk';
 import { MediumMatches } from 'react-native-hbssdk';
 import { SmallMatches } from 'react-native-hbssdk';
 
+
+import { TeamBoard } from 'react-native-hbssdk';
+import { Venue } from 'react-native-hbssdk';
+import { Watch } from 'react-native-hbssdk';
+
 import HBSSDK from 'react-native-hbssdk'
 
 export default function App() {
@@ -25,8 +30,13 @@ export default function App() {
   return (
     <SafeAreaView >
      <ScrollView 
-        style={{ width: "100%", height: "100%", backgroundColor: 'orange' }}
+        style={{ width: "100%", height: "100%", backgroundColor: '' }}
         contentContainerStyle={{ width: "100%" }}>
+
+        <TeamBoard teamId="someId" style={styles.teamBoard} />
+        <Venue style={styles.venue} />
+        <Watch teamId="someId" style={styles.watch} />
+
         <TeamMatchesStats teamId="someId" style={styles.teamMatchesStats} />
         <SmallMatches data={{ groupId: "someId"}} style={styles.smallMatches} />
         <MediumMatches data={{ teamId: "someId"}} style={styles.mediumMatches} />
@@ -43,8 +53,8 @@ export default function App() {
     </SafeAreaView>
   );
 }
+//
 //         <MatchCenter matchId={"anyId"} style={styles.matchCenter} />
-
 //         <Championship _onOpenMatchDetails={_onOpenMatchDetails} style={styles.championship} />
 
 var styles = StyleSheet.create({
@@ -92,6 +102,18 @@ var styles = StyleSheet.create({
   largeMatchesWithEvents: {
     width: "100%",
     height: HBSSDK.matchesWithEventsComponentHeight,
+  },
+  teamBoard: {
+    width: "100%",
+    height: HBSSDK.teamBoardComponentHeight,
+  },
+  venue: {
+    width: "100%",
+    height: HBSSDK.venueComponentHeight,
+  },
+  watch: {
+    width: "100%",
+    height: HBSSDK.watchComponentHeight,
   },
   teamMatchesStats: {
     width: "100%",

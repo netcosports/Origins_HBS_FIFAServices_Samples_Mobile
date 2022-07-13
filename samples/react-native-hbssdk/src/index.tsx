@@ -47,6 +47,53 @@ export const TeamMatchesStats =
       };
 
 ////////////////////////
+// team board
+type TeamBoardProps = {
+  teamId: string;
+  style: ViewStyle;
+};
+
+const TeamBoardComponentName = 'TeamBoard';
+
+export const TeamBoard =
+  UIManager.getViewManagerConfig(TeamBoardComponentName) != null
+    ? requireNativeComponent<TeamBoardProps>(TeamBoardComponentName)
+    : () => {
+        throw new Error(LINKING_ERROR);
+      };
+
+////////////////////////
+// venue
+type VenueProps = {
+  style: ViewStyle;
+};
+
+const VenueComponentName = 'Venue';
+
+export const Venue =
+  UIManager.getViewManagerConfig(VenueComponentName) != null
+    ? requireNativeComponent<VenueProps>(VenueComponentName)
+    : () => {
+        throw new Error(LINKING_ERROR);
+      };
+
+////////////////////////
+// watch
+type WatchProps = {
+  teamId: string;
+  style: ViewStyle;
+};
+
+const WatchComponentName = 'Watch';
+
+export const Watch =
+  UIManager.getViewManagerConfig(WatchComponentName) != null
+    ? requireNativeComponent<WatchProps>(WatchComponentName)
+    : () => {
+        throw new Error(LINKING_ERROR);
+      };
+
+////////////////////////
 // top player
 type TeamMatchesProps = {
   teamId: string;
