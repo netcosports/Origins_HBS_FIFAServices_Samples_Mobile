@@ -8,6 +8,18 @@ import { Standings } from 'react-native-hbssdk';
 import { Championship } from 'react-native-hbssdk';
 import { Favorites } from 'react-native-hbssdk';
 import { HeadToHead } from 'react-native-hbssdk';
+import { TeamMatchesStats } from 'react-native-hbssdk';
+
+//import { MatchCenter } from 'react-native-hbssdk';
+
+import { LargeMatches } from 'react-native-hbssdk';
+import { MediumMatches } from 'react-native-hbssdk';
+import { SmallMatches } from 'react-native-hbssdk';
+
+
+import { TeamBoard } from 'react-native-hbssdk';
+import { Venue } from 'react-native-hbssdk';
+import { Watch } from 'react-native-hbssdk';
 
 import HBSSDK from 'react-native-hbssdk'
 
@@ -18,26 +30,31 @@ export default function App() {
   return (
     <SafeAreaView >
      <ScrollView 
-        style={{ width: "100%", height: "100%", backgroundColor: 'orange' }}
+        style={{ width: "100%", height: "100%", backgroundColor: '' }}
         contentContainerStyle={{ width: "100%" }}>
 
+        <TeamBoard teamId="someId" style={styles.teamBoard} />
+        <Venue style={styles.venue} />
+        <Watch teamId="someId" style={styles.watch} />
+
+        <TeamMatchesStats teamId="someId" style={styles.teamMatchesStats} />
+        <SmallMatches data={{ groupId: "someId"}} style={styles.smallMatches} />
+        <MediumMatches data={{ teamId: "someId"}} style={styles.mediumMatches} />
+        <LargeMatches data={{ roundId: "someId"}} style={styles.largeMatchesWithEvents} />
         <TopPlayerStats statType={"goals"} style={styles.topPlayerStats} />
         <TopPlayerStats statType={"assist"} style={styles.topPlayerStats} />
-
         <TeamMatches teamId={"anyId"} style={styles.teamMatches} />
-
         <Videos style={styles.videos} />
         <Standings data={{ groupId: "no", isExpanded: true }} style={styles.standings} />
         <Championship  style={styles.championship} />
         <Favorites style={styles.favorites} />
         <HeadToHead data={{ teamId1: "some", teamId2: "another" }} style={styles.headToHead} />
-
       </ScrollView>
     </SafeAreaView>
   );
 }
-
-
+//
+//         <MatchCenter matchId={"anyId"} style={styles.matchCenter} />
 //         <Championship _onOpenMatchDetails={_onOpenMatchDetails} style={styles.championship} />
 
 var styles = StyleSheet.create({
@@ -62,6 +79,10 @@ var styles = StyleSheet.create({
     width: "100%",
     height: 520//HBSSDK.championshipComponentHeight,
   },
+  matchCenter: {
+    width: "100%",
+    height: HBSSDK.matchCenterComponentHeight,
+  },
   favorites: {
     width: "100%",
     height: 520//HBSSDK.favoritesComponentHeight,
@@ -69,5 +90,33 @@ var styles = StyleSheet.create({
   headToHead: {
     width: "100%",
     height: HBSSDK.headToHeadComponentHeight,
+  },
+  smallMatches: {
+    width: "100%",
+    height: HBSSDK.smallMatchesComponentHeight,
+  },
+  mediumMatches: {
+    width: "100%",
+    height: HBSSDK.mediumMatchesComponentHeight,
+  },
+  largeMatchesWithEvents: {
+    width: "100%",
+    height: HBSSDK.matchesWithEventsComponentHeight,
+  },
+  teamBoard: {
+    width: "100%",
+    height: HBSSDK.teamBoardComponentHeight,
+  },
+  venue: {
+    width: "100%",
+    height: HBSSDK.venueComponentHeight,
+  },
+  watch: {
+    width: "100%",
+    height: HBSSDK.watchComponentHeight,
+  },
+  teamMatchesStats: {
+    width: "100%",
+    height: HBSSDK.teamMatchesStatsComponentHeight,
   }
 });

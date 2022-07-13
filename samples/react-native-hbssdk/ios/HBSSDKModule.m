@@ -36,6 +36,18 @@ RCT_EXPORT_MODULE(HBSSDK);
   CGFloat championshipComponentHeight = [Championship widgetSizeFor:containerSize].height;
   CGFloat favoritesComponentHeight = [Favorites sizeFor:containerSize].height;
   CGFloat headToHeadComponentHeight = [HeadToHead sizeFor:containerSize].height;
+  CGFloat matchCenterComponentHeight = [MatchCenter widgetSizeFor:containerSize].height;
+
+  CGFloat matchesWithEventsComponentHeight = [Matches bigSizeFor:containerSize displayEvents:YES].height;
+  CGFloat matchesWithoutEventsComponentHeight = [Matches bigSizeFor:containerSize displayEvents:NO].height;
+
+  CGFloat mediumMatchesComponentHeight = [Matches mediumSizeFor:containerSize].height;
+  CGFloat smallMatchesComponentHeight = [Matches smallSizeFor:containerSize].height;
+
+  CGFloat teamMatchesStatsComponentHeight = [Stats teamMatchesSizeFor:containerSize].height;
+  CGFloat teamBoardComponentHeight = [TeamBoard sizeFor:containerSize].height;
+  CGFloat venueComponentHeight = [Venue widgetSizeWithContainerSize:containerSize].height;
+  CGFloat watchComponentHeight = [Watch sizeFor:containerSize].height;
 
   return @{
     @"teamMatchesComponentHeight": @(teamMatchesComponentHeight),
@@ -44,7 +56,17 @@ RCT_EXPORT_MODULE(HBSSDK);
     @"standingsComponentHeight": @(standingsComponentHeight),
     @"favoritesComponentHeight": @(favoritesComponentHeight),
     @"championshipComponentHeight": @(championshipComponentHeight),
-    @"headToHeadComponentHeight": @(headToHeadComponentHeight)
+    @"headToHeadComponentHeight": @(headToHeadComponentHeight),
+    @"matchCenterComponentHeight": @(matchCenterComponentHeight),
+
+    @"matchesWithEventsComponentHeight": @(matchesWithEventsComponentHeight),
+    @"matchesWithoutEventsComponentHeight": @(matchesWithoutEventsComponentHeight),
+    @"mediumMatchesComponentHeight": @(mediumMatchesComponentHeight),
+    @"smallMatchesComponentHeight": @(smallMatchesComponentHeight),
+    @"teamMatchesStatsComponentHeight": @(teamMatchesStatsComponentHeight),
+    @"teamBoardComponentHeight": @(teamBoardComponentHeight),
+    @"venueComponentHeight": @(venueComponentHeight),
+    @"watchComponentHeight": @(watchComponentHeight)
   };
 }
 
