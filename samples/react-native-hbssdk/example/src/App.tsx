@@ -8,6 +8,8 @@ import { Standings } from 'react-native-hbssdk';
 import { Championship } from 'react-native-hbssdk';
 import { Favorites } from 'react-native-hbssdk';
 import { HeadToHead } from 'react-native-hbssdk';
+import { TeamMatchesStats } from 'react-native-hbssdk';
+
 //import { MatchCenter } from 'react-native-hbssdk';
 
 import { LargeMatches } from 'react-native-hbssdk';
@@ -25,6 +27,7 @@ export default function App() {
      <ScrollView 
         style={{ width: "100%", height: "100%", backgroundColor: 'orange' }}
         contentContainerStyle={{ width: "100%" }}>
+        <TeamMatchesStats teamId="someId" style={styles.teamMatchesStats} />
         <SmallMatches data={{ groupId: "someId"}} style={styles.smallMatches} />
         <MediumMatches data={{ teamId: "someId"}} style={styles.mediumMatches} />
         <LargeMatches data={{ roundId: "someId"}} style={styles.largeMatchesWithEvents} />
@@ -90,4 +93,8 @@ var styles = StyleSheet.create({
     width: "100%",
     height: HBSSDK.matchesWithEventsComponentHeight,
   },
+  teamMatchesStats: {
+    width: "100%",
+    height: HBSSDK.teamMatchesStatsComponentHeight,
+  }
 });

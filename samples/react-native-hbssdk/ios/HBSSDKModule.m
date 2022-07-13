@@ -44,6 +44,8 @@ RCT_EXPORT_MODULE(HBSSDK);
   CGFloat mediumMatchesComponentHeight = [Matches mediumSizeFor:containerSize].height;
   CGFloat smallMatchesComponentHeight = [Matches smallSizeFor:containerSize].height;
 
+  CGFloat teamMatchesStatsComponentHeight = [Stats teamMatchesSizeFor:containerSize].height;
+
   return @{
     @"teamMatchesComponentHeight": @(teamMatchesComponentHeight),
     @"topPlayerStatsComponentHeight": @(topPlayerStatsComponentHeight),
@@ -57,7 +59,8 @@ RCT_EXPORT_MODULE(HBSSDK);
     @"matchesWithEventsComponentHeight": @(matchesWithEventsComponentHeight),
     @"matchesWithoutEventsComponentHeight": @(matchesWithoutEventsComponentHeight),
     @"mediumMatchesComponentHeight": @(mediumMatchesComponentHeight),
-    @"smallMatchesComponentHeight": @(smallMatchesComponentHeight)
+    @"smallMatchesComponentHeight": @(smallMatchesComponentHeight),
+    @"teamMatchesStatsComponentHeight": @(teamMatchesStatsComponentHeight)
   };
 }
 

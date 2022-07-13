@@ -30,6 +30,21 @@ export const TopPlayerStats =
         throw new Error(LINKING_ERROR);
       };
 
+////////////////////////
+// team matches stats
+type TeamMatchesStatsProps = {
+  teamId: string;
+  style: ViewStyle;
+};
+
+const TeamMatchesStatsComponentName = 'TeamMatchesStats';
+
+export const TeamMatchesStats =
+  UIManager.getViewManagerConfig(TeamMatchesStatsComponentName) != null
+    ? requireNativeComponent<TeamMatchesStatsProps>(TeamMatchesStatsComponentName)
+    : () => {
+        throw new Error(LINKING_ERROR);
+      };
 
 ////////////////////////
 // top player
