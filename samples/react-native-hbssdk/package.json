@@ -1,6 +1,6 @@
 {
   "name": "@origins-digital/react-native-hbssdk",
-  "version": "0.3.2",
+  "version": "0.4.0",
   "description": "test",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
