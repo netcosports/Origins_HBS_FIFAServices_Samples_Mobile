@@ -14,8 +14,8 @@ class TeamMatchesStatsController: UIViewController {
   private var teamId: String?
 
   func setupParams(teamId: String) {
-    teamMatchesStatsWidget.setupWidgetParams(teamId: teamId, isTransparent: true)
-    teamMatchesStatsTransparentWidget.setupWidgetParams(teamId: teamId, isTransparent: true)
+    teamMatchesStatsWidget.setupWidgetParams(teamId: teamId)
+    teamMatchesStatsTransparentWidget.setupWidgetParams(teamId: teamId)
   }
 
   private let teamMatchesStatsWidget = HBSSDK.Stats.teamMatchesWidget()

@@ -21,8 +21,8 @@ class TopPlayerStatsController: UIViewController {
 
   func setupViewParams(isTransparent: Bool) {
     self.isTransparent = isTransparent
-    goalsStatsWidget.setupWidgetParams(statsType: .goals, isTransparent: true)
-    assistsStatsWidget.setupWidgetParams(statsType: .assists, isTransparent: false)
+    goalsStatsWidget.setupWidgetParams(statsType: .goals)
+    assistsStatsWidget.setupWidgetParams(statsType: .assists)
   }
 
   private let goalsStatsWidget = HBSSDK.Stats.topPlayersWidget()

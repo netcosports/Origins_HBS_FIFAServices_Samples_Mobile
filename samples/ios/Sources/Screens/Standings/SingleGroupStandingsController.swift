@@ -18,8 +18,8 @@ class SingleGroupStandingsViewController: UIViewController {
   private let disposeBag = DisposeBag()
 
 
-  func setupParams(isExpanded: Bool = false, isTransparent: Bool = false) {
-    groupStandingWidget.setupSingleGroupWidgetParams(groupId: "22075", isExpanded: isExpanded, isTransparent: isTransparent)
+  func setupParams(isExpanded: Bool = false) {
+    groupStandingWidget.setupSingleGroupWidgetParams(groupId: "22075", isExpanded: isExpanded)
   }
 
 

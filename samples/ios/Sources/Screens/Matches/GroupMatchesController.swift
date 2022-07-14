@@ -21,21 +21,19 @@ final class GroupMatchesController: UIViewController {
 
   private let disposeBag = DisposeBag()
 
-  private var isTransparent: Bool = false
+  func setupParams(dataSource: MatchWidgetDataSource) {
 
-  func setupParams(dataSource: MatchWidgetDataSource, isTransparent: Bool = false) {
-    self.isTransparent = isTransparent
 
     switch dataSource {
       case .group(let groupId):
-        smallMatchesWidget.setupGroupWidgetParams(groupId: groupId, isTransparent: isTransparent)
-        matchesMediumWidget.setupGroupWidgetParams(groupId: groupId, isTransparent: isTransparent)
+        smallMatchesWidget.setupGroupWidgetParams(groupId: groupId)
+        matchesMediumWidget.setupGroupWidgetParams(groupId: groupId)
       case .team(let teamId):
-        smallMatchesWidget.setupTeamWidgetParams(teamId: teamId, isTransparent: isTransparent)
-        matchesMediumWidget.setupTeamWidgetParams(teamId: teamId, isTransparent: isTransparent)
+        smallMatchesWidget.setupTeamWidgetParams(teamId: teamId)
+        matchesMediumWidget.setupTeamWidgetParams(teamId: teamId)
       case .round(let roundId):
-        smallMatchesWidget.setupRoundWidgetParams(roundId: roundId, isTransparent: isTransparent)
-        matchesMediumWidget.setupRoundWidgetParams(roundId: roundId, isTransparent: isTransparent)
+        smallMatchesWidget.setupRoundWidgetParams(roundId: roundId)
+        matchesMediumWidget.setupRoundWidgetParams(roundId: roundId)
     }
   }
 
@@ -80,11 +78,7 @@ final class GroupMatchesController: UIViewController {
       smallLabel.textColor = .white
       mediumLabel.textColor = .white
     } else {
-      if (isTransparent) {
-        self.view.backgroundColor = UIColor(red: 0.6, green: 0.05, blue: 0.1, alpha: 1.0)
-      } else {
-        self.view.backgroundColor = .white
-      }
+      self.view.backgroundColor = .white
 
       smallLabel.textColor = .blue
       mediumLabel.textColor = .blue

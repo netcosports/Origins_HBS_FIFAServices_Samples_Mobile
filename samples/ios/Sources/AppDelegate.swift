@@ -31,7 +31,6 @@ public class AppDelegate: UIResponder, UIApplicationDelegate {
 		//FirebaseApp.configure()
 
     HBSSDK.Integration.initSdk()
-    HBSSDK.Integration.allowMultipleFavoriteTeams(allow: true)
 
 		let window = UIWindow(frame: UIScreen.main.bounds)
 		window.backgroundColor = .white

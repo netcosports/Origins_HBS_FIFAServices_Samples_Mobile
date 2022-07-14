@@ -17,41 +17,25 @@ class GroupStandingsSelectTypeController: UIViewController {
 
   private let disposeBag = DisposeBag()
 
-  private let compactSolid: UIButton = {
+  private let compact: UIButton = {
     let button = UIButton()
-    button.setTitle("Compact Solid", for: .normal)
+    button.setTitle("Compact", for: .normal)
+    button.setTitleColor(.white, for: .normal)
+    button.backgroundColor = .darkGray
+    return button
+  }()
+  private let expanded: UIButton = {
+    let button = UIButton()
+    button.setTitle("Expanded", for: .normal)
     button.setTitleColor(.white, for: .normal)
     button.backgroundColor = .darkGray
     return button
   }()
 
-  private let compactTransparent: UIButton = {
-    let button = UIButton()
-    button.setTitle("Compact Transparent", for: .normal)
-    button.setTitleColor(.white, for: .normal)
-    button.backgroundColor = .darkGray
-    return button
-  }()
 
-  private let expandedSolid: UIButton = {
+  private let singleGroup: UIButton = {
     let button = UIButton()
-    button.setTitle("Expanded Solid", for: .normal)
-    button.setTitleColor(.white, for: .normal)
-    button.backgroundColor = .darkGray
-    return button
-  }()
-
-  private let expandedTransparent: UIButton = {
-    let button = UIButton()
-    button.setTitle("Expanded Transparent", for: .normal)
-    button.setTitleColor(.white, for: .normal)
-    button.backgroundColor = .darkGray
-    return button
-  }()
-
-  private let singleSolidCompact: UIButton = {
-    let button = UIButton()
-    button.setTitle("Single Solid Compact", for: .normal)
+    button.setTitle("Single Group Expanded", for: .normal)
     button.setTitleColor(.white, for: .normal)
     button.backgroundColor = .darkGray
     return button
@@ -59,13 +43,11 @@ class GroupStandingsSelectTypeController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.view.addSubviews(compactSolid, compactTransparent, expandedSolid, expandedTransparent, singleSolidCompact)
+    self.view.addSubviews(compact, expanded, singleGroup)
 
     Observable.merge(
-      compactSolid.rx.tap.map { _ in WidgetType.compactSolid},
-      compactTransparent.rx.tap.map { _ in WidgetType.compactTransparent},
-      expandedSolid.rx.tap.map { _ in WidgetType.expandedSolid},
-      expandedTransparent.rx.tap.map { _ in WidgetType.expandedTransparent}
+      compact.rx.tap.map { _ in WidgetType.compact},
+      expanded.rx.tap.map { _ in WidgetType.expaned}
     ).observeOn(MainScheduler.asyncInstance)
       .subscribe(onNext: {[weak self] type in
         self?.openWidgets(type: type)
@@ -73,7 +55,7 @@ class GroupStandingsSelectTypeController: UIViewController {
       .disposed(by: disposeBag)
 
     Observable.merge(
-      singleSolidCompact.rx.tap.map { _ in WidgetType.compactSolid}
+      singleGroup.rx.tap.map { _ in WidgetType.expaned}
     ).observeOn(MainScheduler.asyncInstance)
       .subscribe(onNext: {[weak self] type in
         self?.openSingleWidgets(type: type)
@@ -86,14 +68,10 @@ class GroupStandingsSelectTypeController: UIViewController {
   private func openSingleWidgets(type: WidgetType) {
     let widgetController = SingleGroupStandingsViewController()
     switch type {
-    case .compactSolid:
-      widgetController.setupParams(isExpanded: false, isTransparent: false)
-    case .compactTransparent:
-      widgetController.setupParams(isExpanded: false, isTransparent: true)
-    case .expandedSolid:
-      widgetController.setupParams(isExpanded: true, isTransparent: false)
-    case .expandedTransparent:
-      widgetController.setupParams(isExpanded: true, isTransparent: true)
+    case .compact:
+      widgetController.setupParams(isExpanded: false)
+    case .expaned:
+      widgetController.setupParams(isExpanded: true)
     }
 
     navigationController?.pushViewController(widgetController, animated: true)
@@ -102,14 +80,10 @@ class GroupStandingsSelectTypeController: UIViewController {
   private func openWidgets(type: WidgetType) {
     let widgetController = GroupStandingsViewController()
     switch type {
-    case .compactSolid:
-      widgetController.setupParams(isExpanded: false, isTransparent: false)
-    case .compactTransparent:
-      widgetController.setupParams(isExpanded: false, isTransparent: true)
-    case .expandedSolid:
-      widgetController.setupParams(isExpanded: true, isTransparent: false)
-    case .expandedTransparent:
-      widgetController.setupParams(isExpanded: true, isTransparent: true)
+    case .compact:
+      widgetController.setupParams(isExpanded: false)
+    case .expaned:
+      widgetController.setupParams(isExpanded: true)
     }
 
     navigationController?.pushViewController(widgetController, animated: true)
@@ -130,20 +104,15 @@ class GroupStandingsSelectTypeController: UIViewController {
 
   override func viewDidLayoutSubviews() {
     super.viewDidLayoutSubviews()
-    compactSolid.pin.top(view.safeAreaInsets.top).horizontally(20.ui).height(100.ui)
-    compactTransparent.pin.below(of: compactSolid).marginTop(20.ui).horizontally(20.ui).height(100.ui)
+    compact.pin.top(view.safeAreaInsets.top).horizontally(20.ui).height(100.ui)
+    expanded.pin.below(of: compact).marginTop(20.ui).horizontally(20.ui).height(100.ui)
 
-    expandedSolid.pin.below(of: compactTransparent).marginTop(20.ui).horizontally(20.ui).height(100.ui)
-    expandedTransparent.pin.below(of: expandedSolid).marginTop(20.ui).horizontally(20.ui).height(100.ui)
-
-    singleSolidCompact.pin.below(of: expandedTransparent).marginTop(20.ui).horizontally(20.ui).height(100.ui)
+    singleGroup.pin.below(of: expanded).marginTop(20.ui).horizontally(20.ui).height(100.ui)
   }
 
   private enum WidgetType {
-    case compactSolid
-    case compactTransparent
-    case expandedSolid
-    case expandedTransparent
+    case compact
+    case expaned
   }
   
 }

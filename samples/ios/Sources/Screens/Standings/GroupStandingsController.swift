@@ -17,10 +17,8 @@ class GroupStandingsViewController: UIViewController {
 
   private let disposeBag = DisposeBag()
 
-  private var isTransparent = false
-  func setupParams(isExpanded: Bool = false, isTransparent: Bool = false) {
-    self.isTransparent = isTransparent
-    groupStandingWidget.setupAllGroupsWidgetParams(isExpanded: isExpanded, isTransparent: isTransparent)
+  func setupParams(isExpanded: Bool = false) {
+    groupStandingWidget.setupAllGroupsWidgetParams(isExpanded: isExpanded)
   }
 
 
@@ -34,11 +32,7 @@ class GroupStandingsViewController: UIViewController {
     if self.traitCollection.userInterfaceStyle == .dark {
       self.view.backgroundColor = .black
     } else {
-      if (isTransparent) {
-        self.view.backgroundColor = UIColor(red: 0.6, green: 0.05, blue: 0.1, alpha: 1.0)
-      } else {
-        self.view.backgroundColor = .white
-      }
+      self.view.backgroundColor = .white
     }
   }
 
