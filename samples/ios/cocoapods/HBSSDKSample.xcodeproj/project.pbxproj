@@ -8,17 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		048EFBF9E6CC1433F93131A8 /* Pods_HBSSDKSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6A553DF2B64B09A8A32E08C /* Pods_HBSSDKSample.framework */; };
-		AA1BD647282D0AA200E9B859 /* ChampionshipController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1BD632282D0AA200E9B859 /* ChampionshipController.swift */; };
-		AA1BD648282D0AA200E9B859 /* GroupStandingsSelectTypeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1BD634282D0AA200E9B859 /* GroupStandingsSelectTypeController.swift */; };
-		AA1BD649282D0AA200E9B859 /* GroupStandingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1BD635282D0AA200E9B859 /* GroupStandingsController.swift */; };
-		AA1BD64A282D0AA200E9B859 /* SingleGroupStandingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1BD636282D0AA200E9B859 /* SingleGroupStandingsController.swift */; };
-		AA1BD64B282D0AA200E9B859 /* GroupMatchesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1BD638282D0AA200E9B859 /* GroupMatchesController.swift */; };
-		AA1BD64C282D0AA200E9B859 /* GroupMatchesTypeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1BD639282D0AA200E9B859 /* GroupMatchesTypeController.swift */; };
-		AA1BD64D282D0AA200E9B859 /* MatchCenterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1BD63A282D0AA200E9B859 /* MatchCenterController.swift */; };
-		AA1BD64E282D0AA200E9B859 /* StatsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1BD63C282D0AA200E9B859 /* StatsController.swift */; };
-		AA1BD64F282D0AA200E9B859 /* TeamMatchesStatsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1BD63D282D0AA200E9B859 /* TeamMatchesStatsController.swift */; };
-		AA1BD650282D0AA200E9B859 /* TopPlayerStatsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1BD63F282D0AA200E9B859 /* TopPlayerStatsController.swift */; };
-		AA1BD651282D0AA200E9B859 /* TopPlayerStatsTypeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1BD640282D0AA200E9B859 /* TopPlayerStatsTypeController.swift */; };
 		AA1BD652282D0AA200E9B859 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1BD641282D0AA200E9B859 /* AppDelegate.swift */; };
 		AA1BD654282D0AA200E9B859 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA1BD645282D0AA200E9B859 /* GoogleService-Info.plist */; };
 		AA1BD655282D0AA200E9B859 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA1BD646282D0AA200E9B859 /* Assets.xcassets */; };
@@ -30,17 +19,6 @@
 		92972D6C77858D8E635E42D0 /* Pods-OnRewindSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnRewindSample.debug.xcconfig"; path = "Target Support Files/Pods-OnRewindSample/Pods-OnRewindSample.debug.xcconfig"; sourceTree = "<group>"; };
 		9E98307DBED8032E044DC8CB /* Pods-HBSSDKSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HBSSDKSample.release.xcconfig"; path = "Target Support Files/Pods-HBSSDKSample/Pods-HBSSDKSample.release.xcconfig"; sourceTree = "<group>"; };
 		AA1BD62E282D0AA200E9B859 /* iosApp.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; name = iosApp.entitlements; path = ../iosApp.entitlements; sourceTree = "<group>"; };
-		AA1BD632282D0AA200E9B859 /* ChampionshipController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChampionshipController.swift; sourceTree = "<group>"; };
-		AA1BD634282D0AA200E9B859 /* GroupStandingsSelectTypeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupStandingsSelectTypeController.swift; sourceTree = "<group>"; };
-		AA1BD635282D0AA200E9B859 /* GroupStandingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupStandingsController.swift; sourceTree = "<group>"; };
-		AA1BD636282D0AA200E9B859 /* SingleGroupStandingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleGroupStandingsController.swift; sourceTree = "<group>"; };
-		AA1BD638282D0AA200E9B859 /* GroupMatchesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupMatchesController.swift; sourceTree = "<group>"; };
-		AA1BD639282D0AA200E9B859 /* GroupMatchesTypeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupMatchesTypeController.swift; sourceTree = "<group>"; };
-		AA1BD63A282D0AA200E9B859 /* MatchCenterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchCenterController.swift; sourceTree = "<group>"; };
-		AA1BD63C282D0AA200E9B859 /* StatsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsController.swift; sourceTree = "<group>"; };
-		AA1BD63D282D0AA200E9B859 /* TeamMatchesStatsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamMatchesStatsController.swift; sourceTree = "<group>"; };
-		AA1BD63F282D0AA200E9B859 /* TopPlayerStatsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopPlayerStatsController.swift; sourceTree = "<group>"; };
-		AA1BD640282D0AA200E9B859 /* TopPlayerStatsTypeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopPlayerStatsTypeController.swift; sourceTree = "<group>"; };
 		AA1BD641282D0AA200E9B859 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA1BD642282D0AA200E9B859 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		AA1BD645282D0AA200E9B859 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -72,69 +50,10 @@
 		AA1BD62F282D0AA200E9B859 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				AA1BD630282D0AA200E9B859 /* Screens */,
 				AA1BD641282D0AA200E9B859 /* AppDelegate.swift */,
 			);
 			name = Sources;
 			path = ../Sources;
-			sourceTree = "<group>";
-		};
-		AA1BD630282D0AA200E9B859 /* Screens */ = {
-			isa = PBXGroup;
-			children = (
-				AA1BD631282D0AA200E9B859 /* Championship */,
-				AA1BD633282D0AA200E9B859 /* Standings */,
-				AA1BD637282D0AA200E9B859 /* Matches */,
-				AA1BD63A282D0AA200E9B859 /* MatchCenterController.swift */,
-				AA1BD63B282D0AA200E9B859 /* Stats */,
-			);
-			path = Screens;
-			sourceTree = "<group>";
-		};
-		AA1BD631282D0AA200E9B859 /* Championship */ = {
-			isa = PBXGroup;
-			children = (
-				AA1BD632282D0AA200E9B859 /* ChampionshipController.swift */,
-			);
-			path = Championship;
-			sourceTree = "<group>";
-		};
-		AA1BD633282D0AA200E9B859 /* Standings */ = {
-			isa = PBXGroup;
-			children = (
-				AA1BD634282D0AA200E9B859 /* GroupStandingsSelectTypeController.swift */,
-				AA1BD635282D0AA200E9B859 /* GroupStandingsController.swift */,
-				AA1BD636282D0AA200E9B859 /* SingleGroupStandingsController.swift */,
-			);
-			path = Standings;
-			sourceTree = "<group>";
-		};
-		AA1BD637282D0AA200E9B859 /* Matches */ = {
-			isa = PBXGroup;
-			children = (
-				AA1BD638282D0AA200E9B859 /* GroupMatchesController.swift */,
-				AA1BD639282D0AA200E9B859 /* GroupMatchesTypeController.swift */,
-			);
-			path = Matches;
-			sourceTree = "<group>";
-		};
-		AA1BD63B282D0AA200E9B859 /* Stats */ = {
-			isa = PBXGroup;
-			children = (
-				AA1BD63C282D0AA200E9B859 /* StatsController.swift */,
-				AA1BD63D282D0AA200E9B859 /* TeamMatchesStatsController.swift */,
-				AA1BD63E282D0AA200E9B859 /* TopPlayers */,
-			);
-			path = Stats;
-			sourceTree = "<group>";
-		};
-		AA1BD63E282D0AA200E9B859 /* TopPlayers */ = {
-			isa = PBXGroup;
-			children = (
-				AA1BD63F282D0AA200E9B859 /* TopPlayerStatsController.swift */,
-				AA1BD640282D0AA200E9B859 /* TopPlayerStatsTypeController.swift */,
-			);
-			path = TopPlayers;
 			sourceTree = "<group>";
 		};
 		AA1BD643282D0AA200E9B859 /* Resources */ = {
@@ -300,17 +219,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA1BD652282D0AA200E9B859 /* AppDelegate.swift in Sources */,
-				AA1BD650282D0AA200E9B859 /* TopPlayerStatsController.swift in Sources */,
-				AA1BD647282D0AA200E9B859 /* ChampionshipController.swift in Sources */,
-				AA1BD64A282D0AA200E9B859 /* SingleGroupStandingsController.swift in Sources */,
-				AA1BD64C282D0AA200E9B859 /* GroupMatchesTypeController.swift in Sources */,
-				AA1BD64F282D0AA200E9B859 /* TeamMatchesStatsController.swift in Sources */,
-				AA1BD64E282D0AA200E9B859 /* StatsController.swift in Sources */,
-				AA1BD648282D0AA200E9B859 /* GroupStandingsSelectTypeController.swift in Sources */,
-				AA1BD651282D0AA200E9B859 /* TopPlayerStatsTypeController.swift in Sources */,
-				AA1BD64D282D0AA200E9B859 /* MatchCenterController.swift in Sources */,
-				AA1BD64B282D0AA200E9B859 /* GroupMatchesController.swift in Sources */,
-				AA1BD649282D0AA200E9B859 /* GroupStandingsController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
