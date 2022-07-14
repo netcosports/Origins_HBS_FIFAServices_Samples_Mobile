@@ -32,7 +32,7 @@
                 android:src="@drawable/logo_qatar" />
 
             <TextView
-                android:id="@+id/compact_solid"
+                android:id="@+id/compact"
                 style="@style/TextStyleSampleButtonTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -40,10 +40,12 @@
                 android:background="@drawable/sample_rounded_background"
                 android:gravity="center"
                 android:padding="@dimen/hbs_championship_content_top_margin"
-                android:text="Compact Solid" />
+                android:text="Compact" />
+
+
 
             <TextView
-                android:id="@+id/compact_transparent"
+                android:id="@+id/expanded"
                 style="@style/TextStyleSampleButtonTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -51,10 +53,12 @@
                 android:background="@drawable/sample_rounded_background"
                 android:gravity="center"
                 android:padding="@dimen/hbs_championship_content_top_margin"
-                android:text="Compact Transparent" />
+                android:text="Expanded" />
+
+
 
             <TextView
-                android:id="@+id/expanded_solid"
+                android:id="@+id/single_group_expanded"
                 style="@style/TextStyleSampleButtonTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -62,29 +66,7 @@
                 android:background="@drawable/sample_rounded_background"
                 android:gravity="center"
                 android:padding="@dimen/hbs_championship_content_top_margin"
-                android:text="Expanded Solid" />
-
-            <TextView
-                android:id="@+id/expanded_transparent"
-                style="@style/TextStyleSampleButtonTitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:background="@drawable/sample_rounded_background"
-                android:gravity="center"
-                android:padding="@dimen/hbs_championship_content_top_margin"
-                android:text="Expanded Transparent" />
-
-            <TextView
-                android:id="@+id/single_group_solid_compact"
-                style="@style/TextStyleSampleButtonTitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:background="@drawable/sample_rounded_background"
-                android:gravity="center"
-                android:padding="@dimen/hbs_championship_content_top_margin"
-                android:text="Single Group Solid Compact" />
+                android:text="Single Group Expanded" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

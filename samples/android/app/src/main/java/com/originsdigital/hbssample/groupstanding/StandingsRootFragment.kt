@@ -27,40 +27,28 @@ class StandingsRootFragment : Fragment() {
             }
         }
 
-        binding.compactSolid.setOnClickListener {
+        binding.compact.setOnClickListener {
             findNavController().navigate(
                 R.id.action_groupStandingRootFragment_to_groupStandingFragment,
-                GroupStandingFragment.buildArgs(StandingsType.SOLID_COMPACT)
+                GroupStandingFragment.buildArgs(StandingsType.COMPACT)
             )
         }
 
-        binding.compactTransparent.setOnClickListener {
+        binding.expanded.setOnClickListener {
             findNavController().navigate(
                 R.id.action_groupStandingRootFragment_to_groupStandingFragment,
-                GroupStandingFragment.buildArgs(StandingsType.TRANSPARENT_COMPACT)
+                GroupStandingFragment.buildArgs(StandingsType.EXPANDED)
             )
         }
 
-        binding.expandedSolid.setOnClickListener {
-            findNavController().navigate(
-                R.id.action_groupStandingRootFragment_to_groupStandingFragment,
-                GroupStandingFragment.buildArgs(StandingsType.SOLID_EXPANDED)
-            )
-        }
 
-        binding.expandedTransparent.setOnClickListener {
-            findNavController().navigate(
-                R.id.action_groupStandingRootFragment_to_groupStandingFragment,
-                GroupStandingFragment.buildArgs(StandingsType.TRANSPARENT_EXPANDED)
-            )
-        }
 
-        binding.singleGroupSolidCompact.setOnClickListener {
+        binding.singleGroupExpanded.setOnClickListener {
             findNavController().navigate(
                 R.id.action_groupStandingRootFragment_to_singleGroupStandingFragment,
                 SingleGroupStandingFragment.buildArgs(
                     groupId = "275079",
-                    type = StandingsType.SOLID_COMPACT
+                    type = StandingsType.EXPANDED
                 )
             )
         }

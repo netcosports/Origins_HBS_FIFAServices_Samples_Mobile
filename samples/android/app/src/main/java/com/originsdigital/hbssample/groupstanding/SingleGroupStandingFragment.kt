@@ -45,8 +45,7 @@ class SingleGroupStandingFragment : Fragment() {
 
         val widget = HbsSdk.standingsWidget(view.context)
         widget.setupDisplayParams(
-            isTransparent = !standingType.solid,
-            isExpanded = standingType.expanded
+            isExpanded = standingType == StandingsType.EXPANDED
         )
         widget.setupSingleGroup(groupId = groupId)
 

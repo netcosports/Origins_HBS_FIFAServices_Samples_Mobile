@@ -39,9 +39,6 @@
         <action
             android:id="@+id/action_home_fragment_to_headToHeadFragment"
             app:destination="@id/headToHeadFragment" />
-        <action
-            android:id="@+id/action_home_fragment_to_injuresFragment"
-            app:destination="@id/injuresFragment" />
 
         <action
             android:id="@+id/action_home_fragment_to_actionsFragment"
@@ -151,11 +148,6 @@
         android:id="@+id/headToHeadFragment"
         android:name="com.originsdigital.hbssample.h2h.HeadToHeadFragment"
         android:label="TeamsFragment"/>
-
-    <fragment
-        android:id="@+id/injuresFragment"
-        android:name="com.originsdigital.hbssample.injures.InjuresFragment"
-        android:label="Injures Fragment"/>
 
     <fragment
         android:id="@+id/actionsFragment"

@@ -42,7 +42,7 @@ android {
 
 dependencies {
 
-    implementation "com.origins-digital.hbswidgets:widgets-whitelabel:1.0.69"
+    implementation "com.origins-digital.hbswidgets:widgets-whitelabel:1.0.73"
     implementation "com.onrewind:onrewind-sdk:1.7.9"
     implementation "com.netcosports.dioptra:exo:1.0.2"
 

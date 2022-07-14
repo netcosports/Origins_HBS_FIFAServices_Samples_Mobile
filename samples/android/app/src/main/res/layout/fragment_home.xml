@@ -113,16 +113,6 @@
                 android:padding="@dimen/hbs_championship_content_top_margin"
                 android:text="Head to Head" />
 
-            <TextView
-                android:id="@+id/injures"
-                style="@style/TextStyleSampleButtonTitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:background="@drawable/sample_rounded_background"
-                android:gravity="center"
-                android:padding="@dimen/hbs_championship_content_top_margin"
-                android:text="Injures" />
 
             <TextView
                 android:id="@+id/actions"

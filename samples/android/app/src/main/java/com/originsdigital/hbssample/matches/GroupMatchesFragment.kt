@@ -51,46 +51,25 @@ class GroupMatchesFragment : Fragment() {
         val commonId = "275075"
 
         when (matchesType) {
-            MatchesType.SOLID_GROUP_COMPACT -> {
+            MatchesType.GROUP -> {
                 widget.setupWithGroup(groupId = commonId)
                 widgetMedium.setupWithGroup(groupId = commonId)
                 widgetLarge.setupWithGroup(groupId = commonId)
             }
-            MatchesType.TRANSPARENT_GROUP_COMPACT -> {
-                widget.setupWithGroup(groupId = commonId)
-                widgetMedium.setupWithGroup(groupId = commonId)
-                widgetLarge.setupWithGroup(groupId = commonId)
-            }
-            MatchesType.SOLID_ROUND_COMPACT -> {
+
+
+            MatchesType.ROUND -> {
                 widget.setupWithRound(roundId = commonId)
                 widgetMedium.setupWithRound(roundId = commonId)
                 widgetLarge.setupWithRound(roundId = commonId)
             }
-            MatchesType.TRANSPARENT_ROUND_COMPACT -> {
-                widget.setupWithRound(roundId = commonId)
-                widgetMedium.setupWithRound(roundId = commonId)
-                widgetLarge.setupWithRound(roundId = commonId)
-            }
-            MatchesType.SOLID_TEAM_COMPACT -> {
+            MatchesType.TEAM -> {
                 widget.setupWithTeam(teamId = commonId)
                 widgetMedium.setupWithTeam(teamId = commonId)
                 widgetLarge.setupWithTeam(teamId = commonId)
             }
-            MatchesType.TRANSPARENT_TEAM_COMPACT -> {
-                widget.setupWithTeam(teamId = commonId)
-                widgetMedium.setupWithTeam(teamId = commonId)
-                widgetLarge.setupWithTeam(teamId = commonId)
-            }
+
         }
-        widgetLarge.setupDisplayParams(
-            isTransparent = !matchesType.solid
-        )
-
-        widgetMedium.setupDisplayParams(
-            isTransparent = !matchesType.solid
-        )
-
-        widget.setupDisplayParams(isTransparent = !matchesType.solid)
 
         binding.widgetContainer.addView(
             widget,

@@ -60,10 +60,6 @@ class HomeFragment : Fragment() {
             findNavController().navigate(R.id.action_home_fragment_to_headToHeadFragment)
         }
 
-        binding.injures.setOnClickListener {
-            findNavController().navigate(R.id.action_home_fragment_to_injuresFragment)
-        }
-
         binding.actions.setOnClickListener {
             findNavController().navigate(R.id.action_home_fragment_to_actionsFragment)
         }

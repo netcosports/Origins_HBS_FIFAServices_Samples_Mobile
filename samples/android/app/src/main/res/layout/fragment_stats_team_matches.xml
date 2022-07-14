@@ -30,7 +30,6 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="#117"
         android:visibility="gone"
         android:layout_weight="1">
 
@@ -38,7 +37,6 @@
             android:id="@+id/team_matches_widget_transparent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:hbs_widget_transparent="true"
             />
     </FrameLayout>
 

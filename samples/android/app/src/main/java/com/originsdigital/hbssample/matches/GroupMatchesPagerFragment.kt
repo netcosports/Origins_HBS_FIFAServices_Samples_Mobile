@@ -27,45 +27,25 @@ class GroupMatchesPagerFragment : Fragment() {
             }
         }
 
-        binding.solidGroup.setOnClickListener {
+        binding.group.setOnClickListener {
             findNavController().navigate(
                 R.id.action_groupMatches_fragment_to_groupMatchesFragment,
-                GroupMatchesFragment.buildArgs(MatchesType.SOLID_GROUP_COMPACT)
+                GroupMatchesFragment.buildArgs(MatchesType.GROUP)
             )
         }
 
-        binding.transparentGroup.setOnClickListener {
+
+        binding.round.setOnClickListener {
             findNavController().navigate(
                 R.id.action_groupMatches_fragment_to_groupMatchesFragment,
-                GroupMatchesFragment.buildArgs(MatchesType.TRANSPARENT_GROUP_COMPACT)
+                GroupMatchesFragment.buildArgs(MatchesType.ROUND)
             )
         }
 
-        binding.solidRound.setOnClickListener {
+        binding.team.setOnClickListener {
             findNavController().navigate(
                 R.id.action_groupMatches_fragment_to_groupMatchesFragment,
-                GroupMatchesFragment.buildArgs(MatchesType.SOLID_ROUND_COMPACT)
-            )
-        }
-
-        binding.transparentRound.setOnClickListener {
-            findNavController().navigate(
-                R.id.action_groupMatches_fragment_to_groupMatchesFragment,
-                GroupMatchesFragment.buildArgs(MatchesType.TRANSPARENT_ROUND_COMPACT)
-            )
-        }
-
-        binding.solidTeam.setOnClickListener {
-            findNavController().navigate(
-                R.id.action_groupMatches_fragment_to_groupMatchesFragment,
-                GroupMatchesFragment.buildArgs(MatchesType.SOLID_TEAM_COMPACT)
-            )
-        }
-
-        binding.transparentTeam.setOnClickListener {
-            findNavController().navigate(
-                R.id.action_groupMatches_fragment_to_groupMatchesFragment,
-                GroupMatchesFragment.buildArgs(MatchesType.TRANSPARENT_TEAM_COMPACT)
+                GroupMatchesFragment.buildArgs(MatchesType.TEAM)
             )
         }
     }

@@ -27,8 +27,7 @@
             <com.originsdigital.hbswidgets.stats.topplayer.TopPlayerStatsWidget
                 android:id="@+id/goals"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:hbs_top_player_stats_transparent="true"/>
+                android:layout_height="wrap_content"/>
 
             <com.originsdigital.hbswidgets.stats.topplayer.TopPlayerStatsWidget
                 android:id="@+id/assists"

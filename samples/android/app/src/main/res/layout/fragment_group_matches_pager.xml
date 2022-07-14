@@ -33,69 +33,40 @@
 
             <TextView
                 style="@style/TextStyleSampleButtonTitle"
-                android:id="@+id/solid_group"
+                android:id="@+id/group"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:padding="@dimen/hbs_championship_content_top_margin"
                 android:gravity="center"
                 android:background="@drawable/sample_rounded_background"
-                android:text="Solid Group Matches" />
+                android:text="Group Matches" />
+
 
             <TextView
                 style="@style/TextStyleSampleButtonTitle"
-                android:id="@+id/transparent_group"
+                android:id="@+id/round"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:padding="@dimen/hbs_championship_content_top_margin"
                 android:gravity="center"
                 android:background="@drawable/sample_rounded_background"
-                android:text="Transparent Group Matches" />
+                android:text="Round Matches" />
+
+
 
             <TextView
                 style="@style/TextStyleSampleButtonTitle"
-                android:id="@+id/solid_round"
+                android:id="@+id/team"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:padding="@dimen/hbs_championship_content_top_margin"
                 android:gravity="center"
                 android:background="@drawable/sample_rounded_background"
-                android:text="Solid Round Matches" />
+                android:text="Team Matches" />
 
-            <TextView
-                style="@style/TextStyleSampleButtonTitle"
-                android:id="@+id/transparent_round"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:padding="@dimen/hbs_championship_content_top_margin"
-                android:gravity="center"
-                android:background="@drawable/sample_rounded_background"
-                android:text="Transparent Round Matches" />
-
-            <TextView
-                style="@style/TextStyleSampleButtonTitle"
-                android:id="@+id/solid_team"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:padding="@dimen/hbs_championship_content_top_margin"
-                android:gravity="center"
-                android:background="@drawable/sample_rounded_background"
-                android:text="Solid Team Matches" />
-
-            <TextView
-                style="@style/TextStyleSampleButtonTitle"
-                android:id="@+id/transparent_team"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:padding="@dimen/hbs_championship_content_top_margin"
-                android:gravity="center"
-                android:background="@drawable/sample_rounded_background"
-                android:text="Transparent Team Matches" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
