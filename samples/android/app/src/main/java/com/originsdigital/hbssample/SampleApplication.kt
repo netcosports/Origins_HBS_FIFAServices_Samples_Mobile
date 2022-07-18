@@ -17,7 +17,6 @@ class SampleApplication: Application() {
                 .setBaseUrl("https://api-gateway.onrewind.tv/main-api/")
                 .build()
         )
-        HbsSdk.allowMultipleFavoriteTeams(false)
         HbsSdk.setOnVideoClickListener(object : HbsSdk.OnVideoClickListener {
             override fun playEventId(context: Context, eventId: String) {
                 TODO("Not yet implemented")

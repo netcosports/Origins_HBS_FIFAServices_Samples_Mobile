@@ -16,8 +16,8 @@ end
 
 target 'HBSSDKSample' do
 
-  download_spec!(url: 'https://origins-mobile-products.s3.eu-west-1.amazonaws.com/hbssdk/whitelabel/1.0.74/HBSSDK.podspec')
-  download_spec!(url: 'https://origins-mobile-products.s3.eu-west-1.amazonaws.com/hbssdk/whitelabel/1.0.74/hbsshared.podspec')
+  download_spec!(url: 'https://origins-mobile-products.s3.eu-west-1.amazonaws.com/hbssdk/whitelabel/1.0.75/HBSSDK.podspec')
+  download_spec!(url: 'https://origins-mobile-products.s3.eu-west-1.amazonaws.com/hbssdk/whitelabel/1.0.75/hbsshared.podspec')
   download_spec!(url: 'https://origins-mobile-products.s3.eu-west-1.amazonaws.com/OnRewindSDK.podspec')
 
   # SDK specs
