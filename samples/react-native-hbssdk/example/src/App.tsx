@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import { StyleSheet, SafeAreaView, ScrollView } from 'react-native';
+
 import { TopPlayerStats } from 'react-native-hbssdk';
 import { TeamMatches } from 'react-native-hbssdk';
 import { Videos } from 'react-native-hbssdk';
@@ -9,14 +10,9 @@ import { Championship } from 'react-native-hbssdk';
 import { Favorites } from 'react-native-hbssdk';
 import { HeadToHead } from 'react-native-hbssdk';
 import { TeamMatchesStats } from 'react-native-hbssdk';
-
-//import { MatchCenter } from 'react-native-hbssdk';
-
 import { LargeMatches } from 'react-native-hbssdk';
 import { MediumMatches } from 'react-native-hbssdk';
 import { SmallMatches } from 'react-native-hbssdk';
-
-
 import { TeamBoard } from 'react-native-hbssdk';
 import { Venue } from 'react-native-hbssdk';
 import { Watch } from 'react-native-hbssdk';
@@ -33,26 +29,31 @@ export default function App() {
         style={{ width: "100%", height: "100%", backgroundColor: '' }}
         contentContainerStyle={{ width: "100%" }}>
 
-        <TeamBoard teamId="someId" style={styles.teamBoard} />
-        <Venue style={styles.venue} />
-        <Watch teamId="someId" style={styles.watch} />
-
-        <TeamMatchesStats teamId="someId" style={styles.teamMatchesStats} />
         <SmallMatches data={{ groupId: "someId"}} style={styles.smallMatches} />
         <MediumMatches data={{ teamId: "someId"}} style={styles.mediumMatches} />
         <LargeMatches data={{ roundId: "someId"}} style={styles.largeMatchesWithEvents} />
+
+        <TeamMatchesStats teamId="someId" style={styles.teamMatchesStats} />
+        <Watch teamId="someId" style={styles.watch} />
+        <Venue style={styles.venue} />
+        <HeadToHead data={{ teamId1: "some", teamId2: "another" }} style={styles.headToHead} />
+        <Favorites style={styles.favorites} />
+        <Championship  style={styles.championship} />
+        <TeamBoard teamId="someId" style={styles.teamBoard} />
+        <Standings data={{ groupId: "no", isExpanded: true }} style={styles.standings} />
+
         <TopPlayerStats statType={"goals"} style={styles.topPlayerStats} />
         <TopPlayerStats statType={"assist"} style={styles.topPlayerStats} />
         <TeamMatches teamId={"anyId"} style={styles.teamMatches} />
         <Videos style={styles.videos} />
-        <Standings data={{ groupId: "no", isExpanded: true }} style={styles.standings} />
-        <Championship  style={styles.championship} />
-        <Favorites style={styles.favorites} />
-        <HeadToHead data={{ teamId1: "some", teamId2: "another" }} style={styles.headToHead} />
+
+{/*
+*/}
       </ScrollView>
     </SafeAreaView>
   );
 }
+
 //
 //         <MatchCenter matchId={"anyId"} style={styles.matchCenter} />
 //         <Championship _onOpenMatchDetails={_onOpenMatchDetails} style={styles.championship} />

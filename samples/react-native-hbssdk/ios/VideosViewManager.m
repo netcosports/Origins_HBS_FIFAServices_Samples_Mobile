@@ -21,23 +21,8 @@ RCT_EXPORT_MODULE(Videos);
   return view;
 }
 
-//RCT_CUSTOM_VIEW_PROPERTY(statType, NSString, UIView<VideoWidget>)
-//{
-//  NSString *typeString = [RCTConvert NSString:json];
-//  TopPlayerStatsWidgetType type = [typeString isEqualToString:@"goal"] ?
-//    TopPlayerStatsWidgetTypeGoals :
-//    TopPlayerStatsWidgetTypeAssists;
-//
-//  [view setupWidgetParamsWithStatsType:type isTransparent:false];
-//}
-
 + (BOOL)requiresMainQueueSetup {
   return true;
-}
-
-- (NSDictionary *)constantsToExport {
-  CGFloat height = [Videos sizeFor:CGSizeMake(100.0, 0.0)].height;
-  return @{ @"ComponentHeight": @(height) };
 }
 
 @end

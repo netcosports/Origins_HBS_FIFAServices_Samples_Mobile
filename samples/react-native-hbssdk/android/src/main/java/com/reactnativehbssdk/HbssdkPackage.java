@@ -8,7 +8,6 @@ import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.uimanager.ViewManager;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 public class HbssdkPackage implements ReactPackage {
@@ -27,7 +26,18 @@ public class HbssdkPackage implements ReactPackage {
         return Arrays.<ViewManager>asList(
                 new TopPlayerStatsViewManager(reactContext),
                 new TeamMatchesViewManager(reactContext),
-                new VideosViewManager(reactContext)
+                new VideosViewManager(reactContext),
+                new StandingsViewManager(reactContext),
+                new TeamBoardViewManager(reactContext),
+                new ChampionshipViewManager(reactContext),
+                new FavoritesViewManager(reactContext),
+                new HeadToHeadViewManager(reactContext),
+                new VenueViewManager(reactContext),
+                new WatchViewManager(reactContext),
+                new TeamMatchesStatsViewManager(reactContext),
+                new SmallMatchesViewManager(reactContext),
+                new MediumMatchesViewManager(reactContext),
+                new LargeMatchesViewManager(reactContext)
         );
     }
 
