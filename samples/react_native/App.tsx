@@ -17,7 +17,7 @@ import { TeamBoard } from '@origins-digital/react-native-hbssdk';
 import { Venue } from '@origins-digital/react-native-hbssdk';
 import { Watch } from '@origins-digital/react-native-hbssdk';
 
-import HBSSDK from 'react-native-hbssdk'
+import HBSSDK from '@origins-digital/react-native-hbssdk'
 
 export default function App() {
   var _onOpenMatchDetails = (matchId: string) => {
