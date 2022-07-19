@@ -2,20 +2,20 @@ import * as React from 'react';
 
 import { StyleSheet, SafeAreaView, ScrollView } from 'react-native';
 
-import { TopPlayerStats } from '@origins-digital/react-native-hbssdk';
-import { TeamMatches } from '@origins-digital/react-native-hbssdk';
-import { Videos } from '@origins-digital/react-native-hbssdk';
-import { Standings } from '@origins-digital/react-native-hbssdk';
-import { Championship } from '@origins-digital/react-native-hbssdk';
-import { Favorites } from '@origins-digital/react-native-hbssdk';
-import { HeadToHead } from '@origins-digital/react-native-hbssdk';
-import { TeamMatchesStats } from '@origins-digital/react-native-hbssdk';
-import { LargeMatches } from '@origins-digital/react-native-hbssdk';
-import { MediumMatches } from '@origins-digital/react-native-hbssdk';
-import { SmallMatches } from '@origins-digital/react-native-hbssdk';
-import { TeamBoard } from '@origins-digital/react-native-hbssdk';
-import { Venue } from '@origins-digital/react-native-hbssdk';
-import { Watch } from '@origins-digital/react-native-hbssdk';
+import { TopPlayerStats } from 'react-native-hbssdk';
+import { TeamMatches } from 'react-native-hbssdk';
+import { Videos } from 'react-native-hbssdk';
+import { Standings } from 'react-native-hbssdk';
+import { Championship } from 'react-native-hbssdk';
+import { Favorites } from 'react-native-hbssdk';
+import { HeadToHead } from 'react-native-hbssdk';
+import { TeamMatchesStats } from 'react-native-hbssdk';
+import { LargeMatches } from 'react-native-hbssdk';
+import { MediumMatches } from 'react-native-hbssdk';
+import { SmallMatches } from 'react-native-hbssdk';
+import { TeamBoard } from 'react-native-hbssdk';
+import { Venue } from 'react-native-hbssdk';
+import { Watch } from 'react-native-hbssdk';
 
 import HBSSDK from 'react-native-hbssdk'
 

@@ -1,11 +1,9 @@
-# @origins-digital/react-native-hbssdk
-
+# react-native-hbssdk
 HBSSDK
-
 ## Installation
 
 ```sh
-npm install @origins-digital/react-native-hbssdk
+npm install react-native-hbssdk
 ```
 
 ## iOS integration
@@ -21,12 +19,12 @@ def download_spec! (options={})
 end
 
 
-# use links to podspecs provided to you
-download_spec!(url: 'https://origins-mobile-products.s3.eu-west-1.amazonaws.com/hbssdk/whitelabel/1.0.71/HBSSDK.podspec')
-download_spec!(url: 'https://origins-mobile-products.s3.eu-west-1.amazonaws.com/hbssdk/whitelabel/1.0.71/hbsshared.podspec')
-download_spec!(url: 'https://origins-mobile-products.s3.eu-west-1.amazonaws.com/OnRewindSDK.podspec')
-
 target 'your_project_target' do
+  # use links to podspecs provided to you
+  download_spec!(url: 'https://origins-mobile-products.s3.eu-west-1.amazonaws.com/hbssdk/whitelabel/1.0.71/HBSSDK.podspec')
+  download_spec!(url: 'https://origins-mobile-products.s3.eu-west-1.amazonaws.com/hbssdk/whitelabel/1.0.71/hbsshared.podspec')
+  download_spec!(url: 'https://origins-mobile-products.s3.eu-west-1.amazonaws.com/OnRewindSDK.podspec')
+
   # SDK specs
   pod 'hbsshared', :podspec => './specs/hbsshared.podspec'
   pod 'HBSSDK', :podspec => './specs/HBSSDK.podspec'
@@ -39,13 +37,6 @@ end
 Also, you may need to integrate OnRewind SDK. For this you need to add the following into your AppDelegate.m:
 
 ```objc
-#import <HBSSDK/HBSSDK-Swift.h>
-#import <OnRewindSDK/OnRewindSDK-Swift.h>
-
-// ...
-
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
   [Integration setPresentPlayerBlock:^(PresentationContext * _Nonnull context) {
     [OnRewind presentPlayerWithVideoURL:context.videoURL
                                 isLive:NO
@@ -53,51 +44,8 @@ Also, you may need to integrate OnRewind SDK. For this you need to add the follo
   }];
 
   [OnRewind setWithBaseUrl:@""];
-
-// ...
-}
 ```
-You can check details of cocoapods integration of lib in https://github.com/netcosports/Origins_HBS_FIFAServices_Samples_Mobile/tree/main/samples/ios/cocoapods
-
-## Android integration
-
-Add maven repository to the app build.gradle:
-
-```groovy
-allprojects {
-    repositories {
-        ...
-        maven {
-            url "https://artifactory-blr.netcodev.com/artifactory/libs-release"
-            credentials {
-                username "username"
-                password "password"
-            }
-        }
-    }
-}
-```
-
-Add dependancies: 
-
-```groovy
-implementation "com.origins-digital.hbswidgets:widgets-whitelabel:1.0.69"
-implementation "com.onrewind:onrewind-sdk:1.7.9"
-```
-
-Add OnRewind and HBSSDK integrations into your Appllication implementation:
-
-```java
-HbsSdk.init(this);
-    OnRewind.initialize(
-            new OnRewind.InitParams.Builder()
-                    .setApplicationContext(this)
-                    .setBaseUrl("https://api-gateway.onrewind.tv/main-api/")
-                    .build()
-    );
-```
-
-You can check details of android integration in https://github.com/netcosports/Origins_HBS_FIFAServices_Samples_Mobile/tree/main/samples/android
+You can check integration in https://github.com/netcosports/Origins_HBS_FIFAServices_Samples_Mobile/tree/main/samples/ios/cocoapods
 
 ## Usage
 
