@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   dependencies: {
-    'react-native-hbssdk': {
+    '@origins-digital/react-native-hbssdk': {
       root: path.join(__dirname, '..'),
     },
   },
