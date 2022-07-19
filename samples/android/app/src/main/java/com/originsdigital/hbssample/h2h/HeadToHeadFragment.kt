@@ -24,7 +24,7 @@ class HeadToHeadFragment : Fragment() {
             }
         }
         binding.toolbar.setNavigationOnClickListener { findNavController().popBackStack() }
-        binding.headToHead.setupTeamIds("1111", "2222")
+        binding.headToHead.setupOneTeamId("43963")
     }
 
     override fun onCreateView(
