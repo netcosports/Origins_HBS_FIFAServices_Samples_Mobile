@@ -17,4 +17,4 @@ jobs:
           node-version: 16
       - run: echo //registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }} > .npmrc
       - run: npm install
-      - run: npm run release:dry
+      - run: npm run release
