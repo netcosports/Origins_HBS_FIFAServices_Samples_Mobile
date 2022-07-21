@@ -15,6 +15,11 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - run: echo //registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }} > .npmrc
+          registry-url: 'https://registry.npmjs.org'
       - run: npm install
-      - run: npm run release
+      - run: |
+          git config --global user.name 'Sergei Mikhan'
+          git config --global user.email 'sergei@origins-digital.com'
+          npm run release
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

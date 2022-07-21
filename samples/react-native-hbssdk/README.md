@@ -16,7 +16,7 @@ You neeed to add the following spec into your `Podfile`:
 def download_spec! (options={})
   url = options[:url]
   Dir.chdir('./specs'){
-    `curl -X GET '#{url}' -O -k -f -L`
+    %x(curl -X GET '#{url}' -O -k -f -L)
   }
 end
 
