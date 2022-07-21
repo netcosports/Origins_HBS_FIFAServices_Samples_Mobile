@@ -26,7 +26,7 @@
     "typescript": "tsc --noEmit",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
     "prepare": "bob build",
-    "release": "release-it major",
+    "release": "release-it",
     "release:dry": "release-it --dry-run -Y",
     "example": "yarn --cwd example",
     "bootstrap": "yarn example && yarn && yarn example pods"
