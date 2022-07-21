@@ -1365,10 +1365,10 @@
     "@nodelib/fs.scandir" "2.1.5"
     "fastq" "^1.6.0"
 
-"@origins-digital/react-native-hbssdk@^0.6.0":
-  "integrity" "sha512-KaggSfo3gJAWhrlPZ5b7zm6BWsjFh2eJU4JKngcsnWx3bK+3NWCFLmZj6/1N3lzzfRY+B6+ntDhxF+i8UiIqEw=="
-  "resolved" "https://registry.npmjs.org/@origins-digital/react-native-hbssdk/-/react-native-hbssdk-0.6.0.tgz"
-  "version" "0.6.0"
+"@origins-digital/react-native-hbssdk@^1.0.0":
+  "integrity" "sha512-r674rS7WobBiN7CCMwivzgWASj//Vgyod+g+27vln0g/A2hTntn4Sh749FSjlUc1qcYog8oSQSKqfmUa+/84zA=="
+  "resolved" "https://registry.npmjs.org/@origins-digital/react-native-hbssdk/-/react-native-hbssdk-1.0.1.tgz"
+  "version" "1.0.1"
 
 "@react-native-community/cli-clean@^8.0.0":
   "integrity" "sha512-VY/kwyH5xp6oXiB9bcwa+I9W5k6WR/nX3s85FuMW76hSlgG1UVAGL04uZPwYlSmMZuSOSuoXOaIjJ7wAvQMBpg=="

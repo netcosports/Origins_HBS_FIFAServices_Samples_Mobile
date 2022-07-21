@@ -28,7 +28,7 @@ RCT_EXPORT_MODULE(TeamMatches);
 RCT_CUSTOM_VIEW_PROPERTY(teamId, String, UIView<TeamMatchesStatsWidget>)
 {
   NSString *teamId = [RCTConvert NSString:json];
-  [view setupWidgetParamsWithTeamId:teamId isTransparent:NO];
+  [view setupWidgetParamsWithTeamId:teamId];
 }
 
 @end

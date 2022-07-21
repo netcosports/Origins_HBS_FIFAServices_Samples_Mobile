@@ -28,7 +28,7 @@ RCT_CUSTOM_VIEW_PROPERTY(statType, NSString, UIView<TopPlayerStatsWidget>)
     TopPlayerStatsWidgetTypeGoals :
     TopPlayerStatsWidgetTypeAssists;
 
-  [view setupWidgetParamsWithStatsType:type isTransparent:false];
+  [view setupWidgetParamsWithStatsType:type];
 }
 
 + (BOOL)requiresMainQueueSetup {

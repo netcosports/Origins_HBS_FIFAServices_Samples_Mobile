@@ -10,7 +10,7 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
-    "@origins-digital/react-native-hbssdk": "^0.6.0",
+    "@origins-digital/react-native-hbssdk": "^1.0.0",
     "react": "18.0.0",
     "react-native": "0.69.1"
   },

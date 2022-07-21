@@ -34,7 +34,19 @@
 {
   RCTAppSetupPrepareApp(application);
 
-  RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
+  RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions]
+  ;
+
+  [Integration setPresentPlayerBlock:^(VideoPresentationContext * _Nonnull context) {
+    // NOTE: event id should arrive with context.eventId
+    [OnRewind presentPlayerWithEventId:@"78fbebc2-fc52-439e-81f4-8557bba62c1b" accountKey:@"SkH0O4D5H" fromPresentingViewController:context.presentationController];
+//    [OnRewind presentPlayerWithVideoURL:context.videoURL
+//                                 isLive:NO
+//           fromPresentingViewController:context.presentationController];
+  }];
+
+  [OnRewind setWithBaseUrl:@"https://api-gateway.onrewind.tv/main-api"];
+
 
 #if RCT_NEW_ARCH_ENABLED
   _contextContainer = std::make_shared<facebook::react::ContextContainer const>();
@@ -57,14 +69,6 @@
   rootViewController.view = rootView;
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
-
-  [Integration setPresentPlayerBlock:^(PresentationContext * _Nonnull context) {
-    [OnRewind presentPlayerWithVideoURL:context.videoURL
-                                isLive:NO
-          fromPresentingViewController:context.presentationController];
-  }];
-
-  [OnRewind setWithBaseUrl:@""];
 
   return YES;
 }

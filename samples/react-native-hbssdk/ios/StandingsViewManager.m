@@ -31,9 +31,9 @@ RCT_CUSTOM_VIEW_PROPERTY(data, String, UIView<StandingsWidget>)
   NSString *groupId = nil;
   if ([json objectForKey:@"groupId"] != nil) {
     groupId = [RCTConvert NSString:json[@"groupId"]];
-    [view setupSingleGroupWidgetParamsWithGroupId:groupId isExpanded:isExpanded isTransparent:NO];
+    [view setupSingleGroupWidgetParamsWithGroupId:groupId isExpanded:isExpanded];
   } else {
-    [view setupAllGroupsWidgetParamsWithIsExpanded:isExpanded isTransparent: NO];
+    [view setupAllGroupsWidgetParamsWithIsExpanded:isExpanded];
   }
 }
 

@@ -73,11 +73,11 @@ PODS:
     - FlipperKit/FlipperKitNetworkPlugin
   - fmt (6.2.1)
   - glog (0.3.5)
-  - HBSSDK (1.0.71):
+  - HBSSDK (1.0.77):
     - hbsshared
-  - hbsshared (1.0.71)
+  - hbsshared (1.0.77)
   - libevent (2.1.12)
-  - OnRewindSDK (1.0.0)
+  - OnRewindSDK (0.0.1)
   - OpenSSL-Universal (1.1.1100)
   - RCT-Folly (2021.06.28.00-v2):
     - boost
@@ -288,7 +288,7 @@ PODS:
   - React-jsinspector (0.69.1)
   - React-logger (0.69.1):
     - glog
-  - react-native-hbssdk (0.6.0):
+  - react-native-hbssdk (1.0.1):
     - HBSSDK
     - React-Core
   - React-perflogger (0.69.1)
@@ -536,10 +536,10 @@ SPEC CHECKSUMS:
   FlipperKit: cbdee19bdd4e7f05472a66ce290f1b729ba3cb86
   fmt: ff9d55029c625d3757ed641535fd4a75fedc7ce9
   glog: 3d02b25ca00c2d456734d0bcff864cbc62f6ae1a
-  HBSSDK: 7dd5b1a26a74e497d984e77f006dda7f97ab96bb
-  hbsshared: 6b81da601fc84f58c652a15f0d4c615391fa82d0
+  HBSSDK: 436fe9ec89793919ee70d2c8115e0a41189348d2
+  hbsshared: 888c191c5385b6d0523a7081af4879b73db42ac8
   libevent: 4049cae6c81cdb3654a443be001fb9bdceff7913
-  OnRewindSDK: fbe5f1b507176554c162a133828b22414ad0900f
+  OnRewindSDK: 340854ad784837e19f464449dd695c2feea832bf
   OpenSSL-Universal: ebc357f1e6bc71fa463ccb2fe676756aff50e88c
   RCT-Folly: b9d9fe1fc70114b751c076104e52f3b1b5e5a95a
   RCTRequired: ae07282b2ec9c90d7eb98251603bc3f82403d239
@@ -555,7 +555,7 @@ SPEC CHECKSUMS:
   React-jsiexecutor: 758e70947c232828a66b5ddc42d02b4d010fa26e
   React-jsinspector: 55605caf04e02f9b0e05842b786f1c12dde08f4b
   React-logger: ca970551cb7eea2fd814d0d5f6fc1a471eb53b76
-  react-native-hbssdk: 025a977e6eb7ceaba93002299c859b559e397df7
+  react-native-hbssdk: 2ba3d2aa1fffba0b67ee4ac12cb5be5038e3fd11
   React-perflogger: c9161ff0f1c769993cd11d2751e4331ff4ceb7cd
   React-RCTActionSheet: 2d885b0bea76a5254ef852939273edd8de116180
   React-RCTAnimation: 353fa4fc3c19060068832dd32e555182ec07be45
@@ -573,6 +573,6 @@ SPEC CHECKSUMS:
   Yoga: 7ab6e3ee4ce47d7b789d1cb520163833e515f452
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: 424261c754c7c4665bdbf296ad51886ea9a61055
+PODFILE CHECKSUM: 59ca960469943889b441a30b9e88478472513362
 
 COCOAPODS: 1.11.3
