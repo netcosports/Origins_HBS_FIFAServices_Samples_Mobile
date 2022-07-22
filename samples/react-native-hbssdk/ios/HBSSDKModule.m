@@ -16,7 +16,6 @@
 
 - (instancetype)init {
   [Integration initSdk];
-  [Integration allowMultipleFavoriteTeamsWithAllow:YES];
 
   return [super init];
 }

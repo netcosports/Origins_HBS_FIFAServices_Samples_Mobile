@@ -176,7 +176,7 @@ export const Favorites =
 ////////////////////////
 // head to head
 type HeadToHeadProps = {
-  data: { teamId1: string, teamId2: string };
+  data: { teamId: string, teamId1: string, teamId2: string };
   style: ViewStyle;
 };
 

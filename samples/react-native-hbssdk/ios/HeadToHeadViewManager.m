@@ -27,9 +27,16 @@ RCT_EXPORT_MODULE(HeadToHead);
 
 RCT_CUSTOM_VIEW_PROPERTY(data, String, UIView<HeadToHeadWidget>)
 {
-  NSString *teamId1 = [RCTConvert NSString:json[@"teamId1"]];
-  NSString *teamId2 = [RCTConvert NSString:json[@"teamId2"]];
-  [view setupParamsWithTeam1Id:teamId1 team2Id:teamId2];
+  if ([json objectForKey:@"teamId"] != nil) {
+    NSString *teamId = [RCTConvert NSString:json[@"teamId"]];
+    [view setupOneTeamIdWithTeamId:teamId];
+  } else if ([json objectForKey:@"teamId1"] != nil && [json objectForKey:@"teamId2"] != nil) {
+    NSString *teamId1 = [RCTConvert NSString:json[@"teamId1"]];
+    NSString *teamId2 = [RCTConvert NSString:json[@"teamId2"]];
+    [view setupTwoTeamIdsWithTeam1Id:teamId1 team2Id:teamId2];
+  } else {
+    [view setupNoTeams];
+  }
 }
 
 @end
