@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'OnRewindSDK'
-  s.version = '1.0.0'
+  s.version = '0.0.1'
   s.summary = 'OnRewindSDK framework'
 
   s.homepage = 'https://github.com/netcosports/OnRewindSDK'
@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
     'Sergei Mikhan' => 'sergei@netcosports.com'
   }
 
-  s.source = { :http => 'https://origins-mobile-products.s3.eu-west-1.amazonaws.com/OnRewindSDK.xcframework.zip' }
+  s.source = { :http => 'https://origins-mobile-products.s3.eu-west-1.amazonaws.com/onrewind/whitelabel/0.0.1/OnRewindSDK.xcframework.zip' }
 
   s.ios.deployment_target = '13.0'
   s.ios.vendored_frameworks = 'OnRewindSDK.xcframework'

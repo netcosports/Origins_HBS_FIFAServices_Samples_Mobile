@@ -17,7 +17,7 @@ PODS:
   - ObjcExceptionBridging (1.0.1):
     - ObjcExceptionBridging/ObjcExceptionBridging (= 1.0.1)
   - ObjcExceptionBridging/ObjcExceptionBridging (1.0.1)
-  - OnRewindSDK (1.0.0)
+  - OnRewindSDK (0.0.1)
   - PinLayout (1.10.2)
   - PlayKit (3.26.0.0000):
     - PlayKit/Core (= 3.26.0.0000)
@@ -86,7 +86,7 @@ SPEC CHECKSUMS:
   Dioptra: be1324ec757d12bfa7f56fab4958cdd12bedb286
   KalturaNetKit: 8774fdc2e73d3d013c3df88aa49376dd922d3606
   ObjcExceptionBridging: c30e00eb3700467e695faeea30e26e18bd445001
-  OnRewindSDK: fbe5f1b507176554c162a133828b22414ad0900f
+  OnRewindSDK: 340854ad784837e19f464449dd695c2feea832bf
   PinLayout: d6b1960e4b182b4da1481b9aa6728f621e20708d
   PlayKit: 5498c2375ea5277da9618d1dca9dc5e8b8dab6ea
   PlayKitUtils: 8edb43515c8b91d9aa9a47ae8b5af1e7dd58f6f3
@@ -98,6 +98,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   XCGLogger: 0434f15e3909cdc450bb63faf638b8792ab782ab
 
-PODFILE CHECKSUM: 475c391988cca7547dd8a73d81159ff9bc220cc3
+PODFILE CHECKSUM: cdb87a27d8147d4c317bba93a52a6dae422f5e09
 
 COCOAPODS: 1.11.2

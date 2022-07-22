@@ -16,8 +16,8 @@ let package = Package(
   targets: [
     .binaryTarget(
       name: "OnRewindSDK",
-      url: "https://origins-mobile-products.s3.eu-west-1.amazonaws.com/OnRewindSDK.xcframework.zip",
-      checksum: "7c7f5badcf0e9657eb1bcbccdadd88acfda872b59761cf3510aa9f820bc93c83"
+      url: "https://origins-mobile-products.s3.eu-west-1.amazonaws.com/onrewind/whitelabel/0.0.1/OnRewindSDK.xcframework.zip",
+      checksum: "261bb2983ea0f6dcd94e0880c49f86579023441c7c3a327cafbf7d6779323d2d"
     ),
     .binaryTarget(
       name: "SportBuff",

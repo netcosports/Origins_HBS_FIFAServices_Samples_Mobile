@@ -102,9 +102,12 @@ class ViewController: UIViewController {
     view.addSubview(pushButton)
     view.addSubview(listButton)
 
+    OnRewind.initialize()
+    OnRewind.set(baseUrl: "https://api-gateway.onrewind.tv/main-api")
+
     let params: OnRewind.EventParams = .eventId(
-      "3cd492a6-d4a0-4eea-a0ba-eef6d01a21db",
-      accountKey: "HkXiMvWoU"
+      "78fbebc2-fc52-439e-81f4-8557bba62c1b",
+      accountKey: "SkH0O4D5H"
     )
 
     eventsSubject.subscribe(onNext: { [weak self] event in
@@ -118,11 +121,8 @@ class ViewController: UIViewController {
         )
       case .fullscreen(let params):
           OnRewind.presentPlayer(with: params, from: self, playerWrapperClosure: {
-//            let stream = "https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/hls/DesigningForGoogleCast.m3u8"
-//            let wrapper = AVPlayerDemo(item: .just(AVPlayerItem(url: URL(string: stream)!)))
-//            return wrapper
-
-            let wrapper = KalturaPlayerDemo()
+            //let wrapper = KalturaPlayerDemo()
+            let wrapper = AVPlayerDemo()
             return wrapper
           })
       case .list(let params):

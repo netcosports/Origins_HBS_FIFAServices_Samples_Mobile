@@ -41,11 +41,12 @@ public class AppDelegate: UIResponder, UIApplicationDelegate {
 		self.window = window
 
     OnRewind.initialize()
-    OnRewind.set(baseUrl: "")
+    OnRewind.set(baseUrl: "https://api-gateway.onrewind.tv/main-api")
 
     HBSSDK.Integration.presentPlayerBlock = { context in
+      let params = OnRewind.EventParams.eventId("78fbebc2-fc52-439e-81f4-8557bba62c1b", accountKey: "SkH0O4D5H")
       OnRewind.presentPlayer(
-        with: OnRewind.EventParams.videoStream(context.videoURL, isLive: false),
+        with: params,
         from: context.presentationController
       )
     }

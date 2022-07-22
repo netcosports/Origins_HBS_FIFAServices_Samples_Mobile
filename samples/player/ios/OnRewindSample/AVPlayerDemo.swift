@@ -10,29 +10,56 @@ import Dioptra
 import OnRewindSDK
 import UIKit
 
-import RxCocoa
 import RxSwift
+import RxCocoa
+
+
+enum TestError: OnRewindErrorWithMessage {
+  var isRecoverableError: Bool {
+    return true
+  }
+
+  var message: String {
+    "Some error text"
+  }
+
+  case test
+}
 
 class AVPlayerDemo: UIView, OnRewindSDK.PlayerWrapper {
+
+  func startPlayback(with streamUrl: URL, at timestamp: TimeInSeconds?) {
+    let headers: [String: String] = [
+      "referer": "https://sdk.onrewind.tv"
+    ]
+    let asset = AVURLAsset(url: streamUrl, options:
+                            ["AVURLAssetHTTPHeaderFieldsKey": headers]
+    )
+    let itemToPlay = AVPlayerItem(asset: asset, automaticallyLoadedAssetKeys: nil)
+    bind(item: itemToPlay, into: player)
+    player.replaceCurrentItem(with: itemToPlay)
+  }
+
+//  func setOverlayControlsVisible(closure: @escaping WrapperOverlayControlsVisibleClosure) {
+//  }
+//
+//  func setExternalPlaybackActive(closure: @escaping WrapperExternalPlaybackClosure) {
+//    // FIXME:
+//  }
+
 
   // MARK: - Internal
   fileprivate var progressClosure: OnRewindSDK.WrapperProgressClosure?
   fileprivate var playerStateClosure: OnRewindSDK.WrapperPlayerStateClosure?
   fileprivate var playing = false
-  fileprivate var disposeBag: DisposeBag?
-  fileprivate let avItemDisposeBag = DisposeBag()
+  fileprivate var disposeBag = DisposeBag()
 
   // MARK: - UIView
-  public init(item: Observable<AVPlayerItem>) {
+  public init() {
     super.init(frame: .zero)
     backgroundColor = .black
     playerLayer?.videoGravity = .resizeAspect
     playerLayer?.player = player
-    item.observeOn(MainScheduler.instance).subscribe(onNext: { [weak self] item in
-      guard let player = self?.player else { return }
-      self?.bind(item: item, into: player)
-      self?.player.replaceCurrentItem(with: item)
-    }).disposed(by: avItemDisposeBag)
   }
 
   public required init?(coder aDecoder: NSCoder) {
@@ -54,8 +81,9 @@ class AVPlayerDemo: UIView, OnRewindSDK.PlayerWrapper {
   private var player = AVPlayer()
 
   private func bind(item: AVPlayerItem, into player: AVPlayer) {
-    let disposeBag = DisposeBag()
-    let periodicTimeUpdateInterval = CMTime(value: 1, timescale: 1)
+    disposeBag = DisposeBag()
+
+    let periodicTimeUpdateInterval = CMTime(value: 1, timescale: 10)
     player.rx.periodicTimeObserver(interval: periodicTimeUpdateInterval)
       .filter { [weak self] progress in
         guard let timeRange = self?.player.currentItem?.seekableTimeRanges.last?.timeRangeValue else {
@@ -112,7 +140,7 @@ class AVPlayerDemo: UIView, OnRewindSDK.PlayerWrapper {
     item.rx.playbackLikelyToKeepUp
     .observeOn(MainScheduler.asyncInstance)
     .map { [weak player] in
-      return $0 ? PlayerState.active(state: player?.rate == 0.0 ? .paused : .playing ) : PlayerState.stuck
+      return $0 ? PlayerState.active(state: player?.rate == 0.0 ? .paused : .playing ) : PlayerState.loading
     }.subscribe(onNext: { [weak self] state in
       self?.playerStateClosure?(state)
     }).disposed(by: disposeBag)
@@ -132,12 +160,10 @@ class AVPlayerDemo: UIView, OnRewindSDK.PlayerWrapper {
     item.rx.error.flatMap { error -> Observable<Error> in
       guard let error = error else { return .empty() }
       return .just(error)
-    }.map { error in PlayerState.error(error: .playback(error: error)) }
+    }.map { error in PlayerState.error(error: .playback(error: TestError.test)) }
     .subscribe(onNext: { [weak self] state in
       self?.playerStateClosure?(state)
     }).disposed(by: disposeBag)
-
-    self.disposeBag = disposeBag
   }
 
   // MARK: - PlayerWrapper
@@ -197,4 +223,3 @@ class AVPlayerDemo: UIView, OnRewindSDK.PlayerWrapper {
     // Not Supported
   }
 }
-

@@ -19,11 +19,32 @@ import RxSwift
 
 import PlayKit
 
+fileprivate class RequestAdapter: PKRequestParamsAdapter {
+
+  func updateRequestAdapter(with player: Player) {
+
+  }
+
+  func adapt(requestParams: PKRequestParams) -> PKRequestParams {
+    .init(url: requestParams.url, headers: ["referer": "https://sdk.onrewind.tv"])
+  }
+}
+
 class KalturaPlayerDemo: UIView, OnRewindSDK.PlayerWrapper {
 
+  func startPlayback(with streamUrl: URL, at timestamp: TimeInSeconds?) {
+    let entryId = "sintel"
+    let source = PKMediaSource(entryId, contentUrl: streamUrl, drmData: nil, mediaFormat: .hls)
+    let mediaEntry = PKMediaEntry(entryId, sources: [source], duration: -1)
+    let mediaConfig = MediaConfig(mediaEntry: mediaEntry)
+    self.player.prepare(mediaConfig)
+  }
+
   // MARK: - Internal
-  fileprivate let player: Player = {
-    return PlayKitManager.shared.loadPlayer(pluginConfig: nil)
+  fileprivate lazy var player: Player = {
+    let player = PlayKitManager.shared.loadPlayer(pluginConfig: nil)
+    player.settings.contentRequestAdapter = RequestAdapter()
+    return player
   } ()
   fileprivate let playerContainer = PlayerView()
   fileprivate var progressClosure: OnRewindSDK.WrapperProgressClosure?
@@ -177,12 +198,7 @@ extension KalturaPlayerDemo {
 
   func preparePlayer() {
       self.player.view = playerContainer
-      let contentURL = "https://cdnapisec.kaltura.com/p/2215841/playManifest/entryId/1_w9zx2eti/format/applehttp/protocol/https/a.m3u8"
-      let entryId = "sintel"
-      let source = PKMediaSource(entryId, contentUrl: URL(string: contentURL), drmData: nil, mediaFormat: .hls)
-      let mediaEntry = PKMediaEntry(entryId, sources: [source], duration: -1)
-      let mediaConfig = MediaConfig(mediaEntry: mediaEntry)
-      self.player.prepare(mediaConfig)
+
   }
 }
 
