@@ -1,0 +1,18 @@
+{
+  "images": [
+    {
+      "filename": "back_button.pdf",
+      "idiom": "universal"
+    },
+    {
+      "filename": "back_buttonDark.pdf",
+      "idiom": "universal",
+      "appearances": [
+        {
+          "appearance": "luminosity",
+          "value": "dark"
+        }
+      ]
+    }
+  ]
+}
