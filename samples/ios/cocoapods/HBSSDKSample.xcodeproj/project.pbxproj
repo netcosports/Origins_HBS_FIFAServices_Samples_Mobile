@@ -11,6 +11,25 @@
 		AA1BD652282D0AA200E9B859 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1BD641282D0AA200E9B859 /* AppDelegate.swift */; };
 		AA1BD654282D0AA200E9B859 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA1BD645282D0AA200E9B859 /* GoogleService-Info.plist */; };
 		AA1BD655282D0AA200E9B859 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA1BD646282D0AA200E9B859 /* Assets.xcassets */; };
+		C3638C6A288EEA9000DBB475 /* SampleHeadToHeadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3638C4C288EEA9000DBB475 /* SampleHeadToHeadController.swift */; };
+		C3638C6B288EEA9000DBB475 /* SampleChampionshipController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3638C4E288EEA9000DBB475 /* SampleChampionshipController.swift */; };
+		C3638C6C288EEA9000DBB475 /* SampleTeamBoardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3638C50288EEA9000DBB475 /* SampleTeamBoardController.swift */; };
+		C3638C6D288EEA9000DBB475 /* SampleHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3638C51288EEA9000DBB475 /* SampleHomeController.swift */; };
+		C3638C6E288EEA9000DBB475 /* SampleActionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3638C52288EEA9000DBB475 /* SampleActionController.swift */; };
+		C3638C6F288EEA9000DBB475 /* SampleSingleGroupStandingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3638C54288EEA9000DBB475 /* SampleSingleGroupStandingsController.swift */; };
+		C3638C70288EEA9000DBB475 /* SampleStandingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3638C55288EEA9000DBB475 /* SampleStandingsController.swift */; };
+		C3638C71288EEA9000DBB475 /* SampleCarouselStandingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3638C56288EEA9000DBB475 /* SampleCarouselStandingsController.swift */; };
+		C3638C72288EEA9000DBB475 /* SampleBaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3638C57288EEA9000DBB475 /* SampleBaseController.swift */; };
+		C3638C73288EEA9000DBB475 /* SampleFavoriteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3638C59288EEA9000DBB475 /* SampleFavoriteController.swift */; };
+		C3638C74288EEA9000DBB475 /* SampleVenuesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3638C5B288EEA9000DBB475 /* SampleVenuesController.swift */; };
+		C3638C75288EEA9000DBB475 /* SampleVideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3638C5E288EEA9000DBB475 /* SampleVideoController.swift */; };
+		C3638C76288EEA9000DBB475 /* SampleMatchboxController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3638C60288EEA9000DBB475 /* SampleMatchboxController.swift */; };
+		C3638C77288EEA9000DBB475 /* SampleMatchboxTypeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3638C61288EEA9000DBB475 /* SampleMatchboxTypeController.swift */; };
+		C3638C78288EEA9000DBB475 /* SampleTeamsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3638C63288EEA9000DBB475 /* SampleTeamsController.swift */; };
+		C3638C79288EEA9000DBB475 /* SampleWatchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3638C65288EEA9000DBB475 /* SampleWatchController.swift */; };
+		C3638C7A288EEA9000DBB475 /* SampleTeamMatchesStatsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3638C67288EEA9000DBB475 /* SampleTeamMatchesStatsController.swift */; };
+		C3638C7B288EEA9000DBB475 /* SampleStatsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3638C68288EEA9000DBB475 /* SampleStatsController.swift */; };
+		C3638C7C288EEA9000DBB475 /* SampleTopPlayersStatsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3638C69288EEA9000DBB475 /* SampleTopPlayersStatsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +43,25 @@
 		AA1BD645282D0AA200E9B859 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AA1BD646282D0AA200E9B859 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		AAA4B6FB21E888A700508199 /* HBSSDKSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HBSSDKSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3638C4C288EEA9000DBB475 /* SampleHeadToHeadController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleHeadToHeadController.swift; sourceTree = "<group>"; };
+		C3638C4E288EEA9000DBB475 /* SampleChampionshipController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleChampionshipController.swift; sourceTree = "<group>"; };
+		C3638C50288EEA9000DBB475 /* SampleTeamBoardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleTeamBoardController.swift; sourceTree = "<group>"; };
+		C3638C51288EEA9000DBB475 /* SampleHomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleHomeController.swift; sourceTree = "<group>"; };
+		C3638C52288EEA9000DBB475 /* SampleActionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleActionController.swift; sourceTree = "<group>"; };
+		C3638C54288EEA9000DBB475 /* SampleSingleGroupStandingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleSingleGroupStandingsController.swift; sourceTree = "<group>"; };
+		C3638C55288EEA9000DBB475 /* SampleStandingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleStandingsController.swift; sourceTree = "<group>"; };
+		C3638C56288EEA9000DBB475 /* SampleCarouselStandingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleCarouselStandingsController.swift; sourceTree = "<group>"; };
+		C3638C57288EEA9000DBB475 /* SampleBaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleBaseController.swift; sourceTree = "<group>"; };
+		C3638C59288EEA9000DBB475 /* SampleFavoriteController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleFavoriteController.swift; sourceTree = "<group>"; };
+		C3638C5B288EEA9000DBB475 /* SampleVenuesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleVenuesController.swift; sourceTree = "<group>"; };
+		C3638C5E288EEA9000DBB475 /* SampleVideoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleVideoController.swift; sourceTree = "<group>"; };
+		C3638C60288EEA9000DBB475 /* SampleMatchboxController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleMatchboxController.swift; sourceTree = "<group>"; };
+		C3638C61288EEA9000DBB475 /* SampleMatchboxTypeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleMatchboxTypeController.swift; sourceTree = "<group>"; };
+		C3638C63288EEA9000DBB475 /* SampleTeamsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleTeamsController.swift; sourceTree = "<group>"; };
+		C3638C65288EEA9000DBB475 /* SampleWatchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleWatchController.swift; sourceTree = "<group>"; };
+		C3638C67288EEA9000DBB475 /* SampleTeamMatchesStatsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleTeamMatchesStatsController.swift; sourceTree = "<group>"; };
+		C3638C68288EEA9000DBB475 /* SampleStatsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleStatsController.swift; sourceTree = "<group>"; };
+		C3638C69288EEA9000DBB475 /* SampleTopPlayersStatsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleTopPlayersStatsController.swift; sourceTree = "<group>"; };
 		E6A553DF2B64B09A8A32E08C /* Pods_HBSSDKSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HBSSDKSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -50,6 +88,7 @@
 		AA1BD62F282D0AA200E9B859 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				C3638C4A288EEA9000DBB475 /* Screens */,
 				AA1BD641282D0AA200E9B859 /* AppDelegate.swift */,
 			);
 			name = Sources;
@@ -93,6 +132,128 @@
 				AAA4B6FB21E888A700508199 /* HBSSDKSample.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		C3638C4A288EEA9000DBB475 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				C3638C4B288EEA9000DBB475 /* HeadToHead */,
+				C3638C4D288EEA9000DBB475 /* Championship */,
+				C3638C4F288EEA9000DBB475 /* TeamBoard */,
+				C3638C51288EEA9000DBB475 /* SampleHomeController.swift */,
+				C3638C52288EEA9000DBB475 /* SampleActionController.swift */,
+				C3638C53288EEA9000DBB475 /* Standings */,
+				C3638C57288EEA9000DBB475 /* SampleBaseController.swift */,
+				C3638C58288EEA9000DBB475 /* Favorite */,
+				C3638C5A288EEA9000DBB475 /* Venues */,
+				C3638C5C288EEA9000DBB475 /* Injures */,
+				C3638C5D288EEA9000DBB475 /* Videos */,
+				C3638C5F288EEA9000DBB475 /* Matchbox */,
+				C3638C62288EEA9000DBB475 /* Teams */,
+				C3638C64288EEA9000DBB475 /* Watch */,
+				C3638C66288EEA9000DBB475 /* Stats */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		C3638C4B288EEA9000DBB475 /* HeadToHead */ = {
+			isa = PBXGroup;
+			children = (
+				C3638C4C288EEA9000DBB475 /* SampleHeadToHeadController.swift */,
+			);
+			path = HeadToHead;
+			sourceTree = "<group>";
+		};
+		C3638C4D288EEA9000DBB475 /* Championship */ = {
+			isa = PBXGroup;
+			children = (
+				C3638C4E288EEA9000DBB475 /* SampleChampionshipController.swift */,
+			);
+			path = Championship;
+			sourceTree = "<group>";
+		};
+		C3638C4F288EEA9000DBB475 /* TeamBoard */ = {
+			isa = PBXGroup;
+			children = (
+				C3638C50288EEA9000DBB475 /* SampleTeamBoardController.swift */,
+			);
+			path = TeamBoard;
+			sourceTree = "<group>";
+		};
+		C3638C53288EEA9000DBB475 /* Standings */ = {
+			isa = PBXGroup;
+			children = (
+				C3638C54288EEA9000DBB475 /* SampleSingleGroupStandingsController.swift */,
+				C3638C55288EEA9000DBB475 /* SampleStandingsController.swift */,
+				C3638C56288EEA9000DBB475 /* SampleCarouselStandingsController.swift */,
+			);
+			path = Standings;
+			sourceTree = "<group>";
+		};
+		C3638C58288EEA9000DBB475 /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+				C3638C59288EEA9000DBB475 /* SampleFavoriteController.swift */,
+			);
+			path = Favorite;
+			sourceTree = "<group>";
+		};
+		C3638C5A288EEA9000DBB475 /* Venues */ = {
+			isa = PBXGroup;
+			children = (
+				C3638C5B288EEA9000DBB475 /* SampleVenuesController.swift */,
+			);
+			path = Venues;
+			sourceTree = "<group>";
+		};
+		C3638C5C288EEA9000DBB475 /* Injures */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Injures;
+			sourceTree = "<group>";
+		};
+		C3638C5D288EEA9000DBB475 /* Videos */ = {
+			isa = PBXGroup;
+			children = (
+				C3638C5E288EEA9000DBB475 /* SampleVideoController.swift */,
+			);
+			path = Videos;
+			sourceTree = "<group>";
+		};
+		C3638C5F288EEA9000DBB475 /* Matchbox */ = {
+			isa = PBXGroup;
+			children = (
+				C3638C60288EEA9000DBB475 /* SampleMatchboxController.swift */,
+				C3638C61288EEA9000DBB475 /* SampleMatchboxTypeController.swift */,
+			);
+			path = Matchbox;
+			sourceTree = "<group>";
+		};
+		C3638C62288EEA9000DBB475 /* Teams */ = {
+			isa = PBXGroup;
+			children = (
+				C3638C63288EEA9000DBB475 /* SampleTeamsController.swift */,
+			);
+			path = Teams;
+			sourceTree = "<group>";
+		};
+		C3638C64288EEA9000DBB475 /* Watch */ = {
+			isa = PBXGroup;
+			children = (
+				C3638C65288EEA9000DBB475 /* SampleWatchController.swift */,
+			);
+			path = Watch;
+			sourceTree = "<group>";
+		};
+		C3638C66288EEA9000DBB475 /* Stats */ = {
+			isa = PBXGroup;
+			children = (
+				C3638C67288EEA9000DBB475 /* SampleTeamMatchesStatsController.swift */,
+				C3638C68288EEA9000DBB475 /* SampleStatsController.swift */,
+				C3638C69288EEA9000DBB475 /* SampleTopPlayersStatsController.swift */,
+			);
+			path = Stats;
 			sourceTree = "<group>";
 		};
 		F95796E18033C9DD4C90EA45 /* Pods */ = {
@@ -218,7 +379,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3638C7A288EEA9000DBB475 /* SampleTeamMatchesStatsController.swift in Sources */,
+				C3638C79288EEA9000DBB475 /* SampleWatchController.swift in Sources */,
+				C3638C6B288EEA9000DBB475 /* SampleChampionshipController.swift in Sources */,
+				C3638C6E288EEA9000DBB475 /* SampleActionController.swift in Sources */,
+				C3638C75288EEA9000DBB475 /* SampleVideoController.swift in Sources */,
+				C3638C73288EEA9000DBB475 /* SampleFavoriteController.swift in Sources */,
+				C3638C74288EEA9000DBB475 /* SampleVenuesController.swift in Sources */,
+				C3638C6A288EEA9000DBB475 /* SampleHeadToHeadController.swift in Sources */,
+				C3638C78288EEA9000DBB475 /* SampleTeamsController.swift in Sources */,
+				C3638C71288EEA9000DBB475 /* SampleCarouselStandingsController.swift in Sources */,
+				C3638C7B288EEA9000DBB475 /* SampleStatsController.swift in Sources */,
+				C3638C70288EEA9000DBB475 /* SampleStandingsController.swift in Sources */,
+				C3638C7C288EEA9000DBB475 /* SampleTopPlayersStatsController.swift in Sources */,
+				C3638C6F288EEA9000DBB475 /* SampleSingleGroupStandingsController.swift in Sources */,
+				C3638C77288EEA9000DBB475 /* SampleMatchboxTypeController.swift in Sources */,
+				C3638C6D288EEA9000DBB475 /* SampleHomeController.swift in Sources */,
 				AA1BD652282D0AA200E9B859 /* AppDelegate.swift in Sources */,
+				C3638C76288EEA9000DBB475 /* SampleMatchboxController.swift in Sources */,
+				C3638C72288EEA9000DBB475 /* SampleBaseController.swift in Sources */,
+				C3638C6C288EEA9000DBB475 /* SampleTeamBoardController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
