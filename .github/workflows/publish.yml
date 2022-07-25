@@ -2,7 +2,10 @@ name: NPM Publish
 
 on:
   push:
-    branches: [main]
+    branches: 
+      - main
+    paths:
+      - samples/react-native-hbssdk
 
 jobs:
   publish:
