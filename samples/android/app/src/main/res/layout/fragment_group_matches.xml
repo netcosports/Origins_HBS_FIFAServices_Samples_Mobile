@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="#f3f3f3"
-    android:id="@+id/container">
+    android:orientation="vertical">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -27,7 +27,7 @@
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:id="@+id/group_container_name"
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
+                android:layout_height="200dp"
                 android:orientation="vertical"
                 app:layout_constraintTop_toTopOf="parent">
 
@@ -39,8 +39,8 @@
                     android:paddingTop="@dimen/hbs_standing_content_start_margin"
                     android:text="Small carousel" />
 
-                <FrameLayout
-                    android:id="@+id/widget_container"
+                <com.originsdigital.hbswidgets.matchcenter.SmallMatchesWidget
+                    android:id="@+id/small_matches"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:layout_constraintTop_toBottomOf="@+id/group_container_name" />
@@ -60,10 +60,10 @@
                     android:layout_height="wrap_content"
                     android:paddingStart="@dimen/hbs_standing_content_start_margin"
                     android:paddingTop="@dimen/hbs_standing_content_start_margin"
-                    android:text="Medium carousel"/>
+                    android:text="Medium carousel" />
 
-                <FrameLayout
-                    android:id="@+id/medium_widget_container"
+                <com.originsdigital.hbswidgets.matchcenter.MediumMatchesWidget
+                    android:id="@+id/medium_matches"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
@@ -78,19 +78,19 @@
                 app:layout_constraintTop_toBottomOf="@+id/group_container_name_medium">
 
                 <TextView
-                    android:visibility="gone"
                     android:id="@+id/large_group_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingStart="@dimen/hbs_standing_content_start_margin"
                     android:paddingTop="@dimen/hbs_standing_content_start_margin"
-                    android:text="Large carousel"/>
+                    android:text="Large carousel"
+                    android:visibility="gone" />
 
                 <FrameLayout
-                    android:visibility="gone"
                     android:id="@+id/large_widget_container"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:visibility="gone" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
         </androidx.constraintlayout.widget.ConstraintLayout>

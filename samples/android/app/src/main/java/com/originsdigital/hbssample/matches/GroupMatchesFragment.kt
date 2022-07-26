@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.originsdigital.hbssample.SampleApplication
 import com.originsdigital.hbssample.databinding.FragmentGroupMatchesBinding
-import com.originsdigital.hbswidgets.core.HbsSdk
 
 class GroupMatchesFragment : Fragment() {
 
@@ -44,50 +43,39 @@ class GroupMatchesFragment : Fragment() {
             }
         }
 
-        val widget = HbsSdk.matchesWidget(view.context)
-        val widgetMedium = HbsSdk.matchesMediumWidget(view.context)
-        val widgetLarge = HbsSdk.matchesLargeWidget(view.context)
+        val widget = binding.smallMatches
+        val widgetMedium = binding.mediumMatches
 
-        val commonId = "275075"
+        val groupId = "255937"
+        val roundId = "255951"
+        val teamId = "43960"
+        val matchId = "84872"
+        val secondMatchId = "84864"
 
         when (matchesType) {
             MatchesType.GROUP -> {
-                widget.setupWithGroup(groupId = commonId)
-                widgetMedium.setupWithGroup(groupId = commonId)
-                widgetLarge.setupWithGroup(groupId = commonId)
+                widget.setGroupId(groupId = groupId)
+                widgetMedium.setGroupId(groupId = groupId)
             }
 
 
             MatchesType.ROUND -> {
-                widget.setupWithRound(roundId = commonId)
-                widgetMedium.setupWithRound(roundId = commonId)
-                widgetLarge.setupWithRound(roundId = commonId)
+                widget.setRoundId(roundId = roundId)
+                widgetMedium.setRoundId(roundId = roundId)
             }
             MatchesType.TEAM -> {
-                widget.setupWithTeam(teamId = commonId)
-                widgetMedium.setupWithTeam(teamId = commonId)
-                widgetLarge.setupWithTeam(teamId = commonId)
+                widget.setTeamId(teamId = teamId)
+                widgetMedium.setTeamId(teamId = teamId)
+            }
+            MatchesType.MATCH -> {
+                widget.setMatchId(matchId = matchId)
+                widgetMedium.setMatchId(matchId = secondMatchId)
             }
 
         }
 
-        binding.widgetContainer.addView(
-            widget,
-            ViewGroup.LayoutParams.MATCH_PARENT,
-            ViewGroup.LayoutParams.WRAP_CONTENT
-        )
 
-        binding.mediumWidgetContainer.addView(
-            widgetMedium,
-            ViewGroup.LayoutParams.MATCH_PARENT,
-            ViewGroup.LayoutParams.WRAP_CONTENT
-        )
 
-//        binding.largeWidgetContainer.addView(
-//            widgetLarge,
-//            ViewGroup.LayoutParams.MATCH_PARENT,
-//            ViewGroup.LayoutParams.WRAP_CONTENT
-//        )
     }
 
     companion object {

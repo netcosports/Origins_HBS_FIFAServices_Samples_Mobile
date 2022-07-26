@@ -67,6 +67,17 @@
                 android:background="@drawable/sample_rounded_background"
                 android:text="Team Matches" />
 
+            <TextView
+                style="@style/TextStyleSampleButtonTitle"
+                android:id="@+id/single_match"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:padding="@dimen/hbs_championship_content_top_margin"
+                android:gravity="center"
+                android:background="@drawable/sample_rounded_background"
+                android:text="Single Match" />
+
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

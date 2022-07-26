@@ -48,6 +48,13 @@ class GroupMatchesPagerFragment : Fragment() {
                 GroupMatchesFragment.buildArgs(MatchesType.TEAM)
             )
         }
+
+        binding.singleMatch.setOnClickListener {
+            findNavController().navigate(
+                R.id.action_groupMatches_fragment_to_groupMatchesFragment,
+                GroupMatchesFragment.buildArgs(MatchesType.MATCH)
+            )
+        }
     }
 
     override fun onCreateView(
