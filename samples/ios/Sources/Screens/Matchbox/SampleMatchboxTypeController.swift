@@ -23,22 +23,22 @@ class SampleMatchboxTypeController: SampleBaseController {
   private let teamMatches = UIButton {
     $0.setupHbsButton("Team matches")
   }
+  private let singleMatch = UIButton {
+    $0.setupHbsButton("Single match")
+  }
 
 
   override func viewDidLoad() {
     super.viewDidLoad()
     logo.image = getLogoImage()
     UIButton.appearance().tintColor = .white
-    self.view.addSubviews(logo, groupMatches, roundMatches, teamMatches)
+    self.view.addSubviews(logo, groupMatches, roundMatches, teamMatches, singleMatch)
 
-    let groupId = "255937"
-    let roundId = "255951"
-    let teamId = "43960"
 
     groupMatches.rx.tap.subscribe(
       onNext: {[weak self] _ in
         let controller = SampleMatchboxController()
-        controller.setupParams(dataSource: .group(groupId: groupId))
+        controller.setupParams(matchType: .group)
         self?.openController(controller)
       }
     )
@@ -49,7 +49,7 @@ class SampleMatchboxTypeController: SampleBaseController {
     teamMatches.rx.tap.subscribe(
       onNext: {[weak self] _ in
         let controller = SampleMatchboxController()
-        controller.setupParams(dataSource: .team(teamId: teamId))
+        controller.setupParams(matchType: .team)
         self?.openController(controller)
       }
     )
@@ -59,7 +59,16 @@ class SampleMatchboxTypeController: SampleBaseController {
     roundMatches.rx.tap.subscribe(
       onNext: {[weak self] _ in
         let controller = SampleMatchboxController()
-        controller.setupParams(dataSource: .round(roundId: roundId))
+        controller.setupParams(matchType: .round)
+        self?.openController(controller)
+      }
+    )
+      .disposed(by: disposeBag)
+
+    singleMatch.rx.tap.subscribe(
+      onNext: {[weak self] _ in
+        let controller = SampleMatchboxController()
+        controller.setupParams(matchType: .match)
         self?.openController(controller)
       }
     )
@@ -78,6 +87,8 @@ class SampleMatchboxTypeController: SampleBaseController {
     groupMatches.pin.below(of: logo).marginTop(10.ui).height(75.ui).horizontally(28.ui)
     roundMatches.pin.below(of: groupMatches).marginTop(10.ui).height(75.ui).horizontally(28.ui)
     teamMatches.pin.below(of: roundMatches).marginTop(10.ui).height(75.ui).horizontally(28.ui)
+    singleMatch.pin.below(of: teamMatches).marginTop(10.ui).height(75.ui).horizontally(28.ui)
 
   }
 }
+

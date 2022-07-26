@@ -36,26 +36,42 @@ class SampleMatchboxController: SampleBaseController {
       .height(HBSSDK.Matches.mediumSize(for: view.bounds.size).height)
   }
 
-  private var isTransparent = false
+  func setupParams(matchType: MatchType) {
 
-  func setupParams(dataSource: MatchWidgetDataSource, isTransparent: Bool = false) {
-    self.isTransparent = isTransparent
+    let groupId = "255937"
+    let roundId = "255951"
+    let teamId = "43960"
+    let matchId = "84872"
+    let secondMatchId = "84864"
 
-    switch dataSource {
-      case .group(let groupId):
-        smallMatchesWidget.setupGroupWidgetParams(groupId: groupId)
-        matchesMediumWidget.setupGroupWidgetParams(groupId: groupId)
-      case .team(let teamId):
-        smallMatchesWidget.setupTeamWidgetParams(teamId: teamId)
-        matchesMediumWidget.setupTeamWidgetParams(teamId: teamId)
-      case .round(let roundId):
-        smallMatchesWidget.setupRoundWidgetParams(roundId: roundId)
-        matchesMediumWidget.setupRoundWidgetParams(roundId: roundId)
+    switch matchType {
+    case .group:
+      smallMatchesWidget.setGroupId(groupId: groupId)
+      matchesMediumWidget.setGroupId(groupId: groupId)
+      break
+    case .team:
+      smallMatchesWidget.setTeamId(teamId: teamId)
+      matchesMediumWidget.setTeamId(teamId: teamId)
+      break
+    case .round:
+      smallMatchesWidget.setRoundId(roundId: roundId)
+      matchesMediumWidget.setRoundId(roundId: roundId)
+      break
+    case .match:
+      smallMatchesWidget.setMatchId(matchId: matchId)
+      matchesMediumWidget.setMatchId(matchId: secondMatchId)
+      break
     }
   }
 
   private let smallMatchesWidget = HBSSDK.Matches.smallWidget()
   private let matchesMediumWidget = HBSSDK.Matches.mediumWidget()
 
+  enum MatchType {
+    case group
+    case team
+    case round
+    case match
+  }
   
 }
