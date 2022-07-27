@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#f4f4f4"
-    android:id="@+id/container">
+    android:background="@drawable/sample_fragment_background"
+    android:orientation="vertical">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -13,7 +13,7 @@
         android:layout_height="?actionBarSize"
         app:navigationIcon="@drawable/arrow_left"
         app:title="Top player stats"
-        app:titleTextColor="@android:color/white" />
+        app:titleTextColor="@color/sample_toolbar_text_color" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -27,7 +27,7 @@
             <com.originsdigital.hbswidgets.stats.topplayer.TopPlayerStatsWidget
                 android:id="@+id/goals"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content" />
 
             <com.originsdigital.hbswidgets.stats.topplayer.TopPlayerStatsWidget
                 android:id="@+id/assists"

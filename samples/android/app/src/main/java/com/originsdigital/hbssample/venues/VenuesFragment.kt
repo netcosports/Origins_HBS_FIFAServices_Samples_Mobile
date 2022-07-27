@@ -7,8 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.originsdigital.hbssample.SampleApplication
-import com.originsdigital.hbssample.databinding.FragmentVenuesBinding
+import com.originsdigital.hbswidgets.android.R
+import com.originsdigital.hbswidgets.android.databinding.FragmentVenuesBinding
 import com.originsdigital.hbswidgets.core.HbsSdk
 
 class VenuesFragment : Fragment() {
@@ -34,11 +34,6 @@ class VenuesFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.toolbar.setNavigationOnClickListener { findNavController().popBackStack() }
 
-        when (resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK) {
-            Configuration.UI_MODE_NIGHT_YES -> {
-                binding.container.setBackgroundResource(SampleApplication.backgroundResId)
-            }
-        }
 
         val widget = HbsSdk.venuesWidget(view.context)
 

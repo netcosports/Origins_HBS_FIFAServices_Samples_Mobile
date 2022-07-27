@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/sample_fragment_background"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        app:navigationIcon="@drawable/arrow_left"
+        app:title="Standings Type"
+        app:titleTextColor="@color/sample_toolbar_text_color" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/logo_title"
+                style="@style/TextStyleSampleButtonTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:src="@drawable/logo_qatar" />
+
+            <TextView
+                android:id="@+id/compact"
+                style="@style/TextStyleSampleButtonTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/sample_rounded_background"
+                android:gravity="center"
+                android:padding="@dimen/hbs_championship_content_top_margin"
+                android:text="Compact" />
+
+            <TextView
+                android:id="@+id/expanded"
+                style="@style/TextStyleSampleButtonTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/sample_rounded_background"
+                android:gravity="center"
+                android:padding="@dimen/hbs_championship_content_top_margin"
+                android:text="Expanded" />
+
+            <TextView
+                android:id="@+id/single_group_expanded"
+                style="@style/TextStyleSampleButtonTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/sample_rounded_background"
+                android:gravity="center"
+                android:padding="@dimen/hbs_championship_content_top_margin"
+                android:text="Single group expanded" />
+
+            <TextView
+                android:id="@+id/single_group_compact"
+                style="@style/TextStyleSampleButtonTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/sample_rounded_background"
+                android:gravity="center"
+                android:padding="@dimen/hbs_championship_content_top_margin"
+                android:text="Single group compact" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

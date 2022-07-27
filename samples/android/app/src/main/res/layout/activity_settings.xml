@@ -42,42 +42,8 @@
 
     </RadioGroup>
 
-    <TextView
-        android:id="@+id/favorite_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:text="Favorite mode"
-        app:layout_constraintTop_toBottomOf="@id/radio_group"
-        app:layout_constraintStart_toStartOf="parent"
-        />
 
-    <RadioGroup
-        android:id="@+id/favorite_selector"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="24dp"
-        android:padding="20dp"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/favorite_title">
 
-        <RadioButton
-            android:id="@+id/single"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="Single"/>
 
-        <RadioButton
-            android:id="@+id/multiple"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="Multiple"/>
-
-    </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

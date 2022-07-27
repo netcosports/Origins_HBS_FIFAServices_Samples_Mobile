@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#f4f4f4"
-    android:id="@+id/container"
+    android:background="@drawable/sample_fragment_background"
     android:orientation="vertical">
 
     <androidx.appcompat.widget.Toolbar
@@ -26,46 +26,56 @@
             <ImageView
                 android:id="@+id/logo_title"
                 android:layout_width="wrap_content"
-                android:layout_margin="10dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:src="@drawable/logo_qatar"/>
+                android:layout_margin="10dp"
+                android:src="@drawable/logo_qatar" />
 
             <TextView
-                style="@style/TextStyleSampleButtonTitle"
                 android:id="@+id/group"
+                style="@style/TextStyleSampleButtonTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:padding="@dimen/hbs_championship_content_top_margin"
-                android:gravity="center"
                 android:background="@drawable/sample_rounded_background"
+                android:gravity="center"
+                android:padding="@dimen/hbs_championship_content_top_margin"
                 android:text="Group Matches" />
 
 
             <TextView
-                style="@style/TextStyleSampleButtonTitle"
                 android:id="@+id/round"
+                style="@style/TextStyleSampleButtonTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:padding="@dimen/hbs_championship_content_top_margin"
-                android:gravity="center"
                 android:background="@drawable/sample_rounded_background"
+                android:gravity="center"
+                android:padding="@dimen/hbs_championship_content_top_margin"
                 android:text="Round Matches" />
 
 
-
             <TextView
-                style="@style/TextStyleSampleButtonTitle"
                 android:id="@+id/team"
+                style="@style/TextStyleSampleButtonTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:padding="@dimen/hbs_championship_content_top_margin"
-                android:gravity="center"
                 android:background="@drawable/sample_rounded_background"
+                android:gravity="center"
+                android:padding="@dimen/hbs_championship_content_top_margin"
                 android:text="Team Matches" />
+
+            <TextView
+                android:id="@+id/singleMatch"
+                style="@style/TextStyleSampleButtonTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/sample_rounded_background"
+                android:gravity="center"
+                android:padding="@dimen/hbs_championship_content_top_margin"
+                android:text="Single Match" />
 
         </LinearLayout>
     </ScrollView>

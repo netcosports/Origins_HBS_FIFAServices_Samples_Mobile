@@ -1,14 +1,12 @@
 package com.originsdigital.hbssample.stats
 
-import android.content.res.Configuration
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.originsdigital.hbssample.SampleApplication
-import com.originsdigital.hbssample.databinding.FragmentStatsTeamMatchesBinding
+import com.originsdigital.hbswidgets.android.databinding.FragmentStatsTeamMatchesBinding
 
 class TeamMatchesStatsFragment : Fragment() {
 
@@ -19,13 +17,7 @@ class TeamMatchesStatsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.toolbar.setNavigationOnClickListener { findNavController().popBackStack() }
-        binding.teamMatchesWidget.setupParams(teamId = "275075")
-        binding.teamMatchesWidgetTransparent.setupParams(teamId = "275075")
-        when (resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK) {
-            Configuration.UI_MODE_NIGHT_YES -> {
-                binding.container.setBackgroundResource(SampleApplication.backgroundResId)
-            }
-        }
+        binding.teamMatchesWidget.setupParams(teamId = "43960")
     }
 
     override fun onCreateView(

@@ -7,8 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.originsdigital.hbssample.SampleApplication
-import com.originsdigital.hbssample.databinding.FragmentHeadToHeadBinding
+import com.originsdigital.hbswidgets.android.databinding.FragmentHeadToHeadBinding
 
 class HeadToHeadFragment : Fragment() {
 
@@ -16,15 +15,20 @@ class HeadToHeadFragment : Fragment() {
     private val binding: FragmentHeadToHeadBinding
         get() = requireNotNull(_binding)
 
+    private val type: HeadToHeadType
+    get() = HeadToHeadType.values()[requireArguments().getInt(PARAM_TYPE)]
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        when (resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK) {
-            Configuration.UI_MODE_NIGHT_YES -> {
-                binding.container.setBackgroundResource(SampleApplication.backgroundResId)
-            }
-        }
+        binding.toolbar.title = "Head To Head $type"
         binding.toolbar.setNavigationOnClickListener { findNavController().popBackStack() }
-        binding.headToHead.setupOneTeamId("43963")
+
+        when (type) {
+            HeadToHeadType.NO_TEAMS -> binding.headToHead.setupNoTeams()
+            HeadToHeadType.ONE_TEAM -> binding.headToHead.setupOneTeamId(teamId = "43963")
+            HeadToHeadType.TWO_TEAMS -> binding.headToHead.setupTwoTeamsIds(team1Id = "43938", team2Id = "43925")
+        }
+
     }
 
     override fun onCreateView(
@@ -39,5 +43,18 @@ class HeadToHeadFragment : Fragment() {
     override fun onDestroyView() {
         _binding = null
         super.onDestroyView()
+    }
+
+    enum class HeadToHeadType {
+        NO_TEAMS, ONE_TEAM, TWO_TEAMS
+    }
+
+    companion object {
+        private const val PARAM_TYPE = "param_type"
+        fun buildArguments(type: HeadToHeadType): Bundle {
+            return Bundle().apply {
+                putInt(PARAM_TYPE, type.ordinal)
+            }
+        }
     }
 }

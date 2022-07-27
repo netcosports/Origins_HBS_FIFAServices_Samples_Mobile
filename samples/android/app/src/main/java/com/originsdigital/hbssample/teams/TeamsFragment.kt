@@ -7,8 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.originsdigital.hbssample.SampleApplication
-import com.originsdigital.hbssample.databinding.FragmentTeamsBinding
+import com.originsdigital.hbswidgets.android.R
+import com.originsdigital.hbswidgets.android.databinding.FragmentTeamsBinding
 
 class TeamsFragment : Fragment() {
 
@@ -18,11 +18,7 @@ class TeamsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        when (resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK) {
-            Configuration.UI_MODE_NIGHT_YES -> {
-                binding.container.setBackgroundResource(SampleApplication.backgroundResId)
-            }
-        }
+
         binding.toolbar.setNavigationOnClickListener {
             findNavController().popBackStack()
         }

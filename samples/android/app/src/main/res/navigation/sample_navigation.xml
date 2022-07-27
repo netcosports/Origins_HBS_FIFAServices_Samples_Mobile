@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/home_fragment"
-        android:name="com.originsdigital.hbssample.HomeFragment"
+        android:name="com.originsdigital.hbssample.SampleHomeFragment"
         android:label="Home Fragment"
         tools:layout="@layout/fragment_home" >
         <action
@@ -22,9 +22,6 @@
         <action
             android:id="@+id/action_home_fragment_to_topChampionshipFragment"
             app:destination="@id/championshipFragment" />
-        <action
-            android:id="@+id/action_home_fragment_to_matchCenterFragment"
-            app:destination="@id/matchCenterFragment" />
 
         <action
             android:id="@+id/action_home_fragment_to_topVideosFragment"
@@ -37,9 +34,8 @@
             android:id="@+id/action_home_fragment_to_teamsFragment"
             app:destination="@id/teamsFragment" />
         <action
-            android:id="@+id/action_home_fragment_to_headToHeadFragment"
-            app:destination="@id/headToHeadFragment" />
-
+            android:id="@+id/action_home_fragment_to_headToHeadTypeFragment"
+            app:destination="@id/headToHeadTypeFragment" />
         <action
             android:id="@+id/action_home_fragment_to_actionsFragment"
             app:destination="@id/actionsFragment" />
@@ -48,10 +44,18 @@
             android:id="@+id/action_home_fragment_to_venuesFragment"
             app:destination="@id/venuesFragment" />
 
+        <action
+            android:id="@+id/action_home_fragment_to_teamBoardFragment"
+            app:destination="@id/teamBoardFragment" />
+
+        <action
+            android:id="@+id/action_home_fragment_to_watchFragment"
+            app:destination="@id/watchFragment" />
+
     </fragment>
     <fragment
         android:id="@+id/groupStandingRootFragment"
-        android:name="com.originsdigital.hbssample.groupstanding.StandingsRootFragment"
+        android:name="com.originsdigital.hbssample.groupstanding.SampleStandingsRootFragment"
         android:label="GroupStandingFragment" >
         <action
             android:id="@+id/action_groupStandingRootFragment_to_groupStandingFragment"
@@ -64,7 +68,7 @@
 
     <fragment
         android:id="@+id/groupMatchesRootFragment"
-        android:name="com.originsdigital.hbssample.matches.GroupMatchesPagerFragment"
+        android:name="com.originsdigital.hbssample.matches.MatchesTypeFragment"
         android:label="GroupMatchesPagerFragment" >
 
         <action
@@ -74,7 +78,7 @@
 
     <fragment
         android:id="@+id/groupMatchesFragment"
-        android:name="com.originsdigital.hbssample.matches.GroupMatchesFragment"
+        android:name="com.originsdigital.hbssample.matches.MatchesFragment"
         android:label="GroupMatchesFragment" >
 
     </fragment>
@@ -122,13 +126,9 @@
 
     <fragment
         android:id="@+id/championshipFragment"
-        android:name="com.originsdigital.hbssample.championship.ChampionshipFragment"
+        android:name="com.originsdigital.hbssample.championship.SampleChampionshipFragment"
         android:label="ChampionshipFragment"/>
 
-    <fragment
-        android:id="@+id/matchCenterFragment"
-        android:name="com.originsdigital.hbssample.matchcenter.MatchCenterFragment"
-        android:label="MatchCenterFragment"/>
 
     <fragment
         android:id="@+id/videosFragment"
@@ -137,7 +137,7 @@
 
     <fragment
         android:id="@+id/favoritesFragment"
-        android:name="com.originsdigital.hbssample.favorite.FavoritesFragment"
+        android:name="com.originsdigital.hbssample.favorite.SampleFavoritesFragment"
         android:label="FavoritesFragment"/>
 
     <fragment
@@ -145,17 +145,37 @@
         android:name="com.originsdigital.hbssample.teams.TeamsFragment"
         android:label="TeamsFragment"/>
     <fragment
+        android:id="@+id/headToHeadTypeFragment"
+        android:name="com.originsdigital.hbssample.h2h.HeadToHeadTypeFragment"
+        android:label="HeadToHeadFragment">
+
+        <action android:id="@+id/action_home_fragment_to_headToHeadFragment"
+            app:destination="@id/headToHeadFragment"/>
+
+    </fragment>
+
+    <fragment
         android:id="@+id/headToHeadFragment"
         android:name="com.originsdigital.hbssample.h2h.HeadToHeadFragment"
-        android:label="TeamsFragment"/>
+        android:label="HeadToHeadFragment"/>
 
     <fragment
         android:id="@+id/actionsFragment"
-        android:name="com.originsdigital.hbssample.action.ActionsFragment"
+        android:name="com.originsdigital.hbssample.action.SampleActionsFragment"
         android:label="Actions Fragment"/>
 
     <fragment
         android:id="@+id/venuesFragment"
         android:name="com.originsdigital.hbssample.venues.VenuesFragment"
         android:label="Venues Fragment"/>
+
+    <fragment
+        android:id="@+id/teamBoardFragment"
+        android:name="com.originsdigital.hbssample.teamboard.TeamBoardFragment"
+        android:label="TeamBoardFragment"/>
+
+    <fragment
+        android:id="@+id/watchFragment"
+        android:name="com.originsdigital.hbssample.watch.WatchFragment"
+        android:label="WatchFragment"/>
 </navigation>
