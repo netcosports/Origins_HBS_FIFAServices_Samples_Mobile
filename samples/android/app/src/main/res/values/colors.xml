@@ -3,4 +3,9 @@
     <color name="colorPrimary">#ff8a1538</color>
     <color name="colorPrimaryDark">#ff8a1538</color>
     <color name="colorAccent">#ff8a1538</color>
+
+    <color name="sample_toolbar_text_color">#ff8a1538</color>
+
+    <color name="sample_gradient_start">#f4f4f4</color>
+    <color name="sample_gradient_end">#f4f4f4</color>
 </resources>

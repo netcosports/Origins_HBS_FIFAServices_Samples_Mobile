@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#f3f3f3"
+    android:background="@drawable/sample_fragment_background"
     android:id="@+id/container">
 
     <androidx.appcompat.widget.Toolbar
@@ -13,6 +13,8 @@
         android:layout_height="?actionBarSize"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:title="Actions"
+        app:titleTextColor="@color/sample_toolbar_text_color"
         app:navigationIcon="@drawable/arrow_left" />
 
     <FrameLayout

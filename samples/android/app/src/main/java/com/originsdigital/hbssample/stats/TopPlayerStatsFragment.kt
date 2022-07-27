@@ -7,8 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.originsdigital.hbssample.SampleApplication
-import com.originsdigital.hbssample.databinding.FragmentStatsTopPlayersBinding
+import com.originsdigital.hbswidgets.android.R
+import com.originsdigital.hbswidgets.android.databinding.FragmentStatsTopPlayersBinding
 import com.originsdigital.hbswidgets.stats.topplayer.TopPlayerStatsWidget
 
 class TopPlayerStatsFragment : Fragment() {
@@ -30,11 +30,6 @@ class TopPlayerStatsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.toolbar.setNavigationOnClickListener { findNavController().popBackStack() }
         binding.goals.setupStatsType(TopPlayerStatsWidget.Type.GOALS)
-        when (resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK) {
-            Configuration.UI_MODE_NIGHT_YES -> {
-                binding.container.setBackgroundResource(SampleApplication.backgroundResId)
-            }
-        }
     }
 
     override fun onDestroyView() {

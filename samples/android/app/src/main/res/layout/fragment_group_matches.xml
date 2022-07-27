@@ -4,7 +4,7 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#f3f3f3"
+    android:background="@drawable/sample_fragment_background"
     android:orientation="vertical">
 
     <androidx.appcompat.widget.Toolbar
@@ -62,8 +62,8 @@
                     android:paddingTop="@dimen/hbs_standing_content_start_margin"
                     android:text="Medium carousel" />
 
-                <com.originsdigital.hbswidgets.matchcenter.MediumMatchesWidget
-                    android:id="@+id/medium_matches"
+                <FrameLayout
+                    android:id="@+id/medium_widget_container"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@drawable/sample_fragment_background"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        app:navigationIcon="@drawable/arrow_left"
+        app:title="Select Head To Head type"
+        app:titleTextColor="@color/sample_toolbar_text_color"
+        android:layout_height="?actionBarSize"/>
+
+    <ImageView
+        android:id="@+id/logo_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:src="@drawable/logo_qatar" />
+
+    <TextView
+        android:id="@+id/no_teams"
+        style="@style/TextStyleSampleButtonTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/sample_rounded_background"
+        android:gravity="center"
+        android:padding="@dimen/hbs_championship_content_top_margin"
+        android:text="No teams" />
+
+    <TextView
+        android:id="@+id/one_team"
+        style="@style/TextStyleSampleButtonTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/sample_rounded_background"
+        android:gravity="center"
+        android:padding="@dimen/hbs_championship_content_top_margin"
+        android:text="One team" />
+
+    <TextView
+        android:id="@+id/two_teams"
+        style="@style/TextStyleSampleButtonTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/sample_rounded_background"
+        android:gravity="center"
+        android:padding="@dimen/hbs_championship_content_top_margin"
+        android:text="Two teams" />
+
+</LinearLayout>

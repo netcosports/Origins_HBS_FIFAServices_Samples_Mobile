@@ -7,10 +7,8 @@ import android.widget.RadioGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.widget.Toolbar
-import androidx.core.view.isVisible
 import androidx.preference.PreferenceManager
-import com.originsdigital.hbssample.R
-import com.originsdigital.hbswidgets.core.HbsSdk
+import com.originsdigital.hbswidgets.android.R
 
 class SettingsActivity: AppCompatActivity(R.layout.activity_settings) {
 
@@ -32,24 +30,13 @@ class SettingsActivity: AppCompatActivity(R.layout.activity_settings) {
             setTheme(this@SettingsActivity, checkedId == R.id.light)
         }
 
-        val favoriteGroup = findViewById<RadioGroup>(R.id.favorite_selector)
-        favoriteGroup.isVisible = false
-        favoriteGroup.check(if (isFavoriteMultiple()) R.id.multiple else R.id.single)
-        favoriteGroup.setOnCheckedChangeListener { _, checkedId ->
-//            HbsSdk.allowMultipleFavoriteTeams(checkedId == R.id.multiple)
-        }
-    }
-
-
-    private fun isFavoriteMultiple(): Boolean {
-        return false; // HbsSdk.isMultipleFavoriteTeamsAllowed()
     }
 
     companion object {
         private const val PREFS_THEME = "prefs_theme"
 
         private fun isLight(context: Context): Boolean {
-            return PreferenceManager.getDefaultSharedPreferences(context).getBoolean(PREFS_THEME, true)
+            return PreferenceManager.getDefaultSharedPreferences(context).getBoolean(PREFS_THEME, false)
         }
 
         fun setDefaultTheme(context: Context) {

@@ -7,8 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.originsdigital.hbssample.SampleApplication
-import com.originsdigital.hbssample.databinding.FragmentVideosBinding
+import com.originsdigital.hbswidgets.android.R
+import com.originsdigital.hbswidgets.android.databinding.FragmentVideosBinding
 import com.originsdigital.hbswidgets.core.HbsSdk
 
 class VideosFragment : Fragment() {
@@ -34,12 +34,6 @@ class VideosFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.toolbar.setNavigationOnClickListener { findNavController().popBackStack() }
-
-        when (resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK) {
-            Configuration.UI_MODE_NIGHT_YES -> {
-                binding.container.setBackgroundResource(SampleApplication.backgroundResId)
-            }
-        }
 
         val widget = HbsSdk.videosWidget(view.context)
 

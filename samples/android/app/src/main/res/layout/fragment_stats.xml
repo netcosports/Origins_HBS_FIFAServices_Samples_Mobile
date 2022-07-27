@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#f4f4f4"
-    android:id="@+id/container"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:background="@drawable/sample_fragment_background"
+    android:orientation="vertical">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
         app:navigationIcon="@drawable/arrow_left"
         app:title="Stats"
-        app:titleTextColor="@android:color/white"
-        android:layout_height="?actionBarSize"/>
+        app:titleTextColor="@color/sample_toolbar_text_color" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,32 +24,32 @@
         <ImageView
             android:id="@+id/logo_title"
             android:layout_width="wrap_content"
-            android:layout_margin="10dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:src="@drawable/logo_qatar"/>
+            android:layout_margin="10dp"
+            android:src="@drawable/logo_qatar" />
 
         <TextView
-            style="@style/TextStyleSampleButtonTitle"
             android:id="@+id/top_players"
+            style="@style/TextStyleSampleButtonTitle"
             android:layout_width="match_parent"
-            android:layout_margin="10dp"
             android:layout_height="wrap_content"
-            android:padding="@dimen/hbs_championship_content_top_margin"
-            android:gravity="center"
+            android:layout_margin="10dp"
             android:background="@drawable/sample_rounded_background"
-            android:text="Top Players"/>
+            android:gravity="center"
+            android:padding="@dimen/hbs_championship_content_top_margin"
+            android:text="Top Players" />
 
         <TextView
-            style="@style/TextStyleSampleButtonTitle"
             android:id="@+id/team_matches"
+            style="@style/TextStyleSampleButtonTitle"
             android:layout_width="match_parent"
-            android:layout_margin="10dp"
             android:layout_height="wrap_content"
-            android:padding="@dimen/hbs_championship_content_top_margin"
-            android:gravity="center"
+            android:layout_margin="10dp"
             android:background="@drawable/sample_rounded_background"
-            android:text="Team Matches"/>
+            android:gravity="center"
+            android:padding="@dimen/hbs_championship_content_top_margin"
+            android:text="Team Matches" />
 
     </LinearLayout>
 
