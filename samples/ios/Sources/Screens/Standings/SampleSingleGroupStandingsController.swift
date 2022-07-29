@@ -16,7 +16,7 @@ class SampleSingleGroupStandingsController: SampleBaseController {
 
   func setupParams(isExpanded: Bool = false) {
     groupStandingWidget.setupSingleGroupWidgetParams(
-      groupId: "22075",
+      groupId: "255945",
       isExpanded: isExpanded
     )
   }
