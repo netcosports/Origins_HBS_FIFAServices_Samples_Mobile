@@ -23,7 +23,6 @@ class SettingsActivity: AppCompatActivity(R.layout.activity_settings) {
         } else {
             setTheme(R.style.AppTheme)
         }
-
         val radioGroup = findViewById<RadioGroup>(R.id.radio_group)
         radioGroup.check(if (isLight(this)) R.id.light else R.id.dark)
         radioGroup.setOnCheckedChangeListener { _, checkedId ->

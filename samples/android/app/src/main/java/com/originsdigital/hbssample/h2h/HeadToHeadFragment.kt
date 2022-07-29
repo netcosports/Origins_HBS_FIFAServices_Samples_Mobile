@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.originsdigital.hbswidgets.android.R
 import com.originsdigital.hbswidgets.android.databinding.FragmentHeadToHeadBinding
 
 class HeadToHeadFragment : Fragment() {

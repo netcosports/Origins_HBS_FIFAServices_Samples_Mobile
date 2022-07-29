@@ -1,5 +1,5 @@
 package com.originsdigital.hbssample.groupstanding
 
-enum class StandingsType {
+enum class SampleStandingsType {
     COMPACT, EXPANDED
 }

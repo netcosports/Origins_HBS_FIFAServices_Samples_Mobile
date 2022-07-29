@@ -10,11 +10,7 @@ import com.originsdigital.hbssample.settings.SettingsActivity
 import com.originsdigital.hbswidgets.android.R
 import com.originsdigital.hbswidgets.android.databinding.FragmentHomeBinding
 
-class SampleHomeFragment : Fragment() {
-
-    private var _binding: FragmentHomeBinding? = null
-    private val binding: FragmentHomeBinding
-        get() = requireNotNull(_binding)
+class SampleHomeFragment : BaseSampleFragment<FragmentHomeBinding>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -71,17 +67,11 @@ class SampleHomeFragment : Fragment() {
         }
     }
 
-    override fun onCreateView(
+    override fun createViewBinding(
         inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
-        return binding.root
+        container: ViewGroup?
+    ): FragmentHomeBinding {
+        return FragmentHomeBinding.inflate(inflater, container, false)
     }
 
-    override fun onDestroyView() {
-        _binding = null
-        super.onDestroyView()
-    }
 }

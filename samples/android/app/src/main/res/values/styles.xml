@@ -5,6 +5,8 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="colorOnPrimary">#fff</item>
+        <item name="android:windowBackground">@drawable/sample_fragment_background</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="background_color">@drawable/hbs_common_widget_background</item>
     </style>
 

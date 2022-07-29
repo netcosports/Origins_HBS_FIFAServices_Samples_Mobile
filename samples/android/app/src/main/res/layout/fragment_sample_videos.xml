@@ -10,11 +10,15 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
-        app:navigationIcon="@drawable/arrow_left"
-        app:titleTextColor="@color/sample_toolbar_text_color" />
+        app:navigationIcon="@drawable/arrow_left" />
 
-    <FrameLayout
-        android:id="@+id/widget_container"
+    <com.originsdigital.hbswidgets.video.VideosListWidget
+        android:id="@+id/widget1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.originsdigital.hbswidgets.video.VideosListWidget
+        android:id="@+id/widget2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

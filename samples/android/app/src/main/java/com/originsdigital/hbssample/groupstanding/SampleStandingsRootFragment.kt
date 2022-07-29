@@ -4,16 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.originsdigital.hbssample.BaseSampleFragment
 import com.originsdigital.hbswidgets.android.R
 import com.originsdigital.hbswidgets.android.databinding.FragmentSampleStandingsRootBinding
 
-class SampleStandingsRootFragment : Fragment() {
-
-    private var _binding: FragmentSampleStandingsRootBinding? = null
-    private val binding: FragmentSampleStandingsRootBinding
-        get() = requireNotNull(_binding)
+class SampleStandingsRootFragment : BaseSampleFragment<FragmentSampleStandingsRootBinding>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -22,24 +18,23 @@ class SampleStandingsRootFragment : Fragment() {
         binding.compact.setOnClickListener {
             findNavController().navigate(
                 R.id.action_groupStandingRootFragment_to_groupStandingFragment,
-                GroupStandingFragment.buildArgs(StandingsType.COMPACT)
+                SampleAllGroupStandingFragment.buildArgs(SampleStandingsType.COMPACT)
             )
         }
-
 
         binding.expanded.setOnClickListener {
             findNavController().navigate(
                 R.id.action_groupStandingRootFragment_to_groupStandingFragment,
-                GroupStandingFragment.buildArgs(StandingsType.EXPANDED)
+                SampleAllGroupStandingFragment.buildArgs(SampleStandingsType.EXPANDED)
             )
         }
 
         binding.singleGroupExpanded.setOnClickListener {
             findNavController().navigate(
                 R.id.action_groupStandingRootFragment_to_singleGroupStandingFragment,
-                SingleGroupStandingFragment.buildArgs(
-                    groupId = "275079",
-                    type = StandingsType.EXPANDED
+                SampleSingleGroupStandingFragment.buildArgs(
+                    groupId = "255933",
+                    type = SampleStandingsType.EXPANDED
                 )
             )
         }
@@ -47,26 +42,19 @@ class SampleStandingsRootFragment : Fragment() {
         binding.singleGroupCompact.setOnClickListener {
             findNavController().navigate(
                 R.id.action_groupStandingRootFragment_to_singleGroupStandingFragment,
-                SingleGroupStandingFragment.buildArgs(
-                    groupId = "275079",
-                    type = StandingsType.COMPACT
+                SampleSingleGroupStandingFragment.buildArgs(
+                    groupId = "255945",
+                    type = SampleStandingsType.COMPACT
                 )
             )
         }
     }
 
-    override fun onCreateView(
+    override fun createViewBinding(
         inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentSampleStandingsRootBinding.inflate(inflater, container, false)
-        return binding.root
-    }
-
-    override fun onDestroyView() {
-        _binding = null
-        super.onDestroyView()
+        container: ViewGroup?
+    ): FragmentSampleStandingsRootBinding {
+        return FragmentSampleStandingsRootBinding.inflate(inflater, container, false)
     }
 
 }

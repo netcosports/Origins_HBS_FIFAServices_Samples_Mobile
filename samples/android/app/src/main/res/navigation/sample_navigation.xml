@@ -85,19 +85,19 @@
 
     <fragment
         android:id="@+id/groupMatchFragment"
-        android:name="com.originsdigital.hbssample.groupstanding.GroupStandingFragment"
+        android:name="com.originsdigital.hbssample.groupstanding.SampleAllGroupStandingFragment"
         android:label="GroupStandingFragment" />
     <fragment
         android:id="@+id/singlegroupMatchFragment"
-        android:name="com.originsdigital.hbssample.groupstanding.SingleGroupStandingFragment"
+        android:name="com.originsdigital.hbssample.groupstanding.SampleSingleGroupStandingFragment"
         android:label="SingleGroupStandingFragment" />
     <fragment
         android:id="@+id/groupStandingFragment"
-        android:name="com.originsdigital.hbssample.groupstanding.GroupStandingFragment"
+        android:name="com.originsdigital.hbssample.groupstanding.SampleAllGroupStandingFragment"
         android:label="GroupStandingFragment" />
     <fragment
         android:id="@+id/singleGroupStandingFragment"
-        android:name="com.originsdigital.hbssample.groupstanding.SingleGroupStandingFragment"
+        android:name="com.originsdigital.hbssample.groupstanding.SampleSingleGroupStandingFragment"
         android:label="SingleGroupStandingFragment" />
     <fragment
         android:id="@+id/statsFragment"
@@ -132,7 +132,7 @@
 
     <fragment
         android:id="@+id/videosFragment"
-        android:name="com.originsdigital.hbssample.videos.VideosFragment"
+        android:name="com.originsdigital.hbssample.videos.SampleVideosFragment"
         android:label="VideosFragment"/>
 
     <fragment
@@ -166,7 +166,7 @@
 
     <fragment
         android:id="@+id/venuesFragment"
-        android:name="com.originsdigital.hbssample.venues.VenuesFragment"
+        android:name="com.originsdigital.hbssample.venues.SampleVenuesFragment"
         android:label="Venues Fragment"/>
 
     <fragment

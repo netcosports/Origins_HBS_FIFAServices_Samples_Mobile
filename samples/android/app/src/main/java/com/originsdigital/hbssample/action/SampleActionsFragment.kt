@@ -4,38 +4,28 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.originsdigital.hbssample.BaseSampleFragment
 import com.originsdigital.hbswidgets.android.databinding.FragmentActionsBinding
 import com.originsdigital.hbswidgets.core.HbsSdk
 
-class SampleActionsFragment : Fragment() {
+class SampleActionsFragment : BaseSampleFragment<FragmentActionsBinding>() {
 
-    private var _binding: FragmentActionsBinding? = null
-    private val binding: FragmentActionsBinding
-        get() = requireNotNull(_binding)
 
-    override fun onCreateView(
+    override fun createViewBinding(
         inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentActionsBinding.inflate(inflater, container, false)
-        return binding.root
+        container: ViewGroup?
+    ): FragmentActionsBinding {
+        return FragmentActionsBinding.inflate(inflater, container, false)
     }
 
-    override fun onDestroyView() {
-        _binding = null
-        super.onDestroyView()
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.toolbar.setNavigationOnClickListener { findNavController().popBackStack() }
 
-
         val widget = HbsSdk.actionsWidget(view.context)
-
+        widget.setupMatchId("84872")
         binding.actionsContainer.addView(
             widget,
             ViewGroup.LayoutParams.MATCH_PARENT,

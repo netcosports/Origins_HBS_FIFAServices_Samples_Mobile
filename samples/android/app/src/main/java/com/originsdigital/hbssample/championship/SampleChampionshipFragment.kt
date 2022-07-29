@@ -5,16 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.originsdigital.hbssample.BaseSampleFragment
 import com.originsdigital.hbswidgets.android.databinding.FragmentChampionshipBinding
 import com.originsdigital.hbswidgets.matchcenter.OnMatchClickListener
 
-class SampleChampionshipFragment : Fragment() {
-
-    private var _binding: FragmentChampionshipBinding? = null
-    private val binding: FragmentChampionshipBinding
-        get() = requireNotNull(_binding)
+class SampleChampionshipFragment : BaseSampleFragment<FragmentChampionshipBinding>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -31,17 +27,10 @@ class SampleChampionshipFragment : Fragment() {
 
     }
 
-    override fun onCreateView(
+    override fun createViewBinding(
         inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentChampionshipBinding.inflate(inflater, container, false)
-        return binding.root
-    }
-
-    override fun onDestroyView() {
-        _binding = null
-        super.onDestroyView()
+        container: ViewGroup?
+    ): FragmentChampionshipBinding {
+        return FragmentChampionshipBinding.inflate(inflater, container, false)
     }
 }
