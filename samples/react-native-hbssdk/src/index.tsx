@@ -112,7 +112,7 @@ export const TeamMatches =
 ////////////////////////
 // videos
 type VideosProps = {
-  data: { groupId: string, isExpanded: boolean };
+  category: string;
   style: ViewStyle;
 };
 

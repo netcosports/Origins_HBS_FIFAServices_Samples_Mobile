@@ -1,14 +1,16 @@
 package com.reactnativehbssdk;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.uimanager.SimpleViewManager;
 import com.facebook.react.uimanager.ThemedReactContext;
-import com.originsdigital.hbswidgets.video.VideosWidget;
+import com.facebook.react.uimanager.annotations.ReactProp;
+import com.originsdigital.hbswidgets.video.VideosListWidget;
 
 
-public class VideosViewManager extends SimpleViewManager<VideosWidget> {
+public class VideosViewManager extends SimpleViewManager<VideosListWidget> {
 
     public static final String REACT_CLASS = "Videos";
     ReactApplicationContext mCallerContext;
@@ -24,12 +26,12 @@ public class VideosViewManager extends SimpleViewManager<VideosWidget> {
 
     @NonNull
     @Override
-    protected VideosWidget createViewInstance(@NonNull ThemedReactContext reactContext) {
-        return new VideosWidget(reactContext, null);
+    protected VideosListWidget createViewInstance(@NonNull ThemedReactContext reactContext) {
+        return new VideosListWidget(reactContext, null);
     }
-//
-//    @ReactProp(name = "teamId")
-//    public void setTeamId(TeamMatchesWidget view, @Nullable String teamId) {
-//        view.setupParams(teamId);
-//    }
+
+    @ReactProp(name = "category")
+    public void setCategory(VideosListWidget view, @Nullable String category) {
+        view.setCategory(category);
+    }
 }

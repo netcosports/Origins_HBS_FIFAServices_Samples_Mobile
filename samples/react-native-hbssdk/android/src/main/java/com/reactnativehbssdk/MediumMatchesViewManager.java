@@ -33,11 +33,11 @@ public class MediumMatchesViewManager extends SimpleViewManager<MediumMatchesWid
     @ReactProp(name = "data")
     public void setData(MediumMatchesWidget view, @Nullable ReadableMap data) {
         if (data.hasKey("groupId")) {
-            view.setupWithGroup(data.getString("groupId"));
+            view.setGroupId(data.getString("groupId"));
         } else if (data.hasKey("teamId")) {
-            view.setupWithGroup(data.getString("teamId"));
+            view.setTeamId(data.getString("teamId"));
         } else {
-            view.setupWithGroup(data.getString("roundId"));
+            view.setRoundId(data.getString("roundId"));
         }
     }
 }

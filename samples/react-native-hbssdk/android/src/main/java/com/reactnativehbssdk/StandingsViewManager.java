@@ -32,12 +32,11 @@ public class StandingsViewManager extends SimpleViewManager<StandingsWidget> {
 
     @ReactProp(name = "data")
     public void setData(StandingsWidget view, @Nullable ReadableMap data) {
-        view.setupDisplayParams(data.getBoolean("isExpanded"));
+        Boolean isExpanded = data.getBoolean("isExpanded");
         if (data.hasKey("groupId")) {
-            view.setupSingleGroup(data.getString("groupId"));
+            view.setupSingleGroup(data.getString("groupId"), isExpanded);
         } else {
-            view.setupAllGroups();
+            view.setupAllGroups(isExpanded);
         }
-        view.setupDisplayParams(false);
     }
 }
