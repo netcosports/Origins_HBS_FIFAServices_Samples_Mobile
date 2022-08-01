@@ -39,13 +39,13 @@ RCT_CUSTOM_VIEW_PROPERTY(data, String, UIView<MatchesWidget>)
 {
   if ([json objectForKey:@"groupId"] != nil) {
     NSString* groupId = [RCTConvert NSString:json[@"groupId"]];
-    [view setupGroupWidgetParamsWithGroupId:groupId];
+    [view setGroupIdWithGroupId:groupId];
   } else if ([json objectForKey:@"teamId"] != nil) {
     NSString* teamId = [RCTConvert NSString:json[@"teamId"]];
-    [view setupTeamWidgetParamsWithTeamId:teamId];
+    [view setTeamIdWithTeamId:teamId];
   } else {
     NSString* roundId = [RCTConvert NSString:json[@"roundId"]];
-    [view setupRoundWidgetParamsWithRoundId:roundId];
+    [view setRoundIdWithRoundId:roundId];
   }
 }
 
@@ -69,13 +69,13 @@ RCT_CUSTOM_VIEW_PROPERTY(data, String, UIView<MatchesWidget>)
 {
   if ([json objectForKey:@"groupId"] != nil) {
     NSString* groupId = [RCTConvert NSString:json[@"groupId"]];
-    [view setupGroupWidgetParamsWithGroupId:groupId];
+    [view setGroupIdWithGroupId:groupId];
   } else if ([json objectForKey:@"teamId"] != nil) {
     NSString* teamId = [RCTConvert NSString:json[@"teamId"]];
-    [view setupTeamWidgetParamsWithTeamId:teamId];
+    [view setTeamIdWithTeamId:teamId];
   } else {
     NSString* roundId = [RCTConvert NSString:json[@"roundId"]];
-    [view setupRoundWidgetParamsWithRoundId:roundId];
+    [view setRoundIdWithRoundId:roundId];
   }
 }
 @end
@@ -97,13 +97,13 @@ RCT_CUSTOM_VIEW_PROPERTY(data, String, UIView<MatchesWidget>)
 {
   if ([json objectForKey:@"groupId"] != nil) {
     NSString* groupId = [RCTConvert NSString:json[@"groupId"]];
-    [view setupGroupWidgetParamsWithGroupId:groupId];
+    [view setGroupIdWithGroupId:groupId];
   } else if ([json objectForKey:@"teamId"] != nil) {
     NSString* teamId = [RCTConvert NSString:json[@"teamId"]];
-    [view setupTeamWidgetParamsWithTeamId:teamId];
+    [view setTeamIdWithTeamId:teamId];
   } else {
     NSString* roundId = [RCTConvert NSString:json[@"roundId"]];
-    [view setupRoundWidgetParamsWithRoundId:roundId];
+    [view setRoundIdWithRoundId:roundId];
   }
 }
 

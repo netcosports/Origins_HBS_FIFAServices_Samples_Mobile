@@ -73,9 +73,9 @@ PODS:
     - FlipperKit/FlipperKitNetworkPlugin
   - fmt (6.2.1)
   - glog (0.3.5)
-  - HBSSDK (1.0.77):
+  - HBSSDK (1.0.82):
     - hbsshared
-  - hbsshared (1.0.77)
+  - hbsshared (1.0.82)
   - libevent (2.1.12)
   - OnRewindSDK (0.0.1)
   - OpenSSL-Universal (1.1.1100)
@@ -536,8 +536,8 @@ SPEC CHECKSUMS:
   FlipperKit: cbdee19bdd4e7f05472a66ce290f1b729ba3cb86
   fmt: ff9d55029c625d3757ed641535fd4a75fedc7ce9
   glog: 3d02b25ca00c2d456734d0bcff864cbc62f6ae1a
-  HBSSDK: 436fe9ec89793919ee70d2c8115e0a41189348d2
-  hbsshared: 888c191c5385b6d0523a7081af4879b73db42ac8
+  HBSSDK: 5ab40b925d3421b0ab74a086f732b733ce4bb9cf
+  hbsshared: 85825c2115ba5f9fb5a482660fa6d3e8c7a2616c
   libevent: 4049cae6c81cdb3654a443be001fb9bdceff7913
   OnRewindSDK: 340854ad784837e19f464449dd695c2feea832bf
   OpenSSL-Universal: ebc357f1e6bc71fa463ccb2fe676756aff50e88c
@@ -573,6 +573,6 @@ SPEC CHECKSUMS:
   Yoga: 7ab6e3ee4ce47d7b789d1cb520163833e515f452
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: 59ca960469943889b441a30b9e88478472513362
+PODFILE CHECKSUM: af655e1ee18e2180d5a3d42d7e6b7d6efd87b37b
 
 COCOAPODS: 1.11.3
