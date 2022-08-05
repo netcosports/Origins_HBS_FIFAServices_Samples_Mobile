@@ -12,7 +12,7 @@ buildscript {
   }
 
   dependencies {
-    classpath('com.android.tools.build:gradle:7.2.1')
+    classpath('com.android.tools.build:gradle:7.2.2')
   }
 }
 
@@ -139,7 +139,7 @@ repositories {
 dependencies {
     //noinspection GradleDynamicVersion
   implementation "com.facebook.react:react-native:+"
-  implementation("com.origins-digital.hbswidgets:widgets-whitelabel:1.0.82")
+  implementation("com.origins-digital.hbswidgets:widgets-whitelabel:1.0.83")
 // From node_modules
 }
 
