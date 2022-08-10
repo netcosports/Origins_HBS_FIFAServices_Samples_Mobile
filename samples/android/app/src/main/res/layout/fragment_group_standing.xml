@@ -13,9 +13,17 @@
         app:navigationIcon="@drawable/arrow_left"
         app:titleTextColor="@color/sample_toolbar_text_color" />
 
-    <FrameLayout
-        android:id="@+id/widget_container"
+
+    <com.originsdigital.hbswidgets.standings.StandingsWidget
+        android:id="@+id/group"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"/>
+
+    <com.originsdigital.hbswidgets.standings.StandingsWidget
+        android:id="@+id/all"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
 
 </LinearLayout>

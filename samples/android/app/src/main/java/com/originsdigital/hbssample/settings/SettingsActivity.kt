@@ -9,12 +9,18 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.widget.Toolbar
 import androidx.preference.PreferenceManager
 import com.originsdigital.hbswidgets.android.R
+import com.originsdigital.hbswidgets.android.databinding.ActivitySettingsBinding
+import com.originsdigital.hbswidgets.core.HbsSdk
 
-class SettingsActivity: AppCompatActivity(R.layout.activity_settings) {
+class SettingsActivity: AppCompatActivity() {
+
+    private lateinit var binding: ActivitySettingsBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        findViewById<Toolbar>(R.id.toolbar).setNavigationOnClickListener {
+        binding = ActivitySettingsBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        binding.toolbar.setNavigationOnClickListener {
             finish()
         }
 
@@ -23,10 +29,14 @@ class SettingsActivity: AppCompatActivity(R.layout.activity_settings) {
         } else {
             setTheme(R.style.AppTheme)
         }
-        val radioGroup = findViewById<RadioGroup>(R.id.radio_group)
-        radioGroup.check(if (isLight(this)) R.id.light else R.id.dark)
-        radioGroup.setOnCheckedChangeListener { _, checkedId ->
-            setTheme(this@SettingsActivity, checkedId == R.id.light)
+        binding.appTheme.check((if (isLight(this)) binding.light else binding.dark).id)
+        binding.appTheme.setOnCheckedChangeListener { _, checkedId ->
+            setTheme(this@SettingsActivity, checkedId == binding.light.id)
+        }
+
+        binding.actions.check((if (HbsSdk.isDisplayActionsInMatchCenter()) binding.display else binding.hide).id)
+        binding.actions.setOnCheckedChangeListener { _, checkedId ->
+            HbsSdk.displayActionsInMatchCenter(checkedId == binding.display.id)
         }
 
     }

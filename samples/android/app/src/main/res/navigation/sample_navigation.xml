@@ -58,11 +58,8 @@
         android:name="com.originsdigital.hbssample.groupstanding.SampleStandingsRootFragment"
         android:label="GroupStandingFragment" >
         <action
-            android:id="@+id/action_groupStandingRootFragment_to_groupStandingFragment"
+            android:id="@+id/action_standingRootFragment_to_standingFragment"
             app:destination="@id/groupStandingFragment" />
-        <action
-            android:id="@+id/action_groupStandingRootFragment_to_singleGroupStandingFragment"
-            app:destination="@id/singleGroupStandingFragment" />
     </fragment>
 
 
@@ -84,20 +81,12 @@
     </fragment>
 
     <fragment
-        android:id="@+id/groupMatchFragment"
-        android:name="com.originsdigital.hbssample.groupstanding.SampleAllGroupStandingFragment"
-        android:label="GroupStandingFragment" />
-    <fragment
-        android:id="@+id/singlegroupMatchFragment"
-        android:name="com.originsdigital.hbssample.groupstanding.SampleSingleGroupStandingFragment"
-        android:label="SingleGroupStandingFragment" />
-    <fragment
         android:id="@+id/groupStandingFragment"
-        android:name="com.originsdigital.hbssample.groupstanding.SampleAllGroupStandingFragment"
+        android:name="com.originsdigital.hbssample.groupstanding.SampleStandingFragment"
         android:label="GroupStandingFragment" />
     <fragment
         android:id="@+id/singleGroupStandingFragment"
-        android:name="com.originsdigital.hbssample.groupstanding.SampleSingleGroupStandingFragment"
+        android:name="com.originsdigital.hbssample.groupstanding.SampleStandingFragment"
         android:label="SingleGroupStandingFragment" />
     <fragment
         android:id="@+id/statsFragment"

@@ -15,24 +15,11 @@ class SampleStandingsRootFragment : BaseSampleFragment<FragmentSampleStandingsRo
         super.onViewCreated(view, savedInstanceState)
         binding.toolbar.setNavigationOnClickListener { findNavController().popBackStack() }
 
-        binding.compact.setOnClickListener {
-            findNavController().navigate(
-                R.id.action_groupStandingRootFragment_to_groupStandingFragment,
-                SampleAllGroupStandingFragment.buildArgs(SampleStandingsType.COMPACT)
-            )
-        }
-
-        binding.expanded.setOnClickListener {
-            findNavController().navigate(
-                R.id.action_groupStandingRootFragment_to_groupStandingFragment,
-                SampleAllGroupStandingFragment.buildArgs(SampleStandingsType.EXPANDED)
-            )
-        }
 
         binding.singleGroupExpanded.setOnClickListener {
             findNavController().navigate(
-                R.id.action_groupStandingRootFragment_to_singleGroupStandingFragment,
-                SampleSingleGroupStandingFragment.buildArgs(
+                R.id.action_standingRootFragment_to_standingFragment,
+                SampleStandingFragment.buildArgs(
                     groupId = "255933",
                     type = SampleStandingsType.EXPANDED
                 )
@@ -41,8 +28,8 @@ class SampleStandingsRootFragment : BaseSampleFragment<FragmentSampleStandingsRo
 
         binding.singleGroupCompact.setOnClickListener {
             findNavController().navigate(
-                R.id.action_groupStandingRootFragment_to_singleGroupStandingFragment,
-                SampleSingleGroupStandingFragment.buildArgs(
+                R.id.action_standingRootFragment_to_standingFragment,
+                SampleStandingFragment.buildArgs(
                     groupId = "255945",
                     type = SampleStandingsType.COMPACT
                 )

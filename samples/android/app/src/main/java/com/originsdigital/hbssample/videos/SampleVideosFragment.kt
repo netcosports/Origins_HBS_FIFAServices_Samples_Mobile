@@ -21,7 +21,12 @@ class SampleVideosFragment : BaseSampleFragment<FragmentSampleVideosBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.toolbar.setNavigationOnClickListener { findNavController().popBackStack() }
-        binding.widget1.setCategory("Match%20Feed/BIF")
-        binding.widget2.setCategory("Match%20Clip/Clips%20Action")
+        binding.widget1.setCategory("Match%20Feeds")
+        binding.widget2.setCategory("Match%20Clip")
+        binding.widget3.setCategory("Matchday-1")
+        binding.widget4.setCategory("Interviews")
+        binding.widget5.setCategory("Press%20Conferences")
+        binding.widget6.setCategory("Highlights")
+        binding.widget7.setCategory("Ceremonies")
     }
 }
