@@ -20,7 +20,7 @@ class SampleTeamBoardController: SampleBaseController {
     scrollView.addSubviews(teamBoardWidget)
     scrollView.showsVerticalScrollIndicator = false
     title = "Team Board"
-    teamBoardWidget.setupTeamId(teamId: HbsShared.shared().getFavoriteTeamId() ?? "43946")
+    teamBoardWidget.setupTeamId(teamId: HBSSDK.Integration.getFavoriteTeamId() ?? "43946")
     teamBoardWidget.openMatchDetailsBlock = { [weak self] matchId in
       self?.testOpenMatch(matchId: matchId)
     }
