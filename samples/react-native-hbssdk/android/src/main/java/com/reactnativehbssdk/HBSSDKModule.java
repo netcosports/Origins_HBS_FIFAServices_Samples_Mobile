@@ -1,10 +1,15 @@
 package com.reactnativehbssdk;
 
+import android.content.Context;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
+
+
+import com.originsdigital.hbswidgets.standings.StandingsWidget;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -12,6 +17,7 @@ import java.util.Map;
 public class HBSSDKModule extends ReactContextBaseJavaModule {
 
     public static final String REACT_CLASS = "HBSSDK";
+    private Context context;
 
     HBSSDKModule(ReactApplicationContext context) {
         super(context);
@@ -36,7 +42,7 @@ public class HBSSDKModule extends ReactContextBaseJavaModule {
         map.put("teamMatchesComponentHeight", 260);
         map.put("topPlayerStatsComponentHeight", 260);
         map.put("videosComponentHeight", 260);
-        map.put("standingsComponentHeight", 360);
+        map.put("standingsComponentHeight", StandingsWidget.widgetHeightDp(context));
         map.put("favoritesComponentHeight", 260);
         map.put("championshipComponentHeight", 260);
         map.put("headToHeadComponentHeight", 260);
