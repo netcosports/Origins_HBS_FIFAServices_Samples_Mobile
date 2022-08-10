@@ -34,18 +34,7 @@
                 android:src="@drawable/logo_qatar" />
 
             <TextView
-                android:id="@+id/compact"
-                style="@style/TextStyleSampleButtonTitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:background="@drawable/sample_rounded_background"
-                android:gravity="center"
-                android:padding="@dimen/hbs_championship_content_top_margin"
-                android:text="Compact" />
-
-            <TextView
-                android:id="@+id/expanded"
+                android:id="@+id/single_group_expanded"
                 style="@style/TextStyleSampleButtonTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -56,17 +45,6 @@
                 android:text="Expanded" />
 
             <TextView
-                android:id="@+id/single_group_expanded"
-                style="@style/TextStyleSampleButtonTitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:background="@drawable/sample_rounded_background"
-                android:gravity="center"
-                android:padding="@dimen/hbs_championship_content_top_margin"
-                android:text="Single group expanded" />
-
-            <TextView
                 android:id="@+id/single_group_compact"
                 style="@style/TextStyleSampleButtonTitle"
                 android:layout_width="match_parent"
@@ -75,7 +53,7 @@
                 android:background="@drawable/sample_rounded_background"
                 android:gravity="center"
                 android:padding="@dimen/hbs_championship_content_top_margin"
-                android:text="Single group compact" />
+                android:text="Compact" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

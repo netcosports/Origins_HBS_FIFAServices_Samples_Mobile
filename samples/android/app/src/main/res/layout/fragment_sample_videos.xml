@@ -12,14 +12,52 @@
         android:layout_height="?actionBarSize"
         app:navigationIcon="@drawable/arrow_left" />
 
-    <com.originsdigital.hbswidgets.video.VideosListWidget
-        android:id="@+id/widget1"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="match_parent">
 
-    <com.originsdigital.hbswidgets.video.VideosListWidget
-        android:id="@+id/widget2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.originsdigital.hbswidgets.video.VideosListWidget
+                android:id="@+id/widget1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <com.originsdigital.hbswidgets.video.VideosListWidget
+                android:id="@+id/widget2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <com.originsdigital.hbswidgets.video.VideosListWidget
+                android:id="@+id/widget3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <com.originsdigital.hbswidgets.video.VideosListWidget
+                android:id="@+id/widget4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <com.originsdigital.hbswidgets.video.VideosListWidget
+                android:id="@+id/widget5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <com.originsdigital.hbswidgets.video.VideosListWidget
+                android:id="@+id/widget6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <com.originsdigital.hbswidgets.video.VideosListWidget
+                android:id="@+id/widget7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </ScrollView>
+
+
 
 </LinearLayout>
