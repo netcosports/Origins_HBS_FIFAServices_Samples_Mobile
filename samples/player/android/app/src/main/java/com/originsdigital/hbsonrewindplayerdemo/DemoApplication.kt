@@ -1,9 +1,9 @@
 package com.originsdigital.hbsonrewindplayerdemo
 
 import android.app.Application
-import com.netcosports.onrewind.OnRewind
+import com.origins.onrewind.OnRewind
 
-class DemoApplication: Application() {
+class DemoApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()

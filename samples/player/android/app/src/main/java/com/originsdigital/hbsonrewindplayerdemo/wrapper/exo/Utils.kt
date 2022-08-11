@@ -28,7 +28,7 @@ object Utils {
         val type = Util.inferContentType(uriWithoutQuery, "")
 
         return when (type) {
-            C.TYPE_DASH -> {
+            C.CONTENT_TYPE_DASH -> {
                 val item = MediaItem.Builder()
                     .setUri(uri)
                     .setMimeType(MimeTypes.APPLICATION_MPD)
@@ -43,20 +43,20 @@ object Utils {
                     )
                     .createMediaSource(item)
             }
-            C.TYPE_SS -> {
+            C.CONTENT_TYPE_SS -> {
                 val item = MediaItem.Builder().setUri(uri).build()
                 SsMediaSource.Factory(dataSourceFactory)
                     .setManifestParser(FilteringManifestParser(SsManifestParser(), null))
                     .createMediaSource(item)
             }
-            C.TYPE_HLS -> {
+            C.CONTENT_TYPE_HLS -> {
                 val item =
                     MediaItem.Builder().setUri(uri).setMimeType(MimeTypes.APPLICATION_M3U8).build()
                 HlsMediaSource.Factory(dataSourceFactory)
                     .setPlaylistParserFactory(DefaultHlsPlaylistParserFactory())
                     .createMediaSource(item)
             }
-            C.TYPE_OTHER -> {
+            C.CONTENT_TYPE_OTHER -> {
                 val item = MediaItem.Builder().setUri(uri).build()
                 ProgressiveMediaSource.Factory(dataSourceFactory).createMediaSource(item)
             }

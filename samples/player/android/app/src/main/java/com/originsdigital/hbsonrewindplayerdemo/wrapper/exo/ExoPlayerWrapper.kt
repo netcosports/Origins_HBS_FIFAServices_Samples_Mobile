@@ -3,18 +3,19 @@ package com.originsdigital.hbsonrewindplayerdemo.wrapper.exo
 import android.content.Context
 import android.net.Uri
 import android.os.Bundle
+import androidx.lifecycle.LifecycleOwner
 import com.google.android.exoplayer2.*
 import com.google.android.exoplayer2.audio.AudioAttributes
 import com.google.android.exoplayer2.upstream.DataSource
 import com.google.android.exoplayer2.upstream.DefaultHttpDataSource
 import com.google.android.exoplayer2.util.Util
-import com.netcosports.dioptra.core.*
-import com.netcosports.dioptra.wrapper.*
-import com.netcosports.onrewind.ui.player.OnRewindPlayerWrapper
+import com.origins.dioptra.core.*
+import com.origins.dioptra.wrapper.*
+import com.origins.onrewind.ui.player.OnRewindPlayerWrapper
 import kotlin.math.max
 import kotlin.math.min
 
-class ExoPlayerWrapper(val context: Context, bundle: Bundle) : OnRewindPlayerWrapper {
+class ExoPlayerWrapper(val context: Context) : OnRewindPlayerWrapper {
     private var exoPlayer: ExoPlayer? = null
     private val dataSourceFactory: DataSource.Factory = DefaultHttpDataSource.Factory()
         .setUserAgent(Util.getUserAgent(context, "OnrewindSampleExo"))
@@ -106,12 +107,12 @@ class ExoPlayerWrapper(val context: Context, bundle: Bundle) : OnRewindPlayerWra
         }
     }
 
-    override fun onStart() {
+    override fun onStart(owner: LifecycleOwner) {
         initializePlayer()
         playerView.postDelayed(updateProgressAction, 250)
     }
 
-    override fun onStop() {
+    override fun onStop(owner: LifecycleOwner) {
         releasePlayer()
         playerView.removeCallbacks(updateProgressAction)
     }
@@ -130,7 +131,7 @@ class ExoPlayerWrapper(val context: Context, bundle: Bundle) : OnRewindPlayerWra
 
             val audioAttrs = AudioAttributes.Builder()
                 .setUsage(C.USAGE_MEDIA)
-                .setContentType(C.CONTENT_TYPE_MOVIE)
+                .setContentType(C.AUDIO_CONTENT_TYPE_MOVIE)
                 .build()
 
             exoPlayer?.setAudioAttributes(audioAttrs, true)

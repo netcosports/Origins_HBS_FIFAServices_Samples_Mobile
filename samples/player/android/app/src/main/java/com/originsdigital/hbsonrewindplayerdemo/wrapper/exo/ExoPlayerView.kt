@@ -9,7 +9,6 @@ import com.google.android.exoplayer2.ExoPlayer
 import com.google.android.exoplayer2.Player
 import com.google.android.exoplayer2.util.Assertions
 import com.google.android.exoplayer2.video.VideoSize
-import com.netcosports.dioptra.exo.AspectRatioFrameLayout
 
 open class ExoPlayerView @JvmOverloads constructor(
     context: Context,

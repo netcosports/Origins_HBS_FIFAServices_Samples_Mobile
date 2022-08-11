@@ -1,28 +1,27 @@
 package com.originsdigital.hbsonrewindplayerdemo.wrapper.kaltura
 
 import android.content.Context
-import android.os.Bundle
 import android.util.Log
 import android.view.Gravity
 import android.view.View
 import android.widget.FrameLayout
+import androidx.lifecycle.LifecycleOwner
 import com.kaltura.playkit.PlayerEvent
 import com.kaltura.playkit.PlayerState
 import com.kaltura.playkit.providers.ovp.OVPMediaAsset
 import com.kaltura.tvplayer.KalturaOvpPlayer
 import com.kaltura.tvplayer.OVPMediaOptions
 import com.kaltura.tvplayer.PlayerInitOptions
-import com.netcosports.dioptra.core.AudioTrack
-import com.netcosports.dioptra.core.PlaybackState
-import com.netcosports.dioptra.core.Progress
-import com.netcosports.dioptra.core.VideoTrack
-import com.netcosports.dioptra.wrapper.*
-import com.netcosports.onrewind.ui.player.OnRewindPlayerWrapper
+import com.origins.dioptra.core.AudioTrack
+import com.origins.dioptra.core.PlaybackState
+import com.origins.dioptra.core.Progress
+import com.origins.dioptra.core.VideoTrack
+import com.origins.dioptra.wrapper.*
+import com.origins.onrewind.ui.player.OnRewindPlayerWrapper
 
 
 class KalturaWrapper(
     private val context: Context,
-    private val bundle: Bundle,
 ) : OnRewindPlayerWrapper {
 
     private val player: KalturaOvpPlayer
@@ -68,7 +67,6 @@ class KalturaWrapper(
         playerView = frame
     }
 
-
     override var isMuted: Boolean = false
         set(value) {
             field = value
@@ -82,7 +80,6 @@ class KalturaWrapper(
         player.seekToLiveDefaultPosition()
         listener.onCompleted()
     }
-
 
     override fun seek(progress: Long, listener: OnSeekCompletedListener) {
         player.seekTo(progress)
@@ -119,18 +116,17 @@ class KalturaWrapper(
         }
     }
 
-    override fun onResume() {
+    override fun onResume(owner: LifecycleOwner) {
         player.onApplicationResumed()
         playerView.postDelayed(updateProgressAction, 250)
     }
 
-    override fun onPause() {
+    override fun onPause(owner: LifecycleOwner) {
         player.onApplicationPaused()
         playerView.removeCallbacks(updateProgressAction)
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
+    override fun onDestroy(owner: LifecycleOwner) {
         player.removeListeners(this)
         player.destroy()
     }
@@ -155,13 +151,13 @@ class KalturaWrapper(
         player.addListener(this, PlayerEvent.stateChanged) { event ->
 
             val newState = when (event.newState) {
-                PlayerState.IDLE -> com.netcosports.dioptra.core.PlayerState.IDLE
-                PlayerState.LOADING -> com.netcosports.dioptra.core.PlayerState.STUCK
-                PlayerState.BUFFERING -> com.netcosports.dioptra.core.PlayerState.STUCK
+                PlayerState.IDLE -> com.origins.dioptra.core.PlayerState.IDLE
+                PlayerState.LOADING -> com.origins.dioptra.core.PlayerState.STUCK
+                PlayerState.BUFFERING -> com.origins.dioptra.core.PlayerState.STUCK
                 PlayerState.READY -> {
                     val state =
                         if (player.isPlaying) PlaybackState.PLAYING else PlaybackState.PAUSED
-                    com.netcosports.dioptra.core.PlayerState.READY(state)
+                    com.origins.dioptra.core.PlayerState.READY(state)
                 }
             }
 
@@ -172,19 +168,19 @@ class KalturaWrapper(
     private fun addPlayerEventsListener() {
         player.addListener(this, PlayerEvent.playing) { event ->
             playerStateListener?.onNewState(
-                com.netcosports.dioptra.core.PlayerState.READY(PlaybackState.PLAYING)
+                com.origins.dioptra.core.PlayerState.READY(PlaybackState.PLAYING)
             )
         }
 
         player.addListener(this, PlayerEvent.pause) { event ->
             playerStateListener?.onNewState(
-                com.netcosports.dioptra.core.PlayerState.READY(PlaybackState.PAUSED)
+                com.origins.dioptra.core.PlayerState.READY(PlaybackState.PAUSED)
             )
         }
 
         player.addListener(this, PlayerEvent.error) { event ->
             playerStateListener?.onNewState(
-                com.netcosports.dioptra.core.PlayerState.ERROR()
+                com.origins.dioptra.core.PlayerState.ERROR()
             )
         }
     }
