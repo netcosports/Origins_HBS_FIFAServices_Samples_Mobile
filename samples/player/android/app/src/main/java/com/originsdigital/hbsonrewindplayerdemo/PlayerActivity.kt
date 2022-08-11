@@ -93,6 +93,14 @@ class PlayerActivity : AppCompatActivity() {
                     setPictureInPictureParams(params)
                 }
         }
+
+        addOnPictureInPictureModeChangedListener {
+            if (it.isInPictureInPictureMode) {
+                playerView?.enterPip()
+            } else {
+                playerView?.exitPip()
+            }
+        }
     }
 
     private fun updateOrientation(isPortrait: Boolean) {
@@ -185,15 +193,6 @@ class PlayerActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         updateFlags()
-    }
-
-    override fun onPictureInPictureModeChanged(isInPictureInPictureMode: Boolean) {
-        super.onPictureInPictureModeChanged(isInPictureInPictureMode)
-        if (isInPictureInPictureMode) {
-            playerView?.enterPip()
-        } else {
-            playerView?.exitPip()
-        }
     }
 
     override fun onWindowFocusChanged(hasFocus: Boolean) {
