@@ -17,7 +17,6 @@ class SampleTeamsController: SampleBaseController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    teamsWidgets.setupParams(isCarouselMode: isCarouselMode)
     self.view.addSubviews(root)
     root.addSubviews(teamsWidgets)
   }
