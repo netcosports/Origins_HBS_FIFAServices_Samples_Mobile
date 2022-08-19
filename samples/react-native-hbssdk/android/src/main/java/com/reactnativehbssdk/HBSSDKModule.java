@@ -1,7 +1,5 @@
 package com.reactnativehbssdk;
 
-import android.content.Context;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
@@ -17,7 +15,6 @@ import java.util.Map;
 public class HBSSDKModule extends ReactContextBaseJavaModule {
 
     public static final String REACT_CLASS = "HBSSDK";
-    private Context context;
 
     HBSSDKModule(ReactApplicationContext context) {
         super(context);
@@ -42,7 +39,7 @@ public class HBSSDKModule extends ReactContextBaseJavaModule {
         map.put("teamMatchesComponentHeight", 260);
         map.put("topPlayerStatsComponentHeight", 260);
         map.put("videosComponentHeight", 260);
-        map.put("standingsComponentHeight", StandingsWidget.widgetHeightDp(context));
+        map.put("standingsComponentHeight", 330);
         map.put("favoritesComponentHeight", 260);
         map.put("championshipComponentHeight", 260);
         map.put("headToHeadComponentHeight", 260);
