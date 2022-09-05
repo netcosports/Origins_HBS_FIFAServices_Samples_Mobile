@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.originsdigital.hbssample.BaseSampleFragment
 import com.originsdigital.hbswidgets.android.databinding.FragmentSampleVideosBinding
+import com.originsdigital.hbswidgets.video.VideoWidgetCategory
 
 class SampleVideosFragment : BaseSampleFragment<FragmentSampleVideosBinding>() {
 
@@ -21,12 +22,9 @@ class SampleVideosFragment : BaseSampleFragment<FragmentSampleVideosBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.toolbar.setNavigationOnClickListener { findNavController().popBackStack() }
-        binding.widget1.setCategory("Match%20Feeds")
-        binding.widget2.setCategory("Match%20Clip")
-        binding.widget3.setCategory("Matchday-1")
-        binding.widget4.setCategory("Interviews")
-        binding.widget5.setCategory("Press%20Conferences")
-        binding.widget6.setCategory("Highlights")
-        binding.widget7.setCategory("Ceremonies")
+        binding.widget1.setCategory(VideoWidgetCategory.MATCH_FEEDS)
+        binding.widget2.setCategory(VideoWidgetCategory.MATCH_CLIPS)
+//        binding.widget3.setCategory("Matchday-1")
+//        binding.widget4.setCategory("Interviews")
     }
 }

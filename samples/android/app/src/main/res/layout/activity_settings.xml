@@ -2,7 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
+    android:paddingStart="4dp"
+    android:paddingEnd="4dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="?attr/background_color"
     android:id="@+id/container">
@@ -13,14 +16,19 @@
         android:layout_height="?actionBarSize"
         app:navigationIcon="@drawable/arrow_left"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="App theme"/>
+
     <RadioGroup
         android:id="@+id/app_theme"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="48dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="24dp"
-        android:padding="20dp"
+        android:layout_marginTop="12dp"
+        android:padding="10dp"
         android:orientation="horizontal"
         app:layout_constraintTop_toBottomOf="@id/toolbar">
 
@@ -40,14 +48,20 @@
 
     </RadioGroup>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Display actions in match center"/>
+
     <RadioGroup
         android:id="@+id/actions"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="48dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="24dp"
-        android:padding="20dp"
+        android:layout_marginTop="12dp"
+        android:padding="10dp"
         android:orientation="horizontal"
         app:layout_constraintTop_toBottomOf="@id/toolbar">
 
@@ -67,8 +81,92 @@
 
     </RadioGroup>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Layout direction"/>
+
+    <RadioGroup
+        android:id="@+id/direction"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp"
+        android:padding="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <RadioButton
+            android:id="@+id/directionAuto"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Auto"/>
+
+        <RadioButton
+            android:id="@+id/directionLtr"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Left to right"/>
+
+        <RadioButton
+            android:id="@+id/directionRtl"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Right to left"/>
+
+    </RadioGroup>
 
 
+    <TextView
+        android:id="@+id/textSize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Text scale: "/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Match click handler"/>
+
+    <RadioGroup
+        android:id="@+id/matchCenter"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp"
+        android:padding="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <RadioButton
+            android:id="@+id/matchCenterInternal"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Internal"/>
+
+        <RadioButton
+            android:id="@+id/matchCenterLocal"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Local"/>
+
+        <RadioButton
+            android:id="@+id/matchCenterGlobal"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Global"/>
+
+    </RadioGroup>
 
 
 </LinearLayout>

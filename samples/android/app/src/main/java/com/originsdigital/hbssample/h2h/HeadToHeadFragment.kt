@@ -1,20 +1,14 @@
 package com.originsdigital.hbssample.h2h
 
-import android.content.res.Configuration
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.originsdigital.hbswidgets.android.R
+import com.originsdigital.hbssample.BaseSampleFragment
 import com.originsdigital.hbswidgets.android.databinding.FragmentHeadToHeadBinding
 
-class HeadToHeadFragment : Fragment() {
-
-    private var _binding: FragmentHeadToHeadBinding? = null
-    private val binding: FragmentHeadToHeadBinding
-        get() = requireNotNull(_binding)
+class HeadToHeadFragment : BaseSampleFragment<FragmentHeadToHeadBinding>() {
 
     private val type: HeadToHeadType
     get() = HeadToHeadType.values()[requireArguments().getInt(PARAM_TYPE)]
@@ -32,18 +26,11 @@ class HeadToHeadFragment : Fragment() {
 
     }
 
-    override fun onCreateView(
+    override fun createViewBinding(
         inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentHeadToHeadBinding.inflate(inflater, container, false)
-        return binding.root
-    }
-
-    override fun onDestroyView() {
-        _binding = null
-        super.onDestroyView()
+        container: ViewGroup?
+    ): FragmentHeadToHeadBinding {
+        return FragmentHeadToHeadBinding.inflate(inflater, container, false)
     }
 
     enum class HeadToHeadType {

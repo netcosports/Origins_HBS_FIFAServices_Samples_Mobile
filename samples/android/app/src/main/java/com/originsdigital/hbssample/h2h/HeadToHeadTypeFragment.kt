@@ -4,12 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.originsdigital.hbssample.BaseSampleFragment
 import com.originsdigital.hbswidgets.android.R
 import com.originsdigital.hbswidgets.android.databinding.FragmentHeadToHeadTypeBinding
 
-class HeadToHeadTypeFragment : Fragment() {
+class HeadToHeadTypeFragment : BaseSampleFragment<FragmentHeadToHeadTypeBinding>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -36,22 +36,10 @@ class HeadToHeadTypeFragment : Fragment() {
         }
     }
 
-    override fun onCreateView(
+    override fun createViewBinding(
         inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentHeadToHeadTypeBinding.inflate(inflater, container, false)
-        return binding.root
+        container: ViewGroup?
+    ): FragmentHeadToHeadTypeBinding {
+        return FragmentHeadToHeadTypeBinding.inflate(inflater, container, false)
     }
-
-    override fun onDestroyView() {
-        _binding = null
-        super.onDestroyView()
-    }
-
-    private var _binding: FragmentHeadToHeadTypeBinding? = null
-    private val binding: FragmentHeadToHeadTypeBinding
-        get() = requireNotNull(_binding)
-
 }

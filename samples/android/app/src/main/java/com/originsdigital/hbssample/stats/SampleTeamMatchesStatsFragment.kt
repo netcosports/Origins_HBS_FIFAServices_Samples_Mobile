@@ -6,29 +6,22 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.originsdigital.hbssample.BaseSampleFragment
-import com.originsdigital.hbswidgets.android.R
-import com.originsdigital.hbswidgets.android.databinding.FragmentStatsBinding
+import com.originsdigital.hbswidgets.android.databinding.FragmentStatsTeamMatchesBinding
 
-class StatsFragment: BaseSampleFragment<FragmentStatsBinding>() {
+class SampleTeamMatchesStatsFragment : BaseSampleFragment<FragmentStatsTeamMatchesBinding>() {
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.toolbar.setNavigationOnClickListener { findNavController().popBackStack() }
-
-        binding.topPlayers.setOnClickListener {
-            findNavController().navigate(R.id.action_statsFragment_to_topPlayers)
-        }
-
-        binding.teamMatches.setOnClickListener {
-            findNavController().navigate(R.id.action_statsFragment_to_teamMatches)
-        }
+        binding.teamMatchesWidget.setupTeamId(teamId = "43960")
     }
 
     override fun createViewBinding(
         inflater: LayoutInflater,
         container: ViewGroup?
-    ): FragmentStatsBinding {
-        return FragmentStatsBinding.inflate(inflater, container, false)
+    ): FragmentStatsTeamMatchesBinding {
+        return FragmentStatsTeamMatchesBinding.inflate(inflater, container, false)
     }
 
 }

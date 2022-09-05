@@ -21,40 +21,26 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <com.originsdigital.hbswidgets.video.VideosListWidget
+            <com.originsdigital.hbswidgets.video.VideoCarouselWidget
                 android:id="@+id/widget1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
-            <com.originsdigital.hbswidgets.video.VideosListWidget
+            <com.originsdigital.hbswidgets.video.VideoCarouselWidget
                 android:id="@+id/widget2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
-            <com.originsdigital.hbswidgets.video.VideosListWidget
+            <com.originsdigital.hbswidgets.video.VideoCarouselWidget
                 android:id="@+id/widget3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
-            <com.originsdigital.hbswidgets.video.VideosListWidget
+            <com.originsdigital.hbswidgets.video.VideoCarouselWidget
                 android:id="@+id/widget4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
-            <com.originsdigital.hbswidgets.video.VideosListWidget
-                android:id="@+id/widget5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <com.originsdigital.hbswidgets.video.VideosListWidget
-                android:id="@+id/widget6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <com.originsdigital.hbswidgets.video.VideosListWidget
-                android:id="@+id/widget7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
         </LinearLayout>
     </ScrollView>
 

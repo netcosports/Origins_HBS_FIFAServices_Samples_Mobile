@@ -7,6 +7,7 @@
         android:allowBackup="false"
         android:label="Origins Widgets"
         android:supportsRtl="true"
+
         android:icon="@mipmap/ic_launcher"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
@@ -22,6 +23,11 @@
 
         <activity
             android:name="com.originsdigital.hbssample.settings.SettingsActivity"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+
+        <activity
+            android:name="com.originsdigital.hbssample.matchcenter.SampleMatchCenterActivity"
             android:screenOrientation="portrait"
             android:exported="false" />
 

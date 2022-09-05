@@ -20,79 +20,54 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/group_container_name"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:id="@+id/group_container_name"
+            <TextView
+                android:id="@+id/group_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/hbs_standing_content_start_margin"
+                android:paddingTop="@dimen/hbs_standing_content_start_margin"
+                android:text="Small carousel" />
+
+            <com.originsdigital.hbswidgets.matchcenter.SmallMatchesWidget
+                android:id="@+id/small_matches"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:orientation="vertical"
-                app:layout_constraintTop_toTopOf="parent">
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/group_container_name" />
 
-                <TextView
-                    android:id="@+id/group_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="@dimen/hbs_standing_content_start_margin"
-                    android:paddingTop="@dimen/hbs_standing_content_start_margin"
-                    android:text="Small carousel" />
+            <TextView
+                android:id="@+id/medium_group_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/hbs_standing_content_start_margin"
+                android:paddingTop="@dimen/hbs_standing_content_start_margin"
+                android:text="Medium carousel" />
 
-                <com.originsdigital.hbswidgets.matchcenter.SmallMatchesWidget
-                    android:id="@+id/small_matches"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintTop_toBottomOf="@+id/group_container_name" />
-
-            </androidx.appcompat.widget.LinearLayoutCompat>
-
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:id="@+id/group_container_name_medium"
+            <FrameLayout
+                android:id="@+id/medium_widget_container"
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
-                android:orientation="vertical"
-                app:layout_constraintTop_toBottomOf="@+id/group_container_name">
+                android:layout_height="wrap_content" />
 
-                <TextView
-                    android:id="@+id/medium_group_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="@dimen/hbs_standing_content_start_margin"
-                    android:paddingTop="@dimen/hbs_standing_content_start_margin"
-                    android:text="Medium carousel" />
+            <TextView
+                android:id="@+id/large_group_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/hbs_standing_content_start_margin"
+                android:paddingTop="@dimen/hbs_standing_content_start_margin"
+                android:text="Large carousel" />
 
-                <FrameLayout
-                    android:id="@+id/medium_widget_container"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
-            </androidx.appcompat.widget.LinearLayoutCompat>
-
-
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:id="@+id/group_container_name_large"
+            <com.originsdigital.hbswidgets.matchcenter.LargeMatchesWidget
+                android:id="@+id/largeMatches"
                 android:layout_width="match_parent"
-                android:layout_height="450dp"
-                android:orientation="vertical"
-                app:layout_constraintTop_toBottomOf="@+id/group_container_name_medium">
+                android:layout_height="420dp" />
 
-                <TextView
-                    android:id="@+id/large_group_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="@dimen/hbs_standing_content_start_margin"
-                    android:paddingTop="@dimen/hbs_standing_content_start_margin"
-                    android:text="Large carousel"
-                    android:visibility="gone" />
-
-                <FrameLayout
-                    android:id="@+id/large_widget_container"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:visibility="gone" />
-
-            </androidx.appcompat.widget.LinearLayoutCompat>
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.appcompat.widget.LinearLayoutCompat>
     </ScrollView>
 </LinearLayout>
