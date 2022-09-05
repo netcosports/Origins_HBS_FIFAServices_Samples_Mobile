@@ -2,14 +2,17 @@
 //  AppDelegate.swift
 //  iosApp
 //
-//  Created by Eugene Filipkov on 10.03.21.
-//  Copyright ¬© 2021 Origins-Digital. All rights reserved.
+//  Created by Denis Shikunets on 10.03.21.
+//  Copyright © 2021 Origins-Digital. All rights reserved.
 //
 
 import UIKit
 import HBSSDK
 import hbsshared
+import Alidade
+
 import OnRewindSDK
+import PinLayout
 
 class MyCustomNavigation: UINavigationController {
 
@@ -24,33 +27,43 @@ class MyCustomNavigation: UINavigationController {
 
 @UIApplicationMain
 public class AppDelegate: UIResponder, UIApplicationDelegate {
-	public var window: UIWindow?
+  public var window: UIWindow?
 
-	public func application(_ application: UIApplication,
-													didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-		//FirebaseApp.configure()
+  public func application(_ application: UIApplication,
+                          didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    
+    UI.setBaseWidths([.pad: 768, .phone: 414])
+
+
+    let window = UIWindow(frame: UIScreen.main.bounds)
+    window.backgroundColor = .white
 
     HBSSDK.Integration.initSdk()
-
-		let window = UIWindow(frame: UIScreen.main.bounds)
-		window.backgroundColor = .white
-
-		let controller = MyCustomNavigation(rootViewController: SampleHomeController())
-		window.rootViewController = controller
-		window.makeKeyAndVisible()
-		self.window = window
+    HBSSDK.Integration.setDisplayActionsInMatchCenter(display: true)
 
     OnRewind.initialize()
-    OnRewind.set(baseUrl: "https://api-gateway.onrewind.tv/main-api")
+    OnRewind.set(baseUrl: "")
 
-    HBSSDK.Integration.presentPlayerBlock = { context in
-      let params = OnRewind.EventParams.eventId("78fbebc2-fc52-439e-81f4-8557bba62c1b", accountKey: "SkH0O4D5H")
+    Integration.presentPlayerBlock = { context in
+      guard let videoURL = context.videoURL else {
+        return
+      }
       OnRewind.presentPlayer(
-        with: params,
-        from: context.presentationController
+        with: OnRewind.EventParams.videoStream(videoURL, isLive: false),
+        from: context.presentationController,
+        richPlayback: false
       )
     }
 
-		return true
-	}
+//    Integration.presentMatchBlock = { context in
+//      print("tttt presentMatchBlock: \(context.matchId)")
+//    }
+
+    let controller = MyCustomNavigation(rootViewController: SampleMainController())
+    window.rootViewController = controller
+    window.makeKeyAndVisible()
+    self.window = window
+
+    return true
+  }
 }
