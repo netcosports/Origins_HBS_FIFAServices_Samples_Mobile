@@ -31,6 +31,6 @@ public class TeamBoardViewManager extends SimpleViewManager<TeamBoardWidget> {
 
     @ReactProp(name = "teamId")
     public void setTeamId(TeamBoardWidget view, @Nullable String teamId) {
-        view.setupTeamId(teamId);
+        view.setupTeamId(teamId, true); //todo denis
     }
 }

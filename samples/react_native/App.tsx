@@ -29,6 +29,8 @@ export default function App() {
         style={{ width: "100%", height: "100%", backgroundColor: '' }}
         contentContainerStyle={{ width: "100%" }}>
 
+        <Videos data={{ category: "Matches - Match Clips"}} style={styles.videos} />
+
         <Standings data={{ isExpanded: false }} style={styles.standings} />
 
 {/*
