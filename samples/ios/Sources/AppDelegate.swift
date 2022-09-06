@@ -39,7 +39,6 @@ public class AppDelegate: UIResponder, UIApplicationDelegate {
     window.backgroundColor = .white
 
     HBSSDK.Integration.initSdk()
-    HBSSDK.Integration.setDisplayActionsInMatchCenter(display: true)
 
     OnRewind.initialize()
     OnRewind.set(baseUrl: "")

@@ -2,7 +2,7 @@
 //  SampleSettingsController.swift
 //  iosApp
 //
-//  Created by administrator on 9/5/22.
+//  Created by Denis Shikunets on 9/5/22.
 //  Copyright © 2022 Netcosports. All rights reserved.
 //
 
@@ -15,7 +15,7 @@ class SampleSettingsController: UIViewController {
 
   private let sampleSettings = HbsSampleSettings()
 
-  private let titleLabel = UILabel {
+  private let directionLabel = UILabel {
     $0.text = "Layout direction"
   }
 
@@ -35,6 +35,22 @@ class SampleSettingsController: UIViewController {
     [directionAuto, directionLtr, directionRtl]
   }
 
+  private let actionsLabel = UILabel {
+    $0.text = "Display actions in matchcenter"
+  }
+
+  private let actionsDisplay = UIButton {
+    $0.setTitle("Display", for: .normal)
+  }
+
+  private let actionsHide = UIButton {
+    $0.setTitle("Hide", for: .normal)
+  }
+
+  private func displayActions() -> [UIButton] {
+    [actionsDisplay, actionsHide]
+  }
+
   private let close = UIButton {
     $0.setTitle("Close", for: .normal)
     $0.setTitleColor(.black, for: .normal)
@@ -46,7 +62,9 @@ class SampleSettingsController: UIViewController {
     super.viewDidLoad()
     self.view.backgroundColor = .white
 
-    self.view.addSubviews(titleLabel, directionAuto, directionLtr, directionRtl)
+    self.view.addSubviews(directionLabel, directionAuto, directionLtr, directionRtl)
+
+    self.view.addSubviews(actionsLabel, actionsDisplay, actionsHide)
 
     self.view.addSubviews(close)
 
@@ -82,6 +100,34 @@ class SampleSettingsController: UIViewController {
     })
     .disposed(by: disposeBag)
 
+    let displayButton =  sampleSettings.isDisplayActions() ? actionsDisplay : actionsHide
+
+    displayActions().forEach { view in
+      view.isSelected = view == displayButton
+      view.setTitleColor(.black, for: .selected)
+      view.setTitleColor(.lightGray, for: .normal)
+      view.layer.borderWidth = 2.ui
+      view.layer.cornerRadius = 5.ui
+      view.layer.borderColor = view.isSelected ? UIColor.black.cgColor : UIColor.lightGray.cgColor
+    }
+
+    Observable.merge(
+      displayActions().map { view in
+        view.rx.tap.map { _ in
+          view
+        }
+      }
+    ).subscribe(onNext: { [weak self] view in
+      guard let self = self else { return }
+      self.displayActions().forEach {
+        $0.isSelected = $0 == view
+        $0.layer.borderColor = $0.isSelected ? UIColor.black.cgColor : UIColor.lightGray.cgColor
+
+      }
+      self.sampleSettings.setDispayActions(display: view == self.actionsDisplay)
+    })
+    .disposed(by: disposeBag)
+
     close.rx.tap.subscribe(
       onNext: { [weak self] _ in
         self?.dismiss(animated: true)
@@ -104,12 +150,18 @@ class SampleSettingsController: UIViewController {
 
   override func viewDidLayoutSubviews() {
     super.viewDidLayoutSubviews()
-    titleLabel.pin.top(20.ui).start(20.ui).sizeToFit()
-    directionAuto.pin.below(of: titleLabel).start(to: titleLabel.edge.start).marginTop(10.ui).width(90.ui).height(40.ui)
+    directionLabel.pin.top(20.ui).start(20.ui).sizeToFit()
+    directionAuto.pin.below(of: directionLabel).start(to: directionLabel.edge.start).marginTop(10.ui).width(90.ui).height(40.ui)
 
     directionLtr.pin.after(of: directionAuto).marginStart(20.ui).top(to: directionAuto.edge.top).width(90.ui).height(40.ui)
 
     directionRtl.pin.after(of: directionLtr).marginStart(20.ui).top(to: directionAuto.edge.top).width(90.ui).height(40.ui)
+
+    actionsLabel.pin.below(of: directionAuto).marginTop(20.ui).start(20.ui).sizeToFit()
+
+    actionsDisplay.pin.below(of: actionsLabel).start(to: directionLabel.edge.start).marginTop(10.ui).width(90.ui).height(40.ui)
+
+    actionsHide.pin.after(of: actionsDisplay).marginStart(20.ui).top(to: actionsDisplay.edge.top).width(90.ui).height(40.ui)
 
     close.pin.bottom(30.ui).width(200.ui).height(50.ui).hCenter()
 

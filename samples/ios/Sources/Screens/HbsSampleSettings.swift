@@ -8,7 +8,6 @@
 
 import Foundation
 import HBSSDK
-import hbsshared
 
 class HbsSampleSettings {
 
@@ -16,11 +15,21 @@ class HbsSampleSettings {
 
   func setHbsLayoutDirection(direction: HbsLayoutDirection) {
     userDefaults.set(direction.rawValue, forKey: "direction")
+    userDefaults.synchronize()
   }
 
   func getHbsLayoutDirection() -> HbsLayoutDirection {
     let direction = userDefaults.integer(forKey: "direction")
     return HbsLayoutDirection.init(rawValue: direction) ?? .auto
+  }
+
+  func setDispayActions(display: Bool) {
+    userDefaults.set(display, forKey: "display_actions")
+    userDefaults.synchronize()
+  }
+
+  func isDisplayActions() -> Bool {
+    return userDefaults.bool(forKey: "display_actions")
   }
 
 }

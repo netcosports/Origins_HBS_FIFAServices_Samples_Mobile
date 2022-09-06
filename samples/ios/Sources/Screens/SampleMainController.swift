@@ -2,7 +2,7 @@
 //  SampleMainController.swift
 //  iosApp
 //
-//  Created by administrator on 9/5/22.
+//  Created by Denis Shikunets on 9/5/22.
 //  Copyright © 2022 Netcosports. All rights reserved.
 //
 
@@ -40,7 +40,7 @@ class SampleMainController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    setupLayoutDirection()
+    setupSdkParams()
     self.view.addSubviews(background, scrollView)
     scrollView.addSubviews(logo, demoAppButton, settingsButton)
     background.setupHbsSampleBackground()
@@ -51,7 +51,7 @@ class SampleMainController: UIViewController {
       .subscribe(onNext: { [weak self] _ in
         guard let self = self,
           let navigationController = self.navigationController else { return }
-        self.setupLayoutDirection()
+        self.setupSdkParams()
         let controller = SampleHomeController()
         navigationController.pushViewController(controller, animated: true)
       })
@@ -66,8 +66,9 @@ class SampleMainController: UIViewController {
       .disposed(by: disposeBag)
   }
 
-  private func setupLayoutDirection() {
-    let hbsDirection = HbsSampleSettings().getHbsLayoutDirection()
+  private func setupSdkParams() {
+    let appSettings = HbsSampleSettings()
+    let hbsDirection = appSettings.getHbsLayoutDirection()
     switch hbsDirection {
     case .ltr:
       UIView.appearance().semanticContentAttribute = .forceLeftToRight
@@ -84,6 +85,8 @@ class SampleMainController: UIViewController {
     }
 
     HBSSDK.Integration.setupLayoutDirection(layoutDirection: hbsDirection)
+
+    HBSSDK.Integration.setDisplayActionsInMatchCenter(display: appSettings.isDisplayActions())
   }
 
   override func viewDidLayoutSubviews() {
