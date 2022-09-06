@@ -30,11 +30,10 @@
                 android:layout_height="wrap_content" />
 
             <com.originsdigital.hbswidgets.stats.topplayer.TopPlayerStatsWidget
-                android:id="@+id/assists"
+                android:id="@+id/shots"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                app:hbs_top_player_stats_type="assists" />
+                android:layout_marginTop="20dp" />
 
         </LinearLayout>
     </ScrollView>

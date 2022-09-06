@@ -1,29 +1,56 @@
 package com.reactnativehbssdk;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.facebook.react.bridge.ReactApplicationContext;
-import com.facebook.react.uimanager.SimpleViewManager;
-import com.facebook.react.uimanager.ThemedReactContext;
-import com.originsdigital.hbswidgets.venue.VenuesWidget;
+import com.facebook.react.bridge.ReactContextBaseJavaModule;
 
-public class VenueViewManager extends SimpleViewManager<VenuesWidget> {
+import java.util.HashMap;
+import java.util.Map;
 
-    public static final String REACT_CLASS = "Venue";
-    ReactApplicationContext mCallerContext;
+public class HBSSDKModule extends ReactContextBaseJavaModule {
 
-    public VenueViewManager(ReactApplicationContext reactContext) {
-        mCallerContext = reactContext;
+    public static final String REACT_CLASS = "HBSSDK";
+
+    HBSSDKModule(ReactApplicationContext context) {
+        super(context);
     }
 
+    @NonNull
     @Override
     public String getName() {
         return REACT_CLASS;
     }
 
-    @NonNull
     @Override
-    protected VenuesWidget createViewInstance(@NonNull ThemedReactContext reactContext) {
-        return new VenuesWidget(reactContext, null);
+    public boolean hasConstants() {
+        return true;
+    }
+
+    @Nullable
+    @Override
+    public Map<String, Object> getConstants() {
+        Map<String, Object> map = new HashMap<String, Object>();
+
+        map.put("standingsComponentHeight", 290);
+        map.put("videosComponentHeight", 248);
+        map.put("mediumMatchesComponentHeight", 95);
+        map.put("smallMatchesComponentHeight", 130);
+
+        map.put("teamMatchesComponentHeight", 260);
+        map.put("topPlayerStatsComponentHeight", 260);
+        map.put("favoritesComponentHeight", 260);
+        map.put("championshipComponentHeight", 260);
+        map.put("headToHeadComponentHeight", 260);
+        map.put("matchCenterComponentHeight", 260);
+        map.put("matchesWithEventsComponentHeight", 260);
+        map.put("matchesWithoutEventsComponentHeight", 260);
+        map.put("teamMatchesStatsComponentHeight", 260);
+        map.put("teamBoardComponentHeight", 260);
+        map.put("venueComponentHeight", 260);
+        map.put("watchComponentHeight", 260);
+
+        return map;
     }
 }

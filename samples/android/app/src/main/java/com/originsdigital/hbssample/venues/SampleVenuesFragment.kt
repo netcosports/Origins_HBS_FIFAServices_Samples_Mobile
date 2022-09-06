@@ -6,8 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.originsdigital.hbssample.BaseSampleFragment
+import com.originsdigital.hbswidgets.android.R
 import com.originsdigital.hbswidgets.android.databinding.FragmentVenuesBinding
 import com.originsdigital.hbswidgets.core.HbsSdk
+import com.originsdigital.hbswidgets.venue.VenuesWidget
 
 class SampleVenuesFragment : BaseSampleFragment<FragmentVenuesBinding>() {
 
@@ -23,10 +25,20 @@ class SampleVenuesFragment : BaseSampleFragment<FragmentVenuesBinding>() {
         binding.toolbar.setNavigationOnClickListener { findNavController().popBackStack() }
 
         val widget = HbsSdk.venuesWidget(view.context)
+        widget.venueOnClickListener = object : VenuesWidget.VenueOnClickListener {
+            override fun onVenueClick(venueId: String) {
+                findNavController().navigate(
+                    R.id.action_venueFragment_to_venieDetailsFragment,
+                    SampleVenueDetailsFragment.buildArgs(venueId)
+                )
+            }
+
+        }
+
         binding.venuesContainer.addView(
             widget,
             ViewGroup.LayoutParams.MATCH_PARENT,
-            ViewGroup.LayoutParams.WRAP_CONTENT
+            ViewGroup.LayoutParams.MATCH_PARENT
         )
     }
 }

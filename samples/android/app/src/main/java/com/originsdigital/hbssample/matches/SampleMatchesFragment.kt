@@ -1,44 +1,35 @@
 package com.originsdigital.hbssample.matches
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.originsdigital.hbssample.BaseSampleFragment
+import com.originsdigital.hbssample.matchcenter.SampleMatchCenterActivity
 import com.originsdigital.hbswidgets.android.databinding.FragmentGroupMatchesBinding
 import com.originsdigital.hbswidgets.core.HbsSdk
+import com.originsdigital.hbswidgets.matchcenter.MatchWidget
 import com.originsdigital.hbswidgets.matchcenter.OnMatchClickListener
 
-class MatchesFragment : Fragment() {
-
-    private var _binding: FragmentGroupMatchesBinding? = null
-    private val binding: FragmentGroupMatchesBinding
-        get() = requireNotNull(_binding)
+class SampleMatchesFragment : BaseSampleFragment<FragmentGroupMatchesBinding>() {
 
     private val matchesType: MatchesType
         get() = MatchesType.values()[requireArguments().getInt(PARAM_TYPE)]
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentGroupMatchesBinding.inflate(inflater, container, false)
-        return binding.root
-    }
 
-    override fun onDestroyView() {
-        _binding = null
-        super.onDestroyView()
+    override fun createViewBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?
+    ): FragmentGroupMatchesBinding {
+        return FragmentGroupMatchesBinding.inflate(inflater, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.toolbar.setNavigationOnClickListener { findNavController().popBackStack() }
 
-        val widget = binding.smallMatches
         val widgetMedium = HbsSdk.matchesMediumWidget(view.context)
 
         val groupId = "255937"
@@ -49,26 +40,26 @@ class MatchesFragment : Fragment() {
 
         when (matchesType) {
             MatchesType.GROUP -> {
-                widget.setGroupId(groupId = groupId)
-                widget.setOnMatchClickListener(object : OnMatchClickListener {
-                    override fun onMatchClicked(matchId: String) {
-                        Toast.makeText(requireContext(), "Custom match click handler: $matchId", Toast.LENGTH_SHORT).show()
-                    }
-                })
+                binding.smallMatches.setGroupId(groupId = groupId)
                 widgetMedium.setGroupId(groupId = groupId)
+                binding.largeMatches.setGroupId(groupId = groupId)
             }
 
             MatchesType.ROUND -> {
-                widget.setRoundId(roundId = roundId)
+                binding.smallMatches.setRoundId(roundId = roundId)
+                binding.largeMatches.setRoundId(roundId = roundId)
                 widgetMedium.setRoundId(roundId = roundId)
+
             }
 
             MatchesType.TEAM -> {
-                widget.setTeamId(teamId = teamId)
+                binding.smallMatches.setTeamId(teamId = teamId)
+                binding.largeMatches.setTeamId(teamId = teamId)
                 widgetMedium.setTeamId(teamId = teamId)
             }
             MatchesType.MATCH -> {
-                widget.setMatchId(matchId = matchId)
+                binding.smallMatches.setMatchId(matchId = matchId)
+                binding.largeMatches.setMatchId(matchId = matchId)
                 widgetMedium.setMatchId(matchId = secondMatchId)
             }
         }
@@ -80,11 +71,15 @@ class MatchesFragment : Fragment() {
             ViewGroup.LayoutParams.WRAP_CONTENT
         )
 
-//        binding.largeWidgetContainer.addView(
-//            widgetLarge,
-//            ViewGroup.LayoutParams.MATCH_PARENT,
-//            ViewGroup.LayoutParams.WRAP_CONTENT
-//        )
+        if (needLocalMatchListener) {
+            listOf<MatchWidget>(binding.smallMatches, widgetMedium, binding.largeMatches).forEach { widget ->
+                widgetMedium.hbsMatchClickListener = object : OnMatchClickListener {
+                    override fun onMatchClicked(context: Context, matchId: String) {
+                        SampleMatchCenterActivity.launch(context, matchId = matchId, isLocal = true)
+                    }
+                }
+            }
+        }
     }
 
     companion object {

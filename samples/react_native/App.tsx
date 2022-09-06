@@ -29,25 +29,7 @@ export default function App() {
         style={{ width: "100%", height: "100%", backgroundColor: '' }}
         contentContainerStyle={{ width: "100%" }}>
 
-        <Standings data={{ groupId: "255933", isExpanded: true }} style={styles.standings} />
         <Standings data={{ isExpanded: false }} style={styles.standings} />
-
-        <SmallMatches data={{ groupId: "255933"}} style={styles.smallMatches} />
-        <MediumMatches data={{ teamId: "43960"}} style={styles.mediumMatches} />
-        <LargeMatches data={{ roundId: "255951"}} style={styles.largeMatchesWithEvents} />
-
-        <TeamMatchesStats teamId="43960" style={styles.teamMatchesStats} />
-        <Watch teamId="43960" style={styles.watch} />
-        <Venue style={styles.venue} />
-        <HeadToHead data={{ teamId: "43960" }} style={styles.headToHead} />
-        <Favorites style={styles.favorites} />
-        <Championship  style={styles.championship} />
-        <TeamBoard teamId="43960" style={styles.teamBoard} />
-
-        <TopPlayerStats statType={"goals"} style={styles.topPlayerStats} />
-        <TopPlayerStats statType={"assist"} style={styles.topPlayerStats} />
-        <TeamMatches teamId={"43960"} style={styles.teamMatches} />
-        <Videos style={styles.videos} />
 
 {/*
 */}
@@ -55,6 +37,28 @@ export default function App() {
     </SafeAreaView>
   );
 }
+
+/*
+
+        <Standings data={{ groupId: "255933", isExpanded: true }} style={styles.standings} />
+        <Standings data={{ isExpanded: false }} style={styles.standings} />
+<SmallMatches data={{ groupId: "255933"}} style={styles.smallMatches} />
+<MediumMatches data={{ teamId: "43960"}} style={styles.mediumMatches} />
+<LargeMatches data={{ roundId: "255951"}} style={styles.largeMatchesWithEvents} />
+
+<TeamMatchesStats teamId="43960" style={styles.teamMatchesStats} />
+<Watch teamId="43960" style={styles.watch} />
+<Venue style={styles.venue} />
+<HeadToHead data={{ teamId: "43960" }} style={styles.headToHead} />
+<Favorites style={styles.favorites} />
+<Championship  style={styles.championship} />
+<TeamBoard teamId="43960" style={styles.teamBoard} />
+
+<TopPlayerStats statType={"goals"} style={styles.topPlayerStats} />
+<TopPlayerStats statType={"assist"} style={styles.topPlayerStats} />
+<TeamMatches teamId={"43960"} style={styles.teamMatches} />
+<Videos style={styles.videos} />
+*/
 
 //
 //         <MatchCenter matchId={"anyId"} style={styles.matchCenter} />

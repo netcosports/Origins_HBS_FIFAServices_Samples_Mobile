@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.originsdigital.hbssample.settings.SettingsActivity
 import com.originsdigital.hbswidgets.android.R
@@ -63,8 +62,13 @@ class SampleHomeFragment : BaseSampleFragment<FragmentHomeBinding>() {
         }
 
         binding.watch.setOnClickListener {
-            findNavController().navigate(R.id.action_home_fragment_to_watchFragment)
+            findNavController().navigate(R.id.action_home_fragment_to_groupWatchesFragment)
         }
+
+        binding.matchCenter.setOnClickListener {
+            findNavController().navigate(R.id.action_home_fragment_to_matchCenterFragment)
+        }
+
     }
 
     override fun createViewBinding(

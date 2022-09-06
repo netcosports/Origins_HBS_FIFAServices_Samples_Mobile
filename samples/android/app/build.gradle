@@ -42,7 +42,7 @@ android {
 
 dependencies {
 
-    implementation "com.origins-digital.hbswidgets:widgets-whitelabel:1.0.86"
+    implementation "com.origins-digital.hbswidgets:widgets-whitelabel:1.0.89"
     implementation "com.origins-digital.onrewind:player-whitelabel:1.0.5"
     implementation "com.origins-digital.dioptra:exo:1.0.0"
     implementation 'androidx.core:core-ktx:1.8.0'

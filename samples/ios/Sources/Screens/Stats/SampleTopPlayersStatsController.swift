@@ -21,8 +21,8 @@ class SampleTopPlayersStatsController: SampleBaseController {
     logo.image = getLogoImage()
     self.view.addSubviews(logo, goalsStatsWidget, assistsStatsWidget)
 
-    goalsStatsWidget.setupWidgetParams(statsType: .goals)
-    assistsStatsWidget.setupWidgetParams(statsType: .assists)
+    goalsStatsWidget.setupWidgetParams(teamId: "43960", statsType: .goals)
+    assistsStatsWidget.setupWidgetParams(teamId: "43946",statsType: .shots)
   }
 
   override func viewDidLayoutSubviews() {
@@ -33,6 +33,6 @@ class SampleTopPlayersStatsController: SampleBaseController {
 
     assistsStatsWidget.pin.below(of: goalsStatsWidget).marginTop(20.ui).horizontally()
       .height(HBSSDK.Stats.topPlayersSize(for: view.bounds.size).height)
-    
+
   }
 }

@@ -30,6 +30,9 @@
 		C3638C7A288EEA9000DBB475 /* SampleTeamMatchesStatsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3638C67288EEA9000DBB475 /* SampleTeamMatchesStatsController.swift */; };
 		C3638C7B288EEA9000DBB475 /* SampleStatsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3638C68288EEA9000DBB475 /* SampleStatsController.swift */; };
 		C3638C7C288EEA9000DBB475 /* SampleTopPlayersStatsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3638C69288EEA9000DBB475 /* SampleTopPlayersStatsController.swift */; };
+		C3EC709428C647B20081F8C0 /* HbsSampleSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EC709328C647B20081F8C0 /* HbsSampleSettings.swift */; };
+		C3EC709628C6482E0081F8C0 /* SampleMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EC709528C6482E0081F8C0 /* SampleMainController.swift */; };
+		C3EC709828C649E80081F8C0 /* SampleSettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EC709728C649E80081F8C0 /* SampleSettingsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +65,9 @@
 		C3638C67288EEA9000DBB475 /* SampleTeamMatchesStatsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleTeamMatchesStatsController.swift; sourceTree = "<group>"; };
 		C3638C68288EEA9000DBB475 /* SampleStatsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleStatsController.swift; sourceTree = "<group>"; };
 		C3638C69288EEA9000DBB475 /* SampleTopPlayersStatsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleTopPlayersStatsController.swift; sourceTree = "<group>"; };
+		C3EC709328C647B20081F8C0 /* HbsSampleSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HbsSampleSettings.swift; sourceTree = "<group>"; };
+		C3EC709528C6482E0081F8C0 /* SampleMainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleMainController.swift; sourceTree = "<group>"; };
+		C3EC709728C649E80081F8C0 /* SampleSettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleSettingsController.swift; sourceTree = "<group>"; };
 		E6A553DF2B64B09A8A32E08C /* Pods_HBSSDKSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HBSSDKSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -152,6 +158,9 @@
 				C3638C62288EEA9000DBB475 /* Teams */,
 				C3638C64288EEA9000DBB475 /* Watch */,
 				C3638C66288EEA9000DBB475 /* Stats */,
+				C3EC709328C647B20081F8C0 /* HbsSampleSettings.swift */,
+				C3EC709528C6482E0081F8C0 /* SampleMainController.swift */,
+				C3EC709728C649E80081F8C0 /* SampleSettingsController.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -385,8 +394,10 @@
 				C3638C6E288EEA9000DBB475 /* SampleActionController.swift in Sources */,
 				C3638C75288EEA9000DBB475 /* SampleVideoController.swift in Sources */,
 				C3638C73288EEA9000DBB475 /* SampleFavoriteController.swift in Sources */,
+				C3EC709828C649E80081F8C0 /* SampleSettingsController.swift in Sources */,
 				C3638C74288EEA9000DBB475 /* SampleVenuesController.swift in Sources */,
 				C3638C6A288EEA9000DBB475 /* SampleHeadToHeadController.swift in Sources */,
+				C3EC709628C6482E0081F8C0 /* SampleMainController.swift in Sources */,
 				C3638C78288EEA9000DBB475 /* SampleTeamsController.swift in Sources */,
 				C3638C71288EEA9000DBB475 /* SampleCarouselStandingsController.swift in Sources */,
 				C3638C7B288EEA9000DBB475 /* SampleStatsController.swift in Sources */,
@@ -394,6 +405,7 @@
 				C3638C7C288EEA9000DBB475 /* SampleTopPlayersStatsController.swift in Sources */,
 				C3638C6F288EEA9000DBB475 /* SampleSingleGroupStandingsController.swift in Sources */,
 				C3638C77288EEA9000DBB475 /* SampleMatchboxTypeController.swift in Sources */,
+				C3EC709428C647B20081F8C0 /* HbsSampleSettings.swift in Sources */,
 				C3638C6D288EEA9000DBB475 /* SampleHomeController.swift in Sources */,
 				AA1BD652282D0AA200E9B859 /* AppDelegate.swift in Sources */,
 				C3638C76288EEA9000DBB475 /* SampleMatchboxController.swift in Sources */,
