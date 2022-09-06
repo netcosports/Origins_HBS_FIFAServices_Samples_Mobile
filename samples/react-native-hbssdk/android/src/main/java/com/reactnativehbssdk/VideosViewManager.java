@@ -4,13 +4,14 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.facebook.react.bridge.ReactApplicationContext;
+import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.uimanager.SimpleViewManager;
 import com.facebook.react.uimanager.ThemedReactContext;
 import com.facebook.react.uimanager.annotations.ReactProp;
-import com.originsdigital.hbswidgets.video.VideosListWidget;
+import com.originsdigital.hbswidgets.video.VideoCarouselWidget;
 
 
-public class VideosViewManager extends SimpleViewManager<VideosListWidget> {
+public class VideosViewManager extends SimpleViewManager<VideoCarouselWidget> {
 
     public static final String REACT_CLASS = "Videos";
     ReactApplicationContext mCallerContext;
@@ -26,12 +27,14 @@ public class VideosViewManager extends SimpleViewManager<VideosListWidget> {
 
     @NonNull
     @Override
-    protected VideosListWidget createViewInstance(@NonNull ThemedReactContext reactContext) {
-        return new VideosListWidget(reactContext, null);
+    protected VideoCarouselWidget createViewInstance(@NonNull ThemedReactContext reactContext) {
+        return new VideoCarouselWidget(reactContext, null);
     }
 
-    @ReactProp(name = "category")
-    public void setCategory(VideosListWidget view, @Nullable String category) {
-        view.setCategory(category);
+    @ReactProp(name = "data")
+    public void setData(VideoCarouselWidget view, @Nullable ReadableMap data) {
+        String category = data.getString("category");
+        String subcategory = data.getString("subcategory");
+        view.setCategory(category, subcategory);
     }
 }

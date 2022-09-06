@@ -29,7 +29,7 @@ public class TopPlayerStatsViewManager extends SimpleViewManager<TopPlayerStatsW
     @Override
     protected TopPlayerStatsWidget createViewInstance(@NonNull ThemedReactContext reactContext) {
         TopPlayerStatsWidget widget = new TopPlayerStatsWidget(reactContext, null);
-        widget.setupStatsType(TopPlayerStatsWidget.Type.GOALS);
+        widget.setupStatsType("43946", TopPlayerStatsWidget.Type.GOALS); //todo denis
         return widget;
     }
 

@@ -26,9 +26,9 @@ RCT_CUSTOM_VIEW_PROPERTY(statType, NSString, UIView<TopPlayerStatsWidget>)
   NSString *typeString = [RCTConvert NSString:json];
   TopPlayerStatsWidgetType type = [typeString isEqualToString:@"goal"] ?
     TopPlayerStatsWidgetTypeGoals :
-    TopPlayerStatsWidgetTypeAssists;
+    TopPlayerStatsWidgetTypeShots;
 
-  [view setupWidgetParamsWithStatsType:type];
+  [view setupWidgetParamsWithTeamId:@"43946" statsType:type]; //fixme denis
 }
 
 + (BOOL)requiresMainQueueSetup {
