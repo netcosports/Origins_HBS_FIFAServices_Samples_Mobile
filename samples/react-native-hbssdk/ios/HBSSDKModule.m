@@ -30,7 +30,7 @@ RCT_EXPORT_MODULE(HBSSDK);
   CGSize containerSize = [UIScreen mainScreen].bounds.size;
   CGFloat teamMatchesComponentHeight = [Stats teamMatchesSizeFor: containerSize].height;
   CGFloat topPlayerStatsComponentHeight = [Stats topPlayersSizeFor: containerSize].height;
-  CGFloat videosComponentHeight = [Videos sizeFor: containerSize].height;
+  CGFloat videosComponentHeight = [Videos videoWidgetSizeFor:containerSize].height;
   CGFloat standingsComponentHeight = [Standings sizeFor:containerSize].height;
   CGFloat championshipComponentHeight = [Championship widgetSizeFor:containerSize].height;
   CGFloat favoritesComponentHeight = [Favorites sizeFor:containerSize].height;
