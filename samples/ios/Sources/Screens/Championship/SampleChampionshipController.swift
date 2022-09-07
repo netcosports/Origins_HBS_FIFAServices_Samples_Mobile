@@ -16,9 +16,14 @@ class SampleChampionshipController: SampleBaseController {
   override func viewDidLoad() {
     super.viewDidLoad()
     self.view.addSubviews(widget)
-    widget.openMatchDetailsBlock = { [weak self] matchId in
-      self?.testOpenMatch(matchId: matchId)
+    print("tttt use local : \(useLocalMatchClickListener)")
+    if useLocalMatchClickListener {
+      widget.openMatchDetailsBlock = { [weak self] matchId in
+        print("tttt open local \(matchId)")
+        self?.openLocalMatchCenter(matchId: matchId)
+      }
     }
+
   }
 
   override func viewDidLayoutSubviews() {
@@ -28,14 +33,3 @@ class SampleChampionshipController: SampleBaseController {
   }
 }
 
-extension UIViewController {
-  func testOpenMatch(matchId: String) {
-    let controller = UIAlertController(
-      title: "Custom click handle",
-      message: "Open match: \(matchId)",
-      preferredStyle: .alert
-    )
-    controller.addAction(.init(title: "Ok", style: .default))
-    self.present(controller, animated: false)
-  }
-}

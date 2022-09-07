@@ -11,7 +11,7 @@ import HBSSDK
 
 class HbsSampleSettings {
 
-  private let userDefaults = UserDefaults(suiteName: "hbs")!
+  private let userDefaults = UserDefaults.standard
 
   func setHbsLayoutDirection(direction: HbsLayoutDirection) {
     userDefaults.set(direction.rawValue, forKey: "direction")
@@ -32,4 +32,20 @@ class HbsSampleSettings {
     return userDefaults.bool(forKey: "display_actions")
   }
 
+  func setHbsMatchCenterClickHandler(handler: HbsMatchCenterClickHandler) {
+    userDefaults.set(handler.rawValue, forKey: "match_center")
+    userDefaults.synchronize()
+  }
+
+  func getHbsMatchCenterClickHandler() -> HbsMatchCenterClickHandler {
+    let direction = userDefaults.integer(forKey: "match_center")
+    return HbsMatchCenterClickHandler.init(rawValue: direction) ?? .none
+  }
+
+}
+
+enum HbsMatchCenterClickHandler: Int {
+  case none = 0
+  case local = 1
+  case global = 2
 }

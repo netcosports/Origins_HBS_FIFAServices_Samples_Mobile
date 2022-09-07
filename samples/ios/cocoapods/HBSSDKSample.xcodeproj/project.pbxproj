@@ -30,6 +30,7 @@
 		C3638C7A288EEA9000DBB475 /* SampleTeamMatchesStatsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3638C67288EEA9000DBB475 /* SampleTeamMatchesStatsController.swift */; };
 		C3638C7B288EEA9000DBB475 /* SampleStatsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3638C68288EEA9000DBB475 /* SampleStatsController.swift */; };
 		C3638C7C288EEA9000DBB475 /* SampleTopPlayersStatsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3638C69288EEA9000DBB475 /* SampleTopPlayersStatsController.swift */; };
+		C3A636DC28C8ABDF00C48A7A /* SampleMatchCenterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A636DB28C8ABDF00C48A7A /* SampleMatchCenterController.swift */; };
 		C3EC709428C647B20081F8C0 /* HbsSampleSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EC709328C647B20081F8C0 /* HbsSampleSettings.swift */; };
 		C3EC709628C6482E0081F8C0 /* SampleMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EC709528C6482E0081F8C0 /* SampleMainController.swift */; };
 		C3EC709828C649E80081F8C0 /* SampleSettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EC709728C649E80081F8C0 /* SampleSettingsController.swift */; };
@@ -65,6 +66,7 @@
 		C3638C67288EEA9000DBB475 /* SampleTeamMatchesStatsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleTeamMatchesStatsController.swift; sourceTree = "<group>"; };
 		C3638C68288EEA9000DBB475 /* SampleStatsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleStatsController.swift; sourceTree = "<group>"; };
 		C3638C69288EEA9000DBB475 /* SampleTopPlayersStatsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleTopPlayersStatsController.swift; sourceTree = "<group>"; };
+		C3A636DB28C8ABDF00C48A7A /* SampleMatchCenterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleMatchCenterController.swift; sourceTree = "<group>"; };
 		C3EC709328C647B20081F8C0 /* HbsSampleSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HbsSampleSettings.swift; sourceTree = "<group>"; };
 		C3EC709528C6482E0081F8C0 /* SampleMainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleMainController.swift; sourceTree = "<group>"; };
 		C3EC709728C649E80081F8C0 /* SampleSettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleSettingsController.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				C3EC709328C647B20081F8C0 /* HbsSampleSettings.swift */,
 				C3EC709528C6482E0081F8C0 /* SampleMainController.swift */,
 				C3EC709728C649E80081F8C0 /* SampleSettingsController.swift */,
+				C3A636DB28C8ABDF00C48A7A /* SampleMatchCenterController.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3A636DC28C8ABDF00C48A7A /* SampleMatchCenterController.swift in Sources */,
 				C3638C7A288EEA9000DBB475 /* SampleTeamMatchesStatsController.swift in Sources */,
 				C3638C79288EEA9000DBB475 /* SampleWatchController.swift in Sources */,
 				C3638C6B288EEA9000DBB475 /* SampleChampionshipController.swift in Sources */,
