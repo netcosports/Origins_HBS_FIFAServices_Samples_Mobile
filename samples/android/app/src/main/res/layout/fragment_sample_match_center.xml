@@ -2,7 +2,16 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/innerToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        app:navigationIcon="@drawable/arrow_left"
+        app:title="Sample match center widgets"
+        app:titleTextColor="@color/sample_toolbar_text_color" />
     
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"

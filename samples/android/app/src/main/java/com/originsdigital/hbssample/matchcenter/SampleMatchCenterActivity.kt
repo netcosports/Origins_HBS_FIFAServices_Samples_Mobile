@@ -21,7 +21,7 @@ class SampleMatchCenterActivity : AppCompatActivity() {
         binding.toolbar.setNavigationOnClickListener { finish() }
 
         supportFragmentManager.beginTransaction()
-            .replace(binding.fragment.id, SampleMatchStatsFragment.newInstance(matchId))
+            .replace(binding.fragment.id, SampleMatchCenterFragment.newInstance(matchId = matchId, displayToolbar = false))
             .commit()
     }
 
