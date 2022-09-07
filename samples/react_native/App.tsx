@@ -31,6 +31,7 @@ export default function App() {
 
 
 
+        <TeamBoard data={{ teamId: "43948", allowChangeTeam: true }} style={styles.teamBoard} />
         <Standings data={{ isExpanded: false }} style={styles.standings} />
 
 

@@ -35,9 +35,9 @@ RCT_EXPORT_VIEW_PROPERTY(onOpenMatchDetails, RCTBubblingEventBlock)
 
   [self view];
   __weak typeof(self) weakSelf = self;
-  self.currentView.openMatchDetailsBlock = ^(NSString * _Nonnull match) {
-    weakSelf.onOpenMatchDetails(@{ @"matchId": match });
-  };
+//  self.currentView.openMatchDetailsBlock = ^(NSString * _Nonnull match) {
+//    weakSelf.onOpenMatchDetails(@{ @"matchId": match });
+//  };
 }
 
 @end
