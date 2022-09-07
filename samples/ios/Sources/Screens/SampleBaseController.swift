@@ -13,10 +13,17 @@ import RxSwift
 
 class SampleBaseController: UIViewController, UIGestureRecognizerDelegate {
 
+  let appSettings = HbsSampleSettings()
+
   let disposeBag = DisposeBag()
   private let backButtonButton = UIButton()
 
   private let background = GradientView()
+
+  var useLocalMatchClickListener: Bool {
+    return appSettings.getHbsMatchCenterClickHandler() == .local
+  }
+
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -46,6 +53,7 @@ class SampleBaseController: UIViewController, UIGestureRecognizerDelegate {
 
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
+
     self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
     self.navigationController?.interactivePopGestureRecognizer?.delegate = self
   }
@@ -54,4 +62,12 @@ class SampleBaseController: UIViewController, UIGestureRecognizerDelegate {
     return true
   }
   
+}
+
+extension UIViewController {
+  func openLocalMatchCenter(matchId: String) {
+    let matchController = SampleMatchCenterController()
+    matchController.setupMatchId(matchId: matchId, isLocal: true)
+    self.navigationController?.present(matchController, animated: true)
+  }
 }

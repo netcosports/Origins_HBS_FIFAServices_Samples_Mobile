@@ -12,14 +12,13 @@ import Alidade
 import RxSwift
 import RxCocoa
 
-public class SampleHomeController: UIViewController {
+class SampleHomeController: SampleBaseController {
 
   static let hbsDarkWidgetBackgroundEndColor: UIColor = #colorLiteral(red: 0.10980392, green: 0.003921569, blue: 0.06666667, alpha: 1.0)
   static let hbsDarkWidgetBackgroundStartColor: UIColor = #colorLiteral(red: 0.5411765, green: 0.08235294, blue: 0.21960784, alpha: 1.0)
   static let hbsDarkWidgetBackgroundStartColorLight: UIColor = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
   static let horizontalMargin = 28.ui
 
-  private let background = GradientView()
   private let logo = UIImageView()
 
 
@@ -76,21 +75,12 @@ public class SampleHomeController: UIViewController {
     $0.setupHbsButton("Watch")
   }
 
-  private let disposeBag = DisposeBag()
-
-  public override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-    super.traitCollectionDidChange(previousTraitCollection)
-    background.setupHbsSampleBackground()
-  }
 
   public override func viewDidLoad() {
     super.viewDidLoad()
     logo.image = getLogoImage()
-    self.view.addSubviews(background, scrollView)
+    self.view.addSubviews(scrollView)
     self.scrollView.addSubviews(logo, standingsButton, matchboxButton, statsButton, championshipButton, videosButton, favoritesButton, teamsButton, teamBoardButton, headToHeadButton, actionsButton, venuesButton, watchButton)
-
-    background.setupHbsSampleBackground()
-    
 
     standingsButton.rx.tap.observeOn(MainScheduler.asyncInstance)
       .subscribe(onNext: { [weak self] _ in
@@ -193,7 +183,6 @@ public class SampleHomeController: UIViewController {
 
   public override func viewDidLayoutSubviews() {
     super.viewDidLayoutSubviews()
-    background.pin.all()
     scrollView.pin.all()
     logo.pin.top(self.view.getStatusBarHeight()).size(78.ui).hCenter()
     standingsButton.pin.below(of: logo).marginTop(48.ui).horizontally(28.ui).height(75.ui)

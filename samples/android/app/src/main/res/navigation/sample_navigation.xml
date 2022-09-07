@@ -198,6 +198,6 @@
 
     <fragment
         android:id="@+id/matchCenterFragment"
-        android:name="com.originsdigital.hbssample.matchcenter.SampleMatchStatsFragment"
+        android:name="com.originsdigital.hbssample.matchcenter.SampleMatchCenterFragment"
         android:label="TeamBoardFragment"/>
 </navigation>

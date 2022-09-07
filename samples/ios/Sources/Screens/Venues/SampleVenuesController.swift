@@ -19,8 +19,8 @@ class SampleVenuesController: SampleBaseController {
     self.view.addSubviews(root)
     root.addSubviews(venueWidget)
 
-    venueWidget.openMatchDetailsBlock = { (controller, matchId) in
-      controller.testOpenMatch(matchId: matchId)
+    venueWidget.openMatchDetailsBlock = { [weak self] (controller, matchId) in
+      self?.openLocalMatchCenter(matchId: matchId)
     }
   }
 

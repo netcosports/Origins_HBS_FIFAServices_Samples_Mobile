@@ -73,7 +73,7 @@ class SampleMatchesFragment : BaseSampleFragment<FragmentGroupMatchesBinding>() 
 
         if (needLocalMatchListener) {
             listOf<MatchWidget>(binding.smallMatches, widgetMedium, binding.largeMatches).forEach { widget ->
-                widgetMedium.hbsMatchClickListener = object : OnMatchClickListener {
+                widget.hbsMatchClickListener = object : OnMatchClickListener {
                     override fun onMatchClicked(context: Context, matchId: String) {
                         SampleMatchCenterActivity.launch(context, matchId = matchId, isLocal = true)
                     }

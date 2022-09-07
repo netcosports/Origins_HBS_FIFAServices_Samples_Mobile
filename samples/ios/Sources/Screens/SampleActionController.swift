@@ -16,7 +16,7 @@ class SampleActionController: SampleBaseController {
   override func viewDidLoad() {
     super.viewDidLoad()
     self.view.addSubviews(actionsWidget)
-    actionsWidget.setupMatchId(matchId: "84864")
+    actionsWidget.setupMatchId(matchId: "224421")
   }
 
   override func viewDidLayoutSubviews() {

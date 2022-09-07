@@ -8,6 +8,7 @@
 
 import UIKit
 import HBSSDK
+import hbsshared
 
 class SampleTeamBoardController: SampleBaseController {
 
@@ -21,10 +22,13 @@ class SampleTeamBoardController: SampleBaseController {
     scrollView.showsVerticalScrollIndicator = false
     title = "Team Board"
     teamBoardWidget.setupTeamId(teamId: HBSSDK.Integration.getFavoriteTeamId() ?? "43946")
-    teamBoardWidget.openMatchDetailsBlock = { [weak self] matchId in
-      self?.testOpenMatch(matchId: matchId)
+    if useLocalMatchClickListener {
+      teamBoardWidget.openMatchDetailsBlock = { [weak self] matchId in
+        self?.openLocalMatchCenter(matchId: matchId)
+      }
     }
   }
+
 
   override func viewDidLayoutSubviews() {
     super.viewDidLayoutSubviews()

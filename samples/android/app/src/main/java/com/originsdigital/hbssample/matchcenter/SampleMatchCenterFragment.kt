@@ -4,11 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
+import androidx.navigation.fragment.findNavController
 import com.google.android.material.tabs.TabLayout
 import com.originsdigital.hbssample.BaseSampleFragment
 import com.originsdigital.hbswidgets.android.databinding.FragmentSampleMatchCenterBinding
 
-class SampleMatchStatsFragment : BaseSampleFragment<FragmentSampleMatchCenterBinding>() {
+class SampleMatchCenterFragment : BaseSampleFragment<FragmentSampleMatchCenterBinding>() {
     override fun createViewBinding(
         inflater: LayoutInflater,
         container: ViewGroup?
@@ -20,6 +22,8 @@ class SampleMatchStatsFragment : BaseSampleFragment<FragmentSampleMatchCenterBin
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.innerToolbar.isVisible = requireArguments().getBoolean(DISPLAY_TOOLBAR)
+        binding.innerToolbar.setNavigationOnClickListener { findNavController().popBackStack() }
         val matchId = requireNotNull(arguments?.getString(MATCH_ID))
 
         listOf("Lineup", "Stats").map { text ->
@@ -49,12 +53,18 @@ class SampleMatchStatsFragment : BaseSampleFragment<FragmentSampleMatchCenterBin
     companion object {
 
         private const val MATCH_ID = "match_id"
+        private const val DISPLAY_TOOLBAR = "display_toolbar"
 
-        fun newInstance(matchId: String): SampleMatchStatsFragment {
-            val fragment = SampleMatchStatsFragment()
+        fun buildArgs(matchId: String, displayToolbar: Boolean): Bundle {
             val args = Bundle()
             args.putString(MATCH_ID, matchId)
-            fragment.arguments = args
+            args.putBoolean(DISPLAY_TOOLBAR, displayToolbar)
+            return args
+        }
+
+        fun newInstance(matchId: String, displayToolbar: Boolean): SampleMatchCenterFragment {
+            val fragment = SampleMatchCenterFragment()
+            fragment.arguments = buildArgs(matchId, displayToolbar)
             return fragment
         }
     }

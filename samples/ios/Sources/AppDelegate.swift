@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  iosApp
 //
-//  Created by Denis Shikunets on 10.03.21.
-//  Copyright © 2021 Origins-Digital. All rights reserved.
+//  Created by Eugene Filipkov on 10.03.21.
+//  Copyright ¬© 2021 Origins-Digital. All rights reserved.
 //
 
 import UIKit
@@ -27,16 +27,16 @@ class MyCustomNavigation: UINavigationController {
 
 @UIApplicationMain
 public class AppDelegate: UIResponder, UIApplicationDelegate {
-  public var window: UIWindow?
+	public var window: UIWindow?
 
-  public func application(_ application: UIApplication,
-                          didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    
+	public func application(_ application: UIApplication,
+													didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+
     UI.setBaseWidths([.pad: 768, .phone: 414])
 
 
-    let window = UIWindow(frame: UIScreen.main.bounds)
-    window.backgroundColor = .white
+		let window = UIWindow(frame: UIScreen.main.bounds)
+		window.backgroundColor = .white
 
     HBSSDK.Integration.initSdk()
 
@@ -54,15 +54,25 @@ public class AppDelegate: UIResponder, UIApplicationDelegate {
       )
     }
 
-//    Integration.presentMatchBlock = { context in
-//      print("tttt presentMatchBlock: \(context.matchId)")
-//    }
 
-    let controller = MyCustomNavigation(rootViewController: SampleMainController())
-    window.rootViewController = controller
-    window.makeKeyAndVisible()
-    self.window = window
 
-    return true
+		let controller = MyCustomNavigation(rootViewController: SampleMainController())
+		window.rootViewController = controller
+		window.makeKeyAndVisible()
+		self.window = window
+
+		return true
+	}
+
+  func setupMatchClickListener(clickHandler: HbsMatchCenterClickHandler) {
+    if clickHandler == .global {
+      Integration.presentMatchBlock = { context in
+        let matchController = SampleMatchCenterController()
+        matchController.setupMatchId(matchId: context.matchId, isLocal: false)
+        context.presentationController.present(matchController, animated: true)
+      }
+    } else {
+      Integration.presentMatchBlock = nil
+    }
   }
 }

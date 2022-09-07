@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.originsdigital.hbssample.matchcenter.SampleMatchCenterFragment
 import com.originsdigital.hbssample.settings.SettingsActivity
 import com.originsdigital.hbswidgets.android.R
 import com.originsdigital.hbswidgets.android.databinding.FragmentHomeBinding
@@ -66,7 +67,10 @@ class SampleHomeFragment : BaseSampleFragment<FragmentHomeBinding>() {
         }
 
         binding.matchCenter.setOnClickListener {
-            findNavController().navigate(R.id.action_home_fragment_to_matchCenterFragment)
+            findNavController().navigate(
+                R.id.action_home_fragment_to_matchCenterFragment,
+                SampleMatchCenterFragment.buildArgs(matchId = "84891", displayToolbar = true)
+            )
         }
 
     }
