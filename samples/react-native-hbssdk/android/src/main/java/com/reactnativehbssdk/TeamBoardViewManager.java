@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.facebook.react.bridge.ReactApplicationContext;
+import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.uimanager.SimpleViewManager;
 import com.facebook.react.uimanager.ThemedReactContext;
 import com.facebook.react.uimanager.annotations.ReactProp;
@@ -29,8 +30,20 @@ public class TeamBoardViewManager extends SimpleViewManager<TeamBoardWidget> {
         return new TeamBoardWidget(reactContext, null);
     }
 
-    @ReactProp(name = "teamId")
-    public void setTeamId(TeamBoardWidget view, @Nullable String teamId) {
-        view.setupTeamId(teamId, true); //todo denis
+    @ReactProp(name = "data")
+    public void setData(TeamBoardWidget view, @Nullable ReadableMap data) {
+        if (data == null) {
+            return;
+        }
+        String teamId = data.getString("teamId");
+        if (teamId == null) {
+            return;
+        }
+        boolean allowChangeTeam = false;
+        if (data.hasKey("allowChangeTeam")) {
+            allowChangeTeam = data.getBoolean("allowChangeTeam");
+        }
+
+        view.setupTeamId(teamId, allowChangeTeam);
     }
 }

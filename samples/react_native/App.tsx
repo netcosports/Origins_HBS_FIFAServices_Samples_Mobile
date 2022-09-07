@@ -29,9 +29,11 @@ export default function App() {
         style={{ width: "100%", height: "100%", backgroundColor: '' }}
         contentContainerStyle={{ width: "100%" }}>
 
-        <Videos data={{ category: "Matches - Match Clips"}} style={styles.videos} />
 
+
+        <TeamBoard data={{ teamId: "43948", allowChangeTeam: true }} style={styles.teamBoard} />
         <Standings data={{ isExpanded: false }} style={styles.standings} />
+
 
 {/*
 */}
@@ -42,24 +44,29 @@ export default function App() {
 
 /*
 
-        <Standings data={{ groupId: "255933", isExpanded: true }} style={styles.standings} />
-        <Standings data={{ isExpanded: false }} style={styles.standings} />
+<Standings data={{ groupId: "255933", isExpanded: true }} style={styles.standings} />
+<Standings data={{ isExpanded: false }} style={styles.standings} />
 <SmallMatches data={{ groupId: "255933"}} style={styles.smallMatches} />
 <MediumMatches data={{ teamId: "43960"}} style={styles.mediumMatches} />
 <LargeMatches data={{ roundId: "255951"}} style={styles.largeMatchesWithEvents} />
-
+<Videos data={{ category: "Matches - Match Clips"}} style={styles.videos} />
 <TeamMatchesStats teamId="43960" style={styles.teamMatchesStats} />
-<Watch teamId="43960" style={styles.watch} />
+<TopPlayerStats data={{ teamId: "43948", statsType: "goals" }} style={styles.topPlayerStats} />
+<TopPlayerStats data={{ teamId: "43948", statsType: "shots" }} style={styles.topPlayerStats} />
 <Venue style={styles.venue} />
 <HeadToHead data={{ teamId: "43960" }} style={styles.headToHead} />
+<HeadToHead data={{ teamId1: "43960", teamId2: "43948" }} style={styles.headToHead} />
+<HeadToHead data = {{}} style={styles.headToHead} />
+<TeamBoard data={{ teamId: "43948", allowChangeTeam: true }} style={styles.teamBoard} />
+<TeamBoard data={{ teamId: "43948" }} style={styles.teamBoard} />
+
+<Watch teamId="43960" style={styles.watch} />
 <Favorites style={styles.favorites} />
 <Championship  style={styles.championship} />
-<TeamBoard teamId="43960" style={styles.teamBoard} />
 
 <TopPlayerStats statType={"goals"} style={styles.topPlayerStats} />
 <TopPlayerStats statType={"assist"} style={styles.topPlayerStats} />
 <TeamMatches teamId={"43960"} style={styles.teamMatches} />
-<Videos style={styles.videos} />
 */
 
 //
@@ -69,8 +76,7 @@ export default function App() {
 var styles = StyleSheet.create({
   topPlayerStats: {
     width: "100%",
-    height: HBSSDK.topPlayerStatsComponentHeight,
-    backgroundColor: 'green'
+    height: HBSSDK.topPlayerStatsComponentHeight
   },
   teamMatches: {
     width: "100%",

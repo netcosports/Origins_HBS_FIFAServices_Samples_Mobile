@@ -73,9 +73,9 @@ PODS:
     - FlipperKit/FlipperKitNetworkPlugin
   - fmt (6.2.1)
   - glog (0.3.5)
-  - HBSSDK (1.0.89):
+  - HBSSDK (1.0.90):
     - hbsshared
-  - hbsshared (1.0.89)
+  - hbsshared (1.0.90)
   - libevent (2.1.12)
   - OnRewindSDK (0.0.1)
   - OpenSSL-Universal (1.1.1100)
@@ -288,7 +288,7 @@ PODS:
   - React-jsinspector (0.69.1)
   - React-logger (0.69.1):
     - glog
-  - react-native-hbssdk (1.4.2):
+  - react-native-hbssdk (1.4.4):
     - HBSSDK
     - React-Core
   - React-perflogger (0.69.1)
@@ -536,8 +536,8 @@ SPEC CHECKSUMS:
   FlipperKit: cbdee19bdd4e7f05472a66ce290f1b729ba3cb86
   fmt: ff9d55029c625d3757ed641535fd4a75fedc7ce9
   glog: 3d02b25ca00c2d456734d0bcff864cbc62f6ae1a
-  HBSSDK: d330e70041b38c47c1d2f377eb29459d87eb662b
-  hbsshared: fe1cb8be3f47021ae6ec3ab87af6e4ab181dcd97
+  HBSSDK: 8b3bd8e201d5e5c402fc060e4ed0dc704c3bd178
+  hbsshared: 6218e6ce928f8f6b333b83beb7778d5e1b975b8e
   libevent: 4049cae6c81cdb3654a443be001fb9bdceff7913
   OnRewindSDK: 340854ad784837e19f464449dd695c2feea832bf
   OpenSSL-Universal: ebc357f1e6bc71fa463ccb2fe676756aff50e88c
@@ -555,7 +555,7 @@ SPEC CHECKSUMS:
   React-jsiexecutor: 758e70947c232828a66b5ddc42d02b4d010fa26e
   React-jsinspector: 55605caf04e02f9b0e05842b786f1c12dde08f4b
   React-logger: ca970551cb7eea2fd814d0d5f6fc1a471eb53b76
-  react-native-hbssdk: 39b7f5e96e90da13af1f1945e59d52388f078290
+  react-native-hbssdk: 109e1418e90f1f399e93cb03d9afe7c94c541c65
   React-perflogger: c9161ff0f1c769993cd11d2751e4331ff4ceb7cd
   React-RCTActionSheet: 2d885b0bea76a5254ef852939273edd8de116180
   React-RCTAnimation: 353fa4fc3c19060068832dd32e555182ec07be45
@@ -573,6 +573,6 @@ SPEC CHECKSUMS:
   Yoga: 7ab6e3ee4ce47d7b789d1cb520163833e515f452
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: af30f6516476d6a81156351f929442991a2bfe9e
+PODFILE CHECKSUM: 71de59c0f5cf9de1197ae9d700d20fb4f2a69524
 
 COCOAPODS: 1.11.3

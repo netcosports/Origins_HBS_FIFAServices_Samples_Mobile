@@ -33,6 +33,10 @@ public class HeadToHeadViewManager extends SimpleViewManager<HeadToHeadWidget> {
 
     @ReactProp(name = "data")
     public void setData(HeadToHeadWidget view, @Nullable ReadableMap data) {
+        if (data == null) {
+            view.setupNoTeams();
+            return;
+        }
         if (data.hasKey("teamId")) {
             view.setupOneTeamId(data.getString("teamId"));
         } else if (data.hasKey("teamId1") && data.hasKey("teamId2")) {

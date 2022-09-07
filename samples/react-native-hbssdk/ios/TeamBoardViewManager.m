@@ -21,10 +21,12 @@ RCT_EXPORT_MODULE(TeamBoard);
   return view;
 }
 
-RCT_CUSTOM_VIEW_PROPERTY(teamId, NSString, UIView<TeamBoardWidget>)
+RCT_CUSTOM_VIEW_PROPERTY(data, String, UIView<TeamBoardWidget>)
 {
-  NSString *teamId = [RCTConvert NSString:json];
-  [view setupTeamIdWithTeamId:teamId];
+  NSString *teamId = [json objectForKey:@"teamId"];
+//  Boolean allowChangeTeam = [json boolForKey:@"allowChangeTeam"];
+
+  [view setupTeamIdWithTeamId:teamId allowChangeTeam:false];
 }
 
 + (BOOL)requiresMainQueueSetup {
