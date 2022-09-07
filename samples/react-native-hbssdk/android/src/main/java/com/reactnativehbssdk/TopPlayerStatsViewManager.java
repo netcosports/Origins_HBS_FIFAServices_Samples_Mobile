@@ -1,12 +1,14 @@
 package com.reactnativehbssdk;
 
+import android.util.Log;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.facebook.react.bridge.ReactApplicationContext;
+import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.uimanager.SimpleViewManager;
 import com.facebook.react.uimanager.ThemedReactContext;
-
 import com.facebook.react.uimanager.annotations.ReactProp;
 import com.originsdigital.hbswidgets.stats.topplayer.TopPlayerStatsWidget;
 
@@ -28,13 +30,31 @@ public class TopPlayerStatsViewManager extends SimpleViewManager<TopPlayerStatsW
     @NonNull
     @Override
     protected TopPlayerStatsWidget createViewInstance(@NonNull ThemedReactContext reactContext) {
-        TopPlayerStatsWidget widget = new TopPlayerStatsWidget(reactContext, null);
-        widget.setupStatsType("43946", TopPlayerStatsWidget.Type.GOALS); //todo denis
-        return widget;
+        return new TopPlayerStatsWidget(reactContext, null);
     }
 
-    @ReactProp(name = "statType")
-    public void setStatType(TopPlayerStatsWidget view, @Nullable String statType) {
-        //view.setupStatsType("goals".equals(statType) ? TopPlayerStatsWidget.Type.GOALS : TopPlayerStatsWidget.Type.ASSISTS);
+    @ReactProp(name = "data")
+    public void setData(TopPlayerStatsWidget view, @Nullable ReadableMap data) {
+        String teamId = data.getString("teamId");
+        if (teamId == null) {
+            return;
+        }
+        String stringType = data.getString("statsType");
+        if (stringType == null) {
+            return;
+        }
+        TopPlayerStatsWidget.Type statsType = null;
+        switch (stringType) {
+            case "goals":
+                statsType = TopPlayerStatsWidget.Type.GOALS;
+                break;
+            case "shots":
+                statsType = TopPlayerStatsWidget.Type.SHOTS;
+                break;
+        }
+        if (statsType == null) {
+            return;
+        }
+        view.setupStatsType(teamId, statsType);
     }
 }
