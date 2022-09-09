@@ -30,6 +30,7 @@
 		C3638C7A288EEA9000DBB475 /* SampleTeamMatchesStatsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3638C67288EEA9000DBB475 /* SampleTeamMatchesStatsController.swift */; };
 		C3638C7B288EEA9000DBB475 /* SampleStatsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3638C68288EEA9000DBB475 /* SampleStatsController.swift */; };
 		C3638C7C288EEA9000DBB475 /* SampleTopPlayersStatsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3638C69288EEA9000DBB475 /* SampleTopPlayersStatsController.swift */; };
+		C38441DB28CB6E47007F4340 /* SampleWatchSelectTypeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38441DA28CB6E47007F4340 /* SampleWatchSelectTypeController.swift */; };
 		C3A636DC28C8ABDF00C48A7A /* SampleMatchCenterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A636DB28C8ABDF00C48A7A /* SampleMatchCenterController.swift */; };
 		C3EC709428C647B20081F8C0 /* HbsSampleSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EC709328C647B20081F8C0 /* HbsSampleSettings.swift */; };
 		C3EC709628C6482E0081F8C0 /* SampleMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EC709528C6482E0081F8C0 /* SampleMainController.swift */; };
@@ -66,6 +67,7 @@
 		C3638C67288EEA9000DBB475 /* SampleTeamMatchesStatsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleTeamMatchesStatsController.swift; sourceTree = "<group>"; };
 		C3638C68288EEA9000DBB475 /* SampleStatsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleStatsController.swift; sourceTree = "<group>"; };
 		C3638C69288EEA9000DBB475 /* SampleTopPlayersStatsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleTopPlayersStatsController.swift; sourceTree = "<group>"; };
+		C38441DA28CB6E47007F4340 /* SampleWatchSelectTypeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleWatchSelectTypeController.swift; sourceTree = "<group>"; };
 		C3A636DB28C8ABDF00C48A7A /* SampleMatchCenterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleMatchCenterController.swift; sourceTree = "<group>"; };
 		C3EC709328C647B20081F8C0 /* HbsSampleSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HbsSampleSettings.swift; sourceTree = "<group>"; };
 		C3EC709528C6482E0081F8C0 /* SampleMainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleMainController.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				C3638C65288EEA9000DBB475 /* SampleWatchController.swift */,
+				C38441DA28CB6E47007F4340 /* SampleWatchSelectTypeController.swift */,
 			);
 			path = Watch;
 			sourceTree = "<group>";
@@ -412,6 +415,7 @@
 				C3EC709428C647B20081F8C0 /* HbsSampleSettings.swift in Sources */,
 				C3638C6D288EEA9000DBB475 /* SampleHomeController.swift in Sources */,
 				AA1BD652282D0AA200E9B859 /* AppDelegate.swift in Sources */,
+				C38441DB28CB6E47007F4340 /* SampleWatchSelectTypeController.swift in Sources */,
 				C3638C76288EEA9000DBB475 /* SampleMatchboxController.swift in Sources */,
 				C3638C72288EEA9000DBB475 /* SampleBaseController.swift in Sources */,
 				C3638C6C288EEA9000DBB475 /* SampleTeamBoardController.swift in Sources */,

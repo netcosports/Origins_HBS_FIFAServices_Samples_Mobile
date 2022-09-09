@@ -20,7 +20,24 @@ class SampleWatchController: SampleBaseController {
     logo.image = getLogoImage()
     self.view.addSubviews(logo, watchWidget)
 
-    watchWidget.setupTeamId(teamId: "275075")
+
+  }
+
+  func setupParams(watchType: WatchType) {
+    switch watchType {
+    case .group:
+      watchWidget.setupGroupId(groupId: "255937")
+      break
+    case .team:
+      watchWidget.setupTeamId(teamId: "43960")
+      break
+    case .round:
+      watchWidget.setupRoundId(roundId: "255951")
+      break
+    case .match:
+      watchWidget.setupMatchId(matchId: "84872")
+      break
+    }
   }
 
   override func viewDidLayoutSubviews() {
@@ -28,5 +45,12 @@ class SampleWatchController: SampleBaseController {
     logo.pin.top(self.view.getStatusBarHeight()).size(78.ui).hCenter()
     watchWidget.pin.below(of: logo).horizontally()
       .height(HBSSDK.Watch.size(for: self.view.bounds.size).height)
+  }
+
+  enum WatchType {
+    case group
+    case team
+    case round
+    case match
   }
 }
