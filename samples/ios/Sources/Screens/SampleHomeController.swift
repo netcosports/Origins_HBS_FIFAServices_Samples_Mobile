@@ -170,7 +170,7 @@ class SampleHomeController: SampleBaseController {
     watchButton.rx.tap.observeOn(MainScheduler.asyncInstance)
       .subscribe(onNext: { [weak self] _ in
         guard let self = self else { return }
-        let controller = SampleWatchController()
+        let controller = SampleWatchSelectTypeController()
         self.openController(controller)
       })
       .disposed(by: disposeBag)

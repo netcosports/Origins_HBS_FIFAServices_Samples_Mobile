@@ -11,6 +11,7 @@ import { Favorites } from '@origins-digital/react-native-hbssdk';
 import { HeadToHead } from '@origins-digital/react-native-hbssdk';
 import { TeamMatchesStats } from '@origins-digital/react-native-hbssdk';
 import { LargeMatches } from '@origins-digital/react-native-hbssdk';
+import { ExpandedMatches } from '@origins-digital/react-native-hbssdk';
 import { MediumMatches } from '@origins-digital/react-native-hbssdk';
 import { SmallMatches } from '@origins-digital/react-native-hbssdk';
 import { TeamBoard } from '@origins-digital/react-native-hbssdk';
@@ -29,12 +30,9 @@ export default function App() {
         style={{ width: "100%", height: "100%", backgroundColor: '' }}
         contentContainerStyle={{ width: "100%" }}>
 
+        <LargeMatches data={{ groupId: "255933"}} style={styles.largeMatches} />
 
-
-        <TeamBoard data={{ teamId: "43948", allowChangeTeam: true }} style={styles.teamBoard} />
-        <Standings data={{ isExpanded: false }} style={styles.standings} />
-
-
+        <ExpandedMatches data={{ groupId: "255933"}} style={styles.expanedMatches} />
 {/*
 */}
       </ScrollView>
@@ -48,7 +46,8 @@ export default function App() {
 <Standings data={{ isExpanded: false }} style={styles.standings} />
 <SmallMatches data={{ groupId: "255933"}} style={styles.smallMatches} />
 <MediumMatches data={{ teamId: "43960"}} style={styles.mediumMatches} />
-<LargeMatches data={{ roundId: "255951"}} style={styles.largeMatchesWithEvents} />
+<LargeMatches data={{ roundId: "255951"}} style={styles.largeMatches} />
+<ExpandedMatches data={{ roundId: "255951"}} style={styles.expanedMatches} />
 <Videos data={{ category: "Matches - Match Clips"}} style={styles.videos} />
 <TeamMatchesStats teamId="43960" style={styles.teamMatchesStats} />
 <TopPlayerStats data={{ teamId: "43948", statsType: "goals" }} style={styles.topPlayerStats} />
@@ -114,9 +113,13 @@ var styles = StyleSheet.create({
     width: "100%",
     height: HBSSDK.mediumMatchesComponentHeight,
   },
-  largeMatchesWithEvents: {
+  largeMatches: {
     width: "100%",
-    height: HBSSDK.matchesWithEventsComponentHeight,
+    height: HBSSDK.largeMatchesComponentHeight,
+  },
+  expanedMatches: {
+    width: "100%",
+    height: HBSSDK.expandedMatchesComponentHeight,
   },
   teamBoard: {
     width: "100%",
