@@ -20,8 +20,8 @@ class HeadToHeadFragment : BaseSampleFragment<FragmentHeadToHeadBinding>() {
 
         when (type) {
             HeadToHeadType.NO_TEAMS -> binding.headToHead.setupNoTeams()
-            HeadToHeadType.ONE_TEAM -> binding.headToHead.setupOneTeamId(teamId = "43963")
-            HeadToHeadType.TWO_TEAMS -> binding.headToHead.setupTwoTeamsIds(team1Id = "43938", team2Id = "43925")
+            HeadToHeadType.ONE_TEAM -> binding.headToHead.setupOneTeamId(teamId = "43948")
+            HeadToHeadType.TWO_TEAMS -> binding.headToHead.setupTwoTeamsIds(team1Id = "43946", team2Id = "43948")
         }
 
     }

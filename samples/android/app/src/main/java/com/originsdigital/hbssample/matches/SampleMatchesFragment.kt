@@ -43,11 +43,13 @@ class SampleMatchesFragment : BaseSampleFragment<FragmentGroupMatchesBinding>() 
                 binding.smallMatches.setGroupId(groupId = groupId)
                 widgetMedium.setGroupId(groupId = groupId)
                 binding.largeMatches.setGroupId(groupId = groupId)
+                binding.expandedMatches.setGroupId(groupId = groupId)
             }
 
             MatchesType.ROUND -> {
                 binding.smallMatches.setRoundId(roundId = roundId)
                 binding.largeMatches.setRoundId(roundId = roundId)
+                binding.expandedMatches.setRoundId(roundId = roundId)
                 widgetMedium.setRoundId(roundId = roundId)
 
             }
@@ -55,11 +57,13 @@ class SampleMatchesFragment : BaseSampleFragment<FragmentGroupMatchesBinding>() 
             MatchesType.TEAM -> {
                 binding.smallMatches.setTeamId(teamId = teamId)
                 binding.largeMatches.setTeamId(teamId = teamId)
+                binding.expandedMatches.setTeamId(teamId = teamId)
                 widgetMedium.setTeamId(teamId = teamId)
             }
             MatchesType.MATCH -> {
                 binding.smallMatches.setMatchId(matchId = matchId)
                 binding.largeMatches.setMatchId(matchId = matchId)
+                binding.expandedMatches.setMatchId(matchId = matchId)
                 widgetMedium.setMatchId(matchId = secondMatchId)
             }
         }
@@ -72,7 +76,12 @@ class SampleMatchesFragment : BaseSampleFragment<FragmentGroupMatchesBinding>() 
         )
 
         if (needLocalMatchListener) {
-            listOf<MatchWidget>(binding.smallMatches, widgetMedium, binding.largeMatches).forEach { widget ->
+            listOf<MatchWidget>(
+                binding.smallMatches,
+                widgetMedium,
+                binding.largeMatches,
+                binding.expandedMatches,
+            ).forEach { widget ->
                 widget.hbsMatchClickListener = object : OnMatchClickListener {
                     override fun onMatchClicked(context: Context, matchId: String) {
                         SampleMatchCenterActivity.launch(context, matchId = matchId, isLocal = true)
