@@ -13,8 +13,8 @@ def download_spec! (options={})
   }
 end
 
-download_spec!(url: 'https://origins-mobile-products.s3.eu-west-1.amazonaws.com/hbssdk/whitelabel/1.0.91/HBSSDK.podspec')
-download_spec!(url: 'https://origins-mobile-products.s3.eu-west-1.amazonaws.com/hbssdk/whitelabel/1.0.91/hbsshared.podspec')
+download_spec!(url: 'https://origins-mobile-products.s3.eu-west-1.amazonaws.com/hbssdk/whitelabel/1.0.92/HBSSDK.podspec')
+download_spec!(url: 'https://origins-mobile-products.s3.eu-west-1.amazonaws.com/hbssdk/whitelabel/1.0.92/hbsshared.podspec')
 download_spec!(url: 'https://origins-mobile-products.s3.eu-west-1.amazonaws.com/onrewind/whitelabel/0.0.1/OnRewindSDK.podspec')
 
 target 'HBSSDKSample' do

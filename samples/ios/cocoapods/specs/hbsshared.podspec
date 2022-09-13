@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|  
     s.name = 'hbsshared'
-    s.version = '1.0.91'
+    s.version = '1.0.92'
     s.summary = 'Summary of hbsshared'
     s.homepage = 'https://github.com/netcosports'
 
@@ -11,9 +11,9 @@ Pod::Spec.new do |s|
     }
 
     s.platform = :ios
-    s.source = { :http => 'https://origins-mobile-products.s3.eu-west-1.amazonaws.com/hbssdk/whitelabel/1.0.91/hbsshared.xcframework.zip' }
+    s.source = { :http => 'https://origins-mobile-products.s3.eu-west-1.amazonaws.com/hbssdk/whitelabel/1.0.92/hbsshared.xcframework.zip' }
 
-    s.ios.deployment_target = '12.0'
+    s.ios.deployment_target = '11.0'
     s.ios.vendored_frameworks = 'hbsshared.xcframework'
     s.static_framework = true
 

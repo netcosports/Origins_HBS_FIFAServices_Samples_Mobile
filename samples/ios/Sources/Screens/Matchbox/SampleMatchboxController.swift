@@ -19,7 +19,7 @@ class SampleMatchboxController: SampleBaseController {
     super.viewDidLoad()
     logo.image = getLogoImage()
     self.view.addSubviews(scrollView)
-    scrollView.addSubviews(logo, smallMatchesWidget, matchesMediumWidget, largeMatchWidget)
+    scrollView.addSubviews(logo, smallMatchesWidget, matchesMediumWidget, largeMatchWidget, expandedMatchWidget)
   }
 
   override func viewDidLayoutSubviews() {
@@ -36,10 +36,14 @@ class SampleMatchboxController: SampleBaseController {
       .height(HBSSDK.Matches.mediumSize(for: view.bounds.size).height)
 
     largeMatchWidget.pin.below(of: matchesMediumWidget).marginTop(20.ui)
-      .horizontally()
-      .height(HBSSDK.Matches.bigSize(for: view.bounds.size, displayEvents: true).height)
+      .start()
+      .size(HBSSDK.Matches.largeSize(for: view.bounds.size))
 
-    scrollView.contentSize = .init(width: self.view.width, height: largeMatchWidget.frame.maxY + 20.ui)
+    expandedMatchWidget.pin.below(of: largeMatchWidget).marginTop(20.ui)
+      .start()
+      .size(HBSSDK.Matches.expandedSize(for: view.bounds.size))
+
+    scrollView.contentSize = .init(width: self.view.width, height: expandedMatchWidget.frame.maxY + 20.ui)
   }
 
 
@@ -56,26 +60,30 @@ class SampleMatchboxController: SampleBaseController {
       smallMatchesWidget.setGroupId(groupId: groupId)
       matchesMediumWidget.setGroupId(groupId: groupId)
       largeMatchWidget.setGroupId(groupId: groupId)
+      expandedMatchWidget.setGroupId(groupId: groupId)
       break
     case .team:
       smallMatchesWidget.setTeamId(teamId: teamId)
       matchesMediumWidget.setTeamId(teamId: teamId)
       largeMatchWidget.setTeamId(teamId: teamId)
+      expandedMatchWidget.setTeamId(teamId: teamId)
       break
     case .round:
       smallMatchesWidget.setRoundId(roundId: roundId)
       matchesMediumWidget.setRoundId(roundId: roundId)
       largeMatchWidget.setRoundId(roundId: roundId)
+      expandedMatchWidget.setRoundId(roundId: roundId)
       break
     case .match:
       smallMatchesWidget.setMatchId(matchId: matchId)
       matchesMediumWidget.setMatchId(matchId: secondMatchId)
       largeMatchWidget.setMatchId(matchId: secondMatchId)
+      expandedMatchWidget.setMatchId(matchId: secondMatchId)
       break
     }
 
     if useLocalMatchClickListener {
-      [smallMatchesWidget, matchesMediumWidget, largeMatchWidget].forEach { widget in
+      [smallMatchesWidget, matchesMediumWidget, largeMatchWidget, expandedMatchWidget].forEach { widget in
         widget.openMatchDetailsBlock = { [weak self] matchId in
           self?.openLocalMatchCenter(matchId: matchId)
         }
@@ -88,7 +96,8 @@ class SampleMatchboxController: SampleBaseController {
   }
   private let smallMatchesWidget = HBSSDK.Matches.smallWidget()
   private let matchesMediumWidget = HBSSDK.Matches.mediumWidget()
-  private let largeMatchWidget = HBSSDK.Matches.bigWidget()
+  private let largeMatchWidget = HBSSDK.Matches.largeWidget()
+  private let expandedMatchWidget = HBSSDK.Matches.expandedWidget()
 
   enum MatchType {
     case group
