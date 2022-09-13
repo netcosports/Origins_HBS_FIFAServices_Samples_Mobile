@@ -31,7 +31,7 @@
 RCT_EXPORT_MODULE(LargeMatches);
 
 - (UIView *) view {
-  UIView<BigMatchesWidget, MatchesWidget> *view = [Matches bigWidget];
+  UIView<MatchesWidget> *view = [Matches largeWidget];
   return view;
 }
 
@@ -43,9 +43,44 @@ RCT_CUSTOM_VIEW_PROPERTY(data, String, UIView<MatchesWidget>)
   } else if ([json objectForKey:@"teamId"] != nil) {
     NSString* teamId = [RCTConvert NSString:json[@"teamId"]];
     [view setTeamIdWithTeamId:teamId];
-  } else {
+  } else if ([json objectForKey:@"roundId"] != nil) {
     NSString* roundId = [RCTConvert NSString:json[@"roundId"]];
     [view setRoundIdWithRoundId:roundId];
+  } else if ([json objectForKey:@"matchId"] != nil) {
+    NSString* matchId = [RCTConvert NSString:json[@"matchId"]];
+    [view setMatchIdWithMatchId:matchId];
+  }
+}
+
+@end
+
+@interface ExpandedMatchesViewManager : BaseMatchesViewManager
+
+@end
+
+@implementation ExpandedMatchesViewManager
+
+RCT_EXPORT_MODULE(ExpandedMatches);
+
+- (UIView *) view {
+  UIView<MatchesWidget, ExpandedMatchesWidget> *view = [Matches expandedWidget];
+  return view;
+}
+
+RCT_CUSTOM_VIEW_PROPERTY(data, String, UIView<MatchesWidget>)
+{
+  if ([json objectForKey:@"groupId"] != nil) {
+    NSString* groupId = [RCTConvert NSString:json[@"groupId"]];
+    [view setGroupIdWithGroupId:groupId];
+  } else if ([json objectForKey:@"teamId"] != nil) {
+    NSString* teamId = [RCTConvert NSString:json[@"teamId"]];
+    [view setTeamIdWithTeamId:teamId];
+  } else if ([json objectForKey:@"roundId"] != nil) {
+    NSString* roundId = [RCTConvert NSString:json[@"roundId"]];
+    [view setRoundIdWithRoundId:roundId];
+  } else if ([json objectForKey:@"matchId"] != nil) {
+    NSString* matchId = [RCTConvert NSString:json[@"matchId"]];
+    [view setMatchIdWithMatchId:matchId];
   }
 }
 
@@ -73,9 +108,12 @@ RCT_CUSTOM_VIEW_PROPERTY(data, String, UIView<MatchesWidget>)
   } else if ([json objectForKey:@"teamId"] != nil) {
     NSString* teamId = [RCTConvert NSString:json[@"teamId"]];
     [view setTeamIdWithTeamId:teamId];
-  } else {
+  } else if ([json objectForKey:@"roundId"] != nil) {
     NSString* roundId = [RCTConvert NSString:json[@"roundId"]];
     [view setRoundIdWithRoundId:roundId];
+  } else if ([json objectForKey:@"matchId"] != nil) {
+    NSString* matchId = [RCTConvert NSString:json[@"matchId"]];
+    [view setMatchIdWithMatchId:matchId];
   }
 }
 @end
@@ -101,9 +139,12 @@ RCT_CUSTOM_VIEW_PROPERTY(data, String, UIView<MatchesWidget>)
   } else if ([json objectForKey:@"teamId"] != nil) {
     NSString* teamId = [RCTConvert NSString:json[@"teamId"]];
     [view setTeamIdWithTeamId:teamId];
-  } else {
+  } else if ([json objectForKey:@"roundId"] != nil) {
     NSString* roundId = [RCTConvert NSString:json[@"roundId"]];
     [view setRoundIdWithRoundId:roundId];
+  } else if ([json objectForKey:@"matchId"] != nil) {
+    NSString* matchId = [RCTConvert NSString:json[@"matchId"]];
+    [view setMatchIdWithMatchId:matchId];
   }
 }
 
