@@ -8,7 +8,7 @@ import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.uimanager.SimpleViewManager;
 import com.facebook.react.uimanager.ThemedReactContext;
 import com.facebook.react.uimanager.annotations.ReactProp;
-import com.originsdigital.hbswidgets.matchcenter.MediumMatchesWidget;
+import com.originsdigital.hbswidgets.matchcenter.medium.MediumMatchesWidget;
 
 public class MediumMatchesViewManager extends SimpleViewManager<MediumMatchesWidget> {
 
@@ -36,8 +36,10 @@ public class MediumMatchesViewManager extends SimpleViewManager<MediumMatchesWid
             view.setGroupId(data.getString("groupId"));
         } else if (data.hasKey("teamId")) {
             view.setTeamId(data.getString("teamId"));
-        } else {
+        } else if (data.hasKey("roundId")) {
             view.setRoundId(data.getString("roundId"));
+        } else if (data.hasKey("matchId")) {
+            view.setMatchId(data.getString("matchId"));
         }
     }
 }

@@ -8,14 +8,14 @@ import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.uimanager.SimpleViewManager;
 import com.facebook.react.uimanager.ThemedReactContext;
 import com.facebook.react.uimanager.annotations.ReactProp;
-import com.originsdigital.hbswidgets.matchcenter.small.SmallMatchesWidget;
+import com.originsdigital.hbswidgets.matchcenter.expanded.ExpandedMatchesWidget;
 
-public class SmallMatchesViewManager extends SimpleViewManager<SmallMatchesWidget> {
+public class ExpandedMatchesViewManager extends SimpleViewManager<ExpandedMatchesWidget> {
 
-    public static final String REACT_CLASS = "SmallMatches";
+    public static final String REACT_CLASS = "ExpandedMatches";
     ReactApplicationContext mCallerContext;
 
-    public SmallMatchesViewManager(ReactApplicationContext reactContext) {
+    public ExpandedMatchesViewManager(ReactApplicationContext reactContext) {
         mCallerContext = reactContext;
     }
 
@@ -26,18 +26,20 @@ public class SmallMatchesViewManager extends SimpleViewManager<SmallMatchesWidge
 
     @NonNull
     @Override
-    protected SmallMatchesWidget createViewInstance(@NonNull ThemedReactContext reactContext) {
-        return new SmallMatchesWidget(reactContext, null);
+    protected ExpandedMatchesWidget createViewInstance(@NonNull ThemedReactContext reactContext) {
+        return new ExpandedMatchesWidget(reactContext, null);
     }
 
     @ReactProp(name = "data")
-    public void setData(SmallMatchesWidget view, @Nullable ReadableMap data) {
+    public void setData(ExpandedMatchesWidget view, @Nullable ReadableMap data) {
         if (data.hasKey("groupId")) {
             view.setGroupId(data.getString("groupId"));
         } else if (data.hasKey("teamId")) {
             view.setTeamId(data.getString("teamId"));
-        } else {
+        } else if (data.hasKey("roundId")) {
             view.setRoundId(data.getString("roundId"));
+        } else if (data.hasKey("matchId")) {
+            view.setMatchId(data.getString("matchId"));
         }
     }
 }

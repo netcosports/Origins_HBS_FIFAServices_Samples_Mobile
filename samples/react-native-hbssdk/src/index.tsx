@@ -212,9 +212,18 @@ type MatchesProps = {
   style: ViewStyle;
 };
 
+const ExpandedMatchesComponentName = 'ExpandedMatches';
 const LargeMatchesComponentName = 'LargeMatches';
 const MediumMatchesComponentName = 'MediumMatches';
 const SmallMatchesComponentName = 'SmallMatches';
+
+export const ExpandedMatches =
+  UIManager.getViewManagerConfig(ExpandedMatchesComponentName) != null
+    ? requireNativeComponent<MatchesProps>(ExpandedMatchesComponentName)
+    : () => {
+        throw new Error(LINKING_ERROR);
+      };
+
 
 export const LargeMatches =
   UIManager.getViewManagerConfig(LargeMatchesComponentName) != null
