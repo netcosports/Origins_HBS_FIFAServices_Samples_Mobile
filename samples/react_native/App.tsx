@@ -30,9 +30,7 @@ export default function App() {
         style={{ width: "100%", height: "100%", backgroundColor: '' }}
         contentContainerStyle={{ width: "100%" }}>
 
-        <LargeMatches data={{ groupId: "255933"}} style={styles.largeMatches} />
-
-        <ExpandedMatches data={{ groupId: "255933"}} style={styles.expanedMatches} />
+        <TopPlayerStats data={{ teamId: "43948", statsType: "goals" }} style={styles.topPlayerStats} />
 {/*
 */}
       </ScrollView>

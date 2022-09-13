@@ -37,8 +37,8 @@ RCT_EXPORT_MODULE(HBSSDK);
   CGFloat headToHeadComponentHeight = [HeadToHead sizeFor:containerSize].height;
   CGFloat matchCenterComponentHeight = [MatchCenter widgetSizeFor:containerSize].height;
 
-  CGFloat matchesWithEventsComponentHeight = [Matches bigSizeFor:containerSize displayEvents:YES].height;
-  CGFloat matchesWithoutEventsComponentHeight = [Matches bigSizeFor:containerSize displayEvents:NO].height;
+  CGFloat largeMatchesComponentHeight = [Matches largeSizeFor:containerSize].height;
+  CGFloat expandedMatchesComponentHeight = [Matches expandedSizeFor:containerSize].height;
 
   CGFloat mediumMatchesComponentHeight = [Matches mediumSizeFor:containerSize].height;
   CGFloat smallMatchesComponentHeight = [Matches smallSizeFor:containerSize].height;
@@ -58,8 +58,8 @@ RCT_EXPORT_MODULE(HBSSDK);
     @"headToHeadComponentHeight": @(headToHeadComponentHeight),
     @"matchCenterComponentHeight": @(matchCenterComponentHeight),
 
-    @"matchesWithEventsComponentHeight": @(matchesWithEventsComponentHeight),
-    @"matchesWithoutEventsComponentHeight": @(matchesWithoutEventsComponentHeight),
+    @"largeMatchesComponentHeight": @(largeMatchesComponentHeight),
+    @"expandedMatchesComponentHeight": @(expandedMatchesComponentHeight),
     @"mediumMatchesComponentHeight": @(mediumMatchesComponentHeight),
     @"smallMatchesComponentHeight": @(smallMatchesComponentHeight),
     @"teamMatchesStatsComponentHeight": @(teamMatchesStatsComponentHeight),

@@ -21,14 +21,24 @@ RCT_EXPORT_MODULE(TopPlayerStats);
   return view;
 }
 
-RCT_CUSTOM_VIEW_PROPERTY(statType, NSString, UIView<TopPlayerStatsWidget>)
+RCT_CUSTOM_VIEW_PROPERTY(data, String, UIView<TopPlayerStatsWidget>)
 {
-  NSString *typeString = [RCTConvert NSString:json];
-  TopPlayerStatsWidgetType type = [typeString isEqualToString:@"goal"] ?
-    TopPlayerStatsWidgetTypeGoals :
-    TopPlayerStatsWidgetTypeShots;
 
-  [view setupWidgetParamsWithTeamId:@"43946" statsType:type]; //fixme denis
+  NSString *typeString = [RCTConvert NSString:json[@"statsType"]];
+  NSString *teamId = [RCTConvert NSString:json[@"teamId"]];
+  TopPlayerStatsWidgetType type = -1;
+  if (typeString != nil) {
+    if ([typeString isEqualToString:@"goals"]) {
+      type = TopPlayerStatsWidgetTypeGoals;
+    } else if ([typeString isEqualToString:@"shots"]) {
+      type = TopPlayerStatsWidgetTypeShots;
+    }
+  }
+
+  if (type >= 0 && teamId != nil) {
+    [view setupWidgetParamsWithTeamId:teamId statsType:type];
+  }
+
 }
 
 + (BOOL)requiresMainQueueSetup {
@@ -37,4 +47,3 @@ RCT_CUSTOM_VIEW_PROPERTY(statType, NSString, UIView<TopPlayerStatsWidget>)
 
 
 @end
-
