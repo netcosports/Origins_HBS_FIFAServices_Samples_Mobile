@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|  
-    s.name = 'OnRewindSDK'
+    s.name = 'onrewindshared'
     s.version = '1.0.8'
-    s.summary = 'OnRewind summary'
+    s.summary = 'Summary of onrewindshared'
     s.homepage = 'https://github.com/netcosports'
 
     s.author = { 'Sergei Mikhan' => 'sergei@netcosports.com' }
@@ -11,15 +11,12 @@ Pod::Spec.new do |s|
     }
 
     s.platform = :ios
-    s.source = { :http => 'https://origins-mobile-products.s3.eu-west-1.amazonaws.com/onrewind_player/kan/1.0.8/OnRewindSDK.xcframework.zip' }
+    s.source = { :http => 'https://origins-mobile-products.s3.eu-west-1.amazonaws.com/onrewind_player/kan/1.0.8/onrewindshared.xcframework.zip' }
 
     s.ios.deployment_target = '12.0'
-    s.ios.vendored_frameworks = 'OnRewindSDK.xcframework'
+    s.ios.vendored_frameworks = 'onrewindshared.xcframework'
     s.static_framework = true
 
-	s.dependency 'google-cast-sdk', '4.7.0'
-	s.dependency 'SportBuff', '0.2.0.0'
-	s.dependency 'onrewindshared'
 
 
     def s.post_install(target)

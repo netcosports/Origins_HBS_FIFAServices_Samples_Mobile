@@ -13,9 +13,14 @@ def download_spec! (options={})
   }
 end
 
-download_spec!(url: 'https://origins-mobile-products.s3.eu-west-1.amazonaws.com/hbssdk/whitelabel/1.0.92/HBSSDK.podspec')
-download_spec!(url: 'https://origins-mobile-products.s3.eu-west-1.amazonaws.com/hbssdk/whitelabel/1.0.92/hbsshared.podspec')
-download_spec!(url: 'https://origins-mobile-products.s3.eu-west-1.amazonaws.com/onrewind/whitelabel/0.0.1/OnRewindSDK.podspec')
+$onrewind_product_base_url='https://origins-mobile-products.s3.eu-west-1.amazonaws.com/onrewind_player/kan/1.0.8'
+$hbssdk_product_base_url='https://origins-mobile-products.s3.eu-west-1.amazonaws.com/hbssdk/whitelabel/1.0.92'
+
+download_spec!(url: "#{$onrewind_product_base_url}/OnRewindSDK.podspec")
+download_spec!(url: "#{$onrewind_product_base_url}/onrewindshared.podspec")
+
+download_spec!(url: "#{$hbssdk_product_base_url}/HBSSDK.podspec")
+download_spec!(url: "#{$hbssdk_product_base_url}/hbsshared.podspec")
 
 target 'HBSSDKSample' do
 
@@ -23,6 +28,7 @@ target 'HBSSDKSample' do
   pod 'hbsshared', :podspec => './specs/hbsshared.podspec'
   pod 'HBSSDK', :podspec => './specs/HBSSDK.podspec'
   pod 'OnRewindSDK', :podspec => './specs/OnRewindSDK.podspec'
+  pod 'onrewindshared', :podspec => './specs/onrewindshared.podspec'
   pod 'SportBuff', '0.2.0.0'
 
   # sample
@@ -38,7 +44,6 @@ target 'HBSSDKSample' do
   pod 'Alidade/FormatterPool'
   pod 'Alidade/UI'
   pod 'Alidade/String'
-
 
 end
 
