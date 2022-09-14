@@ -48,8 +48,6 @@ public class AppDelegate: UIResponder, UIApplicationDelegate {
         URL(string: "https://storage.googleapis.com/static-production.netcosports.com/onrewind/hbs_demo_player_config.json")!,
         accountKey: "B1oYoKWDK"
       )
-      OnRewind.playerController(with: <#T##OnRewind.EventParams#>)
-
       OnRewind.presentPlayer(
         with: params,
         from: context.presentationController
