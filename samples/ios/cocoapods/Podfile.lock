@@ -25,15 +25,16 @@ PODS:
   - HBSSDK (1.0.92):
     - hbsshared
   - hbsshared (1.0.92)
-  - OnRewindSDK (0.0.1)
-  - PinLayout (1.10.2)
+  - OnRewindSDK (1.0.7):
+    - onrewindshared
+  - onrewindshared (1.0.7)
+  - PinLayout (1.10.3)
   - RxCocoa (5.1.3):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
   - RxRelay (5.1.3):
     - RxSwift (~> 5)
   - RxSwift (5.1.3)
-  - SportBuff (0.2.0.0)
 
 DEPENDENCIES:
   - Alidade
@@ -46,10 +47,10 @@ DEPENDENCIES:
   - HBSSDK (from `./specs/HBSSDK.podspec`)
   - hbsshared (from `./specs/hbsshared.podspec`)
   - OnRewindSDK (from `./specs/OnRewindSDK.podspec`)
+  - onrewindshared (from `./specs/onrewindshared.podspec`)
   - PinLayout
   - RxCocoa
   - RxSwift
-  - SportBuff (= 0.2.0.0)
 
 SPEC REPOS:
   trunk:
@@ -59,7 +60,6 @@ SPEC REPOS:
     - RxCocoa
     - RxRelay
     - RxSwift
-    - SportBuff
 
 EXTERNAL SOURCES:
   HBSSDK:
@@ -68,19 +68,21 @@ EXTERNAL SOURCES:
     :podspec: "./specs/hbsshared.podspec"
   OnRewindSDK:
     :podspec: "./specs/OnRewindSDK.podspec"
+  onrewindshared:
+    :podspec: "./specs/onrewindshared.podspec"
 
 SPEC CHECKSUMS:
   Alidade: ca003a9524ffcc47abdb8ecc2ecd92734d48767b
   Astrolabe: 97d5636ab06045bdfde8b420197b9aa85d5dff43
   HBSSDK: 4ef3bb006631fc27407bc04ebbdc659484caad60
   hbsshared: 1dcdb29dc3d9e963b3cbb1d843451d525edb9159
-  OnRewindSDK: 340854ad784837e19f464449dd695c2feea832bf
-  PinLayout: d6b1960e4b182b4da1481b9aa6728f621e20708d
+  OnRewindSDK: d2852b0c3355a0a793fefebf90121470cfb437bd
+  onrewindshared: 4ab023271a81cd4787f76d727e7b4c65c680f451
+  PinLayout: 0090ccbf29ae69af6ae5a15eaeaf27ed7b2c4d83
   RxCocoa: e2ed092d5432e4296aa818021d27de4090ac0354
   RxRelay: 5a18c2eb2d68326ebaf0112f80d837ae41b92b97
   RxSwift: 915abbdfb62214aa89ccd0b194d44fb478019b27
-  SportBuff: 02fbad1c12fa8a63a4d731ce7c5692873fe07b7b
 
-PODFILE CHECKSUM: eb4198f217a3f9642f07dde3f24c0ca80971e9c8
+PODFILE CHECKSUM: dc771b33d6eb59018b5099fda04fb30ef56c3a54
 
 COCOAPODS: 1.11.2
