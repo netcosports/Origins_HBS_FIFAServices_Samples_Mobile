@@ -41,16 +41,18 @@ public class AppDelegate: UIResponder, UIApplicationDelegate {
     HBSSDK.Integration.initSdk()
 
     OnRewind.initialize()
-    OnRewind.set(baseUrl: "")
+    OnRewind.set(baseUrl: "https://api-gateway.onrewind.tv/main-api")
 
     Integration.presentPlayerBlock = { context in
-      guard let videoURL = context.videoURL else {
-        return
-      }
+      let params = OnRewind.EventParams.configurationURL(
+        URL(string: "https://storage.googleapis.com/static-production.netcosports.com/onrewind/hbs_demo_player_config.json")!,
+        accountKey: "B1oYoKWDK"
+      )
+      OnRewind.playerController(with: <#T##OnRewind.EventParams#>)
+
       OnRewind.presentPlayer(
-        with: OnRewind.EventParams.videoStream(videoURL, isLive: false),
-        from: context.presentationController,
-        richPlayback: false
+        with: params,
+        from: context.presentationController
       )
     }
 
