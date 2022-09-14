@@ -139,7 +139,7 @@ repositories {
 dependencies {
     //noinspection GradleDynamicVersion
   implementation "com.facebook.react:react-native:+"
-  implementation("com.origins-digital.hbswidgets:widgets-whitelabel:1.0.92")
+  complieOnly("com.origins-digital.hbswidgets:widgets-whitelabel:1.0.96")
 // From node_modules
 }
 

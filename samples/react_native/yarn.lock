@@ -1366,9 +1366,9 @@
     "fastq" "^1.6.0"
 
 "@origins-digital/react-native-hbssdk@^1.0.0":
-  "integrity" "sha512-XR37slrUK5xug4uMXOxVO0/3aWqEhT6zwPlKUL6dqxBzTNrEBiKRF7Sg6GTKxFcb2A1RuR03uS73wKAIv6SXQA=="
-  "resolved" "https://registry.npmjs.org/@origins-digital/react-native-hbssdk/-/react-native-hbssdk-1.4.6.tgz"
-  "version" "1.4.6"
+  "integrity" "sha512-8PAqa3OnutGI/l/NoQQEhS+SG5ruCrk7WQtguQysEpZpvPxabXvgnSDBSNKcdM1P+lJr6IWo/UuVi/d9HplXiw=="
+  "resolved" "https://registry.npmjs.org/@origins-digital/react-native-hbssdk/-/react-native-hbssdk-1.4.7.tgz"
+  "version" "1.4.7"
 
 "@react-native-community/cli-clean@^8.0.0":
   "integrity" "sha512-VY/kwyH5xp6oXiB9bcwa+I9W5k6WR/nX3s85FuMW76hSlgG1UVAGL04uZPwYlSmMZuSOSuoXOaIjJ7wAvQMBpg=="
