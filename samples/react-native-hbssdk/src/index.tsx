@@ -17,6 +17,7 @@ const LINKING_ERROR =
 ////////////////////////
 // top player
 type TopPlayerStatsProps = {
+  teamId: string,
   statType: string;
   style: ViewStyle;
 };
@@ -31,6 +32,25 @@ export const TopPlayerStats =
       };
 
 ////////////////////////
+
+////////////////////////
+// lineup
+type LineupProps = {
+  matchId: string,
+  style: ViewStyle;
+};
+
+const LineupComponentName = 'Lineup';
+
+export const Lineup =
+  UIManager.getViewManagerConfig(LineupComponentName) != null
+    ? requireNativeComponent<LineupProps>(LineupComponentName)
+    : () => {
+        throw new Error(LINKING_ERROR);
+      };
+
+////////////////////////
+
 // team matches stats
 type TeamMatchesStatsProps = {
   teamId: string;
@@ -208,7 +228,7 @@ export const MatchCenter =
 ////////////////////////
 // large matches
 type MatchesProps = {
-  data: { groupId: string, teamId: string, roundId: string };
+  data: { groupId: string, teamId: string, roundId: string, matchId: string };
   style: ViewStyle;
 };
 
@@ -248,4 +268,3 @@ export const SmallMatches =
 ///////////////////////
 // module
 export default HBSSDK;
-

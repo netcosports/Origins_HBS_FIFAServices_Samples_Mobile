@@ -17,6 +17,7 @@ import { SmallMatches } from '@origins-digital/react-native-hbssdk';
 import { TeamBoard } from '@origins-digital/react-native-hbssdk';
 import { Venue } from '@origins-digital/react-native-hbssdk';
 import { Watch } from '@origins-digital/react-native-hbssdk';
+import { Lineup } from '@origins-digital/react-native-hbssdk';
 
 import HBSSDK from '@origins-digital/react-native-hbssdk'
 
@@ -29,8 +30,10 @@ export default function App() {
      <ScrollView
         style={{ width: "100%", height: "100%", backgroundColor: '' }}
         contentContainerStyle={{ width: "100%" }}>
-        <Standings data={{ groupId: "255933", isExpanded: true }} style={styles.standings} />
-        <TopPlayerStats data={{ teamId: "43948", statsType: "goals" }} style={styles.topPlayerStats} />
+
+        <MediumMatches data={{ teamId: "43960"}} style={styles.mediumMatches} />
+        <Lineup data={{ matchId: "84872"}} style={styles.lineup} />
+
 {/*
 */}
       </ScrollView>
@@ -89,7 +92,7 @@ var styles = StyleSheet.create({
   },
   championship: {
     width: "100%",
-    height: 520//HBSSDK.championshipComponentHeight,
+    height: HBSSDK.championshipComponentHeight,
   },
   matchCenter: {
     width: "100%",
@@ -134,5 +137,9 @@ var styles = StyleSheet.create({
   teamMatchesStats: {
     width: "100%",
     height: HBSSDK.teamMatchesStatsComponentHeight,
-  }
+  },
+  lineup: {
+    width: "100%",
+    height: 500,
+  },
 });
