@@ -32,8 +32,8 @@ export default function App() {
         contentContainerStyle={{ width: "100%" }}>
 
         <MediumMatches data={{ teamId: "43960"}} style={styles.mediumMatches} />
-        <Lineup data={{ matchId: "84872"}} style={styles.lineup} />
 
+        <Lineup data={{ matchId: "84872"}} style={styles.lineup} />
 {/*
 */}
       </ScrollView>
