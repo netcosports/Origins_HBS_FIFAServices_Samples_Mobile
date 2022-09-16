@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.preference.PreferenceManager
+import com.originsdigital.hbswidgets.android.BuildConfig
 import com.originsdigital.hbswidgets.android.R
 import com.originsdigital.hbswidgets.android.databinding.ActivitySettingsBinding
 import com.originsdigital.hbswidgets.core.HbsSdk
@@ -70,8 +71,8 @@ class SettingsActivity : AppCompatActivity() {
             setMatchClickHandler(this@SettingsActivity, matchCenterHandler)
         }
 
-        val dm = resources.displayMetrics
-        binding.textSize.text = "Font scale: ${dm.scaledDensity / dm.density}"
+
+        binding.appVersion.text = "App version: ${BuildConfig.VERSION_NAME} (${BuildConfig.VERSION_CODE})"
 
     }
 

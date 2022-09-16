@@ -51,6 +51,24 @@ export const Lineup =
 
 ////////////////////////
 
+////////////////////////
+// match stats
+type MatchStatsProps = {
+  matchId: string,
+  style: ViewStyle;
+};
+
+const MatchStatsComponentName = 'MatchStats';
+
+export const Lineup =
+  UIManager.getViewManagerConfig(MatchStatsComponentName) != null
+    ? requireNativeComponent<MatchStatsProps>(MatchStatsComponentName)
+    : () => {
+        throw new Error(LINKING_ERROR);
+      };
+
+////////////////////////
+
 // team matches stats
 type TeamMatchesStatsProps = {
   teamId: string;
