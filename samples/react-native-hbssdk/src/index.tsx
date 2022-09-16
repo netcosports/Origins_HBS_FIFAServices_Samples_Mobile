@@ -60,7 +60,7 @@ type MatchStatsProps = {
 
 const MatchStatsComponentName = 'MatchStats';
 
-export const Lineup =
+export const MatchStats =
   UIManager.getViewManagerConfig(MatchStatsComponentName) != null
     ? requireNativeComponent<MatchStatsProps>(MatchStatsComponentName)
     : () => {
