@@ -12,6 +12,7 @@ import hbsshared
 import Alidade
 
 import OnRewindSDK
+import onrewindshared
 import PinLayout
 
 class MyCustomNavigation: UINavigationController {

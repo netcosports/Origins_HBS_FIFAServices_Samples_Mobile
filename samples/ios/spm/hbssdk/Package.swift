@@ -16,13 +16,13 @@ let package = Package(
     targets: [
         .binaryTarget(
                      name: "HBSSDK",
-                     url: "https://origins-mobile-products.s3.eu-west-1.amazonaws.com/hbssdk/whitelabel/1.0.86/HBSSDK.xcframework.zip",
-                     checksum: "7aba2f29b6adf934a4dd51acb61b7e2be0f8f2c64daae850bd58de12f05beb31"
+                     url: "https://origins-mobile-products.s3.eu-west-1.amazonaws.com/hbssdk/whitelabel/1.0.92/HBSSDK.xcframework.zip",
+                     checksum: "f012668260dcaf1616c42911adeb5a09680ecdd7776d69e685b62df5bd8142ea"
                     ),
-        .binaryTarget(
+.binaryTarget(
                             name: "hbsshared",
-                            url: "https://origins-mobile-products.s3.eu-west-1.amazonaws.com/hbssdk/whitelabel/1.0.86/hbsshared.xcframework.zip",
-                            checksum: "f0b2138d29c0a1180b162ff50c5e661cb5f6e3a7aa84d4d827c426e574a3f779"
+                            url: "https://origins-mobile-products.s3.eu-west-1.amazonaws.com/hbssdk/whitelabel/1.0.92/hbsshared.xcframework.zip",
+                            checksum: "4088638e57e354de6ef2421633da153e6d2d526805b5797bab89dfd80cd5b17f"
                           )
     ],
     swiftLanguageVersions: [.v5]

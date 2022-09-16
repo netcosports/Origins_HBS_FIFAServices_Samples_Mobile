@@ -5,24 +5,24 @@ import PackageDescription
 let package = Package(
   name: "OnRewindSDK",
   platforms: [
-    .iOS(.v13)
+    .iOS(.v11)
   ],
   products: [
-    .library(name: "OnRewindSDK", targets: ["OnRewindSDK", "SportBuff"])
+    .library(name: "OnRewindSDK", targets: ["OnRewindSDK", "onrewindshared"])
   ],
   dependencies: [
 
   ],
   targets: [
     .binaryTarget(
-      name: "OnRewindSDK",
-      url: "https://origins-mobile-products.s3.eu-west-1.amazonaws.com/onrewind/whitelabel/0.0.1/OnRewindSDK.xcframework.zip",
-      checksum: "261bb2983ea0f6dcd94e0880c49f86579023441c7c3a327cafbf7d6779323d2d"
+        name: "OnRewindSDK",
+        url: "https://origins-mobile-products.s3.eu-west-1.amazonaws.com/onrewind_player/directv/1.0.7/OnRewindSDK.xcframework.zip",
+        checksum: "fc492f85a38fd2c7bb5649e3c16f9a9111ea3792c7968ab0759a56e830eb935a"
     ),
     .binaryTarget(
-      name: "SportBuff",
-      url: "https://buffup-public.s3.eu-west-2.amazonaws.com/ios-sdk/sportbuff-ios-sdk-0.2.0.0.zip",
-      checksum: "eba418bfb5cf938203be14ee5070baa0cdd15df95de70030e6196357e8ff7a54"
+        name: "onrewindshared",
+        url: "https://origins-mobile-products.s3.eu-west-1.amazonaws.com/onrewind_player/directv/1.0.7/onrewindshared.xcframework.zip",
+        checksum: "e2bb7fcac53b2b98a75e578819e01f2fcc097e3f39891da30ea5a7b777daad1b"
     )
   ],
   swiftLanguageVersions: [.v5]

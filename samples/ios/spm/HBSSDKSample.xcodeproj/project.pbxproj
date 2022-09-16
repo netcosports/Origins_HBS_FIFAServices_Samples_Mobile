@@ -30,6 +30,11 @@
 		AA69BB0828B8B230008078B8 /* SampleMatchboxController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA69BAF528B8B230008078B8 /* SampleMatchboxController.swift */; };
 		AA69BB0928B8B230008078B8 /* SampleMatchboxTypeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA69BAF628B8B230008078B8 /* SampleMatchboxTypeController.swift */; };
 		AA69BB0A28B8B230008078B8 /* SampleActionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA69BAF728B8B230008078B8 /* SampleActionController.swift */; };
+		AA72B56328D49A3E0055787D /* HbsSampleSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA72B55F28D49A3E0055787D /* HbsSampleSettings.swift */; };
+		AA72B56428D49A3E0055787D /* SampleMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA72B56028D49A3E0055787D /* SampleMainController.swift */; };
+		AA72B56528D49A3E0055787D /* SampleSettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA72B56128D49A3E0055787D /* SampleSettingsController.swift */; };
+		AA72B56628D49A3E0055787D /* SampleMatchCenterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA72B56228D49A3E0055787D /* SampleMatchCenterController.swift */; };
+		AA72B56828D49ACF0055787D /* SampleWatchSelectTypeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA72B56728D49ACF0055787D /* SampleWatchSelectTypeController.swift */; };
 		AA7AB48C2878113700C7953C /* OnRewindSDK in Frameworks */ = {isa = PBXBuildFile; productRef = AA7AB48B2878113700C7953C /* OnRewindSDK */; };
 		AABCE0BE282D3A9A00D4A960 /* HBSSDK in Frameworks */ = {isa = PBXBuildFile; productRef = AABCE0BD282D3A9A00D4A960 /* HBSSDK */; };
 /* End PBXBuildFile section */
@@ -60,6 +65,11 @@
 		AA69BAF528B8B230008078B8 /* SampleMatchboxController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleMatchboxController.swift; sourceTree = "<group>"; };
 		AA69BAF628B8B230008078B8 /* SampleMatchboxTypeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleMatchboxTypeController.swift; sourceTree = "<group>"; };
 		AA69BAF728B8B230008078B8 /* SampleActionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SampleActionController.swift; path = Screens/SampleActionController.swift; sourceTree = "<group>"; };
+		AA72B55F28D49A3E0055787D /* HbsSampleSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HbsSampleSettings.swift; path = Screens/HbsSampleSettings.swift; sourceTree = "<group>"; };
+		AA72B56028D49A3E0055787D /* SampleMainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SampleMainController.swift; path = Screens/SampleMainController.swift; sourceTree = "<group>"; };
+		AA72B56128D49A3E0055787D /* SampleSettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SampleSettingsController.swift; path = Screens/SampleSettingsController.swift; sourceTree = "<group>"; };
+		AA72B56228D49A3E0055787D /* SampleMatchCenterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SampleMatchCenterController.swift; path = Screens/SampleMatchCenterController.swift; sourceTree = "<group>"; };
+		AA72B56728D49ACF0055787D /* SampleWatchSelectTypeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SampleWatchSelectTypeController.swift; path = Screens/Watch/SampleWatchSelectTypeController.swift; sourceTree = "<group>"; };
 		AA7AB48928780FD200C7953C /* OnRewindSDK */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = OnRewindSDK; sourceTree = "<group>"; };
 		AA7AB48A28780FEE00C7953C /* hbssdk */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = hbssdk; sourceTree = "<group>"; };
 		AAA4B6FB21E888A700508199 /* HBSSDKSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HBSSDKSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,6 +102,11 @@
 		AA1BD62F282D0AA200E9B859 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				AA72B56728D49ACF0055787D /* SampleWatchSelectTypeController.swift */,
+				AA72B55F28D49A3E0055787D /* HbsSampleSettings.swift */,
+				AA72B56028D49A3E0055787D /* SampleMainController.swift */,
+				AA72B56228D49A3E0055787D /* SampleMatchCenterController.swift */,
+				AA72B56128D49A3E0055787D /* SampleSettingsController.swift */,
 				AA69BAF228B8B230008078B8 /* Championship */,
 				AA69BAE728B8B230008078B8 /* Favorite */,
 				AA69BADC28B8B230008078B8 /* HeadToHead */,
@@ -392,14 +407,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA72B56628D49A3E0055787D /* SampleMatchCenterController.swift in Sources */,
 				AA69BB0128B8B230008078B8 /* SampleWatchController.swift in Sources */,
 				AA1BD652282D0AA200E9B859 /* AppDelegate.swift in Sources */,
 				AA69BB0028B8B230008078B8 /* SampleFavoriteController.swift in Sources */,
 				AA69BB0228B8B230008078B8 /* SampleVenuesController.swift in Sources */,
 				AA69BB0628B8B230008078B8 /* SampleHomeController.swift in Sources */,
 				AA69BB0928B8B230008078B8 /* SampleMatchboxTypeController.swift in Sources */,
+				AA72B56528D49A3E0055787D /* SampleSettingsController.swift in Sources */,
 				AA69BAFA28B8B230008078B8 /* SampleSingleGroupStandingsController.swift in Sources */,
 				AA69BB0A28B8B230008078B8 /* SampleActionController.swift in Sources */,
+				AA72B56428D49A3E0055787D /* SampleMainController.swift in Sources */,
 				AA69BB0428B8B230008078B8 /* SampleStatsController.swift in Sources */,
 				AA69BAF928B8B230008078B8 /* SampleHeadToHeadController.swift in Sources */,
 				AA69BAFD28B8B230008078B8 /* SampleTeamsController.swift in Sources */,
@@ -407,8 +425,10 @@
 				AA69BAFB28B8B230008078B8 /* SampleStandingsController.swift in Sources */,
 				AA69BB0828B8B230008078B8 /* SampleMatchboxController.swift in Sources */,
 				AA69BB0328B8B230008078B8 /* SampleTeamMatchesStatsController.swift in Sources */,
+				AA72B56328D49A3E0055787D /* HbsSampleSettings.swift in Sources */,
 				AA69BAFE28B8B230008078B8 /* SampleBaseController.swift in Sources */,
 				AA69BB0528B8B230008078B8 /* SampleTopPlayersStatsController.swift in Sources */,
+				AA72B56828D49ACF0055787D /* SampleWatchSelectTypeController.swift in Sources */,
 				AA69BAF828B8B230008078B8 /* SampleVideoController.swift in Sources */,
 				AA69BAFF28B8B230008078B8 /* SampleTeamBoardController.swift in Sources */,
 				AA69BB0728B8B230008078B8 /* SampleChampionshipController.swift in Sources */,
@@ -543,6 +563,7 @@
 				DEVELOPMENT_TEAM = JPS45PPV79;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/../Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -563,6 +584,7 @@
 				DEVELOPMENT_TEAM = JPS45PPV79;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/../Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
