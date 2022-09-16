@@ -18,6 +18,7 @@ import { TeamBoard } from '@origins-digital/react-native-hbssdk';
 import { Venue } from '@origins-digital/react-native-hbssdk';
 import { Watch } from '@origins-digital/react-native-hbssdk';
 import { Lineup } from '@origins-digital/react-native-hbssdk';
+import { MatchStats } from '@origins-digital/react-native-hbssdk';
 
 import HBSSDK from '@origins-digital/react-native-hbssdk'
 
@@ -33,7 +34,8 @@ export default function App() {
 
         <MediumMatches data={{ teamId: "43960"}} style={styles.mediumMatches} />
 
-        <Lineup data={{ matchId: "84872"}} style={styles.lineup} />
+        <MatchStats data={{ matchId: "84872"}} style={styles.matchStats} />
+
 {/*
 */}
       </ScrollView>
@@ -59,6 +61,7 @@ export default function App() {
 <HeadToHead data = {{}} style={styles.headToHead} />
 <TeamBoard data={{ teamId: "43948", allowChangeTeam: true }} style={styles.teamBoard} />
 <TeamBoard data={{ teamId: "43948" }} style={styles.teamBoard} />
+<Lineup data={{ matchId: "84872"}} style={styles.lineup} />
 
 <Watch teamId="43960" style={styles.watch} />
 <Favorites style={styles.favorites} />
@@ -142,4 +145,8 @@ var styles = StyleSheet.create({
     width: "100%",
     height: 500,
   },
+  matchStats: {
+    width: "100%",
+    height: 500,
+  }
 });

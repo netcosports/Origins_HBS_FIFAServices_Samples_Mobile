@@ -8,16 +8,17 @@
 #import <React/RCTViewManager.h>
 #import <HBSSDK/HBSSDK-Swift.h>
 
-@interface LineupViewManager: RCTViewManager
+
+@interface MatchStatsViewManager: RCTViewManager
 
 @end
 
-@implementation LineupViewManager
+@implementation MatchStatsViewManager
 
-RCT_EXPORT_MODULE(Lineup);
+RCT_EXPORT_MODULE(MatchStats);
 
 - (UIView *) view {
-  UIView<LineupWidget> *view = [MatchCenter lineupWidget];
+  UIView<MatchStatsWidget> *view = [MatchCenter matchStatsWidget];
   return view;
 }
 
@@ -25,7 +26,7 @@ RCT_EXPORT_MODULE(Lineup);
   return true;
 }
 
-RCT_CUSTOM_VIEW_PROPERTY(data, String, UIView<LineupWidget>)
+RCT_CUSTOM_VIEW_PROPERTY(data, String, UIView<MatchStatsWidget>)
 {
   if ([json objectForKey:@"matchId"] != nil) {
     NSString *matchId = [RCTConvert NSString:json[@"matchId"]];
