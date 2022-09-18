@@ -69,6 +69,33 @@ export const MatchStats =
 
 ////////////////////////
 
+////////////////////////
+// lineup
+type MatchHeaderProps = {
+  matchId: string,
+  style: ViewStyle;
+};
+
+const MatchHeaderComponentName = 'MatchHeader';
+
+export const MatchHeader =
+  UIManager.getViewManagerConfig(MatchHeaderComponentName) != null
+    ? requireNativeComponent<MatchHeaderProps>(MatchHeaderComponentName)
+    : () => {
+        throw new Error(LINKING_ERROR);
+      };
+
+const ExpandedMatchHeaderComponentName = 'ExpandedMatchHeader';
+
+export const ExpandedMatchHeader =
+  UIManager.getViewManagerConfig(ExpandedMatchHeaderComponentName) != null
+    ? requireNativeComponent<MatchHeaderProps>(ExpandedMatchHeaderComponentName)
+    : () => {
+        throw new Error(LINKING_ERROR);
+      };
+
+////////////////////////
+
 // team matches stats
 type TeamMatchesStatsProps = {
   teamId: string;
