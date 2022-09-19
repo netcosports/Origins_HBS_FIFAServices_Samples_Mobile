@@ -66,6 +66,8 @@ export default function App() {
 <TeamBoard data={{ teamId: "43948" }} style={styles.teamBoard} />
 <Lineup data={{ matchId: "84872"}} style={styles.lineup} />
 <MatchStats data={{ matchId: "84872"}} style={styles.matchStats} />
+<MatchHeader data={{ matchId: "84872"}} style={styles.matchHeader} />
+<ExpandedMatchHeader  data={{ matchId: "84872"}} style={styles.expandedMatchHeader} />
 
 <Watch teamId="43960" style={styles.watch} />
 <Favorites style={styles.favorites} />
