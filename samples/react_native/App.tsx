@@ -39,6 +39,7 @@ export default function App() {
         <Standings data={{ isExpanded: false }} style={styles.standings} />
 
         <Actions data={{ matchId: "84872"}} style={styles.actions} />
+        <Watch data = {{ matchId: "84872" }} style={styles.watch} />
 
 {/*
 */}
@@ -70,7 +71,12 @@ export default function App() {
 <MatchHeader data={{ matchId: "84872"}} style={styles.matchHeader} />
 <ExpandedMatchHeader  data={{ matchId: "84872"}} style={styles.expandedMatchHeader} />
 
-<Watch teamId="43960" style={styles.watch} />
+
+<Watch data = {{ teamId: "43960" }} style={styles.watch} />
+<Watch data = {{ groupId: "255933" }} style={styles.watch} />
+<Watch data = {{ roundId: "255951" }} style={styles.watch} />
+<Watch data = {{ matchId: "84872" }} style={styles.watch} />
+
 <Favorites style={styles.favorites} />
 <Championship  style={styles.championship} />
 

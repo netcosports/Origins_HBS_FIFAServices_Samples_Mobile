@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.facebook.react.bridge.ReactApplicationContext;
+import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.uimanager.SimpleViewManager;
 import com.facebook.react.uimanager.ThemedReactContext;
 import com.facebook.react.uimanager.annotations.ReactProp;
@@ -29,9 +30,19 @@ public class WatchViewManager extends SimpleViewManager<WatchWidget> {
         return new WatchWidget(reactContext, null);
     }
 
-    // FIXME: do we need to provide something here?
-    @ReactProp(name = "teamId")
-    public void setTeamId(WatchWidget view, @Nullable String teamId) {
-
+    @ReactProp(name = "data")
+    public void setData(WatchWidget view, @Nullable ReadableMap data) {
+        if (data == null) {
+            return;
+        }
+        if (data.hasKey("groupId")) {
+            view.setGroupId(data.getString("groupId"));
+        } else if (data.hasKey("teamId")) {
+            view.setTeamId(data.getString("teamId"));
+        } else if (data.hasKey("roundId")) {
+            view.setRoundId(data.getString("roundId"));
+        } else if (data.hasKey("matchId")) {
+            view.setMatchId(data.getString("matchId"));
+        }
     }
 }
