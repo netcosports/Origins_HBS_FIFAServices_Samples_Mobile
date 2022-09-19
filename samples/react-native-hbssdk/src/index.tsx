@@ -52,6 +52,24 @@ export const Lineup =
 ////////////////////////
 
 ////////////////////////
+// actions
+type ActionProps = {
+  matchId: string,
+  style: ViewStyle;
+};
+
+const ActionsComponentName = 'Actions';
+
+export const Actions =
+  UIManager.getViewManagerConfig(ActionsComponentName) != null
+    ? requireNativeComponent<LineupProps>(ActionsComponentName)
+    : () => {
+        throw new Error(LINKING_ERROR);
+      };
+
+////////////////////////
+
+////////////////////////
 // match stats
 type MatchStatsProps = {
   matchId: string,

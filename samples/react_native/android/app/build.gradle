@@ -289,7 +289,7 @@ dependencies {
         implementation jscFlavor
     }
 
-    implementation "com.origins-digital.hbswidgets:widgets-kan:1.0.97"
+    implementation "com.origins-digital.hbswidgets:widgets-whitelabel:1.0.100"
     implementation "com.onrewind:onrewind-sdk:1.7.9"
 }
 
