@@ -62,7 +62,7 @@ const ActionsComponentName = 'Actions';
 
 export const Actions =
   UIManager.getViewManagerConfig(ActionsComponentName) != null
-    ? requireNativeComponent<LineupProps>(ActionsComponentName)
+    ? requireNativeComponent<ActionProps>(ActionsComponentName)
     : () => {
         throw new Error(LINKING_ERROR);
       };
