@@ -47,6 +47,9 @@ RCT_EXPORT_MODULE(HBSSDK);
   CGFloat teamBoardComponentHeight = [TeamBoard sizeFor:containerSize].height;
   CGFloat venueComponentHeight = [Venue widgetSizeWithContainerSize:containerSize].height;
   CGFloat watchComponentHeight = [Watch sizeFor:containerSize].height;
+  CGFloat actionsComponentHeight = [MatchCenter actionsWidgetSizeFor:containerSize].height;
+  CGFloat matchHeaderComponentHeight = [MatchCenter headerWidgetSizeFor:containerSize].height;
+  CGFloat expandedMatchHeaderComponentHeight = [MatchCenter expandedHeaderWidgetSizeFor:containerSize].height;
 
   return @{
     @"teamMatchesComponentHeight": @(teamMatchesComponentHeight),
@@ -65,7 +68,10 @@ RCT_EXPORT_MODULE(HBSSDK);
     @"teamMatchesStatsComponentHeight": @(teamMatchesStatsComponentHeight),
     @"teamBoardComponentHeight": @(teamBoardComponentHeight),
     @"venueComponentHeight": @(venueComponentHeight),
-    @"watchComponentHeight": @(watchComponentHeight)
+    @"watchComponentHeight": @(watchComponentHeight),
+    @"actionsComponentHeight": @(actionsComponentHeight),
+    @"matchHeaderComponentHeight": @(matchHeaderComponentHeight),
+    @"expandedMatchHeaderComponentHeight": @(expandedMatchHeaderComponentHeight)
   };
 }
 

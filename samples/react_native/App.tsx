@@ -21,6 +21,7 @@ import { Lineup } from '@origins-digital/react-native-hbssdk';
 import { MatchStats } from '@origins-digital/react-native-hbssdk';
 import { MatchHeader } from '@origins-digital/react-native-hbssdk';
 import { ExpandedMatchHeader } from '@origins-digital/react-native-hbssdk';
+import { Actions } from '@origins-digital/react-native-hbssdk';
 
 import HBSSDK from '@origins-digital/react-native-hbssdk'
 
@@ -34,10 +35,10 @@ export default function App() {
         style={{ width: "100%", height: "100%", backgroundColor: '' }}
         contentContainerStyle={{ width: "100%" }}>
 
-        <Standings data={{ groupId: "255933", isExpanded: true }} style={styles.standings} />
 
-        <MatchHeader data={{ matchId: "84872"}} style={styles.matchHeader} />
-        <ExpandedMatchHeader  data={{ matchId: "84872"}} style={styles.expandedMatchHeader} />
+        <Standings data={{ isExpanded: false }} style={styles.standings} />
+
+        <Actions data={{ matchId: "84872"}} style={styles.actions} />
 
 {/*
 */}
@@ -164,5 +165,9 @@ var styles = StyleSheet.create({
     width: "100%",
     height: HBSSDK.expandedMatchHeaderComponentHeight,
     backgroundColor: '#f47'
+  },
+  actions: {
+    width: "100%",
+    height: HBSSDK.actionsComponentHeight,
   }
 });
