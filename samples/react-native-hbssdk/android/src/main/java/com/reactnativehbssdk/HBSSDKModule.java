@@ -1,10 +1,13 @@
 package com.reactnativehbssdk;
 
+import android.content.Context;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
+import com.originsdigital.hbswidgets.standings.StandingsWidget;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -12,9 +15,11 @@ import java.util.Map;
 public class HBSSDKModule extends ReactContextBaseJavaModule {
 
     public static final String REACT_CLASS = "HBSSDK";
+    private final Context context;
 
     HBSSDKModule(ReactApplicationContext context) {
         super(context);
+        this.context = context;
     }
 
     @NonNull
@@ -33,7 +38,7 @@ public class HBSSDKModule extends ReactContextBaseJavaModule {
     public Map<String, Object> getConstants() {
         Map<String, Object> map = new HashMap<String, Object>();
 
-        map.put("standingsComponentHeight", 290);
+        map.put("standingsComponentHeight", StandingsWidget.widgetHeightDp(context));
         map.put("videosComponentHeight", 248);
         map.put("mediumMatchesComponentHeight", 130);
         map.put("smallMatchesComponentHeight", 95);
@@ -44,6 +49,9 @@ public class HBSSDKModule extends ReactContextBaseJavaModule {
         map.put("headToHeadComponentHeight", 1040);
         map.put("largeMatchesComponentHeight", 280);
         map.put("expandedMatchesComponentHeight", 360);
+
+        map.put("matchHeaderComponentHeight", 280);
+        map.put("expandedMatchHeaderComponentHeight", 460);
 
         map.put("favoritesComponentHeight", 260);
         map.put("championshipComponentHeight", 260);

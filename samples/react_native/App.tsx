@@ -19,6 +19,8 @@ import { Venue } from '@origins-digital/react-native-hbssdk';
 import { Watch } from '@origins-digital/react-native-hbssdk';
 import { Lineup } from '@origins-digital/react-native-hbssdk';
 import { MatchStats } from '@origins-digital/react-native-hbssdk';
+import { MatchHeader } from '@origins-digital/react-native-hbssdk';
+import { ExpandedMatchHeader } from '@origins-digital/react-native-hbssdk';
 
 import HBSSDK from '@origins-digital/react-native-hbssdk'
 
@@ -32,9 +34,10 @@ export default function App() {
         style={{ width: "100%", height: "100%", backgroundColor: '' }}
         contentContainerStyle={{ width: "100%" }}>
 
-        <MediumMatches data={{ teamId: "43960"}} style={styles.mediumMatches} />
+        <Standings data={{ groupId: "255933", isExpanded: true }} style={styles.standings} />
 
-        <MatchStats data={{ matchId: "84872"}} style={styles.matchStats} />
+        <MatchHeader data={{ matchId: "84872"}} style={styles.matchHeader} />
+        <ExpandedMatchHeader  data={{ matchId: "84872"}} style={styles.expandedMatchHeader} />
 
 {/*
 */}
@@ -62,6 +65,7 @@ export default function App() {
 <TeamBoard data={{ teamId: "43948", allowChangeTeam: true }} style={styles.teamBoard} />
 <TeamBoard data={{ teamId: "43948" }} style={styles.teamBoard} />
 <Lineup data={{ matchId: "84872"}} style={styles.lineup} />
+<MatchStats data={{ matchId: "84872"}} style={styles.matchStats} />
 
 <Watch teamId="43960" style={styles.watch} />
 <Favorites style={styles.favorites} />
@@ -148,5 +152,15 @@ var styles = StyleSheet.create({
   matchStats: {
     width: "100%",
     height: 500,
+  },
+  matchHeader: {
+    width: "100%",
+    height: HBSSDK.matchHeaderComponentHeight,
+    backgroundColor: '#000'
+  },
+  expandedMatchHeader: {
+    width: "100%",
+    height: HBSSDK.expandedMatchHeaderComponentHeight,
+    backgroundColor: '#f47'
   }
 });
