@@ -32,8 +32,6 @@ RCT_EXPORT_MODULE(HBSSDK);
   CGFloat topPlayerStatsComponentHeight = [Stats topPlayersSizeFor: containerSize].height;
   CGFloat videosComponentHeight = [Videos videoWidgetSizeFor:containerSize].height;
   CGFloat standingsComponentHeight = [Standings sizeFor:containerSize].height;
-  CGFloat championshipComponentHeight = [Championship widgetSizeFor:containerSize].height;
-  CGFloat favoritesComponentHeight = [Favorites sizeFor:containerSize].height;
   CGFloat headToHeadComponentHeight = [HeadToHead sizeFor:containerSize].height;
   CGFloat matchCenterComponentHeight = [MatchCenter widgetSizeFor:containerSize].height;
 
@@ -56,8 +54,6 @@ RCT_EXPORT_MODULE(HBSSDK);
     @"topPlayerStatsComponentHeight": @(topPlayerStatsComponentHeight),
     @"videosComponentHeight": @(videosComponentHeight),
     @"standingsComponentHeight": @(standingsComponentHeight),
-    @"favoritesComponentHeight": @(favoritesComponentHeight),
-    @"championshipComponentHeight": @(championshipComponentHeight),
     @"headToHeadComponentHeight": @(headToHeadComponentHeight),
     @"matchCenterComponentHeight": @(matchCenterComponentHeight),
 

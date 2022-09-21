@@ -36,11 +36,7 @@ export default function App() {
         contentContainerStyle={{ width: "100%" }}>
 
 
-        <Standings data={{ isExpanded: false }} style={styles.standings} />
-
-        <Actions data={{ matchId: "84872"}} style={styles.actions} />
-        <Watch data = {{ matchId: "84872" }} style={styles.watch} />
-
+        <Favorites style={styles.favorites} />
 {/*
 */}
       </ScrollView>
@@ -76,6 +72,7 @@ export default function App() {
 <Watch data = {{ groupId: "255933" }} style={styles.watch} />
 <Watch data = {{ roundId: "255951" }} style={styles.watch} />
 <Watch data = {{ matchId: "84872" }} style={styles.watch} />
+<Actions data={{ matchId: "84872"}} style={styles.actions} />
 
 <Favorites style={styles.favorites} />
 <Championship  style={styles.championship} />
@@ -108,7 +105,7 @@ var styles = StyleSheet.create({
   },
   championship: {
     width: "100%",
-    height: HBSSDK.championshipComponentHeight,
+    height: 600,
   },
   matchCenter: {
     width: "100%",
@@ -116,7 +113,7 @@ var styles = StyleSheet.create({
   },
   favorites: {
     width: "100%",
-    height: 520//HBSSDK.favoritesComponentHeight,
+    height: 600,
   },
   headToHead: {
     width: "100%",
