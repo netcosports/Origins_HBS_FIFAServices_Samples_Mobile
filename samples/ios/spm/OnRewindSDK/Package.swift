@@ -16,13 +16,13 @@ let package = Package(
   targets: [
     .binaryTarget(
         name: "OnRewindSDK",
-        url: "https://origins-mobile-products.s3.eu-west-1.amazonaws.com/onrewind_player/directv/1.0.7/OnRewindSDK.xcframework.zip",
-        checksum: "fc492f85a38fd2c7bb5649e3c16f9a9111ea3792c7968ab0759a56e830eb935a"
+        url: "https://origins-mobile-products.s3.eu-west-1.amazonaws.com/onrewind_player/directv/1.0.12/OnRewindSDK.xcframework.zip",
+        checksum: "2c543a3d9d435ab50c9ff0c1ae145b290ab3b9557e8db484e85a25f9745b0516"
     ),
     .binaryTarget(
         name: "onrewindshared",
-        url: "https://origins-mobile-products.s3.eu-west-1.amazonaws.com/onrewind_player/directv/1.0.7/onrewindshared.xcframework.zip",
-        checksum: "e2bb7fcac53b2b98a75e578819e01f2fcc097e3f39891da30ea5a7b777daad1b"
+        url: "https://origins-mobile-products.s3.eu-west-1.amazonaws.com/onrewind_player/directv/1.0.12/onrewindshared.xcframework.zip",
+        checksum: "80806be336f03944ad01323cb2155b4bd745134ae63e375a960d733d5f64ced7"
     )
   ],
   swiftLanguageVersions: [.v5]

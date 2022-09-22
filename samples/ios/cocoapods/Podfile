@@ -13,8 +13,8 @@ def download_spec! (options={})
   }
 end
 
-$onrewind_product_base_url='https://origins-mobile-products.s3.eu-west-1.amazonaws.com/onrewind_player/directv/1.0.7'
-$hbssdk_product_base_url='https://origins-mobile-products.s3.eu-west-1.amazonaws.com/hbssdk/whitelabel/1.0.92'
+$onrewind_product_base_url='https://origins-mobile-products.s3.eu-west-1.amazonaws.com/onrewind_player/directv/1.0.12'
+$hbssdk_product_base_url='https://origins-mobile-products.s3.eu-west-1.amazonaws.com/hbssdk/directv/1.0.108'
 
 download_spec!(url: "#{$onrewind_product_base_url}/OnRewindSDK.podspec")
 download_spec!(url: "#{$onrewind_product_base_url}/onrewindshared.podspec")

@@ -22,12 +22,12 @@ PODS:
   - Astrolabe/Core (5.1.9):
     - RxCocoa (~> 5)
     - RxSwift (~> 5)
-  - HBSSDK (1.0.92):
+  - HBSSDK (1.0.108):
     - hbsshared
-  - hbsshared (1.0.92)
-  - OnRewindSDK (1.0.7):
+  - hbsshared (1.0.108)
+  - OnRewindSDK (1.0.12):
     - onrewindshared
-  - onrewindshared (1.0.7)
+  - onrewindshared (1.0.12)
   - PinLayout (1.10.3)
   - RxCocoa (5.1.3):
     - RxRelay (~> 5)
@@ -74,15 +74,15 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Alidade: ca003a9524ffcc47abdb8ecc2ecd92734d48767b
   Astrolabe: 97d5636ab06045bdfde8b420197b9aa85d5dff43
-  HBSSDK: 4ef3bb006631fc27407bc04ebbdc659484caad60
-  hbsshared: 1dcdb29dc3d9e963b3cbb1d843451d525edb9159
-  OnRewindSDK: d2852b0c3355a0a793fefebf90121470cfb437bd
-  onrewindshared: 4ab023271a81cd4787f76d727e7b4c65c680f451
+  HBSSDK: 8a721bd9ab948b77beb13172b8d4c453bbb876c3
+  hbsshared: 1ffbdeb78e06bb545b71301ba52e05ca93fdd4e6
+  OnRewindSDK: 35fdd1de19f5ffd4de65e04af90359549ef9a2c1
+  onrewindshared: 309f2d6c0b58a6d28147a94bb971ac146c3a6d33
   PinLayout: 0090ccbf29ae69af6ae5a15eaeaf27ed7b2c4d83
   RxCocoa: e2ed092d5432e4296aa818021d27de4090ac0354
   RxRelay: 5a18c2eb2d68326ebaf0112f80d837ae41b92b97
   RxSwift: 915abbdfb62214aa89ccd0b194d44fb478019b27
 
-PODFILE CHECKSUM: dc771b33d6eb59018b5099fda04fb30ef56c3a54
+PODFILE CHECKSUM: a754d0cc2106461ffa3a349ea26268242e474538
 
 COCOAPODS: 1.11.2
