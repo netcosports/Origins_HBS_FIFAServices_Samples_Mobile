@@ -35,16 +35,6 @@ static NSString *const kRNConcurrentRoot = @"concurrentRoot";
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 
-  [Integration setPresentPlayerBlock:^(VideoPresentationContext * _Nonnull context) {
-    // NOTE: event id should arrive with context.eventId
-    [OnRewind presentPlayerWithEventId:@"78fbebc2-fc52-439e-81f4-8557bba62c1b" accountKey:@"SkH0O4D5H" fromPresentingViewController:context.presentationController];
-//    [OnRewind presentPlayerWithVideoURL:context.videoURL
-//                                 isLive:NO
-//           fromPresentingViewController:context.presentationController];
-  }];
-
-  [OnRewind setWithBaseUrl:@"https://api-gateway.onrewind.tv/main-api"];
-
   RCTAppSetupPrepareApp(application);
 
   RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];

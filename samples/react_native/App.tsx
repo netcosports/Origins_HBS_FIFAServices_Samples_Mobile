@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { StyleSheet, SafeAreaView, ScrollView } from 'react-native';
+import { NativeModules, StyleSheet, SafeAreaView, ScrollView } from 'react-native';
 
 import { TopPlayerStats } from '@origins-digital/react-native-hbssdk';
 import { TeamMatches } from '@origins-digital/react-native-hbssdk';
@@ -25,17 +25,28 @@ import { Actions } from '@origins-digital/react-native-hbssdk';
 
 import HBSSDK from '@origins-digital/react-native-hbssdk'
 
+const { OnRewind } = NativeModules;
+
 export default function App() {
+
   var _onOpenMatchDetails = (matchId: string) => {
     console.log("Match id is" + matchId)
   };
+  var callback = (streamUrl: string, matchId: string) => {
+    console.log(`open video player for ${streamUrl} or ${matchId}`);
+    OnRewind.presentPlayer(streamUrl, matchId)
+  }
+  HBSSDK.setPresentPlayerBlock(callback)
+
   return (
     <SafeAreaView >
      <ScrollView
         style={{ width: "100%", height: "100%", backgroundColor: '' }}
         contentContainerStyle={{ width: "100%" }}>
 
+        <MediumMatches onMatchSelected={_onOpenMatchDetails} data={{ teamId: "43960"}} style={styles.mediumMatches} />
 
+        <Videos data={{ category: "Matches - Match Clips" }} style={styles.videos} />
         <Favorites style={styles.favorites} />
 {/*
 */}
@@ -49,10 +60,8 @@ export default function App() {
 <Standings data={{ groupId: "255933", isExpanded: true }} style={styles.standings} />
 <Standings data={{ isExpanded: false }} style={styles.standings} />
 <SmallMatches data={{ groupId: "255933"}} style={styles.smallMatches} />
-<MediumMatches data={{ teamId: "43960"}} style={styles.mediumMatches} />
 <LargeMatches data={{ roundId: "255951"}} style={styles.largeMatches} />
 <ExpandedMatches data={{ roundId: "255951"}} style={styles.expanedMatches} />
-<Videos data={{ category: "Matches - Match Clips"}} style={styles.videos} />
 <TeamMatchesStats teamId="43960" style={styles.teamMatchesStats} />
 <TopPlayerStats data={{ teamId: "43948", statsType: "goals" }} style={styles.topPlayerStats} />
 <TopPlayerStats data={{ teamId: "43948", statsType: "shots" }} style={styles.topPlayerStats} />

@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|  
-    s.name = 'hbsshared'
-    s.version = '1.0.108'
-    s.summary = 'Summary of hbsshared'
+    s.name = 'onrewindshared'
+    s.version = '1.0.12'
+    s.summary = 'Summary of onrewindshared'
     s.homepage = 'https://github.com/netcosports'
 
     s.author = { 'Sergei Mikhan' => 'sergei@netcosports.com' }
@@ -11,10 +11,10 @@ Pod::Spec.new do |s|
     }
 
     s.platform = :ios
-    s.source = { :http => 'https://origins-mobile-products.s3.eu-west-1.amazonaws.com/hbssdk/directv/1.0.108/hbsshared.xcframework.zip' }
+    s.source = { :http => 'https://origins-mobile-products.s3.eu-west-1.amazonaws.com/onrewind_player/directv/1.0.12/onrewindshared.xcframework.zip' }
 
     s.ios.deployment_target = '11.0'
-    s.ios.vendored_frameworks = 'hbsshared.xcframework'
+    s.ios.vendored_frameworks = 'onrewindshared.xcframework'
     s.static_framework = true
 
 
