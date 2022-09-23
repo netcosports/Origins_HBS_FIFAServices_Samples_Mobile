@@ -6,6 +6,8 @@
 //
 
 #import <React/RCTBridgeModule.h>
+#import <React/RCTBridgeMethod.h>
+
 #import <HBSSDK/HBSSDK-Swift.h>
 
 @interface HBSSDKModule : NSObject <RCTBridgeModule>
@@ -22,6 +24,13 @@
 
 RCT_EXPORT_MODULE(HBSSDK);
 
+RCT_EXPORT_METHOD(setPresentPlayerBlock: (RCTResponseSenderBlock)callback)
+{
+  [Integration setPresentPlayerBlock:^(VideoPresentationContext * _Nonnull context) {
+    callback(@[context.eventId == nil ? @"" : context.eventId, context.videoURL.absoluteURL == nil ? @"" : context.videoURL.absoluteURL]);
+  }];
+}
+
 + (BOOL)requiresMainQueueSetup {
   return YES;
 }
@@ -32,6 +41,8 @@ RCT_EXPORT_MODULE(HBSSDK);
   CGFloat topPlayerStatsComponentHeight = [Stats topPlayersSizeFor: containerSize].height;
   CGFloat videosComponentHeight = [Videos videoWidgetSizeFor:containerSize].height;
   CGFloat standingsComponentHeight = [Standings sizeFor:containerSize].height;
+  CGFloat championshipComponentHeight = [Championship widgetSizeFor:containerSize].height;
+  CGFloat favoritesComponentHeight = [Favorites sizeFor:containerSize].height;
   CGFloat headToHeadComponentHeight = [HeadToHead sizeFor:containerSize].height;
   CGFloat matchCenterComponentHeight = [MatchCenter widgetSizeFor:containerSize].height;
 
@@ -45,15 +56,14 @@ RCT_EXPORT_MODULE(HBSSDK);
   CGFloat teamBoardComponentHeight = [TeamBoard sizeFor:containerSize].height;
   CGFloat venueComponentHeight = [Venue widgetSizeWithContainerSize:containerSize].height;
   CGFloat watchComponentHeight = [Watch sizeFor:containerSize].height;
-  CGFloat actionsComponentHeight = [MatchCenter actionsWidgetSizeFor:containerSize].height;
-  CGFloat matchHeaderComponentHeight = [MatchCenter headerWidgetSizeFor:containerSize].height;
-  CGFloat expandedMatchHeaderComponentHeight = [MatchCenter expandedHeaderWidgetSizeFor:containerSize].height;
 
   return @{
     @"teamMatchesComponentHeight": @(teamMatchesComponentHeight),
     @"topPlayerStatsComponentHeight": @(topPlayerStatsComponentHeight),
     @"videosComponentHeight": @(videosComponentHeight),
     @"standingsComponentHeight": @(standingsComponentHeight),
+    @"favoritesComponentHeight": @(favoritesComponentHeight),
+    @"championshipComponentHeight": @(championshipComponentHeight),
     @"headToHeadComponentHeight": @(headToHeadComponentHeight),
     @"matchCenterComponentHeight": @(matchCenterComponentHeight),
 
@@ -64,10 +74,7 @@ RCT_EXPORT_MODULE(HBSSDK);
     @"teamMatchesStatsComponentHeight": @(teamMatchesStatsComponentHeight),
     @"teamBoardComponentHeight": @(teamBoardComponentHeight),
     @"venueComponentHeight": @(venueComponentHeight),
-    @"watchComponentHeight": @(watchComponentHeight),
-    @"actionsComponentHeight": @(actionsComponentHeight),
-    @"matchHeaderComponentHeight": @(matchHeaderComponentHeight),
-    @"expandedMatchHeaderComponentHeight": @(expandedMatchHeaderComponentHeight)
+    @"watchComponentHeight": @(watchComponentHeight)
   };
 }
 
