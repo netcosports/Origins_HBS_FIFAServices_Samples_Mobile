@@ -38,7 +38,12 @@ public class AppDelegate: UIResponder, UIApplicationDelegate {
 		let window = UIWindow(frame: UIScreen.main.bounds)
 		window.backgroundColor = .white
 
-    HBSSDK.Integration.initSdk()
+    HBSSDK.Integration.initSdk(
+      baseUrl: "https://dev-hbs-stats-provider.origins-digital.com/",
+      accountKey: "YOUR_KEY",
+      competitionId: "fwc",
+      season: "2014"
+    )
 
     OnRewind.initialize()
     OnRewind.set(baseUrl: "https://api-gateway.onrewind.tv/main-api")

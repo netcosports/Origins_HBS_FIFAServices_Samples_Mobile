@@ -19,11 +19,17 @@ class HbsSampleApplication: Application() {
         super.onCreate()
         SettingsActivity.setDefaultTheme(this)
 
-        HbsSdk.init(context = this)
+        HbsSdk.init(
+            context = this,
+            baseUrl = "https://dev-hbs-stats-provider.origins-digital.com/",
+            accountKey = "YOUR_KEY",
+            competitionId = "fwc",
+            season = "2014",
+        )
 
         HbsSdk.setAnalyticsListener(object : AnalyticsEventListener {
-            override fun onNewEvent(event: AnalyticsEvent) {
-                Log.d("tttt", "analytic event: ${event.eventId} - ${event.eventName}")
+
+            override fun onNewEvent(screen: String, event: AnalyticsEvent) {
             }
 
         })
