@@ -35,6 +35,8 @@ static NSString *const kRNConcurrentRoot = @"concurrentRoot";
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 
+  [Integration initSdkWithBaseUrl:@"https://dev-hbs-stats-provider.origins-digital.com/" accountKey:@"YOUR_KEY" competitionId:@"fwc" season:@"2014"];
+
   RCTAppSetupPrepareApp(application);
 
   RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];

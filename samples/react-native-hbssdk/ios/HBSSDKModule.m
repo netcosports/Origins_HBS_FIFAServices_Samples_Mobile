@@ -17,8 +17,6 @@
 @implementation HBSSDKModule
 
 - (instancetype)init {
-  [Integration initSdk];
-
   return [super init];
 }
 

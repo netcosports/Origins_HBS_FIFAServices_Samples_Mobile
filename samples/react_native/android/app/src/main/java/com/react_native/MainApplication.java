@@ -54,7 +54,13 @@ public class MainApplication extends Application implements ReactApplication {
   @Override
   public void onCreate() {
     super.onCreate();
-    HbsSdk.init(this);
+    HbsSdk.init(
+            this,
+            "https://dev-hbs-stats-provider.origins-digital.com/",
+            "YOUR_KE",
+            "fwc",
+            "2014"
+    );
     OnRewind.initialize(
             new OnRewind.InitParams.Builder()
                     .setApplicationContext(this)
