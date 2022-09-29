@@ -36,7 +36,7 @@ export default function App() {
     console.log(`open video player for ${streamUrl} or ${matchId}`);
     OnRewind.presentPlayer(streamUrl, matchId)
   }
-  HBSSDK.setPresentPlayerBlock(callback)
+//  HBSSDK.setPresentPlayerBlock(callback)
 
   return (
     <SafeAreaView >
