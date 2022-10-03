@@ -43,6 +43,7 @@ public class HbssdkPackage implements ReactPackage {
                 new MatchStatsViewManager(reactContext),
                 new MatchHeaderViewManager(reactContext),
                 new ExpandedMatchHeaderViewManager(reactContext),
+                new SquadViewManager(reactContext),
                 new ActionsViewManager(reactContext)
         );
     }

@@ -22,6 +22,7 @@ import { MatchStats } from '@origins-digital/react-native-hbssdk';
 import { MatchHeader } from '@origins-digital/react-native-hbssdk';
 import { ExpandedMatchHeader } from '@origins-digital/react-native-hbssdk';
 import { Actions } from '@origins-digital/react-native-hbssdk';
+import { Squad } from '@origins-digital/react-native-hbssdk';
 
 import HBSSDK from '@origins-digital/react-native-hbssdk'
 
@@ -46,8 +47,7 @@ export default function App() {
 
         <MediumMatches onMatchSelected={_onOpenMatchDetails} data={{ teamId: "43960"}} style={styles.mediumMatches} />
 
-        <Videos data={{ category: "Matches - Match Clips" }} style={styles.videos} />
-        <Favorites style={styles.favorites} />
+        <Squad data={{ teamId: "43935" }} style={styles.squad} />
 {/*
 */}
       </ScrollView>
@@ -82,6 +82,7 @@ export default function App() {
 <Watch data = {{ roundId: "255951" }} style={styles.watch} />
 <Watch data = {{ matchId: "84872" }} style={styles.watch} />
 <Actions data={{ matchId: "84872"}} style={styles.actions} />
+<Squad data={{ teamId: "43960" }} style={styles.actions} />
 
 <Favorites style={styles.favorites} />
 <Championship  style={styles.championship} />
@@ -181,5 +182,9 @@ var styles = StyleSheet.create({
   actions: {
     width: "100%",
     height: HBSSDK.actionsComponentHeight,
+  },
+  squad: {
+    width: "100%",
+    height: HBSSDK.squadComponentHeight,
   }
 });

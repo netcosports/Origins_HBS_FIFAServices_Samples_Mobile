@@ -54,6 +54,7 @@ RCT_EXPORT_METHOD(setPresentPlayerBlock: (RCTResponseSenderBlock)callback)
   CGFloat teamBoardComponentHeight = [TeamBoard sizeFor:containerSize].height;
   CGFloat venueComponentHeight = [Venue widgetSizeWithContainerSize:containerSize].height;
   CGFloat watchComponentHeight = [Watch sizeFor:containerSize].height;
+  CGFloat squadComponentHeight = [Teams squadWidgetSizeFor:containerSize].height;
 
   return @{
     @"teamMatchesComponentHeight": @(teamMatchesComponentHeight),
@@ -72,7 +73,8 @@ RCT_EXPORT_METHOD(setPresentPlayerBlock: (RCTResponseSenderBlock)callback)
     @"teamMatchesStatsComponentHeight": @(teamMatchesStatsComponentHeight),
     @"teamBoardComponentHeight": @(teamBoardComponentHeight),
     @"venueComponentHeight": @(venueComponentHeight),
-    @"watchComponentHeight": @(watchComponentHeight)
+    @"watchComponentHeight": @(watchComponentHeight),
+    @"squadComponentHeight": @(squadComponentHeight)
   };
 }
 

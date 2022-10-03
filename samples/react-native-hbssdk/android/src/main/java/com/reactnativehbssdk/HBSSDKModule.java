@@ -53,6 +53,7 @@ public class HBSSDKModule extends ReactContextBaseJavaModule {
         map.put("headToHeadComponentHeight", 1040);
         map.put("largeMatchesComponentHeight", 280);
         map.put("expandedMatchesComponentHeight", 360);
+        map.put("squadComponentHeight", 800);
 
         map.put("matchHeaderComponentHeight", 280);
         map.put("expandedMatchHeaderComponentHeight", 460);
