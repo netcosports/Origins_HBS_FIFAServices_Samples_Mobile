@@ -183,7 +183,7 @@ type SquadProps = {
   style: ViewStyle;
 };
 
-const WatchComponentName = 'Squad';
+const SquadComponentName = 'Squad';
 
 export const Squad =
   UIManager.getViewManagerConfig(SquadComponentName) != null
