@@ -2,6 +2,9 @@ package com.react_native;
 
 import android.app.Application;
 import android.content.Context;
+
+import androidx.annotation.NonNull;
+
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
 import com.facebook.react.ReactInstanceManager;
@@ -61,6 +64,17 @@ public class MainApplication extends Application implements ReactApplication {
             "fwc",
             "2014"
     );
+    HbsSdk.setOnVideoClickListener(new HbsSdk.OnVideoClickListener() {
+      @Override
+      public void playVideoUrl(@NonNull Context context, @NonNull String s) {
+
+      }
+
+      @Override
+      public void playEventId(@NonNull Context context, @NonNull String s) {
+
+      }
+    });
     OnRewind.initialize(
             new OnRewind.InitParams.Builder()
                     .setApplicationContext(this)

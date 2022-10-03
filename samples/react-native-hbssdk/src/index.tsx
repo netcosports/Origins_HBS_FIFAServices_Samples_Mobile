@@ -177,6 +177,22 @@ export const Watch =
       };
 
 ////////////////////////
+// squad
+type SquadProps = {
+  teamId: string;
+  style: ViewStyle;
+};
+
+const WatchComponentName = 'Squad';
+
+export const Squad =
+  UIManager.getViewManagerConfig(SquadComponentName) != null
+    ? requireNativeComponent<SquadProps>(SquadComponentName)
+    : () => {
+        throw new Error(LINKING_ERROR);
+      };
+
+////////////////////////
 // top player
 type TeamMatchesProps = {
   teamId: string;
