@@ -4,6 +4,8 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 platform :ios, '13.0'
 install! 'cocoapods', :deterministic_uuids => false
 
+use_frameworks! :linkage => :static
+
 def download_spec! (options={})
   url = options[:url]
   FileUtils.mkdir_p './specs'
@@ -12,7 +14,7 @@ def download_spec! (options={})
   }
 end
 
-$onrewind_product_base_url='https://origins-mobile-products.s3.eu-west-1.amazonaws.com/onrewind_player/directv/1.0.12'
+$onrewind_product_base_url='https://origins-mobile-products.s3.eu-west-1.amazonaws.com/hbs_onrewind_player/kan/1.0.29'
 $hbssdk_product_base_url='https://origins-mobile-products.s3.eu-west-1.amazonaws.com/hbssdk/whitelabel/1.0.121'
 
 download_spec!(url: "#{$onrewind_product_base_url}/OnRewindSDK.podspec")
@@ -20,6 +22,19 @@ download_spec!(url: "#{$onrewind_product_base_url}/onrewindshared.podspec")
 
 download_spec!(url: "#{$hbssdk_product_base_url}/HBSSDK.podspec")
 download_spec!(url: "#{$hbssdk_product_base_url}/hbsshared.podspec")
+
+pre_install do |installer|
+  installer.pod_targets.each do |pod|
+    if ['Protobuf'].include?(pod.name)
+      def pod.dynamic_framework?;
+        true
+      end
+      def pod.build_type;
+        Pod::BuildType.dynamic_framework
+      end
+    end
+  end
+end
 
 target 'react_native' do
   config = use_native_modules!
@@ -50,7 +65,7 @@ target 'react_native' do
   #
   # Note that if you have use_frameworks! enabled, Flipper will not work and
   # you should disable the next line.
-  use_flipper!()
+  # use_flipper!()
 
   post_install do |installer|
     react_native_post_install(installer)

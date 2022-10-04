@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|  
     s.name = 'onrewindshared'
-    s.version = '1.0.12'
+    s.version = '1.0.29'
     s.summary = 'Summary of onrewindshared'
     s.homepage = 'https://github.com/netcosports'
 
@@ -11,17 +11,11 @@ Pod::Spec.new do |s|
     }
 
     s.platform = :ios
-    s.source = { :http => 'https://origins-mobile-products.s3.eu-west-1.amazonaws.com/onrewind_player/directv/1.0.12/onrewindshared.xcframework.zip' }
+    s.source = { :http => 'https://origins-mobile-products.s3.eu-west-1.amazonaws.com/hbs_onrewind_player/kan/1.0.29/onrewindshared.xcframework.zip' }
 
-    s.ios.deployment_target = '11.0'
+    s.ios.deployment_target = '12.0'
     s.ios.vendored_frameworks = 'onrewindshared.xcframework'
-    s.static_framework = true
 
 
 
-    def s.post_install(target)
-        target.build_configurations.each do |config|
-            config.build_settings['ARCHS'] = ["arm64", "x86_64"]
-        end        
-    end    
 end
