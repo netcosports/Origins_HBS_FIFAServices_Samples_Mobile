@@ -2,16 +2,14 @@ package com.originsdigital.hbsonrewindplayerdemo.wrapper.exo
 
 import android.content.Context
 import android.net.Uri
-import android.os.Bundle
 import androidx.lifecycle.LifecycleOwner
 import com.google.android.exoplayer2.*
 import com.google.android.exoplayer2.audio.AudioAttributes
 import com.google.android.exoplayer2.upstream.DataSource
 import com.google.android.exoplayer2.upstream.DefaultHttpDataSource
 import com.google.android.exoplayer2.util.Util
-import com.origins.dioptra.core.*
-import com.origins.dioptra.wrapper.*
-import com.origins.onrewind.ui.player.OnRewindPlayerWrapper
+import com.origins.onrewind.domain.models.player.*
+import com.origins.onrewind.ui.player.wrapper.*
 import kotlin.math.max
 import kotlin.math.min
 
@@ -28,19 +26,9 @@ class ExoPlayerWrapper(val context: Context) : OnRewindPlayerWrapper {
 
     override val playerView: ExoPlayerView = ExoPlayerView(context)
 
-    private var currentVolume: Float = 1F
-    override var isMuted: Boolean = false
-        set(value) {
-            if (field != value) {
-                field = value
-                if (field) {
-                    currentVolume = exoPlayer?.volume ?: 1F
-                    exoPlayer?.volume = 0F
-                } else {
-                    exoPlayer?.volume = currentVolume
-                }
-            }
-        }
+    override fun setSource(url: String?, startOffsetMillis: Long?, playWhenReady: Boolean?) {
+
+    }
 
     override val isPlaybackSpeedSupported: Boolean = true
     override var playbackSpeed: Float = 1F
@@ -201,14 +189,14 @@ class ExoPlayerWrapper(val context: Context) : OnRewindPlayerWrapper {
             startAutoPlay = playWhenReady
 
             val state = when (playbackState) {
-                Player.STATE_BUFFERING -> if (playWhenReady) PlayerState.STUCK else PlayerState.BUFFERING
-                Player.STATE_ENDED -> PlayerState.ENDED
-                Player.STATE_IDLE -> PlayerState.IDLE
+                Player.STATE_BUFFERING -> if (playWhenReady) PlayerState.Stuck else PlayerState.Buffering
+                Player.STATE_ENDED -> PlayerState.Ended
+                Player.STATE_IDLE -> PlayerState.Idle
                 Player.STATE_READY -> {
                     val state = if (playWhenReady) PlaybackState.PLAYING else PlaybackState.PAUSED
-                    PlayerState.READY(state)
+                    PlayerState.Ready(state)
                 }
-                else -> PlayerState.IDLE
+                else -> PlayerState.Idle
             }
 
             playerStateListener?.onNewState(state)
@@ -230,7 +218,7 @@ class ExoPlayerWrapper(val context: Context) : OnRewindPlayerWrapper {
                 updateStartPosition()
             }
 
-            playerStateListener?.onNewState(PlayerState.ERROR(error))
+            playerStateListener?.onNewState(PlayerState.Error(error.message))
         }
     }
 }

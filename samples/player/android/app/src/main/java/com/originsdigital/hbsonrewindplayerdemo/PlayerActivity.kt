@@ -17,8 +17,8 @@ import androidx.constraintlayout.widget.ConstraintSet
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
-import com.origins.dioptra.core.ScreenMode
 import com.origins.onrewind.domain.models.player.MediaControllerMode
+import com.origins.onrewind.domain.models.player.ScreenMode
 import com.origins.onrewind.ui.OnRewindPlayerView
 import com.origins.onrewind.ui.PlayerParameters
 import com.origins.onrewind.ui.util.isPortrait
@@ -96,9 +96,9 @@ class PlayerActivity : AppCompatActivity() {
 
         addOnPictureInPictureModeChangedListener {
             if (it.isInPictureInPictureMode) {
-                playerView?.enterPip()
+                playerView?.enterPictureInPicture()
             } else {
-                playerView?.exitPip()
+                playerView?.exitPictureInPicture()
             }
         }
     }
@@ -141,14 +141,13 @@ class PlayerActivity : AppCompatActivity() {
 
 
     private fun showPlayer() {
-        val config = PlayerParameters.Builder().apply {
-            if (intent.getBooleanExtra(USE_WRAPPER, false)) {
-                setWrapper(ExoPlayerWrapper(context = this@PlayerActivity))
+        val config = PlayerParameters.Builder()
+            .apply {
+                if (intent.getBooleanExtra(USE_WRAPPER, false)) {
+                    setWrapper(ExoPlayerWrapper(context = this@PlayerActivity))
+                }
             }
-        }
-            //Test Event params
-            .setEventConfigurationUrl("https://storage.googleapis.com/static-production.netcosports.com/onrewind/hbs_demo_player_config.json")
-            .setAccountKey("B1oYoKWDK")
+            .setMatchId("129670")
             .setIsChromecastEnabled(true)
             .build()
 

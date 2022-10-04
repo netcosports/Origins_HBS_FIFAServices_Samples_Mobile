@@ -5,12 +5,12 @@ plugins {
 }
 
 android {
-    compileSdk 31
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.originsdigital.hbsonrewindplayerdemo"
         minSdk 21
-        targetSdk 31
+        targetSdk 33
         versionCode 1
         versionName "1.0"
     }
@@ -40,9 +40,8 @@ dependencies {
 
     //NOTE: artifact will be customized per customer
 
-    implementation "com.origins-digital.onrewind:player-whitelabel:1.0.5"
-    implementation "com.origins-digital.dioptra:exo:1.0.0"
 
+    implementation "com.origins-digital.hbs-player:player-whitelabel:1.0.30"
     implementation 'com.kaltura.player:tvplayer:4.22.4'
 
     implementation 'com.google.android.gms:play-services-cast-framework:21.1.0'
