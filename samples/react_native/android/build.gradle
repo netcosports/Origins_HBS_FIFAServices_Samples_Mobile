@@ -54,8 +54,8 @@ allprojects {
         maven {
             { url = "https://artifactory-blr.netcodev.com/artifactory/libs-release" }
             credentials {
-                username = repoUsername
-                password = repoPassword
+                username = hbsRepoUsername
+                password = hbsRepoPassword
             }
         }
     }
