@@ -12,14 +12,14 @@ class DemoApplication : Application() {
             OnRewind.InitParams.Builder()
                 .setApplicationContext(this)
                 .setBaseUrl("https://dev-hbs-stats-provider.origins-digital.com/api/hbs/")
-                .setAccountKey("6GOG5kQMD")
+                .setAccountKey(TODO("ACCOUNT_KEY"))
                 .setCompetitionConfiguration(
                     CompetitionConfiguration("rsh2_fac", "2021")
                 )
                 .setSportBuffConfiguration(
-                    OnRewind.InitParams.SportBuffConfiguration("OD")
+                    OnRewind.InitParams.SportBuffConfiguration(TODO("SPORT_BUFF_CLIENT_ACCOUNT"))
                 )
-                .setAkamaiPrivateKey("0df73252ceaf17d78589371d5b8d1bbb")
+                .setAkamaiPrivateKey(TODO("AKAMAI_PRIVATE_KEY"))
                 .build()
         )
     }
