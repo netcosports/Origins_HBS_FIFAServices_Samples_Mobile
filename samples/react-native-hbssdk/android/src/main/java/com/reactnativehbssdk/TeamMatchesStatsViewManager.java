@@ -33,6 +33,6 @@ public class TeamMatchesStatsViewManager extends SimpleViewManager<TeamMatchesWi
 
     @ReactProp(name = "teamId")
     public void setTeamId(TeamMatchesWidget view, @Nullable String teamId) {
-        view.setupParams(teamId);
+        view.setupTeamId(teamId);
     }
 }

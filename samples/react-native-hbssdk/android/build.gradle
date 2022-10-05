@@ -5,8 +5,8 @@ buildscript {
     maven {
       url "https://artifactory-blr.netcodev.com/artifactory/libs-release"
       credentials {
-        username hbsRepoUsername
-        password hbsRepoPassword
+        username System.getenv("HBS_REPO_USERNAME") ? System.getenv("HBS_REPO_USERNAME") : hbsRepoUsername
+        password System.getenv("HBS_REPO_PASSWORD") ? System.getenv("HBS_REPO_PASSWORD"): hbsRepoPassword
       }
     }
   }
@@ -64,8 +64,8 @@ repositories {
   maven {
     url "https://artifactory-blr.netcodev.com/artifactory/libs-release"
     credentials {
-      username hbsRepoUsername
-      password hbsRepoPassword
+      username System.getenv("HBS_REPO_USERNAME") ? System.getenv("HBS_REPO_USERNAME") : hbsRepoUsername
+      password System.getenv("HBS_REPO_PASSWORD") ? System.getenv("HBS_REPO_PASSWORD"): hbsRepoPassword
     }
   }
 
@@ -128,7 +128,7 @@ repositories {
   }
 
   if (!found) {
-    throw new GradleException(
+    print(
       "${project.name}: unable to locate React Native android sources. " +
       "Ensure you have you installed React Native as a dependency in your project and try again."
     )
@@ -139,7 +139,7 @@ repositories {
 dependencies {
     //noinspection GradleDynamicVersion
   implementation "com.facebook.react:react-native:+"
-  compileOnly("com.origins-digital.hbswidgets:widgets-whitelabel:1.0.121")
+  compileOnly("com.origins-digital.hbswidgets:widgets-whitelabel:1.0.127")
 // From node_modules
 }
 

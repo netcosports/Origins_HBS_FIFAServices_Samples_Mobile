@@ -60,7 +60,7 @@ public class MainApplication extends Application implements ReactApplication {
     HbsSdk.init(
             this,
             "https://dev-hbs-stats-provider.origins-digital.com/",
-            "YOUR_KE",
+            "Os-hRUFEh",
             "fwc",
             "2014"
     );
