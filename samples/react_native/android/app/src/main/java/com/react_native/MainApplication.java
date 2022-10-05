@@ -12,11 +12,13 @@ import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.config.ReactFeatureFlags;
 import com.facebook.soloader.SoLoader;
-import com.netcosports.onrewind.OnRewind;
+import com.origins.onrewind.OnRewind;
 import com.originsdigital.hbswidgets.core.HbsSdk;
 import com.react_native.newarchitecture.MainApplicationReactNativeHost;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
+
+import com.origins.onrewind.domain.CompetitionConfiguration;
 
 public class MainApplication extends Application implements ReactApplication {
 
@@ -75,10 +77,19 @@ public class MainApplication extends Application implements ReactApplication {
 
       }
     });
+
     OnRewind.initialize(
-            new OnRewind.InitParams.Builder()
+           new OnRewind.InitParams.Builder()
                     .setApplicationContext(this)
-                    .setBaseUrl("https://api-gateway.onrewind.tv/main-api/")
+                    .setBaseUrl("https://dev-hbs-stats-provider.origins-digital.com/api/hbs/")
+                    .setAccountKey("6GOG5kQMD")
+                    .setCompetitionConfiguration(
+                            new CompetitionConfiguration("competitionId", "season")
+                    )
+                    .setSportBuffConfiguration(
+                            new OnRewind.InitParams.SportBuffConfiguration("TODO BuildConfig.SPORT_BUFF_CLIENT_NAME")
+                    )
+                    .setAkamaiPrivateKey("TODO BuildConfig.AKAMAI_PRIVATE_KEY")
                     .build()
     );
     // If you opted-in for the New Architecture, we enable the TurboModule system
