@@ -273,6 +273,23 @@ export const Favorites =
 
 
 ////////////////////////
+////////////////////////
+// Team List
+type TeamListProps = {
+  style: ViewStyle;
+};
+
+const TeamListComponentName = 'TeamList';
+
+export const TeamList =
+  UIManager.getViewManagerConfig(TeamListComponentName) != null
+    ? requireNativeComponent<TeamListProps>(TeamListComponentName)
+    : () => {
+        throw new Error(LINKING_ERROR);
+      };
+
+
+////////////////////////
 // head to head
 type HeadToHeadProps = {
   data: { teamId: string, teamId1: string, teamId2: string };
