@@ -162,7 +162,7 @@ This widget display carousel of special match view.
 Top part contains match info and open match center when user clicks on it
 Bottom part contains video info and launch video player.
 
-![Watch image example](images/watch.png)
+![Watch image example](images/watch.png =375x)
 
 Like matches widget it can be configured using **matchId**, **groupId**, **teamId** or **roundId**
 ```
