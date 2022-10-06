@@ -69,17 +69,49 @@ This widget displays all rounds data as carousel. It not requires any parameters
 ```<Championship  style={styles.championship} />
 ```
 
+## Match center widgets.
+When user clicks on matchbox it displays popup with match details by default.
+You can handle clicks by yourself, and use separated widgets.
+There are three widgets.
+- Match Header
+- Lineup
+- Match Stats
+
+### Match header
+Header of match center
+```
+<MatchHeader data={{ matchId: "84872"}} style={styles.matchHeader} />
+```
+If you want also display actions inside it use Expanded match header
+```
+
+<ExpandedMatchHeader  data={{ matchId: "84872"}} style={styles.expandedMatchHeader} />
+```
+
+### Lineup
+Display lineup for given match
+```
+<Lineup data={{ matchId: "84872"}} style={styles.lineup} />
+```
+
+### Match Stats
+Displays match stats for given match
+```
+<MatchStats data={{ matchId: "84872"}} style={styles.matchStats} />
+```
+
+## Actions
+This widget displays match highlights as carousel
+```
+<Actions data={{ matchId: "84872"}} style={styles.actions} />
+```
+
+
 import { Videos } from '@origins-digital/react-native-hbssdk';
 import { Favorites } from '@origins-digital/react-native-hbssdk';
 import { HeadToHead } from '@origins-digital/react-native-hbssdk';
-import { TeamMatchesStats } from '@origins-digital/react-native-hbssdk';
 
 import { TeamBoard } from '@origins-digital/react-native-hbssdk';
 import { Venue } from '@origins-digital/react-native-hbssdk';
 import { Watch } from '@origins-digital/react-native-hbssdk';
-import { Lineup } from '@origins-digital/react-native-hbssdk';
-import { MatchStats } from '@origins-digital/react-native-hbssdk';
-import { MatchHeader } from '@origins-digital/react-native-hbssdk';
-import { ExpandedMatchHeader } from '@origins-digital/react-native-hbssdk';
-import { Actions } from '@origins-digital/react-native-hbssdk';
 import { Squad } from '@origins-digital/react-native-hbssdk';
