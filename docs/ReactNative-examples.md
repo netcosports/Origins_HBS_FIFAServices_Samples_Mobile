@@ -40,7 +40,9 @@ It supports 4 types of data:
 This widget display top players from given team for selected stats.
 Supported stats type: **goals**, **shots**
 
+```
 <TopPlayerStats data={{ teamId: "43948", statsType: "goals" }} style={styles.topPlayerStats} />
+```
 
 
 ## Team Matches Stats widget
@@ -50,10 +52,24 @@ This widget display stats of matches played by given team (by team id).
 <TeamMatchesStats teamId="43960" style={styles.teamMatchesStats} />
 ```
 
+## Standings widget.
+This widget is used to display standings. It can display standings for all groups as carousel,
+and for single group by group id. There are to display modes: **compact** and **expanded**
+
+You can provide groupdId to display single group, if no group id provided all groups are displayed.
+Display mode configured by **isExpanded** field. If it true widget is expanded, otherwise it is compact.
+
+```
+<Standings data={{ groupId: "255933", isExpanded: true }} style={styles.standings} />
+<Standings data={{ isExpanded: false }} style={styles.standings} />
+```
+
+## Championship widget.
+This widget displays all rounds data as carousel. It not requires any parameters
+```<Championship  style={styles.championship} />
+```
 
 import { Videos } from '@origins-digital/react-native-hbssdk';
-import { Standings } from '@origins-digital/react-native-hbssdk';
-import { Championship } from '@origins-digital/react-native-hbssdk';
 import { Favorites } from '@origins-digital/react-native-hbssdk';
 import { HeadToHead } from '@origins-digital/react-native-hbssdk';
 import { TeamMatchesStats } from '@origins-digital/react-native-hbssdk';
