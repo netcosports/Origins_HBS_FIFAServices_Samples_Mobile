@@ -16,9 +16,9 @@ PODS:
     - Protobuf (~> 3.13)
   - google-cast-sdk-no-bluetooth/Core (4.7.0):
     - Protobuf (~> 3.13)
-  - HBSSDK (1.0.121):
+  - HBSSDK (1.0.127):
     - hbsshared
-  - hbsshared (1.0.121)
+  - hbsshared (1.0.127)
   - OnRewindSDK (1.0.29):
     - google-cast-sdk-no-bluetooth (= 4.7.0)
     - onrewindshared
@@ -234,7 +234,7 @@ PODS:
   - React-jsinspector (0.69.1)
   - React-logger (0.69.1):
     - glog
-  - react-native-hbssdk (1.4.29):
+  - react-native-hbssdk (1.6.4):
     - HBSSDK
     - React-Core
   - React-perflogger (0.69.1)
@@ -438,8 +438,8 @@ SPEC CHECKSUMS:
   fmt: ff9d55029c625d3757ed641535fd4a75fedc7ce9
   glog: 3d02b25ca00c2d456734d0bcff864cbc62f6ae1a
   google-cast-sdk-no-bluetooth: 5313156110d6e71fa336f6d742f1ee641e91fdca
-  HBSSDK: 94a6d9a02bae5d5a60b4fd4e5ad36750815d1827
-  hbsshared: f7e05ab12ae150d37258a403d571eda35e515463
+  HBSSDK: 9e453d923250c7ca2fefa223e8fea1cb8c20adf5
+  hbsshared: ec14efade73e67c09fe8fa76f27105d68b4f2a7c
   OnRewindSDK: 17e6fea0f589d84d40315025c0a79c2b2ec939a3
   onrewindshared: 6a45989df241c3a3caea8a62928885abaf04c134
   Protobuf: e7846f61e8542750cf311385fc633c1d00928f9f
@@ -457,7 +457,7 @@ SPEC CHECKSUMS:
   React-jsiexecutor: 758e70947c232828a66b5ddc42d02b4d010fa26e
   React-jsinspector: 55605caf04e02f9b0e05842b786f1c12dde08f4b
   React-logger: ca970551cb7eea2fd814d0d5f6fc1a471eb53b76
-  react-native-hbssdk: e4a1ae1dc4a8738e42b8e9b4faa311d85f35c2de
+  react-native-hbssdk: c580d2adcc597b9a3bf951b048de00b33f311b7f
   React-perflogger: c9161ff0f1c769993cd11d2751e4331ff4ceb7cd
   React-RCTActionSheet: 2d885b0bea76a5254ef852939273edd8de116180
   React-RCTAnimation: 353fa4fc3c19060068832dd32e555182ec07be45
@@ -473,6 +473,6 @@ SPEC CHECKSUMS:
   SportBuff: fe1c21149f77d0c7927cc01049beb681e90f7e13
   Yoga: 7ab6e3ee4ce47d7b789d1cb520163833e515f452
 
-PODFILE CHECKSUM: f8c9590e4e2f3f213355020b3fb8335d5d926235
+PODFILE CHECKSUM: dac3fca0bcfc352fc4d48c47fbee82fb2c90a9ca
 
 COCOAPODS: 1.11.3

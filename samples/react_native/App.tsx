@@ -7,6 +7,7 @@ import { TeamMatches } from '@origins-digital/react-native-hbssdk';
 import { Videos } from '@origins-digital/react-native-hbssdk';
 import { Standings } from '@origins-digital/react-native-hbssdk';
 import { Championship } from '@origins-digital/react-native-hbssdk';
+import { TeamList } from '@origins-digital/react-native-hbssdk';
 import { Favorites } from '@origins-digital/react-native-hbssdk';
 import { HeadToHead } from '@origins-digital/react-native-hbssdk';
 import { TeamMatchesStats } from '@origins-digital/react-native-hbssdk';
@@ -47,7 +48,7 @@ export default function App() {
 
         <MediumMatches onMatchSelected={_onOpenMatchDetails} data={{ teamId: "43960"}} style={styles.mediumMatches} />
 
-        <Squad data={{ teamId: "43935" }} style={styles.squad} />
+        <TeamList style={styles.teamlist} />
 {/*
 */}
       </ScrollView>
@@ -122,6 +123,10 @@ var styles = StyleSheet.create({
     height: HBSSDK.matchCenterComponentHeight,
   },
   favorites: {
+    width: "100%",
+    height: 600,
+  },
+  teamlist: {
     width: "100%",
     height: 600,
   },
