@@ -19,6 +19,7 @@
 @implementation OnRewindModule
 
 - (instancetype)init {
+  
   [OnRewind setWithBaseUrl:@"https://dev-hbs-stats-provider.origins-digital.com/api/hbs/" akamaiPrivateKey:@"0df73252ceaf17d78589371d5b8d1bbb" accountKey:@"6GOG5kQMD" competitionId:@"rsh2_fac" seasonId:@"2021"];
 
   return [super init];
