@@ -24,7 +24,7 @@ PODS:
     - onrewindshared
     - SportBuff (= 1.1.0)
   - onrewindshared (1.0.29)
-  - Protobuf (3.21.6)
+  - Protobuf (3.21.7)
   - RCT-Folly (2021.06.28.00-v2):
     - boost
     - DoubleConversion
@@ -442,7 +442,7 @@ SPEC CHECKSUMS:
   hbsshared: ec14efade73e67c09fe8fa76f27105d68b4f2a7c
   OnRewindSDK: 17e6fea0f589d84d40315025c0a79c2b2ec939a3
   onrewindshared: 6a45989df241c3a3caea8a62928885abaf04c134
-  Protobuf: e7846f61e8542750cf311385fc633c1d00928f9f
+  Protobuf: f4128517d7a42302e106cc3afe614ee3a7513e94
   RCT-Folly: b9d9fe1fc70114b751c076104e52f3b1b5e5a95a
   RCTRequired: ae07282b2ec9c90d7eb98251603bc3f82403d239
   RCTTypeSafety: a04dc1339af2e1da759ccd093bf11c310dce1ef6
