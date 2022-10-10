@@ -194,3 +194,10 @@ Like matches widget it can be configured using **matchId**, **groupId**, **teamI
 <Watch data = {{ roundId: "255951" }} style={styles.watch} />
 <Watch data = {{ matchId: "84872" }} style={styles.watch} />
 ```
+
+## TeamList
+This widget display list of teams.
+
+```
+<TeamList style={styles.teamlist} />
+```
