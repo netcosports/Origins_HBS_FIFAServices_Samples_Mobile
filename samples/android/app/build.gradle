@@ -52,8 +52,8 @@ android {
 
 dependencies {
 
-    implementation "com.origins-digital.hbswidgets:widgets-whitelabel:1.0.110"
-    implementation "com.origins-digital.onrewind:player-whitelabel:1.0.6"
+    implementation "com.origins-digital.hbswidgets:widgets-viacom18:1.0.133"
+    implementation "com.origins-digital.hbs-player:player-viacom18:1.0.45"
     implementation "com.origins-digital.dioptra:exo:1.0.0"
     implementation 'androidx.core:core-ktx:1.9.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'

@@ -17,8 +17,8 @@ import androidx.constraintlayout.widget.ConstraintSet
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
-import com.origins.dioptra.core.ScreenMode
 import com.origins.onrewind.domain.models.player.MediaControllerMode
+import com.origins.onrewind.domain.models.player.ScreenMode
 import com.origins.onrewind.ui.OnRewindPlayerView
 import com.origins.onrewind.ui.PlayerParameters
 import com.origins.onrewind.ui.util.isPortrait
@@ -38,6 +38,10 @@ class PlayerActivity : AppCompatActivity() {
     private var playerActivityContainer: ConstraintLayout? = null
     private var playerView: OnRewindPlayerView? = null
 
+    private val isLive: Boolean
+        get() = intent.getStringExtra(EXTRA_MATCH_ID) != null
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val isPortrait = resources.configuration.isPortrait()
@@ -53,7 +57,6 @@ class PlayerActivity : AppCompatActivity() {
 
         showPlayer()
 
-        updateControllerMode(false)
         updatePlayerConstraints(isPortrait)
 
         playerView?.fullscreenButtonToggleHandler =
@@ -91,9 +94,9 @@ class PlayerActivity : AppCompatActivity() {
 
         addOnPictureInPictureModeChangedListener {
             if (it.isInPictureInPictureMode) {
-                playerView?.enterPip()
+                playerView?.enterPictureInPicture()
             } else {
-                playerView?.exitPip()
+                playerView?.exitPictureInPicture()
             }
         }
     }
@@ -135,13 +138,20 @@ class PlayerActivity : AppCompatActivity() {
     }
 
     private fun showPlayer() {
-        val videoUrl = intent.getStringExtra(EXTRA_VIDEO_URL).orEmpty()
+        val videoUrl = intent.getStringExtra(EXTRA_VIDEO_URL)
+        val matchId = intent.getStringExtra(EXTRA_MATCH_ID)
+
         val config = PlayerParameters.Builder()
-            .setDirectVideoParams(
-                PlayerParameters.DirectVideoParams.Builder()
-                    .setVideoUrl(videoUrl)
-                    .build()
-            )
+            .setMatchId(matchId)
+            .apply {
+                if (videoUrl != null) {
+                    setDirectVideoParams(
+                        PlayerParameters.DirectVideoParams.Builder()
+                            .setVideoUrl(videoUrl)
+                            .build()
+                    )
+                }
+            }
             .build()
 
         val player = OnRewindPlayerView(this, config)
@@ -172,6 +182,7 @@ class PlayerActivity : AppCompatActivity() {
         }
         set.applyTo(playerActivityContainer)
         playerView?.requestScreenMode(if (isPortrait) ScreenMode.NORMAL else ScreenMode.FULLSCREEN)
+        updateControllerMode(!isPortrait && isLive)
     }
 
     override fun onConfigurationChanged(newConfig: Configuration) {
@@ -217,9 +228,15 @@ class PlayerActivity : AppCompatActivity() {
 
     companion object {
         private const val EXTRA_VIDEO_URL = "extra_video_url"
+        private const val EXTRA_MATCH_ID = "extra_match_id"
         fun getLaunchIntent(context: Context, url: String): Intent {
             return Intent(context, PlayerActivity::class.java)
                 .putExtra(EXTRA_VIDEO_URL, url)
+        }
+
+        fun getLaunchIntentForMatchId(context: Context, matchId: String): Intent {
+            return Intent(context, PlayerActivity::class.java)
+                .putExtra(EXTRA_MATCH_ID, matchId)
         }
     }
 }
