@@ -123,7 +123,7 @@ var styles = StyleSheet.create({
   },
   matchCenter: {
     width: "100%",
-    height: HBSSDK.matchCenterComponentHeight,
+    height: 600,
   },
   favorites: {
     width: "100%",

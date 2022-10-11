@@ -9,13 +9,17 @@ import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
+import com.originsdigital.hbswidgets.action.ActionWidget;
 import com.originsdigital.hbswidgets.core.HbsSdk;
 import com.originsdigital.hbswidgets.matchcenter.expanded.ExpandedMatchesWidget;
 import com.originsdigital.hbswidgets.matchcenter.large.LargeMatchesWidget;
 import com.originsdigital.hbswidgets.matchcenter.medium.MediumMatchesWidget;
 import com.originsdigital.hbswidgets.matchcenter.small.SmallMatchesWidget;
+import com.originsdigital.hbswidgets.matchdetails.header.MatchDetailsHeaderExpandedWidget;
+import com.originsdigital.hbswidgets.matchdetails.header.MatchDetailsHeaderWidget;
 import com.originsdigital.hbswidgets.standings.StandingsWidget;
 import com.originsdigital.hbswidgets.stats.teammatches.TeamMatchesWidget;
+import com.originsdigital.hbswidgets.stats.topplayer.TopPlayerStatsWidget;
 import com.originsdigital.hbswidgets.teamboard.TeamBoardWidget;
 import com.originsdigital.hbswidgets.teamdetails.squad.SquadWidget;
 import com.originsdigital.hbswidgets.venue.VenuesWidget;
@@ -54,7 +58,7 @@ public class HBSSDKModule extends ReactContextBaseJavaModule {
         map.put("videosComponentHeight", VideoCarouselWidget.widgetHeightDp(context));
         map.put("mediumMatchesComponentHeight", MediumMatchesWidget.widgetHeightDp(context));
         map.put("smallMatchesComponentHeight", SmallMatchesWidget.widgetHeight(context));
-        map.put("topPlayerStatsComponentHeight", 250);
+        map.put("topPlayerStatsComponentHeight", TopPlayerStatsWidget.widgetHeight(context));
         map.put("teamMatchesStatsComponentHeight", TeamMatchesWidget.widgetHeightDp(context));
         map.put("venueComponentHeight", VenuesWidget.widgetHeight(context));
         map.put("teamBoardComponentHeight", TeamBoardWidget.widgetHeightDp(context));
@@ -64,11 +68,9 @@ public class HBSSDKModule extends ReactContextBaseJavaModule {
         map.put("squadComponentHeight", SquadWidget.widgetHeight(context));
 
 
-        map.put("matchHeaderComponentHeight", 280);
-        map.put("expandedMatchHeaderComponentHeight", 460);
-        map.put("actionsComponentHeight", 160);
-
-        map.put("matchCenterComponentHeight", 260);
+        map.put("matchHeaderComponentHeight", MatchDetailsHeaderWidget.widgetHeightDp(context));
+        map.put("expandedMatchHeaderComponentHeight", MatchDetailsHeaderExpandedWidget.widgetHeightDp(context));
+        map.put("actionsComponentHeight", ActionWidget.widgetHeightDp(context));
 
         map.put("teamMatchesComponentHeight", 310);
         map.put("watchComponentHeight", 460);

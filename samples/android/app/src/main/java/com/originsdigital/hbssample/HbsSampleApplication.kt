@@ -24,6 +24,7 @@ class HbsSampleApplication : Application() {
         val season: String = "2014"
 
 
+
         HbsSdk.init(
             context = this,
             baseUrl = "https://dev-hbs-stats-provider.origins-digital.com/",
