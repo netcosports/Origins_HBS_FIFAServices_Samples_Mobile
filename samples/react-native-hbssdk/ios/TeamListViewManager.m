@@ -15,7 +15,7 @@
 
 @implementation TeamListViewManager
 
-RCT_EXPORT_MODULE(Favorites);
+RCT_EXPORT_MODULE(TeamList);
 
 - (UIView *) view {
   UIView<TeamListWidget> *view = [Teams widget];
