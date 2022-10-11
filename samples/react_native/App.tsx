@@ -36,9 +36,11 @@ export default function App() {
   };
   var callback = (streamUrl: string, matchId: string) => {
     console.log(`open video player for ${streamUrl} or ${matchId}`);
+    console.log(`test ${OnRewind}`);
+
     OnRewind.presentPlayer(streamUrl, matchId)
   }
-//  HBSSDK.setPresentPlayerBlock(callback)
+  HBSSDK.setPresentPlayerBlock(callback)
 
   return (
     <SafeAreaView >
@@ -48,6 +50,7 @@ export default function App() {
 
         <MediumMatches onMatchSelected={_onOpenMatchDetails} data={{ teamId: "43960"}} style={styles.mediumMatches} />
 
+        <Watch data = {{ groupId: "255933" }} style={styles.watch} />
         <TeamList style={styles.teamlist} />
 {/*
 */}

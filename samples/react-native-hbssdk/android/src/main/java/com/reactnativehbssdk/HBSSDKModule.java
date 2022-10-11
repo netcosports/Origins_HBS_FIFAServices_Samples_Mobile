@@ -5,8 +5,11 @@ import android.content.Context;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
+import com.facebook.react.bridge.ReactMethod;
+import com.originsdigital.hbswidgets.core.HbsSdk;
 import com.originsdigital.hbswidgets.matchcenter.expanded.ExpandedMatchesWidget;
 import com.originsdigital.hbswidgets.matchcenter.large.LargeMatchesWidget;
 import com.originsdigital.hbswidgets.matchcenter.medium.MediumMatchesWidget;
@@ -68,8 +71,23 @@ public class HBSSDKModule extends ReactContextBaseJavaModule {
         map.put("matchCenterComponentHeight", 260);
 
         map.put("teamMatchesComponentHeight", 310);
-        map.put("watchComponentHeight", 260);
+        map.put("watchComponentHeight", 460);
 
         return map;
+    }
+
+    @ReactMethod
+    public void setPresentPlayerBlock(Callback callback) {
+        HbsSdk.setOnVideoClickListener(new HbsSdk.OnVideoClickListener() {
+            @Override
+            public void playVideoUrl(@NonNull Context context, @NonNull String videoUrl) {
+                callback.invoke(videoUrl, "");
+            }
+
+            @Override
+            public void playEventId(@NonNull Context context, @NonNull String matchId) {
+                callback.invoke("", matchId);
+            }
+        });
     }
 }
