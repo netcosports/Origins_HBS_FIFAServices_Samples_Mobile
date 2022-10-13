@@ -132,7 +132,7 @@ class AVPlayerDemo: UIView, OnRewindSDK.PlayerWrapper {
       return item.seekableTimeRanges.last?.timeRangeValue.end != item.currentTime()
     }
     .distinctUntilChanged()
-    .map { $0 == 0.0 ? PlayerState.active(state: .paused) : PlayerState.active(state: .playing) }
+    .map { $0 == 0.0 ? PlayerStateDeprecated.active(state: .paused) : PlayerStateDeprecated.active(state: .playing) }
     .subscribe(onNext: { [weak self] state in
       self?.playerStateClosure?(state)
     }).disposed(by: disposeBag)
@@ -140,19 +140,19 @@ class AVPlayerDemo: UIView, OnRewindSDK.PlayerWrapper {
     item.rx.playbackLikelyToKeepUp
     .observeOn(MainScheduler.asyncInstance)
     .map { [weak player] in
-      return $0 ? PlayerState.active(state: player?.rate == 0.0 ? .paused : .playing ) : PlayerState.loading
+      return $0 ? PlayerStateDeprecated.active(state: player?.rate == 0.0 ? .paused : .playing ) : PlayerStateDeprecated.loading
     }.subscribe(onNext: { [weak self] state in
       self?.playerStateClosure?(state)
     }).disposed(by: disposeBag)
 
     item.rx.didPlayToEnd
-      .map { _ in PlayerState.finished }
+      .map { _ in PlayerStateDeprecated.finished }
       .subscribe(onNext: { [weak self] state in
       self?.playerStateClosure?(state)
     }).disposed(by: disposeBag)
 
     item.rx.status.filter { $0 == .readyToPlay }.take(1).map { _ in
-      return PlayerState.ready
+      return PlayerStateDeprecated.ready
     }.subscribe(onNext: { [weak self] state in
       self?.playerStateClosure?(state)
     }).disposed(by: disposeBag)
@@ -160,7 +160,7 @@ class AVPlayerDemo: UIView, OnRewindSDK.PlayerWrapper {
     item.rx.error.flatMap { error -> Observable<Error> in
       guard let error = error else { return .empty() }
       return .just(error)
-    }.map { error in PlayerState.error(error: .playback(error: TestError.test)) }
+    }.map { error in PlayerStateDeprecated.error(error: .playback(error: TestError.test)) }
     .subscribe(onNext: { [weak self] state in
       self?.playerStateClosure?(state)
     }).disposed(by: disposeBag)
@@ -198,7 +198,7 @@ class AVPlayerDemo: UIView, OnRewindSDK.PlayerWrapper {
     }
   }
 
-  func setPlaybackState(state: OnRewindSDK.PlaybackState) {
+  func setPlaybackState(state: OnRewindSDK.PlaybackStateDeprected) {
     switch state {
     case .paused:
       self.player.pause()

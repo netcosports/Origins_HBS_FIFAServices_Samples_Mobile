@@ -36,8 +36,6 @@ export default function App() {
   };
   var callback = (streamUrl: string, matchId: string) => {
     console.log(`open video player for ${streamUrl} or ${matchId}`);
-    console.log(`test ${OnRewind}`);
-
     OnRewind.presentPlayer(streamUrl, matchId)
   }
   HBSSDK.setPresentPlayerBlock(callback)
@@ -48,10 +46,7 @@ export default function App() {
         style={{ width: "100%", height: "100%", backgroundColor: '' }}
         contentContainerStyle={{ width: "100%" }}>
 
-        <MediumMatches onMatchSelected={_onOpenMatchDetails} data={{ teamId: "43960"}} style={styles.mediumMatches} />
-
-        <Watch data = {{ groupId: "255933" }} style={styles.watch} />
-        <TeamList style={styles.teamlist} />
+        <Watch data = {{ matchId: "134080" }} style={styles.watch} />
 {/*
 */}
       </ScrollView>
@@ -61,6 +56,8 @@ export default function App() {
 
 /*
 
+<TeamList style={styles.teamlist} />
+<MediumMatches onMatchSelected={_onOpenMatchDetails} data={{ teamId: "43960"}} style={styles.mediumMatches} />
 <Standings data={{ groupId: "255933", isExpanded: true }} style={styles.standings} />
 <Standings data={{ isExpanded: false }} style={styles.standings} />
 <SmallMatches data={{ groupId: "255933"}} style={styles.smallMatches} />

@@ -35,7 +35,7 @@ class SampleWatchController: SampleBaseController {
       watchWidget.setupRoundId(roundId: "255951")
       break
     case .match:
-      watchWidget.setupMatchId(matchId: "84872")
+      watchWidget.setupMatchId(matchId: "134080")
       break
     }
   }

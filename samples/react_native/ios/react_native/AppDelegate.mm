@@ -35,7 +35,12 @@ static NSString *const kRNConcurrentRoot = @"concurrentRoot";
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 
-  [Integration initSdkWithBaseUrl:@"https://dev-hbs-stats-provider.origins-digital.com/" accountKey:@"Os-hRUFEh" competitionId:@"fwc" season:@"2014"];
+  [Integration
+   initSdkWithBaseUrl:@"https://dev-hbs-stats-provider.origins-digital.com/"
+   accountKey:@"uZknQc_1h"
+   competitionId:@"fu17wwc"
+   season:@"2022"
+  ];
 
   RCTAppSetupPrepareApp(application);
 

@@ -11,20 +11,13 @@ PODS:
     - ReactCommon/turbomodule/core (= 0.69.1)
   - fmt (6.2.1)
   - glog (0.3.5)
-  - google-cast-sdk-no-bluetooth (4.7.0):
-    - google-cast-sdk-no-bluetooth/Core (= 4.7.0)
-    - Protobuf (~> 3.13)
-  - google-cast-sdk-no-bluetooth/Core (4.7.0):
-    - Protobuf (~> 3.13)
   - HBSSDK (1.0.127):
     - hbsshared
   - hbsshared (1.0.127)
-  - OnRewindSDK (1.0.29):
-    - google-cast-sdk-no-bluetooth (= 4.7.0)
+  - OnRewindSDK (1.0.45):
     - onrewindshared
     - SportBuff (= 1.1.0)
-  - onrewindshared (1.0.29)
-  - Protobuf (3.21.7)
+  - onrewindshared (1.0.45)
   - RCT-Folly (2021.06.28.00-v2):
     - boost
     - DoubleConversion
@@ -350,8 +343,6 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - fmt
-    - google-cast-sdk-no-bluetooth
-    - Protobuf
     - SportBuff
 
 EXTERNAL SOURCES:
@@ -437,12 +428,10 @@ SPEC CHECKSUMS:
   FBReactNativeSpec: 546a637adc797fa436dd51d1c63c580f820de31c
   fmt: ff9d55029c625d3757ed641535fd4a75fedc7ce9
   glog: 3d02b25ca00c2d456734d0bcff864cbc62f6ae1a
-  google-cast-sdk-no-bluetooth: 5313156110d6e71fa336f6d742f1ee641e91fdca
   HBSSDK: 9e453d923250c7ca2fefa223e8fea1cb8c20adf5
   hbsshared: ec14efade73e67c09fe8fa76f27105d68b4f2a7c
-  OnRewindSDK: 17e6fea0f589d84d40315025c0a79c2b2ec939a3
-  onrewindshared: 6a45989df241c3a3caea8a62928885abaf04c134
-  Protobuf: f4128517d7a42302e106cc3afe614ee3a7513e94
+  OnRewindSDK: bdd7cae4aebaf8b3d0c9276bf1c5f6ec7f9cb582
+  onrewindshared: 238ff2d63b4ea0685c4ef5fc235a0856320cc4d4
   RCT-Folly: b9d9fe1fc70114b751c076104e52f3b1b5e5a95a
   RCTRequired: ae07282b2ec9c90d7eb98251603bc3f82403d239
   RCTTypeSafety: a04dc1339af2e1da759ccd093bf11c310dce1ef6
@@ -473,6 +462,6 @@ SPEC CHECKSUMS:
   SportBuff: fe1c21149f77d0c7927cc01049beb681e90f7e13
   Yoga: 7ab6e3ee4ce47d7b789d1cb520163833e515f452
 
-PODFILE CHECKSUM: dac3fca0bcfc352fc4d48c47fbee82fb2c90a9ca
+PODFILE CHECKSUM: 8af752a3259e636769db4f52bf08e4d5acad176f
 
 COCOAPODS: 1.11.3

@@ -14,7 +14,7 @@ def download_spec! (options={})
   }
 end
 
-$onrewind_product_base_url='https://origins-mobile-products.s3.eu-west-1.amazonaws.com/hbs_onrewind_player/kan/1.0.29'
+$onrewind_product_base_url='https://origins-mobile-products.s3.eu-west-1.amazonaws.com/hbs_onrewind_player/viacom18/1.0.45'
 $hbssdk_product_base_url='https://origins-mobile-products.s3.eu-west-1.amazonaws.com/hbssdk/whitelabel/1.0.127'
 
 download_spec!(url: "#{$onrewind_product_base_url}/OnRewindSDK.podspec")

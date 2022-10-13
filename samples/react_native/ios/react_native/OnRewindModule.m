@@ -20,7 +20,13 @@
 
 - (instancetype)init {
   
-  [OnRewind setWithBaseUrl:@"https://dev-hbs-stats-provider.origins-digital.com/api/hbs/" akamaiPrivateKey:@"0df73252ceaf17d78589371d5b8d1bbb" accountKey:@"6GOG5kQMD" competitionId:@"rsh2_fac" seasonId:@"2021"];
+  [OnRewind
+   setWithBaseUrl:@"https://dev-hbs-stats-provider.origins-digital.com/api/hbs/"
+   akamaiPrivateKey:@"0df73252ceaf17d78589371d5b8d1bbb"
+   accountKey:@"uZknQc_1h"
+   competitionId:@"fu17wwc"
+   seasonId:@"2022"
+  ];
 
   return [super init];
 }
@@ -33,7 +39,7 @@ RCT_EXPORT_METHOD(presentPlayer:(NSString *)matchId streamUrl:(NSString *)stream
     UIViewController* controller =
       [[(AppDelegate*)[ [UIApplication sharedApplication] delegate] window] rootViewController];
     // FIXME: test value
-    NSString* matchId = @"129670";
+    //NSString* matchId = @"134080";
     [OnRewind presentPlayerWithMatchId:matchId fromPresentingViewController:controller];
   });
 }

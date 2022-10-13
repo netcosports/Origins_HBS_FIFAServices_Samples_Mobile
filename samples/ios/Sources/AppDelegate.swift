@@ -40,23 +40,32 @@ public class AppDelegate: UIResponder, UIApplicationDelegate {
 
     HBSSDK.Integration.initSdk(
       baseUrl: "https://dev-hbs-stats-provider.origins-digital.com/",
-      accountKey: "YOUR_KEY",
-      competitionId: "fwc",
-      season: "2014"
+      accountKey: "uZknQc_1h",
+      competitionId: "fu17wwc",
+      season: "2022"
+    )
+    OnRewind.set(
+      baseUrl: "https://dev-hbs-stats-provider.origins-digital.com/",
+      akamaiPrivateKey: "0df73252ceaf17d78589371d5b8d1bbb",
+      accountKey: "uZknQc_1h",
+      competitionId: "fu17wwc",
+      seasonId: "2022"
     )
 
-    OnRewind.initialize()
-    OnRewind.set(baseUrl: "https://api-gateway.onrewind.tv/main-api")
-
     Integration.presentPlayerBlock = { context in
-      let params = OnRewind.EventParams.configurationURL(
-        URL(string: "https://storage.googleapis.com/static-production.netcosports.com/onrewind/hbs_demo_player_config.json")!,
-        accountKey: "B1oYoKWDK"
-      )
-      OnRewind.presentPlayer(
-        with: params,
-        from: context.presentationController
-      )
+      // TEST value
+      //let params: OnRewind.EventParams = .matchId("134080")
+      if let matchId = context.eventId {
+        OnRewind.presentPlayer(
+          withMatchId: matchId,
+          fromPresentingViewController: context.presentationController
+        )
+      } else if let url = context.videoURL {
+        OnRewind.presentPlayer(
+          withVideoURL: url, isLive: false,
+          fromPresentingViewController: context.presentationController
+        )
+      }
     }
 
 
