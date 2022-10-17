@@ -8,7 +8,6 @@
 
 
 import AVKit
-import Dioptra
 import OnRewindSDK
 import UIKit
 

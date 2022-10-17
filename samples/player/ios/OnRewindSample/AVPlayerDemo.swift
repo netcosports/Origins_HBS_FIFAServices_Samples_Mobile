@@ -6,7 +6,6 @@
 //
 
 import AVKit
-import Dioptra
 import OnRewindSDK
 import UIKit
 
@@ -111,13 +110,13 @@ class AVPlayerDemo: UIView, OnRewindSDK.PlayerWrapper {
     }).disposed(by: disposeBag)
 
     item.rx.loadedTimeRanges
-      .map { ranges -> LoadedTimeRange in
-        return ranges.map {
-          let bounds = (lower: CMTimeGetSeconds($0.start), upper: CMTimeGetSeconds($0.end))
+      .map { ranges -> [ClosedRange<TimeInSeconds>] in
+        return ranges.map { range -> ClosedRange<TimeInSeconds> in
+          let bounds = (lower: CMTimeGetSeconds(range.start), upper: CMTimeGetSeconds(range.end))
           guard bounds.lower.isFinite && bounds.upper.isFinite else {
-            return TimeInSecondsRange(uncheckedBounds: (0, 0))
+            return ClosedRange<TimeInSeconds>(uncheckedBounds: (0, 0))
           }
-          return TimeInSecondsRange(uncheckedBounds: bounds)
+          return ClosedRange<TimeInSeconds>(uncheckedBounds: bounds)
         }
     }.subscribe(onNext: { [weak self] buffers in
       guard let buffer = buffers.last?.upperBound else { return }

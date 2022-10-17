@@ -31,7 +31,7 @@ target 'OnRewindSample' do
   pod 'PinLayout'
 
   pod 'Astrolabe'
-  pod 'Dioptra'
+
 end
 
 post_install do |installer|
