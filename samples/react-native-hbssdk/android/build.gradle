@@ -1,7 +1,7 @@
 buildscript {
   repositories {
-      google()
-      mavenCentral()
+    google()
+    mavenCentral()
     maven {
       url "https://artifactory-blr.netcodev.com/artifactory/libs-release"
       credentials {
@@ -77,8 +77,8 @@ repositories {
     defaultDir = rootProject.ext.get('reactNativeAndroidRoot')
   } else {
     defaultDir = new File(
-      projectDir,
-      '/../../../node_modules/react-native/android'
+            projectDir,
+            '/../../../node_modules/react-native/android'
     )
   }
 
@@ -91,55 +91,55 @@ repositories {
     logger.info(":${project.name}:reactNativeAndroidRoot ${defaultDir.canonicalPath}")
     found = true
   } else {
-    def parentDir = rootProject.projectDir
-
-    1.upto(5, {
-      if (found) return true
-      parentDir = parentDir.parentFile
-
-      def androidSourcesDir = new File(
-        parentDir,
-        'node_modules/react-native'
-      )
-
-      def androidPrebuiltBinaryDir = new File(
-        parentDir,
-        'node_modules/react-native/android'
-      )
-
-      if (androidPrebuiltBinaryDir.exists()) {
-        maven {
-          url androidPrebuiltBinaryDir.toString()
-          name androidSourcesName
-        }
-
-        logger.info(":${project.name}:reactNativeAndroidRoot ${androidPrebuiltBinaryDir.canonicalPath}")
-        found = true
-      } else if (androidSourcesDir.exists()) {
-        maven {
-          url androidSourcesDir.toString()
-          name androidSourcesName
-        }
-
-        logger.info(":${project.name}:reactNativeAndroidRoot ${androidSourcesDir.canonicalPath}")
-        found = true
-      }
-    })
+//    def parentDir = rootProject.projectDir
+//
+//    1.upto(5, {
+//      if (found) return true
+//      parentDir = parentDir.parentFile
+//
+//      def androidSourcesDir = new File(
+//        parentDir,
+//        'node_modules/react-native'
+//      )
+//
+//      def androidPrebuiltBinaryDir = new File(
+//        parentDir,
+//        'node_modules/react-native/android'
+//      )
+//
+//      if (androidPrebuiltBinaryDir.exists()) {
+//        maven {
+//          url androidPrebuiltBinaryDir.toString()
+//          name androidSourcesName
+//        }
+//
+//        logger.info(":${project.name}:reactNativeAndroidRoot ${androidPrebuiltBinaryDir.canonicalPath}")
+//        found = true
+//      } else if (androidSourcesDir.exists()) {
+//        maven {
+//          url androidSourcesDir.toString()
+//          name androidSourcesName
+//        }
+//
+//        logger.info(":${project.name}:reactNativeAndroidRoot ${androidSourcesDir.canonicalPath}")
+//        found = true
+//      }
+//    })
   }
 
   if (!found) {
     print(
-      "${project.name}: unable to locate React Native android sources. " +
-      "Ensure you have you installed React Native as a dependency in your project and try again."
+            "${project.name}: unable to locate React Native android sources. " +
+                    "Ensure you have you installed React Native as a dependency in your project and try again."
     )
   }
 }
 
 
 dependencies {
-    //noinspection GradleDynamicVersion
+  //noinspection GradleDynamicVersion
   implementation "com.facebook.react:react-native:+"
-  compileOnly("com.origins-digital.hbswidgets:widgets-whitelabel:1.0.136")
+  compileOnly("com.origins-digital.hbswidgets:widgets-whitelabel:1.0.139")
 // From node_modules
 }
 
