@@ -22,13 +22,6 @@
 
 RCT_EXPORT_MODULE(HBSSDK);
 
-RCT_EXPORT_METHOD(setPresentPlayerBlock: (RCTResponseSenderBlock)callback)
-{
-  [Integration setPresentPlayerBlock:^(VideoPresentationContext * _Nonnull context) {
-    callback(@[context.eventId == nil ? @"" : context.eventId, context.videoURL.absoluteURL == nil ? @"" : context.videoURL.absoluteURL]);
-  }];
-}
-
 + (BOOL)requiresMainQueueSetup {
   return YES;
 }

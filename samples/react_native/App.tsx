@@ -1,6 +1,4 @@
-import * as React from 'react';
-
-import { NativeModules, StyleSheet, SafeAreaView, ScrollView } from 'react-native';
+import React, { Component } from 'react';
 
 import { TopPlayerStats } from '@origins-digital/react-native-hbssdk';
 import { TeamMatches } from '@origins-digital/react-native-hbssdk';
@@ -27,31 +25,41 @@ import { Squad } from '@origins-digital/react-native-hbssdk';
 
 import HBSSDK from '@origins-digital/react-native-hbssdk'
 
-const { OnRewind } = NativeModules;
+import { NativeModules, NativeEventEmitter, StyleSheet, SafeAreaView, ScrollView, EmitterSubscription } from 'react-native';
 
-export default function App() {
+const { OnRewind, HBSEventEmitter } = NativeModules;
 
-  var _onOpenMatchDetails = (matchId: string) => {
-    console.log("Match id is" + matchId)
-  };
-  var callback = (streamUrl: string, matchId: string) => {
-    console.log(`open video player for ${streamUrl} or ${matchId}`);
-    OnRewind.presentPlayer(streamUrl, matchId)
+export default class App extends Component {
+
+  private eventListener!: EmitterSubscription;
+  private eventEmitter!: NativeEventEmitter;
+
+  componentDidMount() {
+    this.eventEmitter = new NativeEventEmitter(HBSEventEmitter)
+    this.eventListener = this.eventEmitter.addListener('presentVideoPlayer', (data) => {
+      OnRewind.presentPlayer(data.streamUrl, data.matchId)
+    })
   }
-  HBSSDK.setPresentPlayerBlock(callback)
+  
+  componentDidUpdate() {
+    console.log("did unmount")
+    this.eventListener.remove();
+  }
+  
+  render() {
+    return (
+      <SafeAreaView >
+      <ScrollView
+          style={{ width: "100%", height: "100%", backgroundColor: '' }}
+          contentContainerStyle={{ width: "100%" }}>
 
-  return (
-    <SafeAreaView >
-     <ScrollView
-        style={{ width: "100%", height: "100%", backgroundColor: '' }}
-        contentContainerStyle={{ width: "100%" }}>
-
-        <Watch data = {{ matchId: "134080" }} style={styles.watch} />
-{/*
-*/}
-      </ScrollView>
-    </SafeAreaView>
-  );
+          <Watch data = {{ matchId: "134080" }} style={styles.watch} />
+  {/*
+  */}
+        </ScrollView>
+      </SafeAreaView>
+    );
+  }
 }
 
 /*

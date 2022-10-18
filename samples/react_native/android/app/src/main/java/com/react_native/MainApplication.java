@@ -63,21 +63,11 @@ public class MainApplication extends Application implements ReactApplication {
     HbsSdk.init(
             this,
             "https://dev-hbs-stats-provider.origins-digital.com/",
-            "Os-hRUFEh",
-            "fwc",
-            "2014"
+            "uZknQc_1h",
+            "fu17wwc",
+            "2022"
     );
-    HbsSdk.setOnVideoClickListener(new HbsSdk.OnVideoClickListener() {
-      @Override
-      public void playVideoUrl(@NonNull Context context, @NonNull String s) {
 
-      }
-
-      @Override
-      public void playEventId(@NonNull Context context, @NonNull String s) {
-
-      }
-    });
 
     OnRewind.initialize(
            new OnRewind.InitParams.Builder()

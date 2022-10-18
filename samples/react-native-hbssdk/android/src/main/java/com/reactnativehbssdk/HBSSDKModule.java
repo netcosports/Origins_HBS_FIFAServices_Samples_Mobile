@@ -77,19 +77,4 @@ public class HBSSDKModule extends ReactContextBaseJavaModule {
 
         return map;
     }
-
-    @ReactMethod
-    public void setPresentPlayerBlock(Callback callback) {
-        HbsSdk.setOnVideoClickListener(new HbsSdk.OnVideoClickListener() {
-            @Override
-            public void playVideoUrl(@NonNull Context context, @NonNull String videoUrl) {
-                callback.invoke(videoUrl, "");
-            }
-
-            @Override
-            public void playEventId(@NonNull Context context, @NonNull String matchId) {
-                callback.invoke("", matchId);
-            }
-        });
-    }
 }

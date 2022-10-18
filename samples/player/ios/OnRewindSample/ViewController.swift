@@ -99,15 +99,16 @@ class ViewController: UIViewController {
     view.addSubview(pushButton)
     view.addSubview(listButton)
 
+
     OnRewind.set(
-      baseUrl: "https://dev-hbs-stats-provider.origins-digital.com/",
+      baseUrl: "https://hbs-stats-provider.origins-digital.com/",
       akamaiPrivateKey: "0df73252ceaf17d78589371d5b8d1bbb",
-      accountKey: "uZknQc_1h",
+      accountKey: "T6vPCPENV",
       competitionId: "fu17wwc",
       seasonId: "2022"
     )
 
-    let params: OnRewind.EventParams = .matchId("134080")
+    let params: OnRewind.EventParams = .matchId("134072")
 
     eventsSubject.subscribe(onNext: { [weak self] event in
       guard let self = self else { return }

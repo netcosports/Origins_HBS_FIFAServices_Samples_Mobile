@@ -16,6 +16,7 @@ public class OnRewindPackage implements ReactPackage {
     public List<NativeModule> createNativeModules(@NonNull ReactApplicationContext reactApplicationContext) {
         List<NativeModule> modules = new ArrayList<>();
         modules.add(new OnRewindModule(reactApplicationContext));
+        modules.add(new HBSEventEmitter(reactApplicationContext));
         return modules;
     }
 
@@ -24,4 +25,6 @@ public class OnRewindPackage implements ReactPackage {
     public List<ViewManager> createViewManagers(@NonNull ReactApplicationContext reactApplicationContext) {
         return new ArrayList<>();
     }
+
+
 }
