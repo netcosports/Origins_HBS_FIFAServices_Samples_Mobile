@@ -9,6 +9,7 @@ import com.google.android.exoplayer2.upstream.DataSource
 import com.google.android.exoplayer2.upstream.DefaultHttpDataSource
 import com.google.android.exoplayer2.util.Util
 import com.origins.onrewind.domain.models.player.*
+import com.origins.onrewind.ui.player.core.Source
 import com.origins.onrewind.ui.player.wrapper.*
 import kotlin.math.max
 import kotlin.math.min
@@ -25,9 +26,7 @@ class ExoPlayerWrapper(val context: Context) : OnRewindPlayerWrapper {
     private var playbackParameters: PlaybackParameters = PlaybackParameters.DEFAULT
 
     override val playerView: ExoPlayerView = ExoPlayerView(context)
-
-    override fun setSource(url: String?, startOffsetMillis: Long?, playWhenReady: Boolean?) {
-
+    override fun setSource(source: Source<String?>) {
     }
 
     override val isPlaybackSpeedSupported: Boolean = true
@@ -82,6 +81,8 @@ class ExoPlayerWrapper(val context: Context) : OnRewindPlayerWrapper {
             }
         }
     }
+
+
 
     override fun selectAudioTrack(audioTrack: AudioTrack) = Unit
     override fun selectVideoTrack(videoTrack: VideoTrack) = Unit

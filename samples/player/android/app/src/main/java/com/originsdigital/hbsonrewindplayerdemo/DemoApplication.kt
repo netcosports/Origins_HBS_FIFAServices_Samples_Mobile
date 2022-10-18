@@ -11,7 +11,7 @@ class DemoApplication : Application() {
         OnRewind.initialize(
             OnRewind.InitParams.Builder()
                 .setApplicationContext(this)
-                .setBaseUrl("https://dev-hbs-stats-provider.origins-digital.com/api/hbs/")
+                .setBaseUrl("https://dev-hbs-stats-provider.origins-digital.com/")
                 .setAccountKey(TODO("ACCOUNT_KEY"))
                 .setCompetitionConfiguration(
                     CompetitionConfiguration("rsh2_fac", "2021")

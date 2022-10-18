@@ -16,6 +16,7 @@ import com.origins.onrewind.domain.models.player.AudioTrack
 import com.origins.onrewind.domain.models.player.PlaybackState
 import com.origins.onrewind.domain.models.player.Progress
 import com.origins.onrewind.domain.models.player.VideoTrack
+import com.origins.onrewind.ui.player.core.Source
 import com.origins.onrewind.ui.player.wrapper.*
 
 
@@ -96,8 +97,7 @@ class KalturaWrapper(
         }
     }
 
-    override fun setSource(url: String?, startOffsetMillis: Long?, playWhenReady: Boolean?) {
-        TODO("Not yet implemented")
+    override fun setSource(source: Source<String?>) {
     }
 
     override fun retry() = Unit
