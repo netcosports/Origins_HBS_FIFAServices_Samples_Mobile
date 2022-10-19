@@ -212,6 +212,8 @@ export const TeamMatches =
 // videos
 type VideosProps = {
   category: string;
+  subcategory: string;
+  title: string;
   style: ViewStyle;
 };
 

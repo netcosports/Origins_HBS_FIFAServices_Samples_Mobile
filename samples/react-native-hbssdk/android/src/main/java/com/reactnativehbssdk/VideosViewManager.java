@@ -33,8 +33,15 @@ public class VideosViewManager extends SimpleViewManager<VideoCarouselWidget> {
 
     @ReactProp(name = "data")
     public void setData(VideoCarouselWidget view, @Nullable ReadableMap data) {
+        if (data == null) {
+            return;
+        }
         String category = data.getString("category");
+        if (category == null) {
+            return;
+        }
         String subcategory = data.getString("subcategory");
-        view.setCategory(category, subcategory);
+        String title = data.getString("title");
+        view.setCategory(category, subcategory, title != null ? title : category);
     }
 }

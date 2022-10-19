@@ -28,8 +28,9 @@ RCT_EXPORT_MODULE(Videos);
 RCT_CUSTOM_VIEW_PROPERTY(data, String, UIView<VideoWidget>)
 {
   NSString* category = [RCTConvert NSString:json[@"category"]];
-  [view setupCategoryWithCategory:category subCategory:nil];
+  NSString* subcategory = [RCTConvert NSString:json[@"subcategory"]];
+  NSString* title = [RCTConvert NSString:json[@"title"]];
+  [view setupCategoryWithCategory:category subCategory:subcategory title:title != nil ? title : category];
 }
 
 @end
-

@@ -40,7 +40,7 @@ RCT_EXPORT_METHOD(presentPlayer:(NSString *)matchId streamUrl:(NSString *)stream
       [[(AppDelegate*)[ [UIApplication sharedApplication] delegate] window] rootViewController];
     // FIXME: test value
     //NSString* matchId = @"134080";
-    [OnRewind presentPlayerWithMatchId:matchId fromPresentingViewController:controller];
+    [OnRewind presentPlayerWithMatchId:matchId fromPresentingViewController:controller preferredStreamLanguage:@"en"];
   });
 }
 

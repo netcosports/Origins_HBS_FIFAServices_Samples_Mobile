@@ -40,18 +40,20 @@ export default class App extends Component {
       OnRewind.presentPlayer(data.streamUrl, data.matchId)
     })
   }
-  
+
   componentDidUpdate() {
     console.log("did unmount")
     this.eventListener.remove();
   }
-  
+
   render() {
     return (
       <SafeAreaView >
       <ScrollView
           style={{ width: "100%", height: "100%", backgroundColor: '' }}
           contentContainerStyle={{ width: "100%" }}>
+
+          <Videos data = {{ category: "Matches - Match Clips", title: "My awesome title"}} style={styles.videos} />
 
           <Watch data = {{ matchId: "134080" }} style={styles.watch} />
   {/*
