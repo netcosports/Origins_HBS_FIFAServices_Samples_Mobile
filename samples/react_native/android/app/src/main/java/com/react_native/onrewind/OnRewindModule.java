@@ -21,7 +21,7 @@ public class OnRewindModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void presentPlayer(String videoUrl, String matchId) {
+    public void presentPlayer(String matchId, String streamUrl) {
         if (!videoUrl.isEmpty()) {
             Log.d("tttt", "video url: " + videoUrl);
         } else if (!matchId.isEmpty()) {

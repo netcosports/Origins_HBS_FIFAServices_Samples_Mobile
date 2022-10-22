@@ -37,7 +37,7 @@ export default class App extends Component {
   componentDidMount() {
     this.eventEmitter = new NativeEventEmitter(HBSEventEmitter)
     this.eventListener = this.eventEmitter.addListener('presentVideoPlayer', (data) => {
-      OnRewind.presentPlayer(data.streamUrl, data.matchId)
+      OnRewind.presentPlayer(data.matchId, data.streamUrl)
     })
   }
 
@@ -55,7 +55,7 @@ export default class App extends Component {
 
           <Videos data = {{ category: "Matches - Match Clips", title: "My awesome title"}} style={styles.videos} />
 
-          <Watch data = {{ matchId: "134080" }} style={styles.watch} />
+          <Watch data = {{ matchId: "134086" }} style={styles.watch} />
   {/*
   */}
         </ScrollView>

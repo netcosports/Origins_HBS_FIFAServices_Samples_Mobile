@@ -38,7 +38,7 @@ RCT_EXPORT_MODULE(HBSEventEmitter);
   [Integration setPresentPlayerBlock:^(VideoPresentationContext * _Nonnull context) {
      [self sendEventWithName:@"presentVideoPlayer" body:@{
        @"matchId": context.eventId == nil ? @"" : context.eventId,
-       @"videoUrl": context.videoURL.absoluteURL == nil ? @"" : context.videoURL.absoluteURL
+       @"streamUrl": context.videoURL.absoluteURL == nil ? @"" : context.videoURL.absoluteURL
      }];
   }];}
 

@@ -33,11 +33,22 @@
 
 RCT_EXPORT_MODULE(OnRewind);
 
++ (UIViewController*) topMostController
+{
+    UIViewController *topController = [UIApplication sharedApplication].keyWindow.rootViewController;
+
+    while (topController.presentedViewController) {
+        topController = topController.presentedViewController;
+    }
+
+    return topController;
+}
+
 RCT_EXPORT_METHOD(presentPlayer:(NSString *)matchId streamUrl:(NSString *)streamUrl)
 {
   dispatch_async(dispatch_get_main_queue(), ^{
     UIViewController* controller =
-      [[(AppDelegate*)[ [UIApplication sharedApplication] delegate] window] rootViewController];
+      [OnRewindModule topMostController];
     // FIXME: test value
     //NSString* matchId = @"134080";
     [OnRewind presentPlayerWithMatchId:matchId fromPresentingViewController:controller preferredStreamLanguage:@"en"];

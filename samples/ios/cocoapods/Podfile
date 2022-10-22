@@ -22,7 +22,6 @@ download_spec!(url: "#{$onrewind_product_base_url}/onrewindshared.podspec")
 download_spec!(url: "#{$hbssdk_product_base_url}/HBSSDK.podspec")
 download_spec!(url: "#{$hbssdk_product_base_url}/hbsshared.podspec")
 
-
 target 'HBSSDKSample' do
 
   # SDK specs
