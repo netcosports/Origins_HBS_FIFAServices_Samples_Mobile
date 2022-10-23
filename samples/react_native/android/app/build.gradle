@@ -289,8 +289,9 @@ dependencies {
         implementation jscFlavor
     }
 
-    implementation "com.origins-digital.hbswidgets:widgets-whitelabel:1.0.142"
-    api "com.origins-digital.hbs-player:player-whitelabel:1.0.56"
+    implementation "com.origins-digital.hbswidgets:widgets-whitelabel:1.0.149"
+    api "com.origins-digital.hbs-player:player-whitelabel:1.0.77"
+    api "com.origins-digital.hbs-player:player-whitelabel-shared:1.0.77"
 }
 
 if (isNewArchitectureEnabled()) {

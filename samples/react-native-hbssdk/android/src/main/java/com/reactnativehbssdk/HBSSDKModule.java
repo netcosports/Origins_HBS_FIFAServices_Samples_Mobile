@@ -73,7 +73,7 @@ public class HBSSDKModule extends ReactContextBaseJavaModule {
         map.put("actionsComponentHeight", ActionWidget.widgetHeightDp(context));
 
         map.put("teamMatchesComponentHeight", 310);
-        map.put("watchComponentHeight", 460);
+        map.put("watchComponentHeight", 510);
 
         return map;
     }
