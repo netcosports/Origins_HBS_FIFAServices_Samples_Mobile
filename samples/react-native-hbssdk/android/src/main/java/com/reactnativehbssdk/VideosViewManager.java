@@ -40,8 +40,14 @@ public class VideosViewManager extends SimpleViewManager<VideoCarouselWidget> {
         if (category == null) {
             return;
         }
-        String subcategory = data.getString("subcategory");
-        String title = data.getString("title");
+        String title = category;
+        if (data.hasKey("title")) {
+            title = data.getString("title");
+        }
+        String subcategory = null;
+        if (data.hasKey("subcategory")) {
+            subcategory = data.getString("subcategory");
+        }
         view.setCategory(category, subcategory, title != null ? title : category);
     }
 }

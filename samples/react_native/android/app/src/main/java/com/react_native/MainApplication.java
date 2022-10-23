@@ -73,14 +73,14 @@ public class MainApplication extends Application implements ReactApplication {
            new OnRewind.InitParams.Builder()
                     .setApplicationContext(this)
                     .setBaseUrl("https://dev-hbs-stats-provider.origins-digital.com/api/hbs/")
-                    .setAccountKey("6GOG5kQMD")
+                    .setAccountKey("uZknQc_1h")
                     .setCompetitionConfiguration(
-                            new CompetitionConfiguration("competitionId", "season")
+                            new CompetitionConfiguration("fu17wwc", "2022")
                     )
-                    .setSportBuffConfiguration(
-                            new OnRewind.InitParams.SportBuffConfiguration("TODO BuildConfig.SPORT_BUFF_CLIENT_NAME")
-                    )
-                    .setAkamaiPrivateKey("TODO BuildConfig.AKAMAI_PRIVATE_KEY")
+//                    .setSportBuffConfiguration(
+//                            new OnRewind.InitParams.SportBuffConfiguration("kan")
+//                    )
+                    .setAkamaiPrivateKey("TODO_SET_YOUR_AKAMAI_KEY")
                     .build()
     );
     // If you opted-in for the New Architecture, we enable the TurboModule system
