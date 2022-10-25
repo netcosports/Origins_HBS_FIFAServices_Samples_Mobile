@@ -60,27 +60,31 @@ public class MainApplication extends Application implements ReactApplication {
   @Override
   public void onCreate() {
     super.onCreate();
+    String accountKey = "uZknQc_1h";
+    String competitionId = "fu17wwc";
+    String season = "2022";
+    String baseUrl = "https://hbs-web-fwc2022-sdk.akamaized.net/";
     HbsSdk.init(
             this,
-            "https://dev-hbs-stats-provider.origins-digital.com/",
-            "uZknQc_1h",
-            "fu17wwc",
-            "2022"
+            baseUrl,
+            accountKey,
+            competitionId,
+            season
     );
 
 
     OnRewind.initialize(
            new OnRewind.InitParams.Builder()
                     .setApplicationContext(this)
-                    .setBaseUrl("https://dev-hbs-stats-provider.origins-digital.com/api/hbs/")
-                    .setAccountKey("uZknQc_1h")
+                    .setBaseUrl(baseUrl)
+                    .setAccountKey(accountKey)
                     .setCompetitionConfiguration(
-                            new CompetitionConfiguration("fu17wwc", "2022")
+                            new CompetitionConfiguration(competitionId, season)
                     )
 //                    .setSportBuffConfiguration(
 //                            new OnRewind.InitParams.SportBuffConfiguration("kan")
 //                    )
-                    .setAkamaiPrivateKey("TODO_SET_YOUR_AKAMAI_KEY")
+                    .setAkamaiPrivateKey("PUT_YOUR_AKAMAI_KEY")
                     .build()
     );
     // If you opted-in for the New Architecture, we enable the TurboModule system

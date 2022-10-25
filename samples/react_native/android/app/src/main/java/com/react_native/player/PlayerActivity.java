@@ -95,7 +95,8 @@ public class PlayerActivity extends AppCompatActivity {
             playerView.setExitEnrichModeHandler(new OnRewindPlayerView.ExitEnrichModeHandler() {
                 @Override
                 public void onExitRequested() {
-                    updateControllerMode(false);
+                    finish();
+//                    updateControllerMode(false);
                 }
             });
 
