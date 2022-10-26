@@ -213,6 +213,7 @@ export const TeamMatches =
 type VideosProps = {
   category: string;
   subcategory: string;
+  matchId: string;
   title: string;
   style: ViewStyle;
 };
