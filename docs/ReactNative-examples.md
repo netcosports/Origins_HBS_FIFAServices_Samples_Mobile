@@ -142,8 +142,12 @@ This widget is used to display team squad for given team.
 ```
 ## Videos
 This widget displays list of videos as carousel for given category and (optional) subcategory.
+Also this widget can display videos for match by match id.
 ```
-<Videos data={{ category: "Matches - Match Clips", subcategory: "TODO" }} style={styles.actions} />
+<Videos data = {{ category: "Matches - Match Clips", title: "My awesome title"}} style={styles.videos} />
+<Videos data = {{ category: "Matches - Match Clips", subcategory: "Arrival", title: "Check subcategory"}} style={styles.videos} />
+<Videos data = {{ matchId: "134086", title: "Match Videos"}} style={styles.videos} />
+
 ```
 
 ## Head to Head
