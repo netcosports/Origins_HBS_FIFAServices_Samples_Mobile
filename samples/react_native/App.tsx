@@ -54,7 +54,8 @@ export default class App extends Component {
           contentContainerStyle={{ width: "100%" }}>
 
           <Videos data = {{ category: "Matches - Match Clips", title: "My awesome title"}} style={styles.videos} />
-
+          <Videos data = {{ category: "Matches - Match Clips", subcategory: "Arrival", title: "Check subcategory"}} style={styles.videos} />
+          <Videos data = {{ matchId: "134086", title: "Match Videos"}} style={styles.videos} />
           <Watch data = {{ matchId: "134085" }} style={styles.watch} />
   {/*
   */}

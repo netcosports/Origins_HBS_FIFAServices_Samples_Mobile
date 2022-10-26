@@ -11,6 +11,7 @@ import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.originsdigital.hbswidgets.action.ActionWidget;
 import com.originsdigital.hbswidgets.core.HbsSdk;
+import com.originsdigital.hbswidgets.h2h.HeadToHeadWidget;
 import com.originsdigital.hbswidgets.matchcenter.expanded.ExpandedMatchesWidget;
 import com.originsdigital.hbswidgets.matchcenter.large.LargeMatchesWidget;
 import com.originsdigital.hbswidgets.matchcenter.medium.MediumMatchesWidget;
@@ -24,6 +25,7 @@ import com.originsdigital.hbswidgets.teamboard.TeamBoardWidget;
 import com.originsdigital.hbswidgets.teamdetails.squad.SquadWidget;
 import com.originsdigital.hbswidgets.venue.VenuesWidget;
 import com.originsdigital.hbswidgets.video.VideoCarouselWidget;
+import com.originsdigital.hbswidgets.watch.WatchWidget;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -62,7 +64,7 @@ public class HBSSDKModule extends ReactContextBaseJavaModule {
         map.put("teamMatchesStatsComponentHeight", TeamMatchesWidget.widgetHeightDp(context));
         map.put("venueComponentHeight", VenuesWidget.widgetHeight(context));
         map.put("teamBoardComponentHeight", TeamBoardWidget.widgetHeightDp(context));
-        map.put("headToHeadComponentHeight", 1040);
+        map.put("headToHeadComponentHeight", HeadToHeadWidget.widgetHeight(context));
         map.put("largeMatchesComponentHeight", LargeMatchesWidget.widgetHeightDp(context));
         map.put("expandedMatchesComponentHeight", ExpandedMatchesWidget.widgetHeightDp(context));
         map.put("squadComponentHeight", SquadWidget.widgetHeight(context));
@@ -72,8 +74,8 @@ public class HBSSDKModule extends ReactContextBaseJavaModule {
         map.put("expandedMatchHeaderComponentHeight", MatchDetailsHeaderExpandedWidget.widgetHeightDp(context));
         map.put("actionsComponentHeight", ActionWidget.widgetHeightDp(context));
 
-        map.put("teamMatchesComponentHeight", 310);
-        map.put("watchComponentHeight", 510);
+        map.put("teamMatchesComponentHeight", TeamMatchesWidget.widgetHeightDp(context));
+        map.put("watchComponentHeight", WatchWidget.widgetHeightDp(context));
 
         return map;
     }

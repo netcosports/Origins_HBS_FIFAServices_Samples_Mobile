@@ -30,7 +30,13 @@ RCT_CUSTOM_VIEW_PROPERTY(data, String, UIView<VideoWidget>)
   NSString* category = [RCTConvert NSString:json[@"category"]];
   NSString* subcategory = [RCTConvert NSString:json[@"subcategory"]];
   NSString* title = [RCTConvert NSString:json[@"title"]];
-  [view setupCategoryWithCategory:category subCategory:subcategory title:title != nil ? title : category];
+  NSString* matchId = [RCTConvert NSString:json[@"matchId"]];
+  if (matchId != nil) {
+    [view setupMatchIdWithMatchId:matchId title:title];
+  } else {
+    [view setupCategoryWithCategory:category subCategory:subcategory title:title != nil ? title : category];
+  }
+
 }
 
 @end
