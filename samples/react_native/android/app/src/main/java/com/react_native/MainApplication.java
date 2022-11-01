@@ -71,6 +71,7 @@ public class MainApplication extends Application implements ReactApplication {
             competitionId,
             season
     );
+    HbsSdk.closeMatchCenterWhenPlayerStarted(true);
 
 
     OnRewind.initialize(
@@ -81,9 +82,6 @@ public class MainApplication extends Application implements ReactApplication {
                     .setCompetitionConfiguration(
                             new CompetitionConfiguration(competitionId, season)
                     )
-//                    .setSportBuffConfiguration(
-//                            new OnRewind.InitParams.SportBuffConfiguration("kan")
-//                    )
                     .setAkamaiPrivateKey("PUT_YOUR_AKAMAI_KEY")
                     .build()
     );
