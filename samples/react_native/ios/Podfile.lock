@@ -11,9 +11,9 @@ PODS:
     - ReactCommon/turbomodule/core (= 0.69.1)
   - fmt (6.2.1)
   - glog (0.3.5)
-  - HBSSDK (1.0.158):
+  - HBSSDK (1.0.183):
     - hbsshared
-  - hbsshared (1.0.158)
+  - hbsshared (1.0.183)
   - OnRewindSDK (1.0.85):
     - onrewindshared
   - onrewindshared (1.0.85)
@@ -226,7 +226,7 @@ PODS:
   - React-jsinspector (0.69.1)
   - React-logger (0.69.1):
     - glog
-  - react-native-hbssdk (1.7.16):
+  - react-native-hbssdk (1.7.19):
     - HBSSDK
     - React-Core
   - React-perflogger (0.69.1)
@@ -425,8 +425,8 @@ SPEC CHECKSUMS:
   FBReactNativeSpec: 546a637adc797fa436dd51d1c63c580f820de31c
   fmt: ff9d55029c625d3757ed641535fd4a75fedc7ce9
   glog: 3d02b25ca00c2d456734d0bcff864cbc62f6ae1a
-  HBSSDK: ba957145e2615b60610ab504189dbcf5615988cf
-  hbsshared: 4455f40660b88a86b4ddadea92f846f54cd1797e
+  HBSSDK: bfcbb2ca79f91eee942b0d6123f5030efe060aca
+  hbsshared: 9a4b6d48957e82745a1f6d95c3ff19b3a19605b5
   OnRewindSDK: 7664ec0f8994b30fab24e5780e5e1d023aced49c
   onrewindshared: 88182cc4c08e13a06438f1dc211ee60866ef5720
   RCT-Folly: b9d9fe1fc70114b751c076104e52f3b1b5e5a95a
@@ -443,7 +443,7 @@ SPEC CHECKSUMS:
   React-jsiexecutor: 758e70947c232828a66b5ddc42d02b4d010fa26e
   React-jsinspector: 55605caf04e02f9b0e05842b786f1c12dde08f4b
   React-logger: ca970551cb7eea2fd814d0d5f6fc1a471eb53b76
-  react-native-hbssdk: 8b8ffcade9ab72caa9810de336e0cc70c0f0bafa
+  react-native-hbssdk: a797ea091848c580e98864e12a75bd1590f6b7ff
   React-perflogger: c9161ff0f1c769993cd11d2751e4331ff4ceb7cd
   React-RCTActionSheet: 2d885b0bea76a5254ef852939273edd8de116180
   React-RCTAnimation: 353fa4fc3c19060068832dd32e555182ec07be45
@@ -458,6 +458,6 @@ SPEC CHECKSUMS:
   ReactCommon: e30ec17dfb1d4c4f3419eac254350d6abca6d5a2
   Yoga: 7ab6e3ee4ce47d7b789d1cb520163833e515f452
 
-PODFILE CHECKSUM: aa2a0f9ad576fd122494f57c2f21c635d2fbf902
+PODFILE CHECKSUM: 63a7bf4cbd4de5f815bda03d972ab58caaf983b8
 
 COCOAPODS: 1.11.3

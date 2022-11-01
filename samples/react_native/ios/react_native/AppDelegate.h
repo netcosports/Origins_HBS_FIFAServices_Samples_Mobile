@@ -5,4 +5,9 @@
 
 @property (nonatomic, strong) UIWindow *window;
 
+
 @end
+
+
+extern NSString* const PARAM_COMPETITION;
+extern NSString* const PARAM_SEASON;

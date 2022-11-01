@@ -30,16 +30,37 @@ static NSString *const kRNConcurrentRoot = @"concurrentRoot";
 @end
 #endif
 
+NSString* const PARAM_COMPETITION = @"hbs_param_competition";
+NSString* const PARAM_SEASON = @"hbs_param_season";
+
 @implementation AppDelegate
+
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 
+  NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+  NSString* preferredCompetition = [defaults objectForKey:PARAM_COMPETITION];
+  NSString* preferredSeason = [defaults objectForKey:PARAM_SEASON];
+
+  NSString* competition = preferredCompetition != nil ? preferredCompetition : @"fu17wwc";
+  NSString* season = preferredSeason != nil ? preferredSeason : @"2022";
+
+
   [Integration
    initSdkWithBaseUrl:@"https://dev-hbs-stats-provider.origins-digital.com/"
    accountKey:@"uZknQc_1h"
-   competitionId:@"fu17wwc"
-   season:@"2022"
+   competitionId:competition
+   season:season
+  ];
+
+  [OnRewind
+   setWithBaseUrl:@"https://dev-hbs-stats-provider.origins-digital.com/api/hbs/"
+   akamaiPrivateKey:@"0df73252ceaf17d78589371d5b8d1bbb"
+   accountKey:@"uZknQc_1h"
+   competitionId:competition
+   seasonId:competition
   ];
 
   RCTAppSetupPrepareApp(application);

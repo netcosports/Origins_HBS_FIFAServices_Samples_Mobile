@@ -16,6 +16,7 @@
 		AA27417128FD9B120089E1CD /* HBSEventEmitter.m in Sources */ = {isa = PBXBuildFile; fileRef = AA27417028FD9B120089E1CD /* HBSEventEmitter.m */; };
 		AA7B96DA28DDA538006D99EF /* OnRewindModule.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7B96D928DDA538006D99EF /* OnRewindModule.m */; };
 		BD34379F76932282ABBA7B1A /* Pods_react_native_react_nativeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A39013AFAB973E84323E39DF /* Pods_react_native_react_nativeTests.framework */; };
+		C39F066329114EA90059815A /* HbsConfigurationModule.m in Sources */ = {isa = PBXBuildFile; fileRef = C39F066229114EA90059815A /* HbsConfigurationModule.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		A39013AFAB973E84323E39DF /* Pods_react_native_react_nativeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_react_native_react_nativeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA27417028FD9B120089E1CD /* HBSEventEmitter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HBSEventEmitter.m; path = react_native/HBSEventEmitter.m; sourceTree = "<group>"; };
 		AA7B96D928DDA538006D99EF /* OnRewindModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = OnRewindModule.m; path = react_native/OnRewindModule.m; sourceTree = "<group>"; };
+		C39F066229114EA90059815A /* HbsConfigurationModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HbsConfigurationModule.m; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -98,6 +100,7 @@
 				13B07FB71A68108700A75B9A /* main.m */,
 				AA27417028FD9B120089E1CD /* HBSEventEmitter.m */,
 				AA7B96D928DDA538006D99EF /* OnRewindModule.m */,
+				C39F066229114EA90059815A /* HbsConfigurationModule.m */,
 			);
 			name = react_native;
 			sourceTree = "<group>";
@@ -419,6 +422,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
+				C39F066329114EA90059815A /* HbsConfigurationModule.m in Sources */,
 				AA27417128FD9B120089E1CD /* HBSEventEmitter.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 				AA7B96DA28DDA538006D99EF /* OnRewindModule.m in Sources */,
