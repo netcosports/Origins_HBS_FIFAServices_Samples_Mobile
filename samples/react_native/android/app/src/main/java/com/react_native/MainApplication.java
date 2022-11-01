@@ -12,6 +12,7 @@ import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.config.ReactFeatureFlags;
 import com.facebook.soloader.SoLoader;
+import com.google.android.exoplayer2.util.Log;
 import com.origins.onrewind.OnRewind;
 import com.originsdigital.hbswidgets.core.HbsSdk;
 import com.react_native.newarchitecture.MainApplicationReactNativeHost;
@@ -61,8 +62,10 @@ public class MainApplication extends Application implements ReactApplication {
   public void onCreate() {
     super.onCreate();
     String accountKey = "uZknQc_1h";
-    String competitionId = "fu17wwc";
-    String season = "2022";
+    String preferredCompetition = PreferenceUtils.getCompetition(this);
+    String preferredSeason = PreferenceUtils.getSeason(this);
+    String competitionId = preferredCompetition != null ? preferredCompetition : "fu17wwc";
+    String season = preferredSeason != null ? preferredSeason : "2022";
     String baseUrl = "https://hbs-web-fwc2022-sdk.akamaized.net/";
     HbsSdk.init(
             this,

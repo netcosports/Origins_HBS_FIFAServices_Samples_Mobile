@@ -29,10 +29,8 @@ public class OnRewindModule extends ReactContextBaseJavaModule {
             return;
         }
         if (!streamUrl.isEmpty()) {
-            Log.d("tttt", "video url: " + streamUrl);
             activity.startActivity(PlayerActivity.getLaunchIntent(getCurrentActivity(), streamUrl));
         } else if (!matchId.isEmpty()) {
-            Log.d("tttt", "matchId: " + matchId);
             activity.startActivity(PlayerActivity.getLaunchIntentForMatchId(getCurrentActivity(), matchId));
         }
     }

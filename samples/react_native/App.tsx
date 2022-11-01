@@ -27,7 +27,7 @@ import HBSSDK from '@origins-digital/react-native-hbssdk'
 
 import { NativeModules, NativeEventEmitter, StyleSheet, SafeAreaView, ScrollView, EmitterSubscription } from 'react-native';
 
-const { OnRewind, HBSEventEmitter } = NativeModules;
+const { OnRewind, HBSEventEmitter, HbsConfiguration } = NativeModules;
 
 export default class App extends Component {
 
@@ -39,6 +39,7 @@ export default class App extends Component {
     this.eventListener = this.eventEmitter.addListener('presentVideoPlayer', (data) => {
       OnRewind.presentPlayer(data.matchId, data.streamUrl)
     })
+    HbsConfiguration.updateConfiguration("fwc", "2022")
   }
 
   componentDidUpdate() {

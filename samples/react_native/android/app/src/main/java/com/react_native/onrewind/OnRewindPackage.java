@@ -11,12 +11,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class OnRewindPackage implements ReactPackage {
+
     @NonNull
     @Override
     public List<NativeModule> createNativeModules(@NonNull ReactApplicationContext reactApplicationContext) {
         List<NativeModule> modules = new ArrayList<>();
         modules.add(new OnRewindModule(reactApplicationContext));
         modules.add(new HBSEventEmitter(reactApplicationContext));
+        modules.add(new HbsConfigurationModule(reactApplicationContext));
         return modules;
     }
 
