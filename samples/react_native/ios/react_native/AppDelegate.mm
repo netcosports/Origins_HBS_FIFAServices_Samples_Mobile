@@ -55,6 +55,8 @@ NSString* const PARAM_SEASON = @"hbs_param_season";
    season:season
   ];
 
+  [Integration closeMatchCenterWhenPlayerStartedWithClose:YES];
+
   [OnRewind
    setWithBaseUrl:@"https://dev-hbs-stats-provider.origins-digital.com/api/hbs/"
    akamaiPrivateKey:@"0df73252ceaf17d78589371d5b8d1bbb"
