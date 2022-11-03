@@ -7,6 +7,8 @@
 #import <React/RCTAppSetupUtils.h>
 
 #import <HBSSDK/HBSSDK-Swift.h>
+
+#import <onrewindshared/onrewindshared.h>
 #import <OnRewindSDK/OnRewindSDK-Swift.h>
 
 #if RCT_NEW_ARCH_ENABLED
@@ -49,8 +51,8 @@ NSString* const PARAM_SEASON = @"hbs_param_season";
 
 
   [Integration
-   initSdkWithBaseUrl:@"https://dev-hbs-stats-provider.origins-digital.com/"
-   accountKey:@"uZknQc_1h"
+   initSdkWithBaseUrl:@"https://hbs-web-fwc2022-sdk.akamaized.net/"
+   accountKey:@"2fy22ueTc"
    competitionId:competition
    season:season
   ];
@@ -58,11 +60,11 @@ NSString* const PARAM_SEASON = @"hbs_param_season";
   [Integration closeMatchCenterWhenPlayerStartedWithClose:YES];
 
   [OnRewind
-   setWithBaseUrl:@"https://dev-hbs-stats-provider.origins-digital.com/api/hbs/"
-   akamaiPrivateKey:@"0df73252ceaf17d78589371d5b8d1bbb"
-   accountKey:@"uZknQc_1h"
+   setWithBaseUrl:@"https://hbs-web-fwc2022-sdk.akamaized.net/"
+   akamaiPrivateKey:@""
+   accountKey:@"2fy22ueTc"
    competitionId:competition
-   seasonId:competition
+   seasonId:season
   ];
 
   RCTAppSetupPrepareApp(application);

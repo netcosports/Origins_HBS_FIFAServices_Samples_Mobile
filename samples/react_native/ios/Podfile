@@ -14,27 +14,14 @@ def download_spec! (options={})
   }
 end
 
-$onrewind_product_base_url='https://origins-mobile-products.s3.eu-west-1.amazonaws.com/hbs_onrewind_player/whitelabel/1.0.85'
-$hbssdk_product_base_url='https://origins-mobile-products.s3.eu-west-1.amazonaws.com/hbssdk/whitelabel/1.0.183'
+$onrewind_product_base_url='https://origins-mobile-products.s3.eu-west-1.amazonaws.com/hbs_onrewind_player/kan/1.0.117'
+$hbssdk_product_base_url='https://origins-mobile-products.s3.eu-west-1.amazonaws.com/hbssdk/kan/1.0.190'
 
 download_spec!(url: "#{$onrewind_product_base_url}/OnRewindSDK.podspec")
 download_spec!(url: "#{$onrewind_product_base_url}/onrewindshared.podspec")
 
 download_spec!(url: "#{$hbssdk_product_base_url}/HBSSDK.podspec")
 download_spec!(url: "#{$hbssdk_product_base_url}/hbsshared.podspec")
-
-pre_install do |installer|
-  installer.pod_targets.each do |pod|
-    if ['Protobuf'].include?(pod.name)
-      def pod.dynamic_framework?;
-        true
-      end
-      def pod.build_type;
-        Pod::BuildType.dynamic_framework
-      end
-    end
-  end
-end
 
 target 'react_native' do
   config = use_native_modules!

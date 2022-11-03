@@ -39,7 +39,7 @@ export default class App extends Component {
     this.eventListener = this.eventEmitter.addListener('presentVideoPlayer', (data) => {
       OnRewind.presentPlayer(data.matchId, data.streamUrl)
     })
-    HbsConfiguration.updateConfiguration("fwc", "2022")
+    HbsConfiguration.updateConfiguration("fu17wwc", "2022")
   }
 
   componentDidUpdate() {
@@ -54,10 +54,10 @@ export default class App extends Component {
           style={{ width: "100%", height: "100%", backgroundColor: '' }}
           contentContainerStyle={{ width: "100%" }}>
 
+          <Watch data = {{ matchId: "134091" }} style={styles.watch} />
           <Videos data = {{ category: "Matches - Match Clips", title: "My awesome title"}} style={styles.videos} />
           <Videos data = {{ category: "Matches - Match Clips", subcategory: "Arrival", title: "Check subcategory"}} style={styles.videos} />
           <Videos data = {{ matchId: "134086", title: "Match Videos"}} style={styles.videos} />
-          <Watch data = {{ matchId: "134085" }} style={styles.watch} />
   {/*
   */}
         </ScrollView>
