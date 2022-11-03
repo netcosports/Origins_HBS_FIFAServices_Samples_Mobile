@@ -43,7 +43,6 @@ PODS:
   - RxRelay (5.1.3):
     - RxSwift (~> 5)
   - RxSwift (5.1.3)
-  - SportBuff (0.2.0.0)
 
 DEPENDENCIES:
   - Alidade
@@ -60,7 +59,6 @@ DEPENDENCIES:
   - PinLayout
   - RxCocoa
   - RxSwift
-  - SportBuff (= 0.2.0.0)
 
 SPEC REPOS:
   trunk:
@@ -72,7 +70,6 @@ SPEC REPOS:
     - RxCocoa
     - RxRelay
     - RxSwift
-    - SportBuff
 
 EXTERNAL SOURCES:
   HBSSDK:
@@ -87,18 +84,15 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Alidade: ca003a9524ffcc47abdb8ecc2ecd92734d48767b
   Astrolabe: 97d5636ab06045bdfde8b420197b9aa85d5dff43
-  google-cast-sdk: 6731e9a206ce43e0f4433d15598ad8a19f0371d5
-  HBSSDK: 4ef3bb006631fc27407bc04ebbdc659484caad60
-  hbsshared: 1dcdb29dc3d9e963b3cbb1d843451d525edb9159
-  OnRewindSDK: 52c26df26b07b039996131f7bc0505990859db60
-  onrewindshared: 44abeb1ddfe3ab5b1013c5af7066f36bd0c5af1e
+  HBSSDK: ccd02615f71f6d58f0ff60c45719eabc7f573813
+  hbsshared: e10537c18b434e98c899d1b8dca15efd124b7cf7
+  OnRewindSDK: 4a1acf553a8179ea0ac388d3851a5be0a050a4bd
+  onrewindshared: 231e1ec9c3744f306f75d72a5f99fddc8fcb3cbf
   PinLayout: 0090ccbf29ae69af6ae5a15eaeaf27ed7b2c4d83
-  Protobuf: 7504b04fffcf6662ad629694db8231f5e744327f
   RxCocoa: e2ed092d5432e4296aa818021d27de4090ac0354
   RxRelay: 5a18c2eb2d68326ebaf0112f80d837ae41b92b97
   RxSwift: 915abbdfb62214aa89ccd0b194d44fb478019b27
-  SportBuff: 02fbad1c12fa8a63a4d731ce7c5692873fe07b7b
 
 PODFILE CHECKSUM: ae30ad8bf4a2657eb07b5988d6e32b01b368892b
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.11.3

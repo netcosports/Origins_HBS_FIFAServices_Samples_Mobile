@@ -93,22 +93,22 @@ class ViewController: UIViewController {
       self.eventsSubject.onNext(storedEvent)
     }
 
-    OnRewind.initialize()
-    OnRewind.set(baseUrl: "https://api-gateway.onrewind.tv/main-api")
-
     view.backgroundColor = .white
 
     view.addSubview(presentButton)
     view.addSubview(pushButton)
     view.addSubview(listButton)
 
-    OnRewind.initialize()
-    OnRewind.set(baseUrl: "https://api-gateway.onrewind.tv/main-api")
 
-    let params: OnRewind.EventParams = .eventId(
-      "78fbebc2-fc52-439e-81f4-8557bba62c1b",
-      accountKey: "SkH0O4D5H"
+    OnRewind.set(
+      baseUrl: "https://hbs-stats-provider.origins-digital.com/",
+      akamaiPrivateKey: "0df73252ceaf17d78589371d5b8d1bbb",
+      accountKey: "T6vPCPENV",
+      competitionId: "fu17wwc",
+      seasonId: "2022"
     )
+
+    let params: OnRewind.EventParams = .matchId("134072")
 
     eventsSubject.subscribe(onNext: { [weak self] event in
       guard let self = self else { return }

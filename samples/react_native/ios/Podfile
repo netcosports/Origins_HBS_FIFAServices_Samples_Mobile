@@ -4,6 +4,8 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 platform :ios, '13.0'
 install! 'cocoapods', :deterministic_uuids => false
 
+use_frameworks! :linkage => :static
+
 def download_spec! (options={})
   url = options[:url]
   FileUtils.mkdir_p './specs'
@@ -12,9 +14,27 @@ def download_spec! (options={})
   }
 end
 
-download_spec!(url: 'https://origins-mobile-products.s3.eu-west-1.amazonaws.com/hbssdk/whitelabel/1.0.92/HBSSDK.podspec')
-download_spec!(url: 'https://origins-mobile-products.s3.eu-west-1.amazonaws.com/hbssdk/whitelabel/1.0.92/hbsshared.podspec')
-download_spec!(url: 'https://origins-mobile-products.s3.eu-west-1.amazonaws.com/onrewind/whitelabel/0.0.1/OnRewindSDK.podspec')
+$onrewind_product_base_url='https://origins-mobile-products.s3.eu-west-1.amazonaws.com/hbs_onrewind_player/whitelabel/1.0.85'
+$hbssdk_product_base_url='https://origins-mobile-products.s3.eu-west-1.amazonaws.com/hbssdk/whitelabel/1.0.183'
+
+download_spec!(url: "#{$onrewind_product_base_url}/OnRewindSDK.podspec")
+download_spec!(url: "#{$onrewind_product_base_url}/onrewindshared.podspec")
+
+download_spec!(url: "#{$hbssdk_product_base_url}/HBSSDK.podspec")
+download_spec!(url: "#{$hbssdk_product_base_url}/hbsshared.podspec")
+
+pre_install do |installer|
+  installer.pod_targets.each do |pod|
+    if ['Protobuf'].include?(pod.name)
+      def pod.dynamic_framework?;
+        true
+      end
+      def pod.build_type;
+        Pod::BuildType.dynamic_framework
+      end
+    end
+  end
+end
 
 target 'react_native' do
   config = use_native_modules!
@@ -36,17 +56,16 @@ target 'react_native' do
     # Pods for testing
   end
 
-
   pod 'hbsshared', :podspec => './specs/hbsshared.podspec'
   pod 'HBSSDK', :podspec => './specs/HBSSDK.podspec'
   pod 'OnRewindSDK', :podspec => './specs/OnRewindSDK.podspec'
-  pod 'SportBuff', '0.2.0.0'
+  pod 'onrewindshared', :podspec => './specs/onrewindshared.podspec'
 
   # Enables Flipper.
   #
   # Note that if you have use_frameworks! enabled, Flipper will not work and
   # you should disable the next line.
-  use_flipper!()
+  # use_flipper!()
 
   post_install do |installer|
     react_native_post_install(installer)

@@ -16,21 +16,22 @@ end
 PLAYKIT_GIT='https://github.com/kaltura/playkit-ios.git'
 PLAYKIT_BRANCH=ENV['PK_BRANCH'] || 'develop'
 
-download_spec!(url: 'https://origins-mobile-products.s3.eu-west-1.amazonaws.com/onrewind/whitelabel/0.0.1/OnRewindSDK.podspec')
+download_spec!(url: 'https://origins-mobile-products.s3.eu-west-1.amazonaws.com/hbs_onrewind_player/viacom18/1.0.67/onrewindshared.podspec')
+download_spec!(url: 'https://origins-mobile-products.s3.eu-west-1.amazonaws.com/hbs_onrewind_player/viacom18/1.0.67/OnRewindSDK.podspec')
 
 target 'OnRewindSample' do
 
   pod 'PlayKit', :git => PLAYKIT_GIT, :branch => PLAYKIT_BRANCH
 
   pod 'OnRewindSDK', :podspec => './specs/OnRewindSDK.podspec'
-  pod 'SportBuff', '0.2.0.0'
+  pod 'onrewindshared', :podspec => './specs/onrewindshared.podspec'
 
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'PinLayout'
 
   pod 'Astrolabe'
-  pod 'Dioptra'
+
 end
 
 post_install do |installer|

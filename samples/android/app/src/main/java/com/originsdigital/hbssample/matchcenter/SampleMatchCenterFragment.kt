@@ -26,7 +26,10 @@ class SampleMatchCenterFragment : BaseSampleFragment<FragmentSampleMatchCenterBi
         binding.innerToolbar.setNavigationOnClickListener { findNavController().popBackStack() }
         val matchId = requireNotNull(arguments?.getString(MATCH_ID))
 
-        listOf("Lineup", "Stats").map { text ->
+        binding.matchHeader.setupMatchId(matchId)
+        binding.expandedMatchHeader.setupMatchId(matchId)
+
+        listOf("Lineup", "Stats", "Header", "Expanded header").map { text ->
             val tab = binding.tabLayout.newTab()
             tab.text = text
             binding.tabLayout.addTab(tab)

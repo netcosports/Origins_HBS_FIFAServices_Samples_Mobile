@@ -12,12 +12,12 @@ import com.kaltura.playkit.providers.ovp.OVPMediaAsset
 import com.kaltura.tvplayer.KalturaOvpPlayer
 import com.kaltura.tvplayer.OVPMediaOptions
 import com.kaltura.tvplayer.PlayerInitOptions
-import com.origins.dioptra.core.AudioTrack
-import com.origins.dioptra.core.PlaybackState
-import com.origins.dioptra.core.Progress
-import com.origins.dioptra.core.VideoTrack
-import com.origins.dioptra.wrapper.*
-import com.origins.onrewind.ui.player.OnRewindPlayerWrapper
+import com.origins.onrewind.domain.models.player.AudioTrack
+import com.origins.onrewind.domain.models.player.PlaybackState
+import com.origins.onrewind.domain.models.player.Progress
+import com.origins.onrewind.domain.models.player.VideoTrack
+import com.origins.onrewind.ui.player.core.Source
+import com.origins.onrewind.ui.player.wrapper.*
 
 
 class KalturaWrapper(
@@ -67,12 +67,6 @@ class KalturaWrapper(
         playerView = frame
     }
 
-    override var isMuted: Boolean = false
-        set(value) {
-            field = value
-            player.setVolume(if (value) 0F else 1F)
-        }
-
     override val isPlaybackSpeedSupported: Boolean = false
     override var playbackSpeed: Float = 1F
 
@@ -101,6 +95,9 @@ class KalturaWrapper(
             PlaybackState.PLAYING -> player.play()
             PlaybackState.PAUSED -> player.pause()
         }
+    }
+
+    override fun setSource(source: Source<String?>) {
     }
 
     override fun retry() = Unit
@@ -151,13 +148,13 @@ class KalturaWrapper(
         player.addListener(this, PlayerEvent.stateChanged) { event ->
 
             val newState = when (event.newState) {
-                PlayerState.IDLE -> com.origins.dioptra.core.PlayerState.IDLE
-                PlayerState.LOADING -> com.origins.dioptra.core.PlayerState.STUCK
-                PlayerState.BUFFERING -> com.origins.dioptra.core.PlayerState.STUCK
+                PlayerState.IDLE -> com.origins.onrewind.domain.models.player.PlayerState.Idle
+                PlayerState.LOADING -> com.origins.onrewind.domain.models.player.PlayerState.Stuck
+                PlayerState.BUFFERING -> com.origins.onrewind.domain.models.player.PlayerState.Stuck
                 PlayerState.READY -> {
                     val state =
                         if (player.isPlaying) PlaybackState.PLAYING else PlaybackState.PAUSED
-                    com.origins.dioptra.core.PlayerState.READY(state)
+                    com.origins.onrewind.domain.models.player.PlayerState.Ready(state)
                 }
             }
 
@@ -168,19 +165,19 @@ class KalturaWrapper(
     private fun addPlayerEventsListener() {
         player.addListener(this, PlayerEvent.playing) { event ->
             playerStateListener?.onNewState(
-                com.origins.dioptra.core.PlayerState.READY(PlaybackState.PLAYING)
+                com.origins.onrewind.domain.models.player.PlayerState.Ready(PlaybackState.PLAYING)
             )
         }
 
         player.addListener(this, PlayerEvent.pause) { event ->
             playerStateListener?.onNewState(
-                com.origins.dioptra.core.PlayerState.READY(PlaybackState.PAUSED)
+                com.origins.onrewind.domain.models.player.PlayerState.Ready(PlaybackState.PAUSED)
             )
         }
 
         player.addListener(this, PlayerEvent.error) { event ->
             playerStateListener?.onNewState(
-                com.origins.dioptra.core.PlayerState.ERROR()
+                com.origins.onrewind.domain.models.player.PlayerState.Error()
             )
         }
     }

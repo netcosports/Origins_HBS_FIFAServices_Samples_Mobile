@@ -16,6 +16,14 @@
         android:layout_height="?actionBarSize"
         app:navigationIcon="@drawable/arrow_left"/>
 
+
+
+    <TextView
+        android:id="@+id/appVersion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Text scale: "/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -120,13 +128,6 @@
             android:text="Right to left"/>
 
     </RadioGroup>
-
-
-    <TextView
-        android:id="@+id/textSize"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text="Text scale: "/>
 
     <TextView
         android:layout_width="wrap_content"

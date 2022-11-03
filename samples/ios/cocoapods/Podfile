@@ -13,8 +13,8 @@ def download_spec! (options={})
   }
 end
 
-$onrewind_product_base_url='https://origins-mobile-products.s3.eu-west-1.amazonaws.com/onrewind_player/kan/1.0.8'
-$hbssdk_product_base_url='https://origins-mobile-products.s3.eu-west-1.amazonaws.com/hbssdk/whitelabel/1.0.92'
+$onrewind_product_base_url='https://origins-mobile-products.s3.eu-west-1.amazonaws.com/hbs_onrewind_player/whitelabel/1.0.51'
+$hbssdk_product_base_url='https://origins-mobile-products.s3.eu-west-1.amazonaws.com/hbssdk/whitelabel/1.0.136'
 
 download_spec!(url: "#{$onrewind_product_base_url}/OnRewindSDK.podspec")
 download_spec!(url: "#{$onrewind_product_base_url}/onrewindshared.podspec")
@@ -29,7 +29,6 @@ target 'HBSSDKSample' do
   pod 'HBSSDK', :podspec => './specs/HBSSDK.podspec'
   pod 'OnRewindSDK', :podspec => './specs/OnRewindSDK.podspec'
   pod 'onrewindshared', :podspec => './specs/onrewindshared.podspec'
-  pod 'SportBuff', '0.2.0.0'
 
   # sample
   pod 'RxSwift'

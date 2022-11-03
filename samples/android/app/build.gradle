@@ -4,21 +4,31 @@ plugins {
 }
 
 android {
-    compileSdk 31
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.originsdigital.hbssampleandroid"
         minSdk 21
-        targetSdk 31
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    signingConfigs {
+        myConfig {
+            storeFile file("test.jks")
+            storePassword "test12"
+            keyAlias "test"
+            keyPassword "test12"
+        }
+    }
+
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            signingConfig signingConfigs.myConfig
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -42,11 +52,11 @@ android {
 
 dependencies {
 
-    implementation "com.origins-digital.hbswidgets:widgets-whitelabel:1.0.92"
-    implementation "com.origins-digital.onrewind:player-whitelabel:1.0.6"
+    implementation "com.origins-digital.hbswidgets:widgets-whitelabel:1.0.136"
+    implementation "com.origins-digital.hbs-player:player-whitelabel:1.0.51"
     implementation "com.origins-digital.dioptra:exo:1.0.0"
-    implementation 'androidx.core:core-ktx:1.8.0'
-    implementation 'androidx.appcompat:appcompat:1.4.2'
+    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'com.google.android.material:material:1.6.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     testImplementation 'junit:junit:4.13.2'
@@ -55,6 +65,6 @@ dependencies {
 
 
     implementation("androidx.preference:preference-ktx:1.2.0")
-    implementation ("androidx.navigation:navigation-fragment-ktx:2.5.1")
+    implementation ("androidx.navigation:navigation-fragment-ktx:2.5.2")
 
 }

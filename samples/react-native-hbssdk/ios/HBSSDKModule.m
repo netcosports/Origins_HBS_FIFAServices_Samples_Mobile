@@ -6,6 +6,8 @@
 //
 
 #import <React/RCTBridgeModule.h>
+#import <React/RCTBridgeMethod.h>
+
 #import <HBSSDK/HBSSDK-Swift.h>
 
 @interface HBSSDKModule : NSObject <RCTBridgeModule>
@@ -15,8 +17,6 @@
 @implementation HBSSDKModule
 
 - (instancetype)init {
-  [Integration initSdk];
-
   return [super init];
 }
 
@@ -47,6 +47,7 @@ RCT_EXPORT_MODULE(HBSSDK);
   CGFloat teamBoardComponentHeight = [TeamBoard sizeFor:containerSize].height;
   CGFloat venueComponentHeight = [Venue widgetSizeWithContainerSize:containerSize].height;
   CGFloat watchComponentHeight = [Watch sizeFor:containerSize].height;
+  CGFloat squadComponentHeight = [Teams squadWidgetSizeFor:containerSize].height;
 
   return @{
     @"teamMatchesComponentHeight": @(teamMatchesComponentHeight),
@@ -65,7 +66,8 @@ RCT_EXPORT_MODULE(HBSSDK);
     @"teamMatchesStatsComponentHeight": @(teamMatchesStatsComponentHeight),
     @"teamBoardComponentHeight": @(teamBoardComponentHeight),
     @"venueComponentHeight": @(venueComponentHeight),
-    @"watchComponentHeight": @(watchComponentHeight)
+    @"watchComponentHeight": @(watchComponentHeight),
+    @"squadComponentHeight": @(squadComponentHeight)
   };
 }
 

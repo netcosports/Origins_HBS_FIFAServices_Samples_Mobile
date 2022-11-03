@@ -36,8 +36,10 @@ public class SmallMatchesViewManager extends SimpleViewManager<SmallMatchesWidge
             view.setGroupId(data.getString("groupId"));
         } else if (data.hasKey("teamId")) {
             view.setTeamId(data.getString("teamId"));
-        } else {
+        } else if (data.hasKey("roundId")) {
             view.setRoundId(data.getString("roundId"));
+        } else if (data.hasKey("matchId")) {
+            view.setMatchId(data.getString("matchId"));
         }
     }
 }

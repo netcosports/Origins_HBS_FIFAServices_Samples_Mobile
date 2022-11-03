@@ -1,5 +1,7 @@
 package com.reactnativehbssdk;
 
+import android.util.Log;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
@@ -33,8 +35,27 @@ public class VideosViewManager extends SimpleViewManager<VideoCarouselWidget> {
 
     @ReactProp(name = "data")
     public void setData(VideoCarouselWidget view, @Nullable ReadableMap data) {
+        if (data == null) {
+            return;
+        }
         String category = data.getString("category");
-        String subcategory = data.getString("subcategory");
-        view.setCategory(category, subcategory);
+
+        String title = category;
+        if (data.hasKey("title")) {
+            title = data.getString("title");
+        }
+        String subcategory = null;
+        if (data.hasKey("subcategory")) {
+            subcategory = data.getString("subcategory");
+        }
+        String matchId = null;
+        if (data.hasKey("matchId")) {
+            matchId = data.getString("matchId");
+        }
+        if (matchId != null) {
+            view.setMatchId(matchId, title);
+        } else if (category != null) {
+            view.setCategory(category, subcategory, title != null ? title : category);
+        }
     }
 }

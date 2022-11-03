@@ -83,10 +83,9 @@ class SampleMainController: UIViewController {
     @unknown default:
       break
     }
-
     HBSSDK.Integration.setupLayoutDirection(layoutDirection: hbsDirection)
 
-    HBSSDK.Integration.setDisplayActionsInMatchCenter(display: appSettings.isDisplayActions())
+    //HBSSDK.Integration.setDisplayActionsInMatchCenter(display: appSettings.isDisplayActions())
 
     let delegate = UIApplication.shared.delegate as! AppDelegate
     delegate.setupMatchClickListener(clickHandler: appSettings.getHbsMatchCenterClickHandler())

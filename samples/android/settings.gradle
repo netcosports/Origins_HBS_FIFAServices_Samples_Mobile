@@ -24,6 +24,7 @@ dependencyResolutionManagement {
                 password repoPassword
             }
         }
+        maven { url 'https://jitpack.io' }
     }
 }
 rootProject.name = "HBS Sample"

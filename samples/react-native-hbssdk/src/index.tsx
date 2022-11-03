@@ -17,6 +17,7 @@ const LINKING_ERROR =
 ////////////////////////
 // top player
 type TopPlayerStatsProps = {
+  teamId: string,
   statType: string;
   style: ViewStyle;
 };
@@ -31,6 +32,88 @@ export const TopPlayerStats =
       };
 
 ////////////////////////
+
+////////////////////////
+// lineup
+type LineupProps = {
+  matchId: string,
+  style: ViewStyle;
+};
+
+const LineupComponentName = 'Lineup';
+
+export const Lineup =
+  UIManager.getViewManagerConfig(LineupComponentName) != null
+    ? requireNativeComponent<LineupProps>(LineupComponentName)
+    : () => {
+        throw new Error(LINKING_ERROR);
+      };
+
+////////////////////////
+
+////////////////////////
+// actions
+type ActionProps = {
+  matchId: string,
+  style: ViewStyle;
+};
+
+const ActionsComponentName = 'Actions';
+
+export const Actions =
+  UIManager.getViewManagerConfig(ActionsComponentName) != null
+    ? requireNativeComponent<ActionProps>(ActionsComponentName)
+    : () => {
+        throw new Error(LINKING_ERROR);
+      };
+
+////////////////////////
+
+////////////////////////
+// match stats
+type MatchStatsProps = {
+  matchId: string,
+  style: ViewStyle;
+};
+
+const MatchStatsComponentName = 'MatchStats';
+
+export const MatchStats =
+  UIManager.getViewManagerConfig(MatchStatsComponentName) != null
+    ? requireNativeComponent<MatchStatsProps>(MatchStatsComponentName)
+    : () => {
+        throw new Error(LINKING_ERROR);
+      };
+
+////////////////////////
+
+////////////////////////
+// lineup
+type MatchHeaderProps = {
+  matchId: string,
+  style: ViewStyle;
+};
+
+const MatchHeaderComponentName = 'MatchHeader';
+
+export const MatchHeader =
+  UIManager.getViewManagerConfig(MatchHeaderComponentName) != null
+    ? requireNativeComponent<MatchHeaderProps>(MatchHeaderComponentName)
+    : () => {
+        throw new Error(LINKING_ERROR);
+      };
+
+const ExpandedMatchHeaderComponentName = 'ExpandedMatchHeader';
+
+export const ExpandedMatchHeader =
+  UIManager.getViewManagerConfig(ExpandedMatchHeaderComponentName) != null
+    ? requireNativeComponent<MatchHeaderProps>(ExpandedMatchHeaderComponentName)
+    : () => {
+        throw new Error(LINKING_ERROR);
+      };
+
+////////////////////////
+
 // team matches stats
 type TeamMatchesStatsProps = {
   teamId: string;
@@ -94,6 +177,22 @@ export const Watch =
       };
 
 ////////////////////////
+// squad
+type SquadProps = {
+  teamId: string;
+  style: ViewStyle;
+};
+
+const SquadComponentName = 'Squad';
+
+export const Squad =
+  UIManager.getViewManagerConfig(SquadComponentName) != null
+    ? requireNativeComponent<SquadProps>(SquadComponentName)
+    : () => {
+        throw new Error(LINKING_ERROR);
+      };
+
+////////////////////////
 // top player
 type TeamMatchesProps = {
   teamId: string;
@@ -113,6 +212,9 @@ export const TeamMatches =
 // videos
 type VideosProps = {
   category: string;
+  subcategory: string;
+  matchId: string;
+  title: string;
   style: ViewStyle;
 };
 
@@ -174,6 +276,23 @@ export const Favorites =
 
 
 ////////////////////////
+////////////////////////
+// Team List
+type TeamListProps = {
+  style: ViewStyle;
+};
+
+const TeamListComponentName = 'TeamList';
+
+export const TeamList =
+  UIManager.getViewManagerConfig(TeamListComponentName) != null
+    ? requireNativeComponent<TeamListProps>(TeamListComponentName)
+    : () => {
+        throw new Error(LINKING_ERROR);
+      };
+
+
+////////////////////////
 // head to head
 type HeadToHeadProps = {
   data: { teamId: string, teamId1: string, teamId2: string };
@@ -208,7 +327,7 @@ export const MatchCenter =
 ////////////////////////
 // large matches
 type MatchesProps = {
-  data: { groupId: string, teamId: string, roundId: string };
+  data: { groupId: string, teamId: string, roundId: string, matchId: string };
   style: ViewStyle;
 };
 
@@ -248,4 +367,3 @@ export const SmallMatches =
 ///////////////////////
 // module
 export default HBSSDK;
-

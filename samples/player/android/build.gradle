@@ -21,6 +21,7 @@ allprojects {
                 password "3BQTrscV"
             }
         }
+        maven { url "https://jitpack.io" }
     }
 }
 

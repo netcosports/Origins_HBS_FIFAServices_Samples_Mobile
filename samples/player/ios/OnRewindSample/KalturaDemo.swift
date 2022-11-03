@@ -8,7 +8,6 @@
 
 
 import AVKit
-import Dioptra
 import OnRewindSDK
 import UIKit
 
@@ -168,7 +167,7 @@ class KalturaPlayerDemo: UIView, OnRewindSDK.PlayerWrapper {
     seekedClosure = completion
   }
 
-  func setPlaybackState(state: OnRewindSDK.PlaybackState) {
+  func setPlaybackState(state: OnRewindSDK.PlaybackStateDeprected) {
     switch state {
     case .paused:
       self.player.pause()

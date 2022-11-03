@@ -21,10 +21,21 @@ RCT_EXPORT_MODULE(Watch);
   return view;
 }
 
-RCT_CUSTOM_VIEW_PROPERTY(teamId, NSString, UIView<WatchWidget>)
+RCT_CUSTOM_VIEW_PROPERTY(data, String, UIView<WatchWidget>)
 {
-  NSString *teamId = [RCTConvert NSString:json];
-  [view setupTeamIdWithTeamId:teamId];
+  if ([json objectForKey:@"groupId"] != nil) {
+    NSString* groupId = [RCTConvert NSString:json[@"groupId"]];
+    [view setupGroupIdWithGroupId:groupId];
+  } else if ([json objectForKey:@"teamId"] != nil) {
+    NSString* teamId = [RCTConvert NSString:json[@"teamId"]];
+    [view setupTeamIdWithTeamId:teamId];
+  } else if ([json objectForKey:@"roundId"] != nil) {
+    NSString* roundId = [RCTConvert NSString:json[@"roundId"]];
+    [view setupRoundIdWithRoundId:roundId];
+  } else if ([json objectForKey:@"matchId"] != nil) {
+    NSString* matchId = [RCTConvert NSString:json[@"matchId"]];
+    [view setupMatchIdWithMatchId:matchId];
+  }
 }
 
 + (BOOL)requiresMainQueueSetup {

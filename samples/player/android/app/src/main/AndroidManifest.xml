@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.originsdigital.hbsonrewindplayerdemo">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -11,8 +12,9 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
-        android:theme="@style/Theme.HbsOnrewindPlayerDemo">
+        android:networkSecurityConfig="@xml/network_config"
+        android:theme="@style/Theme.HbsOnrewindPlayerDemo"
+        tools:replace="android:networkSecurityConfig">
 
         <activity
             android:name=".IntroActivity"
