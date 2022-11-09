@@ -27,6 +27,7 @@ enum Events: Equatable {
   case fullscreen(OnRewind.EventParams)
   case list(OnRewind.EventParams)
   case embeded(OnRewind.EventParams)
+  case viacom18(OnRewind.EventParams)
 }
 
 class ViewController: UIViewController {
@@ -54,6 +55,14 @@ class ViewController: UIViewController {
     let button = UIButton()
     button.backgroundColor = .orange
     button.setTitle("Push player embedded in list", for: .normal)
+    button.titleLabel?.numberOfLines = 0
+    return button
+  }()
+
+  private let viacom18Button: UIButton = {
+    let button = UIButton()
+    button.backgroundColor = .orange
+    button.setTitle("Push player sample for viacom18", for: .normal)
     button.titleLabel?.numberOfLines = 0
     return button
   }()
@@ -98,7 +107,7 @@ class ViewController: UIViewController {
     view.addSubview(presentButton)
     view.addSubview(pushButton)
     view.addSubview(listButton)
-
+    view.addSubview(viacom18Button)
 
     OnRewind.set(
       baseUrl: "https://hbs-stats-provider.origins-digital.com/",
@@ -125,6 +134,11 @@ class ViewController: UIViewController {
             let wrapper = AVPlayerDemo()
             return wrapper
           })
+        case .viacom18(let params):
+          self.navigationController?.pushViewController(
+            ViacomSampleController(params: params),
+            animated: true, completion: self.restoreCompletion
+          )
       case .list(let params):
         self.navigationController?.pushViewController(
           ListViewController(params: params),
@@ -144,6 +158,10 @@ class ViewController: UIViewController {
     listButton.rx.tap.subscribe(onNext: { [weak self] in
       self?.eventsSubject.onNext(.list(params))
     }).disposed(by: disposeBag)
+
+    viacom18Button.rx.tap.subscribe(onNext: { [weak self] in
+      self?.eventsSubject.onNext(.viacom18(params))
+    }).disposed(by: disposeBag)
   }
 
   override func viewDidLayoutSubviews() {
@@ -152,9 +170,10 @@ class ViewController: UIViewController {
     presentButton.pin.horizontally(12.0).height(100.0).top(view.pin.safeArea.top + 12).hCenter()
     pushButton.pin.horizontally(12.0).height(100.0).below(of: presentButton).marginTop(12).hCenter()
     listButton.pin.horizontally(12.0).height(100.0).below(of: pushButton).marginTop(12).hCenter()
+    viacom18Button.pin.horizontally(12.0).height(100.0).below(of: listButton).marginTop(12).hCenter()
   }
 
   override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-    return .landscape
+    return .portrait
   }
 }

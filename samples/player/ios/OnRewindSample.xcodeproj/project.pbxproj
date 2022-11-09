@@ -16,6 +16,7 @@
 		AAA4B70121E888A700508199 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA4B70021E888A700508199 /* ViewController.swift */; };
 		AAA4B70621E888A900508199 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAA4B70521E888A900508199 /* Assets.xcassets */; };
 		AAA4B70921E888A900508199 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAA4B70721E888A900508199 /* LaunchScreen.storyboard */; };
+		AAC7E707291BEABC0042C16F /* ViacomSampleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC7E706291BEABC0042C16F /* ViacomSampleController.swift */; };
 		AAE6A7BC25C4361000DEC20A /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE6A7B925C4361000DEC20A /* DetailsViewController.swift */; };
 		AAE6A7BE25C4361000DEC20A /* AVPlayerDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE6A7BB25C4361000DEC20A /* AVPlayerDemo.swift */; };
 		AAE6A90D25C7F32E00DEC20A /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE6A90C25C7F32E00DEC20A /* ListViewController.swift */; };
@@ -36,6 +37,7 @@
 		AAA4B70521E888A900508199 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AAA4B70821E888A900508199 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AAA4B70A21E888A900508199 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AAC7E706291BEABC0042C16F /* ViacomSampleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViacomSampleController.swift; sourceTree = "<group>"; };
 		AAE6A7B925C4361000DEC20A /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		AAE6A7BA25C4361000DEC20A /* DMPlayerDemo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMPlayerDemo.swift; sourceTree = "<group>"; };
 		AAE6A7BB25C4361000DEC20A /* AVPlayerDemo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVPlayerDemo.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				AAA4B70721E888A900508199 /* LaunchScreen.storyboard */,
 				AAA4B70A21E888A900508199 /* Info.plist */,
 				AA72194C2879AE8000A53363 /* KalturaDemo.swift */,
+				AAC7E706291BEABC0042C16F /* ViacomSampleController.swift */,
 			);
 			path = OnRewindSample;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 				AA98130927B3E8F700355E69 /* AVPlayerLayer+Rx.swift in Sources */,
 				AAA4B6FF21E888A700508199 /* AppDelegate.swift in Sources */,
 				AAE6A7BC25C4361000DEC20A /* DetailsViewController.swift in Sources */,
+				AAC7E707291BEABC0042C16F /* ViacomSampleController.swift in Sources */,
 				AAE6A90D25C7F32E00DEC20A /* ListViewController.swift in Sources */,
 				AA98130A27B3E8F700355E69 /* AVAsynchronousKeyValueLoading+Rx.swift in Sources */,
 				AA72194D2879AE8000A53363 /* KalturaDemo.swift in Sources */,

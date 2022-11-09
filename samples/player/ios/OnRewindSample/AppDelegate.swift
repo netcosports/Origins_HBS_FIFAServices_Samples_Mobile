@@ -13,7 +13,11 @@ var isPad: Bool { return UIDevice.current.userInterfaceIdiom == .pad }
 class NavigationController: UINavigationController {
 
   override open var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-    return isPad ? .landscape : .portrait
+    return topViewController?.supportedInterfaceOrientations ?? .allButUpsideDown
+  }
+
+  override var shouldAutorotate: Bool {
+    return topViewController?.shouldAutorotate ?? false
   }
 }
 

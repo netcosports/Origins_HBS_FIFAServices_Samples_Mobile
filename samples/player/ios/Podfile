@@ -16,8 +16,8 @@ end
 PLAYKIT_GIT='https://github.com/kaltura/playkit-ios.git'
 PLAYKIT_BRANCH=ENV['PK_BRANCH'] || 'develop'
 
-download_spec!(url: 'https://origins-mobile-products.s3.eu-west-1.amazonaws.com/hbs_onrewind_player/viacom18/1.0.67/onrewindshared.podspec')
-download_spec!(url: 'https://origins-mobile-products.s3.eu-west-1.amazonaws.com/hbs_onrewind_player/viacom18/1.0.67/OnRewindSDK.podspec')
+download_spec!(url: 'https://origins-mobile-products.s3.eu-west-1.amazonaws.com/hbs_onrewind_player/viacom18/1.0.125/onrewindshared.podspec')
+download_spec!(url: 'https://origins-mobile-products.s3.eu-west-1.amazonaws.com/hbs_onrewind_player/viacom18/1.0.125/OnRewindSDK.podspec')
 
 target 'OnRewindSample' do
 
