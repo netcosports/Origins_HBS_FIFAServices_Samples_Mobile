@@ -110,14 +110,14 @@ class ViewController: UIViewController {
     view.addSubview(viacom18Button)
 
     OnRewind.set(
-      baseUrl: "https://hbs-stats-provider.origins-digital.com/",
-      akamaiPrivateKey: "0df73252ceaf17d78589371d5b8d1bbb",
+      baseUrl: "https://viacom-web-fwc2022-sdk.akamaized.net/",
+      akamaiPrivateKey: "2c6a022f5b718ee32f650d6ce69d068e",
       accountKey: "T6vPCPENV",
       competitionId: "fu17wwc",
       seasonId: "2022"
     )
 
-    let params: OnRewind.EventParams = .matchId("134072")
+    let params: OnRewind.EventParams = .matchId("134088")
 
     eventsSubject.subscribe(onNext: { [weak self] event in
       guard let self = self else { return }
