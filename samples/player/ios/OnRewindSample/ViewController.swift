@@ -111,13 +111,13 @@ class ViewController: UIViewController {
 
     OnRewind.set(
       baseUrl: "https://hbs-stats-provider.origins-digital.com/",
-      akamaiPrivateKey: "0df73252ceaf17d78589371d5b8d1bbb",
+      akamaiPrivateKey: "AKAMAIKEY",
       accountKey: "T6vPCPENV",
       competitionId: "fu17wwc",
       seasonId: "2022"
     )
 
-    let params: OnRewind.EventParams = .matchId("134072")
+    let params: OnRewind.EventParams = .matchId("134088")
 
     eventsSubject.subscribe(onNext: { [weak self] event in
       guard let self = self else { return }

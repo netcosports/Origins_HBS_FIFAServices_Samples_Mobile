@@ -18,10 +18,12 @@ class ViacomSampleController: UIViewController {
   let params: OnRewind.EventParams
 
   private let hypeButton = UIButton()
+  private let fullscreeButton = UIButton()
   private let enLangButton = UIButton()
   private let hiLangButton = UIButton()
   private let disposeBag = DisposeBag()
-  private var isHypeVisible = false
+  private var isHypeVisible = true
+  private var hasModallyPresented = false
   init(params: OnRewind.EventParams) {
     self.params = params
     super.init(nibName: nil, bundle: nil)
@@ -37,6 +39,14 @@ class ViacomSampleController: UIViewController {
     view.backgroundColor = UIColor.lightGray
     playerController = OnRewind.playerController(
       with: params,
+      presentedModallyScreenClosure: { [weak self] event in
+        switch event {
+          case .presented:
+            self?.hasModallyPresented = true
+          case .dismissed:
+            self?.hasModallyPresented = false
+        }
+      },
       playerWrapperClosure: {
         return AVPlayerDemo()
       },
@@ -56,15 +66,20 @@ class ViacomSampleController: UIViewController {
     self.addChild(player)
     player.didMove(toParent: self)
 
-    self.view.addSubview(hypeButton)
-    hypeButton.setTitle("HYPE", for: .normal)
-    hypeButton.setTitleColor(UIColor.black, for: .normal)
-    hypeButton.backgroundColor = .orange
+    self.view.addSubview(fullscreeButton)
+    fullscreeButton.setTitle("Fullscreen", for: .normal)
+    fullscreeButton.setTitleColor(UIColor.black, for: .normal)
+    fullscreeButton.backgroundColor = .orange
 
-    hypeButton.rx.tap.subscribe(onNext: { [weak self] in
-      guard let self = self else { return }
-      self.isHypeVisible = !self.isHypeVisible
-      self.playerController?.setPlayerControls(visibility: self.isHypeVisible)
+    fullscreeButton.rx.tap.subscribe(onNext: { [weak self] in
+      if #available(iOS 16.0, *) {
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
+          windowScene.requestGeometryUpdate(.iOS(interfaceOrientations: .landscape)) { _ in }
+        }
+      } else {
+        let value = UIInterfaceOrientation.landscapeLeft.rawValue
+        UIDevice.current.setValue(value, forKey: "orientation")
+      }
     }).disposed(by: disposeBag)
   }
 
@@ -74,17 +89,28 @@ class ViacomSampleController: UIViewController {
       return
     }
 
-    if UIDevice.current.orientation.isLandscape {
+    if view.frame.width > view.frame.height {
       player.view.pin.all()
     } else {
       player.view.pin.top(120.0).horizontally().aspectRatio(16.0/9.0)
     }
 
-    hypeButton.pin.top(to: player.view.edge.top).hCenter().marginTop(20.0).width(80.0).height(30.0)
+    fullscreeButton.pin.top(to: player.view.edge.top).hCenter().marginTop(20.0).height(90).width(140)
+  }
+
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+  }
+
+  override func viewDidDisappear(_ animated: Bool) {
+    super.viewDidDisappear(animated)
   }
 
   override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-
+    // NOTE: please comment this to reproduce same problem your app has
+    if hasModallyPresented {
+      return .landscape
+    }
     return .allButUpsideDown
   }
 
