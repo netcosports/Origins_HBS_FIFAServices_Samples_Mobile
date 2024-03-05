@@ -7,7 +7,7 @@ on:
 
 jobs:
   publish:
-    runs-on: ubuntu-latest
+    runs-on: ios_node_m1
     defaults:
       run:
         working-directory: ./samples/react-native-hbssdk
@@ -19,8 +19,6 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       - run: npm install
       - run: |
-          git config --global user.name 'Sergei Mikhan'
-          git config --global user.email 'sergei@origins-digital.com'
-          npm run release
+          echo $NODE_AUTH_TOKEN > token
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
